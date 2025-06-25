@@ -1,5 +1,5 @@
-﻿using TMPro;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Events;
 
 public class FishTugMinigame : MonoBehaviour
 {
@@ -11,18 +11,16 @@ public class FishTugMinigame : MonoBehaviour
     public float swimSpeed = 3f;
     public float swimLimitX = 5f;
 
+    [Header("Callbacks")]
+    public UnityEvent OnWin;
+    public UnityEvent OnLose;
+
     private int fishDir;
     private bool isDragging = false;
     private bool inputLocked = false;
     private Vector3 dragOffset;
+    private bool finished = false;
 
-    private PhaseUpdateMinigameState_Caller caller;
-
-    private void Awake()
-    {
-        caller = FindAnyObjectByType<PhaseUpdateMinigameState_Caller>();
-        if (caller == null) Debug.LogError("[FishTug] no PhaseUpdateMinigameState_Caller found!");
-    }
 
     private void Start()
     {
@@ -34,18 +32,7 @@ public class FishTugMinigame : MonoBehaviour
 
     private void Update()
     {
-        /*if (returningCenter)
-        {
-            Vector3 target = new Vector3(0f, fish.position.y, fish.position.z);
-            fish.position = Vector3.MoveTowards(fish.position, target, returnSpeed * Time.deltaTime);
-            if (Mathf.Abs(fish.position.x) < 0.01f)
-            {
-                caller.UpdateStateAndGoNextPhase(true);
-                Debug.Log("win from FishTugMinigame");
-                returningCenter = false;
-            }
-            return;
-        }*/
+        if (finished) return;
 
         if (!isDragging)
         {
@@ -54,8 +41,7 @@ public class FishTugMinigame : MonoBehaviour
 
         if (Mathf.Abs(fish.position.x) > swimLimitX)
         {
-            caller.UpdateStateAndGoNextPhase(false);
-            enabled = false;
+            Finish(false);
             return;
         }
 
@@ -81,9 +67,7 @@ public class FishTugMinigame : MonoBehaviour
             if ((fishDir == -1 && fish.position.x > swimLimitX) ||
                 (fishDir == 1 && fish.position.x < -swimLimitX))
             {
-                isDragging = false;
-                inputLocked = true;
-                caller.UpdateStateAndGoNextPhase(true);
+                Finish(true);
             }
         }
 
@@ -91,6 +75,15 @@ public class FishTugMinigame : MonoBehaviour
         {
             isDragging = false;
         }
+    }
+
+    private void Finish(bool win)
+    {
+        finished = true;
+        isDragging = false;
+
+        if (win) OnWin.Invoke();
+        else OnLose.Invoke();
     }
 
     private void ApplyFishRotation()
