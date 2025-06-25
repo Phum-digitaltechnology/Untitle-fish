@@ -18,7 +18,11 @@ public class PhaseListener : MonoBehaviour
     private void Awake()
     {
         FindAnyObjectByType<PhaseController>().PhaseUpdateEvent += UpdatePhase;
+
     }
+
+
+
 
     void UpdatePhase(Phase phase)
     {
