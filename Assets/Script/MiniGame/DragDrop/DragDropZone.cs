@@ -2,15 +2,35 @@ using UnityEngine;
 
 public class DragDropZone : MonoBehaviour
 {
+    private bool dragging = false;
+    private bool haveWorm = false;
+    private Vector3 offset;
+    [SerializeField] private GameObject worm;
 
-    public void OnMouseDrag()
+    void Update()
     {
-        Debug.Log($"Im Draggingggg {this.gameObject.name}");
+        if (dragging)
+        {
+            worm.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
+        }
     }
 
-    GameObject DragObject()
+    private void OnMouseDown()
     {
-        //Some Fuction that Return
-        return null;
+        offset = worm.transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        dragging = true;
+    }
+
+    private void OnMouseUp()
+    {
+        dragging = false;
+    }
+
+    private void OnMouseOver()
+    {
+        if (dragging)
+        {
+            
+        }
     }
 }
