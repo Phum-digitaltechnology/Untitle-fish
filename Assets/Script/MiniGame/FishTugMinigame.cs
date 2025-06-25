@@ -1,7 +1,7 @@
 ﻿using TMPro;
 using UnityEngine;
 
-public class FishTugMinigame : MiniGameBase
+public class FishTugMinigame : MonoBehaviour
 {
     [Header("Scene Refs")]
     public Transform fish;
@@ -10,11 +10,9 @@ public class FishTugMinigame : MiniGameBase
     public float dragThreshold = 50f;
     public float swimSpeed = 3f;
     public float swimLimitX = 5f;
-    public float returnSpeed = 5f;
 
     private int fishDir;
     private bool isDragging = false;
-    private bool returningCenter = false;
     private bool inputLocked = false;
     private Vector3 dragOffset;
 
@@ -36,7 +34,7 @@ public class FishTugMinigame : MiniGameBase
 
     private void Update()
     {
-        if (returningCenter)
+        /*if (returningCenter)
         {
             Vector3 target = new Vector3(0f, fish.position.y, fish.position.z);
             fish.position = Vector3.MoveTowards(fish.position, target, returnSpeed * Time.deltaTime);
@@ -47,7 +45,7 @@ public class FishTugMinigame : MiniGameBase
                 returningCenter = false;
             }
             return;
-        }
+        }*/
 
         if (!isDragging)
         {
@@ -57,7 +55,7 @@ public class FishTugMinigame : MiniGameBase
         if (Mathf.Abs(fish.position.x) > swimLimitX)
         {
             caller.UpdateStateAndGoNextPhase(false);
-            enabled = false; // หยุดสคริปต์นี้
+            enabled = false;
             return;
         }
 
@@ -85,7 +83,7 @@ public class FishTugMinigame : MiniGameBase
             {
                 isDragging = false;
                 inputLocked = true;
-                returningCenter = true;
+                caller.UpdateStateAndGoNextPhase(true);
             }
         }
 
