@@ -891,6 +891,7 @@ MonoBehaviour:
           m_StringArgument: Win
           m_BoolArgument: 0
         m_CallState: 2
+  confetti: {fileID: 5796808221085052961, guid: f53964a3e3277144ea9ac1de9d299bfa, type: 3}
 --- !u!1 &1202030283
 GameObject:
   m_ObjectHideFlags: 0

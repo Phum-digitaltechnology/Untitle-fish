@@ -748,7 +748,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ebec2193005bed4a9a410f5aa396030, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countDownTime: 5
+  countDownTime: 500
   OnFinishCountDown:
     m_PersistentCalls:
       m_Calls:
@@ -1373,7 +1373,7 @@ Transform:
   m_GameObject: {fileID: 1614414900}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1573,7 +1573,7 @@ Transform:
   m_GameObject: {fileID: 2042189390}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5, y: -9, z: 0}
+  m_LocalPosition: {x: -1.5, y: -9, z: -1}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1724,6 +1724,7 @@ MonoBehaviour:
           m_StringArgument: Win
           m_BoolArgument: 0
         m_CallState: 2
+  confetti: {fileID: 5796808221085052961, guid: f53964a3e3277144ea9ac1de9d299bfa, type: 3}
 --- !u!1 &2091627065
 GameObject:
   m_ObjectHideFlags: 0

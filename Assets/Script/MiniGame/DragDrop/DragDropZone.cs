@@ -15,7 +15,7 @@ public class DragDropZone : MonoBehaviour
             if (wormTransform != null)
             {
                 wormTransform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
-                Debug.Log("Dragging");
+                //Debug.Log("Dragging");
             }
         }
     }

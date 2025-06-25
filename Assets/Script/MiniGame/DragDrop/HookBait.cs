@@ -4,14 +4,19 @@ using UnityEngine.Events;
 public class HookBait : MonoBehaviour
 {
     [SerializeField] private UnityEvent OnApplyBait;
+    [SerializeField] private GameObject confetti;
 
-    public void OnTriggerEnter2D(Collider2D col)
+    public void OnTriggerStay2D(Collider2D col)
     {
         if (col.gameObject.tag == "Worm")
         {
-            Destroy(col.gameObject.GetComponent<Rigidbody2D>());
-            OnApplyBait?.Invoke();
+            //Debug.Log("Trigger Stay");
+            if (Input.GetMouseButtonUp(0))
+            {
+                Destroy(col.gameObject.GetComponent<Rigidbody2D>());
+                OnApplyBait?.Invoke();
+                Instantiate(confetti, new Vector3(col.gameObject.transform.position.x, col.gameObject.transform.position.y, col.gameObject.transform.position.z), Quaternion.identity);
+            }
         }
     }
-
 }
