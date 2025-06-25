@@ -2,12 +2,12 @@ using System.Collections;
 using UnityEngine;
 using System.Collections.Generic;
 
-enum Manager
+enum MANAGER
 {
-    SceneTransition,
-    AudioSources,
-    SceneManager,
-    ScoreSystem
+    SceneTransition = 0,
+    AudioSources = 1,
+    SceneManager = 2,
+    ScoreSystem = 3,
 };
 
 public class GameManager : MonoBehaviour
