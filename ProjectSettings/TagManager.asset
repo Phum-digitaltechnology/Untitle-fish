@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - Fish
+  - Hook
+  - Worm
+  - GameManager
   layers:
   - Default
   - TransparentFX
