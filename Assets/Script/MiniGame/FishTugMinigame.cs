@@ -3,115 +3,101 @@ using UnityEngine;
 
 public class FishTugMinigame : MiniGameBase
 {
+    [Header("Scene Refs")]
     public Transform fish;
-    public TextMeshProUGUI countdownText;
-    public float countdownTime = 5f;
+
+    [Header("Gameplay Settings")]
     public float dragThreshold = 50f;
     public float swimSpeed = 3f;
     public float swimLimitX = 5f;
     public float returnSpeed = 5f;
 
-    private float timer;
-    private Vector2 dragStart;
     private int fishDir;
-
-    private bool returningToCenter = false;
-    private bool inputLocked = false;
     private bool isDragging = false;
+    private bool returningCenter = false;
+    private bool inputLocked = false;
     private Vector3 dragOffset;
+
+    private PhaseUpdateMinigameState_Caller caller;
+
+    private void Awake()
+    {
+        caller = FindAnyObjectByType<PhaseUpdateMinigameState_Caller>();
+        if (caller == null) Debug.LogError("[FishTug] no PhaseUpdateMinigameState_Caller found!");
+    }
 
     private void Start()
     {
-        timer = countdownTime;
-
         fishDir = (Random.value < 0.5f) ? -1 : 1;
-        float yRot = (fishDir == 1) ? 180f : 0f;
-        fish.localRotation = Quaternion.Euler(0, yRot, 0);
+        ApplyFishRotation();
 
-        Vector3 pos = fish.position;
-        pos.y = 0f;
-        fish.position = pos;
-
-        countdownText.text = Mathf.Ceil(timer).ToString();
+        Vector3 p = fish.position; p.y = 0f; fish.position = p;
     }
 
     private void Update()
     {
-        if (returningToCenter)
+        if (returningCenter)
         {
             Vector3 target = new Vector3(0f, fish.position.y, fish.position.z);
             fish.position = Vector3.MoveTowards(fish.position, target, returnSpeed * Time.deltaTime);
-
             if (Mathf.Abs(fish.position.x) < 0.01f)
             {
-                returningToCenter = false;
-                EndMiniGame(true);
+                caller.UpdateStateAndGoNextPhase(true);
+                Debug.Log("win from FishTugMinigame");
+                returningCenter = false;
             }
-
             return;
         }
 
-        if (gameEnded) return;
-
         if (!isDragging)
         {
-            Vector3 move = Vector3.right * fishDir * swimSpeed * Time.deltaTime;
-            fish.position += move;
+            fish.position += Vector3.right * fishDir * swimSpeed * Time.deltaTime;
         }
 
         if (Mathf.Abs(fish.position.x) > swimLimitX)
         {
-            EndMiniGame(false);
-            StartCoroutine(UnloadAfterDelay(1f));
+            caller.UpdateStateAndGoNextPhase(false);
+            enabled = false; // หยุดสคริปต์นี้
             return;
         }
 
-        timer -= Time.deltaTime;
-        countdownText.text = Mathf.Ceil(timer).ToString();
+        if (inputLocked) return;
 
-        if (timer <= 0f)
+        if (Input.GetMouseButtonDown(0))
         {
-            EndMiniGame(false);
-            StartCoroutine(UnloadAfterDelay(1f));
-            return;
+            Vector2 mw = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.Raycast(mw, Vector2.zero);
+            if (hit && hit.transform == fish)
+            {
+                isDragging = true;
+                dragOffset = fish.position - (Vector3)mw;
+            }
         }
 
-        if (!inputLocked)
+        if (Input.GetMouseButton(0) && isDragging)
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                RaycastHit2D hit = Physics2D.Raycast(mouseWorldPos, Vector2.zero);// 2D Raycast
+            Vector2 mw = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 newPos = (Vector3)mw + dragOffset;
+            fish.position = new Vector3(newPos.x, fish.position.y, fish.position.z);
 
-                if (hit.collider != null && hit.transform == fish)
-                {
-                    isDragging = true;
-                    dragOffset = fish.position - (Vector3)mouseWorldPos;
-                }
-            }
-
-            if (Input.GetMouseButton(0) && isDragging)
-            {
-                Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                Vector3 newPos = (Vector3)mouseWorldPos + dragOffset;
-                fish.position = new Vector3(newPos.x, fish.position.y, fish.position.z); // เคลื่อนเฉพาะแกน X
-
-                // Win condition
-                if ((fishDir == -1 && fish.position.x > swimLimitX) ||
-                    (fishDir == 1 && fish.position.x < -swimLimitX))
-                {
-                    isDragging = false;
-                    inputLocked = true;
-                    gameEnded = true;
-                    returningToCenter = true;
-                }
-            }
-
-
-            if (Input.GetMouseButtonUp(0))
+            if ((fishDir == -1 && fish.position.x > swimLimitX) ||
+                (fishDir == 1 && fish.position.x < -swimLimitX))
             {
                 isDragging = false;
+                inputLocked = true;
+                returningCenter = true;
             }
         }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            isDragging = false;
+        }
+    }
+
+    private void ApplyFishRotation()
+    {
+        float yRot = (fishDir == 1) ? 180f : 0f;
+        fish.localRotation = Quaternion.Euler(0, yRot, 0);
     }
 }
