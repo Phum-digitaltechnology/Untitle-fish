@@ -614,10 +614,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 972693391}
-  - component: {fileID: 972693395}
   - component: {fileID: 972693394}
   - component: {fileID: 972693393}
   - component: {fileID: 972693392}
+  - component: {fileID: 972693395}
   m_Layer: 0
   m_Name: Bucket
   m_TagString: Untagged
@@ -725,7 +725,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 972693390}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b916e8de7c37454e8145455aa0a50f6, type: 3}
+  m_Script: {fileID: 11500000, guid: ec5e5eef1a4316b4abd8591768d60dfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   worm: {fileID: 3594204446805339442, guid: 7535299c81a99b445a6c5dcb02e919ec, type: 3}

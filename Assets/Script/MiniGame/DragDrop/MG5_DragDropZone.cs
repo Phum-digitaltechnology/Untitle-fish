@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DragDropZone : MonoBehaviour
+public class MG5_DragDropZone : MonoBehaviour
 {
     private bool dragging = false;
     private bool haveWorm = false;
