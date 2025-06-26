@@ -871,7 +871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a864b3845794ec45b798358e8c9d5be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxScore: 10
+  MaxScore: 20
   OnAddScore:
     m_PersistentCalls:
       m_Calls: []
