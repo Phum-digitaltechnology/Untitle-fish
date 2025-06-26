@@ -57,7 +57,10 @@ public class sceneManager : MonoBehaviour
     {
         transitionAnim.SetTrigger("End");
         yield return new WaitForSeconds(1);
-        SceneManager.LoadSceneAsync(SceneName, LoadSceneMode.Additive);
+        AsyncOperation op = SceneManager.LoadSceneAsync(SceneName, LoadSceneMode.Additive);
+        yield return op;
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName(SceneName));
+        GameObject.Find("InterMissionCanvas").SetActive(false);
         transitionAnim.SetTrigger("Start");
     }
 
@@ -66,16 +69,35 @@ public class sceneManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            ChangeScene(randomMiniGame().SceneName);
+            //ChangeScene(randomMiniGame().SceneName);
         }
+    }
+
+    private void Start()
+    {
+        ChangeScene(randomMiniGame().SceneName);
     }
 
     //call to unload minigame scene and return to intermission scene
     public void EndMiniGame(bool areYouWinningSon)
     {
         ScoreSystem scoreCS = this.transform.parent.GetChild(3).gameObject.GetComponent<ScoreSystem>();
-        
-        SceneManager.UnloadSceneAsync(currentMiniGame.SceneName);
+
+        AsyncOperation op = SceneManager.UnloadSceneAsync(currentMiniGame.SceneName);
+
+        op.completed += (AsyncOperation o) =>
+        {
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName("IntermissionMain"));
+        };
+
+        GameObject[] allObjects = Resources.FindObjectsOfTypeAll<GameObject>();
+        foreach (GameObject obj in allObjects)
+        {
+            if (obj.name == "InterMissionCanvas" && !obj.activeInHierarchy)
+            {
+                obj.SetActive(true);
+            }
+        }
 
         if (areYouWinningSon)
         {

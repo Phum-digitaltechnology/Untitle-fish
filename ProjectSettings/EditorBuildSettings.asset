@@ -9,8 +9,32 @@ EditorBuildSettings:
     path: Assets/Scenes/IntermissionMain.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Scenes/SampleMinigameScene.unity
-    guid: f3c0bc21f1a3775429bb16479757e6ee
+    path: Assets/Scenes/MiniGame/MG_1.unity
+    guid: eb85622999a61ec4aa01bfd8269bf8b8
+  - enabled: 1
+    path: Assets/Scenes/MiniGame/MG_2.unity
+    guid: 90c3efdcdcc740444aff845e379a0c04
+  - enabled: 1
+    path: Assets/Scenes/MiniGame/MG_4.unity
+    guid: c8f7de04dfe90e9408e8cdfc5615b4a6
+  - enabled: 1
+    path: Assets/Scenes/MiniGame/MG_5.unity
+    guid: 08c918f9cfd15dc4a83f95599a468a87
+  - enabled: 1
+    path: Assets/Scenes/MiniGame/MG_6.unity
+    guid: a83fa4bbf9fe5b74babc0ab1663a5567
+  - enabled: 1
+    path: Assets/Scenes/MiniGame/MG_7.unity
+    guid: a6c11b80cd2137c4f8c62e25d39436bd
+  - enabled: 1
+    path: Assets/Scenes/MiniGame/MG_8.unity
+    guid: 40aebed39aeaa2242a2077dc8d684ae7
+  - enabled: 1
+    path: Assets/Scenes/MiniGame/MG_9.unity
+    guid: 6b59d957ab3e1d942b48e220bbd5ae8d
+  - enabled: 1
+    path: Assets/Scenes/MiniGame/MG_10.unity
+    guid: 37a5f5fe098822143ab90866215b9203
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

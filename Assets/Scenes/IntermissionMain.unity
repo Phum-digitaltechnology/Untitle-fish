@@ -1008,7 +1008,7 @@ GameObject:
   - component: {fileID: 1297319669}
   - component: {fileID: 1297319668}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: InterMissionCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1484,7 +1484,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60e719bb968001e408a06b488cfb22e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MiniGameScene: []
+  MiniGameScene:
+  - {fileID: 11400000, guid: 11c5e80c3ce2f8d4781c8d33df73dc93, type: 2}
+  - {fileID: 11400000, guid: 3f8bcd7ac0317214690a2c6c1a02805b, type: 2}
+  - {fileID: 11400000, guid: 47214aa073295a34ba576e82e5f11e95, type: 2}
+  - {fileID: 11400000, guid: bfa7bd322c0ce0f49822b7c573804424, type: 2}
+  - {fileID: 11400000, guid: 8ad0cd21ecf9d9d439c08a92092ea745, type: 2}
+  - {fileID: 11400000, guid: b8a685b5764d02846a7d9e0f96622e49, type: 2}
+  - {fileID: 11400000, guid: 810952adcb6e31e499302089c869ad7c, type: 2}
+  - {fileID: 11400000, guid: 39e570841ca2e5a448302c0ac8d7cfcd, type: 2}
   transitionAnim: {fileID: 682972819}
   currentMiniGame: {fileID: 0}
 --- !u!1 &1911203362
