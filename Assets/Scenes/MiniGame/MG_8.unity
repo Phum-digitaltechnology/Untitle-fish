@@ -752,7 +752,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1408501035}
-        m_TargetAssemblyTypeName: AimingMove, Assembly-CSharp
+        m_TargetAssemblyTypeName: Aimming, Assembly-CSharp
         m_MethodName: SetUp
         m_Mode: 1
         m_Arguments:
@@ -784,12 +784,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1408501030}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29ec504d962bc174f86007d35750c9e0, type: 3}
+  m_Script: {fileID: 11500000, guid: 2388031a92118ea45bec80c43db49c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   MovePos:
-  - {fileID: 759622625}
   - {fileID: 1509199481}
+  - {fileID: 759622625}
   fishTransform: {fileID: 2036276295}
   moveSpeed: 5
 --- !u!1 &1509199480
