@@ -778,7 +778,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aaee0b669c36944b9929b34df9515ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxScore: 5
+  MaxScore: 1
   CurrentScore: 0
   OnAddScore:
     m_PersistentCalls:
@@ -824,6 +824,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lastMouseDirection: {x: 0, y: 0, z: 0}
   reelingAmount: 0
+  reelingMax: 5
   OnSuccessLoop:
     m_PersistentCalls:
       m_Calls:

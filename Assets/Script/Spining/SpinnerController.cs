@@ -5,6 +5,7 @@ public class SpinnerController : MonoBehaviour
 {
     public Vector3 lastMouseDirection;
     public float reelingAmount;
+    public int reelingMax;
     float spinSpeed;
     float spinDecay = 1f;
     
@@ -21,7 +22,7 @@ public class SpinnerController : MonoBehaviour
             if (lastMouseDirection != Vector3.zero)
             {
                 float angle = Vector3.SignedAngle(lastMouseDirection, mouseDir, Vector3.forward);
-                reelingAmount += Mathf.Abs(angle / 360);
+                reelingAmount += angle / 360;
                 spinSpeed += angle * 2;
             }
             lastMouseDirection = mouseDir;
@@ -35,7 +36,7 @@ public class SpinnerController : MonoBehaviour
 
         spinSpeed = Mathf.Lerp(spinSpeed, 0f, Time.deltaTime * spinDecay); // the Speed of object spin
 
-        if(reelingAmount >= 1)
+        if(reelingAmount >= reelingMax || reelingAmount <= -reelingMax)
         {
             OnSuccessLoop.Invoke();
             reelingAmount = 0f;

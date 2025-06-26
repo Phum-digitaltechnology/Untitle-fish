@@ -13,7 +13,7 @@ public class OnMinigameStateUpdate_Listener : MonoBehaviour
         FindAnyObjectByType<PhaseController>().MiniGameStateUpdateEvent += OnMiniGameWinStateUpdate;
 
     }
-    void OnMiniGameWinStateUpdate(bool isWin)
+    public void OnMiniGameWinStateUpdate(bool isWin)
     {
         if (isWin)
         {
