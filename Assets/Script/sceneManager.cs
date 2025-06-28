@@ -61,6 +61,7 @@ public class sceneManager : MonoBehaviour
         yield return op;
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(SceneName));
         GameObject.Find("InterMissionCanvas").SetActive(false);
+        GameObject.Find("IntermissionCamera").GetComponent<AudioListener>().enabled = false;
         transitionAnim.SetTrigger("Start");
     }
 
@@ -90,6 +91,7 @@ public class sceneManager : MonoBehaviour
             SceneManager.SetActiveScene(SceneManager.GetSceneByName("IntermissionMain"));
         };
 
+        GameObject.Find("IntermissionCamera").GetComponent<AudioListener>().enabled = true;
         GameObject[] allObjects = Resources.FindObjectsOfTypeAll<GameObject>();
         foreach (GameObject obj in allObjects)
         {

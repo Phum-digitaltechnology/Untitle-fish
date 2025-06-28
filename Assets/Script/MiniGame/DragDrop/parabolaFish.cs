@@ -8,7 +8,6 @@ public class parabolaFish : MonoBehaviour
     [SerializeField] private GameObject confetti;
     public void OnTriggerEnter2D(Collider2D col)
     {
-        OnCatchingFish?.Invoke();
         StartCoroutine(spawnEffect());
     }
 
@@ -16,5 +15,7 @@ public class parabolaFish : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         Instantiate(confetti, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+        yield return new WaitForSeconds(1);
+        OnCatchingFish?.Invoke();
     }
 }

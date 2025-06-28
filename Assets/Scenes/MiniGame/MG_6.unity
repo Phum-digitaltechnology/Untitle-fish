@@ -518,6 +518,7 @@ GameObject:
   - component: {fileID: 500944217}
   - component: {fileID: 500944216}
   - component: {fileID: 500944218}
+  - component: {fileID: 500944219}
   m_Layer: 0
   m_Name: Hook
   m_TagString: Hook
@@ -643,8 +644,32 @@ MonoBehaviour:
   - {fileID: 649470562}
   onCorrectBobber:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 500944219}
+        m_TargetAssemblyTypeName: PhaseUpdateMinigameState_Caller, Assembly-CSharp
+        m_MethodName: UpdateStateAndGoNextPhase
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   confetti: {fileID: 5796808221085052961, guid: f53964a3e3277144ea9ac1de9d299bfa, type: 3}
+--- !u!114 &500944219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 500944214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f56a6b2d080653d4f880012fcc702de1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &649470562
 GameObject:
   m_ObjectHideFlags: 0
