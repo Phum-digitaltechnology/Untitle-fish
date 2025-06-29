@@ -11,6 +11,7 @@ public class FishRun : MonoBehaviour
 
     int currentDesitnation;
 
+
     public void SetUp()
     {
         if (MovePos.Count < 2)

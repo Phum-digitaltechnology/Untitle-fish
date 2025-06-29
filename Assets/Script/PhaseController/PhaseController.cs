@@ -8,6 +8,7 @@ public enum Phase
 }
 public class PhaseController : MonoBehaviour
 {
+    public event Action EarlySetUp;
     public event Action OnSetUpEvent;
     public event Action<Phase> PhaseUpdateEvent;
     public event Action<bool> MiniGameStateUpdateEvent;
@@ -16,6 +17,7 @@ public class PhaseController : MonoBehaviour
     bool MinigameState;
     private void Start()
     {
+        EarlySetUp?.Invoke();
         OnSetUpEvent?.Invoke();
         PhaseUpdateEvent.Invoke(phase);
     }

@@ -8,22 +8,16 @@ public class Aimming : MonoBehaviour
     [SerializeField] private float moveSpeed = 5f;
 
 
+
     public void SetUp()
     {
-        if (MovePos.Count < 2)
-        {
-            Debug.LogWarning("MovePos list needs at least 2 points.");
-            return;
-        }
-
         int randIndex = Random.Range(0, MovePos.Count);
-        Transform fishStartPos = MovePos[randIndex];
-        MovePos.RemoveAt(randIndex);
+        Vector3 fishStartPos = new Vector3(Random.Range(MovePos[0].transform.position.x, MovePos[1].transform.position.x), fishTransform.position.y, fishTransform.position.z);
 
         // Set fish start position (preserve Z)
         fishTransform.position = new Vector3(
-            fishStartPos.localPosition.x,
-            fishStartPos.localPosition.y,
+            fishStartPos.x,
+            fishStartPos.y,
             fishTransform.localPosition.z
         );
 

@@ -15,10 +15,21 @@ public class FishCheck : MonoBehaviour
     [SerializeField] Transform pos2;
 
 
-    [ContextMenu("Test Random")]
+
+
+
     public void SetUp()
     {
+        Debug.Log("Random FromSetUp");
         this.transform.position = new Vector3(Random.Range(pos1.transform.position.x, pos2.transform.position.x), this.transform.position.y, this.transform.position.z);
+        Collider[] hits = Physics.OverlapSphere(transform.position, radius, detectionLayer);
+        Debug.Log($"hit lenght : {hits.Length} ");
+        while (hits.Length > 0)
+        {
+            this.transform.position = new Vector3(Random.Range(pos1.transform.position.x, pos2.transform.position.x), this.transform.position.y, this.transform.position.z);
+            hits = Physics.OverlapSphere(transform.position, radius, detectionLayer);
+            Debug.Log($"Hit from While {hits.Length}");
+        }
     }
 
     public void IsFoundFish()

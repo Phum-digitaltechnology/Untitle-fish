@@ -711,11 +711,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1408501032}
-  - component: {fileID: 1408501033}
   - component: {fileID: 1408501034}
   - component: {fileID: 1408501035}
+  - component: {fileID: 1408501036}
   m_Layer: 0
-  m_Name: FishRun
+  m_Name: FishAim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -736,33 +736,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 889949340}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1408501033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1408501030}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb9fc59d9a2bd8f4fbfeb582c5a3a8fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnSetUp:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1408501035}
-        m_TargetAssemblyTypeName: Aimming, Assembly-CSharp
-        m_MethodName: SetUp
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1408501034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -792,6 +765,36 @@ MonoBehaviour:
   - {fileID: 759622625}
   fishTransform: {fileID: 2036276295}
   moveSpeed: 5
+--- !u!114 &1408501036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408501030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb9fc59d9a2bd8f4fbfeb582c5a3a8fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnEarlySetUp:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1408501035}
+        m_TargetAssemblyTypeName: Aimming, Assembly-CSharp
+        m_MethodName: SetUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnSetUp:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1509199480
 GameObject:
   m_ObjectHideFlags: 0
@@ -1016,19 +1019,7 @@ MonoBehaviour:
         m_CallState: 2
   OnUnActive:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
   enableSetActiveObj: 1
 --- !u!4 &1747055439
 Transform:
@@ -1231,7 +1222,7 @@ Transform:
   m_GameObject: {fileID: 1850615455}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.9320064, y: 2.7492433, z: -24.22523}
+  m_LocalPosition: {x: 3.63, y: 2.7492433, z: -24.22523}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1364,6 +1355,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb9fc59d9a2bd8f4fbfeb582c5a3a8fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnEarlySetUp:
+    m_PersistentCalls:
+      m_Calls: []
   OnSetUp:
     m_PersistentCalls:
       m_Calls:
@@ -1552,8 +1546,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.322792, y: 1, z: 1}
+  m_Center: {x: -0.005797386, y: 0, z: 0}
 --- !u!212 &2036276298
 SpriteRenderer:
   m_ObjectHideFlags: 0
