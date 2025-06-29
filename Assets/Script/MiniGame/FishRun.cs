@@ -9,6 +9,8 @@ public class FishRun : MonoBehaviour
 
     private Transform targetPoint;
 
+    int currentDesitnation;
+
     public void SetUp()
     {
         if (MovePos.Count < 2)
@@ -16,10 +18,22 @@ public class FishRun : MonoBehaviour
             Debug.LogWarning("MovePos list needs at least 2 points.");
             return;
         }
+        List<Transform> copyOfMovePos = new List<Transform>(MovePos);
+
 
         int randIndex = Random.Range(0, MovePos.Count);
-        Transform fishStartPos = MovePos[randIndex];
-        MovePos.RemoveAt(randIndex);
+        Transform fishStartPos = copyOfMovePos[randIndex];
+        copyOfMovePos.RemoveAt(randIndex);
+
+        if (randIndex == 0)
+        {
+            currentDesitnation = 1;
+        }
+        else
+        {
+            currentDesitnation = 0;
+        }
+
 
         // Set fish start position (preserve Z)
         fishTransform.position = new Vector3(
@@ -28,17 +42,21 @@ public class FishRun : MonoBehaviour
             fishTransform.localPosition.z
         );
 
-        // Set first remaining point as target
-        targetPoint = MovePos[0];
 
-        // Flatten target Z to match fish
+        setTargetPos(copyOfMovePos[0]);
+    }
+
+    void setTargetPos(Transform newPos)
+    {
+        targetPoint = newPos;
         Vector3 fixedTargetPos = new Vector3(
-            targetPoint.localPosition.x,
-            targetPoint.localPosition.y,
-            fishTransform.localPosition.z
-        );
+    targetPoint.localPosition.x,
+    targetPoint.localPosition.y,
+    fishTransform.localPosition.z
+                             );
         targetPoint.position = fixedTargetPos;
     }
+
 
     private void Update()
     {
@@ -50,11 +68,30 @@ public class FishRun : MonoBehaviour
 
     private void MoveToPoint(Vector3 destination)
     {
-        Vector3 currentPos = fishTransform.position;
 
-        // Only move in X and Y, keep Z the same
-        Vector3 targetPos = new Vector3(destination.x, destination.y, currentPos.z);
+        if (fishTransform.transform.position != destination)
+        {
+            Vector3 currentPos = fishTransform.position;
+            // Only move in X and Y, keep Z the same
+            Vector3 targetPos = new Vector3(destination.x, destination.y, currentPos.z);
 
-        fishTransform.position = Vector3.MoveTowards(currentPos, targetPos, moveSpeed * Time.deltaTime);
+            fishTransform.position = Vector3.MoveTowards(currentPos, targetPos, moveSpeed * Time.deltaTime);
+        }
+        else
+        {
+            if (currentDesitnation == 0)
+            {
+                currentDesitnation = 1;
+                setTargetPos(MovePos[1]);
+            }
+            else
+            {
+                currentDesitnation = 0;
+                setTargetPos(MovePos[0]);
+            }
+
+        }
     }
+
+
 }

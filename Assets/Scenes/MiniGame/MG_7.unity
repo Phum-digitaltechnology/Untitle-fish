@@ -737,7 +737,7 @@ MonoBehaviour:
   - {fileID: 1509199481}
   - {fileID: 759622625}
   fishTransform: {fileID: 2036276295}
-  moveSpeed: 5
+  moveSpeed: 10
 --- !u!4 &1408501032
 Transform:
   m_ObjectHideFlags: 0
