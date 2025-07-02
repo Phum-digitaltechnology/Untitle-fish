@@ -8,6 +8,9 @@ public class Countdown : MonoBehaviour
 
     [SerializeField] float countDownTime;
     [SerializeField] UnityEvent OnFinishCountDown;
+
+    [SerializeField] UnityEvent<float> timerUpdate;
+
     public void BeginCountDown()
     {
         StartCoroutine(CountDownCoroutine());
@@ -15,7 +18,12 @@ public class Countdown : MonoBehaviour
 
     IEnumerator CountDownCoroutine()
     {
-        yield return new WaitForSeconds(countDownTime);
+        for (float i = 0; i <= countDownTime; i += Time.deltaTime)
+        {
+            timerUpdate?.Invoke(Time.deltaTime);
+            yield return null;
+        }
+
         OnFinishCountDownEvent?.Invoke();
         OnFinishCountDown?.Invoke();
     }
