@@ -18,7 +18,7 @@ public class Aimming : MonoBehaviour
         fishTransform.position = new Vector3(
             fishStartPos.x,
             fishStartPos.y,
-            fishTransform.localPosition.z
+            fishTransform.transform.position.z
         );
 
 
@@ -36,7 +36,9 @@ public class Aimming : MonoBehaviour
 
         // Move only on X-axis
         Vector3 newPos = currentPos + new Vector3(inputX * moveSpeed * Time.deltaTime, 0f, 0f);
-
-        fishTransform.position = newPos;
+        if (newPos.x > MovePos[0].position.x && newPos.x < MovePos[1].position.x)
+        {
+            fishTransform.position = newPos;
+        }
     }
 }
