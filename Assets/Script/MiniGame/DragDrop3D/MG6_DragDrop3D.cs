@@ -18,6 +18,12 @@ public class MG6_DragDrop3D : MonoBehaviour
     private Vector3 MousePosition;
     [SerializeField] BobberColor bobberColor;
     [SerializeField] private UnityEvent<BobberColor> OnApplyBobber;
+    [SerializeField] public bool canDragDrop = false;
+
+    public void SetUp()
+    {
+        canDragDrop = true;
+    }
 
     private Vector3 GetMousePosition()
     {
@@ -26,13 +32,19 @@ public class MG6_DragDrop3D : MonoBehaviour
 
     private void OnMouseDown()
     {
-        MousePosition = Input.mousePosition - GetMousePosition();
-        this.gameObject.AddComponent<Rigidbody>().freezeRotation = true;
+        if (canDragDrop)
+        {
+            MousePosition = Input.mousePosition - GetMousePosition();
+            this.gameObject.AddComponent<Rigidbody>().freezeRotation = true;
+        }
     }
 
     private void OnMouseDrag()
     {
-        transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition - MousePosition);
+        if (canDragDrop)
+        {
+            transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition - MousePosition);
+        }
     }
 
     void OnTriggerStay(Collider col)

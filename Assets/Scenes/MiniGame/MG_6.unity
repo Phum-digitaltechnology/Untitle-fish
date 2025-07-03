@@ -342,6 +342,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  timerUpdate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &320993047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -506,6 +509,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  canDragDrop: 0
 --- !u!1 &500944214
 GameObject:
   m_ObjectHideFlags: 0
@@ -645,7 +649,7 @@ MonoBehaviour:
   onCorrectBobber:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 500944219}
+      - m_Target: {fileID: 738296025}
         m_TargetAssemblyTypeName: PhaseUpdateMinigameState_Caller, Assembly-CSharp
         m_MethodName: UpdateStateAndGoNextPhase
         m_Mode: 6
@@ -855,6 +859,9 @@ MonoBehaviour:
           m_StringArgument: Noooooo I'm Losee
           m_BoolArgument: 0
         m_CallState: 2
+  timerUpdate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &805589778
 GameObject:
   m_ObjectHideFlags: 0
@@ -992,6 +999,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  canDragDrop: 0
 --- !u!1 &817806892
 GameObject:
   m_ObjectHideFlags: 0
@@ -1292,6 +1300,18 @@ MonoBehaviour:
           m_StringArgument: MiniGame Start
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1645852268}
+        m_TargetAssemblyTypeName: BobberBox, Assembly-CSharp
+        m_MethodName: Setup
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: MiniGame Start
+          m_BoolArgument: 0
+        m_CallState: 2
   OnUnActive:
     m_PersistentCalls:
       m_Calls:
@@ -1322,7 +1342,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 738296027}
-  - {fileID: 1645852264}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1369689118
@@ -1636,6 +1655,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  canDragDrop: 0
 --- !u!1 &1645852263
 GameObject:
   m_ObjectHideFlags: 0
@@ -1645,6 +1665,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1645852264}
+  - component: {fileID: 1645852268}
   - component: {fileID: 1645852267}
   - component: {fileID: 1645852266}
   - component: {fileID: 1645852265}
@@ -1664,13 +1685,13 @@ Transform:
   m_GameObject: {fileID: 1645852263}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -5.9298096, y: 2.3994386, z: 1.402803}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1843381395}
   - {fileID: 500944215}
-  m_Father: {fileID: 1205962871}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1645852265
 MonoBehaviour:
@@ -1684,21 +1705,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb9fc59d9a2bd8f4fbfeb582c5a3a8fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnEarlySetUp:
+    m_PersistentCalls:
+      m_Calls: []
   OnSetUp:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: AimingMove, Assembly-CSharp
-        m_MethodName: SetUp
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1645852266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1723,6 +1735,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f56a6b2d080653d4f880012fcc702de1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1645852268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645852263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d703d50a4079c8f40bcc6515021e07b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bobber3D:
+  - {fileID: 2017506195}
+  - {fileID: 1785767462}
+  - {fileID: 2029971176}
+  - {fileID: 1482271355}
+  - {fileID: 330310225}
+  - {fileID: 805589778}
 --- !u!1 &1669212766
 GameObject:
   m_ObjectHideFlags: 0
@@ -2130,6 +2161,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  canDragDrop: 0
 --- !u!1 &1823735419
 GameObject:
   m_ObjectHideFlags: 0
@@ -2411,6 +2443,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  timerUpdate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1888918412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2501,6 +2536,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  canDragDrop: 0
 --- !u!65 &2017506198
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2712,6 +2748,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  canDragDrop: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -2722,3 +2759,4 @@ SceneRoots:
   - {fileID: 877852837}
   - {fileID: 1704055647}
   - {fileID: 1823735422}
+  - {fileID: 1645852264}

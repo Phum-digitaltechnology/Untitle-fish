@@ -165,6 +165,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  timerUpdate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &135946661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -602,7 +605,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1586661254}
-  - {fileID: 1202030284}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &972693390
@@ -723,7 +725,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 972693390}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec5e5eef1a4316b4abd8591768d60dfd, type: 3}
   m_Name: 
@@ -892,7 +894,7 @@ MonoBehaviour:
           m_StringArgument: Win
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1006646685}
+      - m_Target: {fileID: 1586661252}
         m_TargetAssemblyTypeName: PhaseUpdateMinigameState_Caller, Assembly-CSharp
         m_MethodName: UpdateStateAndGoNextPhase
         m_Mode: 6
@@ -945,13 +947,13 @@ Transform:
   m_GameObject: {fileID: 1202030283}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -5.9298096, y: 2.3994386, z: 1.402803}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 972693391}
   - {fileID: 1006646681}
-  m_Father: {fileID: 959102558}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1202030285
 MonoBehaviour:
@@ -965,12 +967,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb9fc59d9a2bd8f4fbfeb582c5a3a8fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnEarlySetUp:
+    m_PersistentCalls:
+      m_Calls: []
   OnSetUp:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: AimingMove, Assembly-CSharp
-        m_MethodName: SetUp
+      - m_Target: {fileID: 972693395}
+        m_TargetAssemblyTypeName: MG5_DragDropZone, Assembly-CSharp
+        m_MethodName: Setup
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1050,6 +1055,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  timerUpdate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1532465422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1175,6 +1183,9 @@ MonoBehaviour:
           m_StringArgument: Noooooo I'm Losee
           m_BoolArgument: 0
         m_CallState: 2
+  timerUpdate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1635062892
 GameObject:
   m_ObjectHideFlags: 0
@@ -1412,3 +1423,4 @@ SceneRoots:
   - {fileID: 580618071}
   - {fileID: 263001174}
   - {fileID: 420497230}
+  - {fileID: 1202030284}

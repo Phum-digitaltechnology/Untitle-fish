@@ -62,6 +62,7 @@ public class sceneManager : MonoBehaviour
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(SceneName));
         GameObject.Find("InterMissionCanvas").SetActive(false);
         GameObject.Find("IntermissionCamera").GetComponent<AudioListener>().enabled = false;
+        GameObject.Find("IntermissionCamera").GetComponent<Camera>().enabled = false;
         transitionAnim.SetTrigger("Start");
     }
 
@@ -84,22 +85,7 @@ public class sceneManager : MonoBehaviour
     {
         ScoreSystem scoreCS = this.transform.parent.GetChild(3).gameObject.GetComponent<ScoreSystem>();
 
-        AsyncOperation op = SceneManager.UnloadSceneAsync(currentMiniGame.SceneName);
-
-        op.completed += (AsyncOperation o) =>
-        {
-            SceneManager.SetActiveScene(SceneManager.GetSceneByName("IntermissionMain"));
-        };
-
-        GameObject.Find("IntermissionCamera").GetComponent<AudioListener>().enabled = true;
-        GameObject[] allObjects = Resources.FindObjectsOfTypeAll<GameObject>();
-        foreach (GameObject obj in allObjects)
-        {
-            if (obj.name == "InterMissionCanvas" && !obj.activeInHierarchy)
-            {
-                obj.SetActive(true);
-            }
-        }
+        StartCoroutine(BackToIntermission());
 
         if (areYouWinningSon)
         {
@@ -117,6 +103,30 @@ public class sceneManager : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         ChangeScene(randomMiniGame().SceneName);
+    }
+
+    IEnumerator BackToIntermission()
+    {
+        transitionAnim.SetTrigger("End");
+        yield return new WaitForSeconds(1);
+        AsyncOperation op = SceneManager.UnloadSceneAsync(currentMiniGame.SceneName);
+
+        op.completed += (AsyncOperation o) =>
+        {
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName("IntermissionMain"));
+        };
+
+        GameObject.Find("IntermissionCamera").GetComponent<AudioListener>().enabled = true;
+        GameObject.Find("IntermissionCamera").GetComponent<Camera>().enabled = true;
+        GameObject[] allObjects = Resources.FindObjectsOfTypeAll<GameObject>();
+        foreach (GameObject obj in allObjects)
+        {
+            if (obj.name == "InterMissionCanvas" && !obj.activeInHierarchy)
+            {
+                obj.SetActive(true);
+            }
+        }
+        transitionAnim.SetTrigger("Start");
     }
 
 }

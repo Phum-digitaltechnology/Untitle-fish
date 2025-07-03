@@ -13,9 +13,9 @@ public class parabolaFish : MonoBehaviour
 
     IEnumerator spawnEffect()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.3f);
         Instantiate(confetti, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.3f);
         OnCatchingFish?.Invoke();
     }
 }

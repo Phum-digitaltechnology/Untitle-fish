@@ -11,6 +11,7 @@ public class AimingMove : MonoBehaviour
     public void SetUp()
     {
         fish.transform.localPosition = new Vector3(Random.Range(-1.5f, 6), -9, 0);
+        this.gameObject.GetComponent<AimingMove>().enabled = true;
     }
 
     private void Update()

@@ -8,6 +8,11 @@ public class MG5_DragDropZone : MonoBehaviour
     [SerializeField] private GameObject worm;
     private Transform wormTransform;
 
+    public void Setup()
+    {
+        this.gameObject.GetComponent<MG5_DragDropZone>().enabled = true;
+    }
+
     void Update()
     {
         if (dragging)
@@ -38,6 +43,7 @@ public class MG5_DragDropZone : MonoBehaviour
         Debug.Log("Mouse over bucket");
         if (Input.GetMouseButtonDown(0) && haveWorm == false)
         {
+            Debug.Log("Get Worm!");
             wormTransform = Instantiate(worm, Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity).transform;
             wormTransform.SetParent(this.transform);
             haveWorm = true;
