@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class FishRun : MonoBehaviour
 {
@@ -8,9 +9,18 @@ public class FishRun : MonoBehaviour
     [SerializeField] private float moveSpeed = 5f;
 
     private Transform targetPoint;
-
     int currentDesitnation;
+    [SerializeField] UnityEvent ChangeToPos1;
+    [SerializeField] UnityEvent ChangeToPos2;
 
+    bool fishStop;
+
+    public void SetFishToStop()
+    {
+        fishStop = true;
+    }
+
+    [ContextMenu("Random")]
 
     public void SetUp()
     {
@@ -29,10 +39,13 @@ public class FishRun : MonoBehaviour
         if (randIndex == 0)
         {
             currentDesitnation = 1;
+            ChangeToPos2?.Invoke();
+
         }
         else
         {
             currentDesitnation = 0;
+            ChangeToPos1?.Invoke();
         }
 
 
@@ -80,14 +93,18 @@ public class FishRun : MonoBehaviour
         }
         else
         {
+            if (fishStop) return;
+
             if (currentDesitnation == 0)
             {
                 currentDesitnation = 1;
+                ChangeToPos2?.Invoke();
                 setTargetPos(MovePos[1]);
             }
             else
             {
                 currentDesitnation = 0;
+                ChangeToPos1?.Invoke();
                 setTargetPos(MovePos[0]);
             }
 

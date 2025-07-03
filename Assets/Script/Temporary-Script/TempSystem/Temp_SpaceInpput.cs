@@ -10,7 +10,6 @@ public class Temp_SpaceInpput : MonoBehaviour
     {
         if (Input.GetKeyDown(InteractKey))
         {
-
             OnKeyButtonPress?.Invoke();
         }
     }

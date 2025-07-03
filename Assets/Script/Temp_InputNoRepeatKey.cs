@@ -8,24 +8,32 @@ public class Temp_InputNoRepeatKey : MonoBehaviour
 
     [SerializeField] UnityEvent OnSuccessInputKey;
     [SerializeField] UnityEvent OnFailureInputpKey;
-    KeyCode previosKey;
+    KeyCode previousKey;
+
+    [Header("Key Press")]
+    [SerializeField] List<UnityEvent> OnKeyPressEvent = new List<UnityEvent>();
+
+
     private void Update()
     {
-        foreach (KeyCode key in InputKey)
+        for (int i = 0; i < InputKey.Count; i++)
         {
-            if (Input.GetKeyDown(key))
             {
-                if (previosKey == key)
+                if (Input.GetKeyDown(InputKey[i]))
                 {
-                    OnFailureInputpKey?.Invoke();
-                }
-                else
-                {
-                    OnSuccessInputKey?.Invoke();
-                    previosKey = key;
+                    if (previousKey == InputKey[i])
+                    {
+                        OnFailureInputpKey?.Invoke();
+                    }
+                    else
+                    {
+                        OnKeyPressEvent[i]?.Invoke();
+                        OnSuccessInputKey?.Invoke();
+                        previousKey = InputKey[i];
+                    }
                 }
             }
         }
-    }
 
+    }
 }
