@@ -4,35 +4,45 @@ using UnityEngine.Events;
 public class TimerVisual : MonoBehaviour
 {
     [SerializeField] List<Sprite> spritesState = new List<Sprite>();
+    [SerializeField] float MaxTime;
     public UnityEvent<Sprite> setSpriteEvent;
     public UnityEvent<Color> SetSpriteOpacity;
+    [SerializeField] Sprite explode; // >:(
+
 
     public void VisualUpdate(float currentTime)
     {
-        int floorTime = Mathf.FloorToInt(currentTime);
-
-        if (floorTime > spritesState.Count)
+        Color newColor = Color.white;
+        if (currentTime > MaxTime)
         {
-            Color myColor = Color.white;
+            newColor.a = 0;
+            SetSpriteOpacity?.Invoke(newColor);
+            return;
+        }
 
-            myColor.a = 0f; //
-            SetSpriteOpacity?.Invoke(myColor);
-        }
-        else
+        SetSpriteOpacity?.Invoke(newColor);
+
+        float normalizedTime = currentTime / MaxTime;
+
+        if (normalizedTime < 0)
         {
-            Color myColor = Color.white;
-            SetSpriteOpacity?.Invoke(myColor);
-            if (floorTime == 0)
-            {
-                setSprite(0);
-                return;
-            }
-            setSprite(floorTime - 1);
+            setSpriteEvent?.Invoke(explode);
+            return;
         }
+
+        normalizedTime *= 10;
+        int floooredTime = Mathf.FloorToInt(normalizedTime);
+        setSprite(floooredTime);
     }
 
     void setSprite(int roundedTime)
     {
+        if (roundedTime >= spritesState.Count)
+        {
+            roundedTime = spritesState.Count - 1;
+        }
+
+
         setSpriteEvent?.Invoke(spritesState[roundedTime]);
     }
 

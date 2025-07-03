@@ -9,7 +9,6 @@ public class Global_CountDown : MonoBehaviour
     [SerializeField] float maxSceneTime;
     float currentTime;
     [SerializeField] UnityEvent OnFinishCountDown;
-
     [SerializeField] UnityEvent<float> currentTimeUpdate;
 
 
@@ -26,6 +25,16 @@ public class Global_CountDown : MonoBehaviour
     }
 
 
+    public void ClampCurrentTime(float ClampTime)
+    {
+        if (currentTime > ClampTime)
+        {
+            currentTime = ClampTime;
+        }
+    }
+
+
+
     public void StartTimer()
     {
         Debug.Log($"Remaining Time {currentTime}");
@@ -38,17 +47,19 @@ public class Global_CountDown : MonoBehaviour
             OnFinishCountDownEvent?.Invoke();
             OnFinishCountDown?.Invoke();
         }
-
     }
 
 
     IEnumerator CountDownCoroutine()
     {
-        for (float i = 0; i < currentTime; i += Time.deltaTime)
+        while (currentTime > 0)
         {
-            currentTimeUpdate?.Invoke(Time.deltaTime);
+            currentTimeUpdate?.Invoke(currentTime);
+            currentTime -= Time.deltaTime;
             yield return null;
         }
+        currentTime = -1;
+        currentTimeUpdate?.Invoke(currentTime);
 
         OnFinishCountDownEvent?.Invoke();
         OnFinishCountDown?.Invoke();
