@@ -20,6 +20,6 @@ public class SpriteChanger : MonoBehaviour
 
     public void ChangeSprite(Sprite image)
     {
-       spriteRenderer.sprite = image;
+        spriteRenderer.sprite = image;
     }
 }

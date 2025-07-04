@@ -1,4 +1,3 @@
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -13,7 +12,7 @@ public class SpinnerController : MonoBehaviour
     [SerializeField] float speedCap = 500;
     [SerializeField] UnityEvent OnFinishLoop;
     [SerializeField] UnityEvent OnSuccessLoop;
-
+    [SerializeField] Transform Test;
     public void Update()
     {
         Vector3 center = Camera.main.WorldToScreenPoint(transform.position);
@@ -25,7 +24,10 @@ public class SpinnerController : MonoBehaviour
             if (lastMouseDirection != Vector3.zero)
             {
                 float angle = Vector3.SignedAngle(lastMouseDirection, mouseDir, Vector3.forward);
-                reelingAmount += angle / 360;
+                if (spinSpeed > 0)
+                {
+                    reelingAmount += angle / 360;
+                }
                 spinSpeed += angle * 2;
             }
             lastMouseDirection = mouseDir;
@@ -36,15 +38,10 @@ public class SpinnerController : MonoBehaviour
         }
 
         transform.Rotate(Vector3.forward, spinSpeed * Time.deltaTime); // Make the object spin
-
+        Test.transform.Rotate(new Vector3(1, 0, 0), spinSpeed * Time.deltaTime); // Make the object spin
 
 
         spinSpeed = Mathf.Lerp(spinSpeed, 0f, Time.deltaTime * spinDecay); // the Speed of object spin
-
-        if (math.abs(spinSpeed) > speedCap)
-        {
-            spinSpeed = speedCap * (spinSpeed / spinSpeed);
-        }
 
 
 

@@ -3,7 +3,6 @@ using UnityEngine;
 public class SpriteFadeOut : MonoBehaviour
 {
     [SerializeField] private float fadeDuration = 2f; // Total time to fade
-    [SerializeField] private float delayBeforeFade = 0f; // Optional delay before fading starts
 
     private SpriteRenderer spriteRenderer;
     private float timer;
