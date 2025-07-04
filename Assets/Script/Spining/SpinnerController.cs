@@ -4,11 +4,13 @@ using UnityEngine.Events;
 public class SpinnerController : MonoBehaviour
 {
     public Vector3 lastMouseDirection;
+    float previosReelingAmount;
     public float reelingAmount;
     public int reelingMax;
     float spinSpeed;
     float spinDecay = 1f;
-    
+
+    [SerializeField] UnityEvent OnFinishLoop;
     [SerializeField] UnityEvent OnSuccessLoop;
 
     public void Update()
@@ -36,10 +38,20 @@ public class SpinnerController : MonoBehaviour
 
         spinSpeed = Mathf.Lerp(spinSpeed, 0f, Time.deltaTime * spinDecay); // the Speed of object spin
 
-        if(reelingAmount >= reelingMax || reelingAmount <= -reelingMax)
+
+
+
+        if (reelingAmount >= reelingMax || reelingAmount <= -reelingMax)
         {
             OnSuccessLoop.Invoke();
             reelingAmount = 0f;
         }
+
+        if (Mathf.FloorToInt(reelingAmount) > Mathf.FloorToInt(previosReelingAmount))
+        {
+            OnFinishLoop?.Invoke();
+            previosReelingAmount = Mathf.FloorToInt(reelingAmount);
+        }
+
     }
 }
