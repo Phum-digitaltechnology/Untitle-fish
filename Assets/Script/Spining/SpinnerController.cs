@@ -1,3 +1,4 @@
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -9,7 +10,7 @@ public class SpinnerController : MonoBehaviour
     public int reelingMax;
     float spinSpeed;
     float spinDecay = 1f;
-
+    [SerializeField] float speedCap = 500;
     [SerializeField] UnityEvent OnFinishLoop;
     [SerializeField] UnityEvent OnSuccessLoop;
 
@@ -36,8 +37,14 @@ public class SpinnerController : MonoBehaviour
 
         transform.Rotate(Vector3.forward, spinSpeed * Time.deltaTime); // Make the object spin
 
+
+
         spinSpeed = Mathf.Lerp(spinSpeed, 0f, Time.deltaTime * spinDecay); // the Speed of object spin
 
+        if (math.abs(spinSpeed) > speedCap)
+        {
+            spinSpeed = speedCap * (spinSpeed / spinSpeed);
+        }
 
 
 
