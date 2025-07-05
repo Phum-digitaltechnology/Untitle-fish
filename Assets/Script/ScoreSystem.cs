@@ -2,9 +2,10 @@ using UnityEngine;
 
 public class ScoreSystem : MonoBehaviour
 {
-    [SerializeField] private int currentScore = 0;
+    [SerializeField] public int currentScore = 0;
     [SerializeField] public int Life;
     private int currentLife = 0;
+    public bool losing = false;
 
     private void Start()
     {
@@ -23,7 +24,10 @@ public class ScoreSystem : MonoBehaviour
 
     private void Update()
     {
-        //check score to increase minigame speed
+        if(currentLife <= 0)
+        {
+            losing = true;
+        }
     }
 
 }

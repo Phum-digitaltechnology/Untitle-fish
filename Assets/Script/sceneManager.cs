@@ -9,6 +9,8 @@ public class sceneManager : MonoBehaviour
     [SerializeField] private List<MiniGame> MiniGameScene = new List<MiniGame>();
     [SerializeField] private Animator transitionAnim;
     [SerializeField] private MiniGame currentMiniGame;
+    [SerializeField] private GameObject GameManagerObj;
+    private bool losing = false;
     
     //right click on the component and click "Load All ScriptableObjects" to load all scriptable objects
     #if UNITY_EDITOR
@@ -73,17 +75,21 @@ public class sceneManager : MonoBehaviour
         {
             //ChangeScene(randomMiniGame().SceneName);
         }
+        losing = GameManagerObj.GetComponent<GameManager>().Manager[(int)MANAGER.ScoreSystem].GetComponent<ScoreSystem>().losing;
     }
 
     private void Start()
     {
+        GameManagerObj = this.transform.parent.gameObject;
+
         ChangeScene(randomMiniGame().SceneName);
     }
 
     //call to unload minigame scene and return to intermission scene
     public void EndMiniGame(bool areYouWinningSon)
     {
-        ScoreSystem scoreCS = this.transform.parent.GetChild(3).gameObject.GetComponent<ScoreSystem>();
+        //ScoreSystem scoreCS = this.transform.parent.GetChild(3).gameObject.GetComponent<ScoreSystem>();
+        ScoreSystem scoreCS = GameManagerObj.GetComponent<GameManager>().Manager[(int)MANAGER.ScoreSystem].GetComponent<ScoreSystem>();
 
         StartCoroutine(BackToIntermission());
 
@@ -102,7 +108,10 @@ public class sceneManager : MonoBehaviour
     IEnumerator TriggerMiniGame()
     {
         yield return new WaitForSeconds(3);
-        ChangeScene(randomMiniGame().SceneName);
+        if (!losing)
+        {
+            ChangeScene(randomMiniGame().SceneName);
+        }
     }
 
     IEnumerator BackToIntermission()
@@ -123,7 +132,19 @@ public class sceneManager : MonoBehaviour
         {
             if (obj.name == "InterMissionCanvas" && !obj.activeInHierarchy)
             {
-                obj.SetActive(true);
+                if (!losing)
+                {
+                    obj.SetActive(true);
+                }
+                else
+                {
+                    obj.SetActive(true);
+                    for(int i = 0; i < 4; i++)
+                    {
+                        obj.transform.GetChild(i).gameObject.SetActive(false);
+                    }
+                    obj.transform.GetChild(4).gameObject.SetActive(true);
+                }
             }
         }
         transitionAnim.SetTrigger("Start");

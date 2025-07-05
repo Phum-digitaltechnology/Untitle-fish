@@ -35,7 +35,15 @@ public class MG6_DragDrop3D : MonoBehaviour
         if (canDragDrop)
         {
             MousePosition = Input.mousePosition - GetMousePosition();
-            this.gameObject.AddComponent<Rigidbody>().freezeRotation = true;
+            Rigidbody rb = this.gameObject.GetComponent<Rigidbody>();
+            if (rb != null) {
+                rb.freezeRotation = true;
+            }
+            else
+            {
+                rb = this.gameObject.AddComponent<Rigidbody>();
+                rb.freezeRotation = true;
+            }
         }
     }
 
