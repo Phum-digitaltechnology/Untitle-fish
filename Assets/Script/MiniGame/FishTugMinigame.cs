@@ -1,6 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.Events;
-using System.Collections;
 
 public class FishTugMinigame : MonoBehaviour
 {
@@ -23,12 +23,18 @@ public class FishTugMinigame : MonoBehaviour
     private bool finished = false;
     private Vector3 exit;
     private bool canSwimAway = false;
-
     private Collider2D fishCollider;
+
+    [SerializeField] UnityEvent onFishGoLeft;
+    [SerializeField] UnityEvent onFishGoRight;
 
     private void Start()
     {
         fishDir = (Random.value < 0.5f) ? -1 : 1;
+
+
+
+
         ApplyFishRotation();
 
         Vector3 p = fish.position; p.y = 0f; fish.position = p;
@@ -49,7 +55,7 @@ public class FishTugMinigame : MonoBehaviour
     private void Update()
     {
         if (!finished)
-        { 
+        {
             if (!isDragging)
             {
                 fish.position += Vector3.right * fishDir * swimSpeed * Time.deltaTime;
@@ -88,9 +94,9 @@ public class FishTugMinigame : MonoBehaviour
             }
         }
     }
-    private void OnTriggerEnter2D(Collider2D other)
+    public void FoundSomething(Collider2D other)
     {
-        if (finished) return;
+        Debug.Log("Checking Collider");
 
         if (other == winZone)
         {
@@ -106,7 +112,7 @@ public class FishTugMinigame : MonoBehaviour
     {
         isDragging = false;
         finished = true;
-        
+
         if (win)
         {
             exit = Vector3.right * -fishDir;
