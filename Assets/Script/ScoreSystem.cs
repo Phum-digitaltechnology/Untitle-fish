@@ -1,13 +1,18 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ScoreSystem : MonoBehaviour
 {
     [SerializeField] public int currentScore = 0;
     [SerializeField] public int Life;
     private int currentLife = 0;
+    public int CurrentLife => currentLife;
     public bool losing = false;
 
-    private void Start()
+    [SerializeField] UnityEvent<int> currentLifeEvent;
+
+
+    private void Awake()
     {
         currentLife = Life;
     }
@@ -24,7 +29,7 @@ public class ScoreSystem : MonoBehaviour
 
     private void Update()
     {
-        if(currentLife <= 0)
+        if (currentLife <= 0)
         {
             losing = true;
         }
