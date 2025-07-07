@@ -8,7 +8,6 @@ public class ScoreSystem : MonoBehaviour
     private int currentLife = 0;
     public int CurrentLife => currentLife;
     public bool losing = false;
-
     [SerializeField] UnityEvent<int> currentLifeEvent;
 
 
@@ -25,14 +24,11 @@ public class ScoreSystem : MonoBehaviour
     public void Lose()
     {
         currentLife--;
-    }
-
-    private void Update()
-    {
         if (currentLife <= 0)
         {
             losing = true;
         }
     }
+
 
 }

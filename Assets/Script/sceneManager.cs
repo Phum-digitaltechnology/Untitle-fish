@@ -1,8 +1,9 @@
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEditor;
-using UnityEngine.SceneManagement;
+using System;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEditor;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class sceneManager : MonoBehaviour
 {
@@ -11,31 +12,33 @@ public class sceneManager : MonoBehaviour
     [SerializeField] private MiniGame currentMiniGame;
     [SerializeField] private GameObject GameManagerObj;
     private bool losing = false;
-    
+
+    public event Action<string> OnLoadingIntoScene;
     //right click on the component and click "Load All ScriptableObjects" to load all scriptable objects
-    #if UNITY_EDITOR
-        [ContextMenu("Load All ScriptableObjects")]
-        void LoadAllInEditor()
+#if UNITY_EDITOR
+    [ContextMenu("Load All ScriptableObjects")]
+    void LoadAllInEditor()
+    {
+        MiniGameScene.Clear();
+        string[] guids = AssetDatabase.FindAssets("t:MiniGame");
+        foreach (string guid in guids)
         {
-            MiniGameScene.Clear();
-            string[] guids = AssetDatabase.FindAssets("t:MiniGame");
-            foreach (string guid in guids)
-            {
-                string path = AssetDatabase.GUIDToAssetPath(guid);
-                MiniGame obj = AssetDatabase.LoadAssetAtPath<MiniGame>(path);
-                if (obj != null)
-                    MiniGameScene.Add(obj);
-            }
+            string path = AssetDatabase.GUIDToAssetPath(guid);
+            MiniGame obj = AssetDatabase.LoadAssetAtPath<MiniGame>(path);
+            if (obj != null)
+                MiniGameScene.Add(obj);
         }
-    #endif
-    
+    }
+#endif
+
+
     //random minigame from the minigame pool and increase down time
     public MiniGame randomMiniGame()
     {
         int rand = 0;
         do
         {
-            rand = Random.Range(0, MiniGameScene.Count);
+            rand = UnityEngine.Random.Range(0, MiniGameScene.Count);
         } while (MiniGameScene[rand].currentDownTime < MiniGameScene[rand].coolDown);
 
         foreach (var m in MiniGameScene)
@@ -48,10 +51,11 @@ public class sceneManager : MonoBehaviour
         currentMiniGame = MiniGameScene[rand];
         return MiniGameScene[rand];
     }
-    
+
     //change scene
     public void ChangeScene(string SceneName)
     {
+        Debug.Log($"Loading Into Scene {SceneName}");
         StartCoroutine(LoadLevel(SceneName));
     }
     //play animation before and after load scene
@@ -61,6 +65,7 @@ public class sceneManager : MonoBehaviour
         yield return new WaitForSeconds(1);
         AsyncOperation op = SceneManager.LoadSceneAsync(SceneName, LoadSceneMode.Additive);
         yield return op;
+        OnLoadingIntoScene?.Invoke(SceneName);
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(SceneName));
         GameObject.Find("InterMissionCanvas").SetActive(false);
         GameObject.Find("IntermissionCamera").GetComponent<AudioListener>().enabled = false;
@@ -81,7 +86,7 @@ public class sceneManager : MonoBehaviour
     private void Start()
     {
         GameManagerObj = this.transform.parent.gameObject;
-
+        OnLoadingIntoScene?.Invoke("IntermissionMain"); // trigger the Loading scene Event
         ChangeScene(randomMiniGame().SceneName);
     }
 
@@ -91,8 +96,6 @@ public class sceneManager : MonoBehaviour
         //ScoreSystem scoreCS = this.transform.parent.GetChild(3).gameObject.GetComponent<ScoreSystem>();
         ScoreSystem scoreCS = GameManagerObj.GetComponent<GameManager>().Manager[(int)MANAGER.ScoreSystem].GetComponent<ScoreSystem>();
 
-        StartCoroutine(BackToIntermission());
-
         if (areYouWinningSon)
         {
             scoreCS.Win();
@@ -101,6 +104,9 @@ public class sceneManager : MonoBehaviour
         {
             scoreCS.Lose();
         }
+
+        StartCoroutine(BackToIntermission());
+
 
         StartCoroutine(TriggerMiniGame());
     }
@@ -124,10 +130,11 @@ public class sceneManager : MonoBehaviour
         {
             SceneManager.SetActiveScene(SceneManager.GetSceneByName("IntermissionMain"));
         };
-
+        OnLoadingIntoScene?.Invoke("IntermissionMain");
         GameObject.Find("IntermissionCamera").GetComponent<AudioListener>().enabled = true;
         GameObject.Find("IntermissionCamera").GetComponent<Camera>().enabled = true;
         GameObject[] allObjects = Resources.FindObjectsOfTypeAll<GameObject>();
+
         foreach (GameObject obj in allObjects)
         {
             if (obj.name == "InterMissionCanvas" && !obj.activeInHierarchy)
@@ -139,7 +146,7 @@ public class sceneManager : MonoBehaviour
                 else
                 {
                     obj.SetActive(true);
-                    for(int i = 0; i < 4; i++)
+                    for (int i = 0; i < 4; i++)
                     {
                         obj.transform.GetChild(i).gameObject.SetActive(false);
                     }

@@ -1,16 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LosingScreen : MonoBehaviour
 {
 
-    public TMP_Text text;
+    public TextMeshProUGUI Losetext;
+    public TextMeshProUGUI Score;
+    [SerializeField] GameObject loseUi;
+
+    public void ActiveLosingScene()
+    {
+        loseUi.SetActive(true);
+    }
     void Update()
     {
-        text.text = "Score : " + GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().Manager[(int)MANAGER.ScoreSystem].GetComponent<ScoreSystem>().currentScore.ToString();
+        string disPlayText = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().Manager[(int)MANAGER.ScoreSystem].GetComponent<ScoreSystem>().currentScore.ToString();
+        Losetext.text = "Score : " + disPlayText;
+        Score.text = disPlayText;
     }
 
     public void ReturnToTitle()
