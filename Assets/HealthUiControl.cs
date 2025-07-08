@@ -40,7 +40,13 @@ public class HealthUiControl : MonoBehaviour
 
     void decreaseHealth()
     {
-        healthHolder.transform.GetChild(0).gameObject.SetActive(false);
+        int missingHealth = scoreSystem.Life - scoreSystem.CurrentLife;
+
+
+        for (int i = 0; i < missingHealth; i++)
+        {
+            healthHolder.transform.GetChild(i).gameObject.SetActive(false);
+        }
     }
 
 }
