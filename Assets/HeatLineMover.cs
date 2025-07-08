@@ -4,6 +4,7 @@ public class HeatLineMover : MonoBehaviour
 {
     public float speed = 2f;
     private bool isMoving = false;
+    public Transform rightEdge;
 
     public void StartMoving()
     {
@@ -19,7 +20,16 @@ public class HeatLineMover : MonoBehaviour
     {
         if (isMoving)
         {
-            transform.Translate(Vector3.right * speed * Time.deltaTime);
+            Vector3 newPosition = transform.position + Vector3.right * speed * Time.deltaTime;
+
+            if (newPosition.x <= rightEdge.position.x)
+            {
+                transform.position = newPosition;
+            }
+            else
+            {
+                transform.position = new Vector3(rightEdge.position.x, transform.position.y, transform.position.z);
+            }
         }
     }
 }
