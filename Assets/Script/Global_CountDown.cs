@@ -8,11 +8,12 @@ public class Global_CountDown : MonoBehaviour
 
     [SerializeField] float maxSceneTime;
     float currentTime;
+    [SerializeField] UnityEvent OnStartCountDown;
     [SerializeField] UnityEvent OnFinishCountDown;
     [SerializeField] UnityEvent<float> currentTimeUpdate;
 
 
-    private void Start()
+    private void Awake()
     {
         currentTime = maxSceneTime;
         currentTimeUpdate?.Invoke(currentTime);
@@ -30,6 +31,7 @@ public class Global_CountDown : MonoBehaviour
         if (currentTime > ClampTime)
         {
             currentTime = ClampTime;
+            currentTimeUpdate?.Invoke(currentTime);
         }
     }
 
@@ -37,6 +39,7 @@ public class Global_CountDown : MonoBehaviour
 
     public void StartTimer()
     {
+        OnStartCountDown?.Invoke();
         Debug.Log($"Remaining Time {currentTime}");
         if (currentTime > 0)
         {

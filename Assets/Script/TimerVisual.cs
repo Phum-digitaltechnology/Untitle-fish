@@ -4,7 +4,7 @@ using UnityEngine.Events;
 public class TimerVisual : MonoBehaviour
 {
     [SerializeField] List<Sprite> spritesState = new List<Sprite>();
-    [SerializeField] float MaxTime;
+    [SerializeField] float StartTime;
     public UnityEvent<Sprite> setSpriteEvent;
     public UnityEvent<Color> SetSpriteOpacity;
     [SerializeField] Sprite explode; // >:(
@@ -13,7 +13,7 @@ public class TimerVisual : MonoBehaviour
     public void VisualUpdate(float currentTime)
     {
         Color newColor = Color.white;
-        if (currentTime > MaxTime)
+        if (currentTime > StartTime)
         {
             newColor.a = 0;
             SetSpriteOpacity?.Invoke(newColor);
@@ -22,7 +22,7 @@ public class TimerVisual : MonoBehaviour
 
         SetSpriteOpacity?.Invoke(newColor);
 
-        float normalizedTime = currentTime / MaxTime;
+        float normalizedTime = currentTime / StartTime;
 
         if (normalizedTime < 0)
         {

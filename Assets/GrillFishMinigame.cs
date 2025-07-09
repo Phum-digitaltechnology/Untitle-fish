@@ -14,10 +14,10 @@ public class GrillFishMinigame : MonoBehaviour
     public Collider2D burnedZone;
 
     [Header("Fish Sprite by Doneness")]
-    public Sprite rawFishSprite;
-    public Sprite mediumFishSprite;
-    public Sprite cookedFishSprite;
-    public Sprite burnedFishSprite;
+    public FishVisual rawFishSprite;
+    public FishVisual mediumFishSprite;
+    public FishVisual cookedFishSprite;
+    public FishVisual burnedFishSprite;
 
     [Header("Fish Renderer")]
     public SpriteRenderer fishRenderer;
@@ -72,19 +72,25 @@ public class GrillFishMinigame : MonoBehaviour
 
         if (lineCol.IsTouching(rawZone))
         {
-            fishRenderer.sprite = rawFishSprite;
+            fishRenderer.sprite = rawFishSprite.FishSprite;
+            fishRenderer.color = rawFishSprite.FishColor;
         }
         else if (lineCol.IsTouching(mediumZone))
         {
-            fishRenderer.sprite = mediumFishSprite;
+            fishRenderer.sprite = mediumFishSprite.FishSprite;
+            fishRenderer.color = mediumFishSprite.FishColor;
+
         }
         else if (lineCol.IsTouching(cookedZone))
         {
-            fishRenderer.sprite = cookedFishSprite;
+            fishRenderer.sprite = cookedFishSprite.FishSprite;
+            fishRenderer.color = cookedFishSprite.FishColor;
+
         }
         else if (lineCol.IsTouching(burnedZone))
         {
-            fishRenderer.sprite = burnedFishSprite;
+            fishRenderer.sprite = burnedFishSprite.FishSprite;
+            fishRenderer.color = burnedFishSprite.FishColor;
         }
     }
 
@@ -103,4 +109,10 @@ public class GrillFishMinigame : MonoBehaviour
             OnLose?.Invoke();
         }
     }
+}
+[System.Serializable]
+public class FishVisual
+{
+    public Sprite FishSprite;
+    public Color FishColor = Color.white;
 }
