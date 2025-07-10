@@ -8,8 +8,9 @@ using UnityEngine.SceneManagement;
 public class sceneManager : MonoBehaviour
 {
     [SerializeField] private List<MiniGame> MiniGameScene = new List<MiniGame>();
+    [SerializeField] private List<MiniGame> CanAppear = new List<MiniGame>();
     [SerializeField] private Animator transitionAnim;
-    [SerializeField] private MiniGame currentMiniGame;
+    [SerializeField] private MiniGame CurrentMinigame;
     [SerializeField] private GameObject GameManagerObj;
     private bool losing = false;
 
@@ -35,21 +36,34 @@ public class sceneManager : MonoBehaviour
     //random minigame from the minigame pool and increase down time
     public MiniGame randomMiniGame()
     {
-        int rand = 0;
-        do
+        CanAppear.Clear();
+        foreach (var game in MiniGameScene)
         {
-            rand = UnityEngine.Random.Range(0, MiniGameScene.Count);
-        } while (MiniGameScene[rand].currentDownTime < MiniGameScene[rand].coolDown);
-
-        foreach (var m in MiniGameScene)
-        {
-            m.currentDownTime++;
+            if(game.weight <= 0)
+            {
+                game.CanAppear = false;
+            }
+            else
+            {
+                game.CanAppear = true;
+            }
         }
 
-        MiniGameScene[rand].currentDownTime = 0;
+        foreach (var game in MiniGameScene)
+        {
+            if (game.CanAppear)
+            {
+                if (UnityEngine.Random.Range(1, 100) <= game.weight)
+                {
+                    CanAppear.Add(game);
+                }
+            }
+        }
 
-        currentMiniGame = MiniGameScene[rand];
-        return MiniGameScene[rand];
+        MiniGame miniGame = CanAppear[UnityEngine.Random.Range(0, CanAppear.Count)];
+        miniGame.weight = 0;
+        miniGame.CurrentDownTime = 0;
+        return miniGame;
     }
 
     //change scene
@@ -85,9 +99,18 @@ public class sceneManager : MonoBehaviour
 
     private void Start()
     {
+        ResetWeight();
         GameManagerObj = this.transform.parent.gameObject;
         OnLoadingIntoScene?.Invoke("IntermissionMain"); // trigger the Loading scene Event
-        ChangeScene(randomMiniGame().SceneName);
+        StartCoroutine(TriggerMiniGame());
+    }
+
+    private void ResetWeight()
+    {
+        foreach(MiniGame m in MiniGameScene)
+        {
+            m.weight = 100;
+        }
     }
 
     //call to unload minigame scene and return to intermission scene
@@ -107,6 +130,22 @@ public class sceneManager : MonoBehaviour
 
         StartCoroutine(BackToIntermission());
 
+        foreach (var game in MiniGameScene)
+        {
+            if (game.CurrentDownTime == 0)
+            {
+                game.CurrentDownTime++;
+            }
+            else
+            {
+                game.weight++;
+                game.CurrentDownTime++;
+                if (game.weight >= 100)
+                {
+                    game.weight = 100;
+                }
+            }
+        }
 
         StartCoroutine(TriggerMiniGame());
     }
@@ -116,7 +155,8 @@ public class sceneManager : MonoBehaviour
         yield return new WaitForSeconds(3);
         if (!losing)
         {
-            ChangeScene(randomMiniGame().SceneName);
+            CurrentMinigame = randomMiniGame();
+            ChangeScene(CurrentMinigame.SceneName);
         }
     }
 
@@ -124,7 +164,7 @@ public class sceneManager : MonoBehaviour
     {
         transitionAnim.SetTrigger("End");
         yield return new WaitForSeconds(1);
-        AsyncOperation op = SceneManager.UnloadSceneAsync(currentMiniGame.SceneName);
+        AsyncOperation op = SceneManager.UnloadSceneAsync(CurrentMinigame.SceneName);
 
         op.completed += (AsyncOperation o) =>
         {

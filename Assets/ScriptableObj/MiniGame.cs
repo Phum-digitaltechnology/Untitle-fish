@@ -4,6 +4,7 @@ using UnityEngine;
 public class MiniGame : ScriptableObject
 {
     public string SceneName;
-    public int coolDown;
-    public int currentDownTime;
+    public int weight;
+    public bool CanAppear;
+    public int CurrentDownTime;
 }
