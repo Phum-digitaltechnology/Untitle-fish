@@ -5,7 +5,7 @@ using UnityEngine.Events;
 public class FishRun : MonoBehaviour
 {
     [SerializeField] private List<Transform> MovePos = new List<Transform>();
-    [SerializeField] private Transform fishTransform;
+    [SerializeField] private Rigidbody fishTransform;
     [SerializeField] private float moveSpeed = 5f;
 
     private Transform targetPoint;
@@ -38,22 +38,24 @@ public class FishRun : MonoBehaviour
 
         if (randIndex == 0)
         {
+            DirectionX = 1;
             currentDesitnation = 1;
             ChangeToPos2?.Invoke();
 
         }
         else
         {
+            DirectionX = -1;
             currentDesitnation = 0;
             ChangeToPos1?.Invoke();
         }
 
 
         // Set fish start position (preserve Z)
-        fishTransform.position = new Vector3(
+        fishTransform.transform.position = new Vector3(
             fishStartPos.localPosition.x,
             fishStartPos.localPosition.y,
-            fishTransform.localPosition.z
+            fishTransform.transform.localPosition.z
         );
 
 
@@ -66,7 +68,7 @@ public class FishRun : MonoBehaviour
         Vector3 fixedTargetPos = new Vector3(
     targetPoint.localPosition.x,
     targetPoint.localPosition.y,
-    fishTransform.localPosition.z
+    fishTransform.transform.localPosition.z
                              );
         targetPoint.position = fixedTargetPos;
     }
@@ -80,16 +82,14 @@ public class FishRun : MonoBehaviour
         }
     }
 
+    float DirectionX = 0;
     private void MoveToPoint(Vector3 destination)
     {
-
-        if (fishTransform.transform.position != destination)
+        if (Vector3.Distance(fishTransform.transform.position, destination) >= 0.5f)
         {
-            Vector3 currentPos = fishTransform.position;
-            // Only move in X and Y, keep Z the same
+            Vector3 currentPos = fishTransform.transform.position;
             Vector3 targetPos = new Vector3(destination.x, destination.y, currentPos.z);
-
-            fishTransform.position = Vector3.MoveTowards(currentPos, targetPos, moveSpeed * Time.deltaTime);
+            fishTransform.linearVelocity = new Vector3(DirectionX * moveSpeed, 0, 0);
         }
         else
         {
@@ -97,12 +97,14 @@ public class FishRun : MonoBehaviour
 
             if (currentDesitnation == 0)
             {
+                DirectionX = 1;
                 currentDesitnation = 1;
                 ChangeToPos2?.Invoke();
                 setTargetPos(MovePos[1]);
             }
             else
             {
+                DirectionX = -1;
                 currentDesitnation = 0;
                 ChangeToPos1?.Invoke();
                 setTargetPos(MovePos[0]);

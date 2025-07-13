@@ -335,9 +335,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Frame
       objectReference: {fileID: 0}
-    - target: {fileID: 7193417387345002103, guid: 4fa94e04e0dfb1a48ac53c275962c4fc, type: 3}
-      propertyPath: StartTime
-      value: 6
+    - target: {fileID: 7535796991615361846, guid: 4fa94e04e0dfb1a48ac53c275962c4fc, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1080
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

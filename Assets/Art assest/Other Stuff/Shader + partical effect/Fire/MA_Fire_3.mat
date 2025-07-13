@@ -101,7 +101,7 @@ Material:
     m_Colors:
     - _ColorBot: {r: 0.5056525, g: 0.8784314, b: 0.2588236, a: 0}
     - _ColorBottom: {r: 0.735849, g: 0.70326257, b: 0.2742079, a: 0}
-    - _ColorTop: {r: 1, g: 0.11348406, b: 0, a: 0}
+    - _ColorTop: {r: 1, g: 0.113484085, b: 0, a: 0}
     - _FireShade: {r: 1, g: 0, b: 0.10514355, a: 0}
     - _RedTip: {r: 0.8862745, g: 0, b: 0.12160394, a: 0}
   m_BuildTextureStacks: []
