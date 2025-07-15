@@ -1,6 +1,4 @@
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine.Events;
 
 public enum BobberColor
@@ -30,13 +28,14 @@ public class MG6_DragDrop3D : MonoBehaviour
         return Camera.main.WorldToScreenPoint(transform.position);
     }
 
-    private void OnMouseDown()
+    public void OnMouseDown()
     {
         if (canDragDrop)
         {
             MousePosition = Input.mousePosition - GetMousePosition();
             Rigidbody rb = this.gameObject.GetComponent<Rigidbody>();
-            if (rb != null) {
+            if (rb != null)
+            {
                 rb.freezeRotation = true;
             }
             else
@@ -47,7 +46,7 @@ public class MG6_DragDrop3D : MonoBehaviour
         }
     }
 
-    private void OnMouseDrag()
+    public void OnMouseDrag()
     {
         if (canDragDrop)
         {
@@ -57,7 +56,7 @@ public class MG6_DragDrop3D : MonoBehaviour
 
     void OnTriggerStay(Collider col)
     {
-        if(col.gameObject.tag == "Hook")
+        if (col.gameObject.tag == "Hook")
         {
             if (Input.GetMouseButtonUp(0))
             {
