@@ -138,7 +138,7 @@ public class sceneManager : MonoBehaviour
             }
             else
             {
-                game.weight++;
+                game.weight += 10;
                 game.CurrentDownTime++;
                 if (game.weight >= 100)
                 {
