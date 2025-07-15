@@ -730,12 +730,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 546163757}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -960, y: -540, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1297319671}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &551777777
 GameObject:
@@ -1622,6 +1622,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentScore: 0
   Life: 4
+  currentTimeScale: 1
   losing: 0
   currentLifeEvent:
     m_PersistentCalls:
@@ -1781,6 +1782,7 @@ RectTransform:
   - {fileID: 983491907}
   - {fileID: 464927816}
   - {fileID: 683546794}
+  - {fileID: 546163760}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2564,8 +2566,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b8a685b5764d02846a7d9e0f96622e49, type: 2}
   - {fileID: 11400000, guid: 810952adcb6e31e499302089c869ad7c, type: 2}
   - {fileID: 11400000, guid: 39e570841ca2e5a448302c0ac8d7cfcd, type: 2}
+  CanAppear: []
   transitionAnim: {fileID: 816399619}
-  currentMiniGame: {fileID: 0}
+  CurrentMinigame: {fileID: 0}
   GameManagerObj: {fileID: 0}
 --- !u!1 &1911203362
 GameObject:
@@ -2866,7 +2869,6 @@ SceneRoots:
   - {fileID: 330585546}
   - {fileID: 410087041}
   - {fileID: 832575519}
-  - {fileID: 546163760}
   - {fileID: 1268467456}
   - {fileID: 1297319671}
   - {fileID: 2027263054}

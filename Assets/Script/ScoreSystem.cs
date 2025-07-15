@@ -5,6 +5,7 @@ public class ScoreSystem : MonoBehaviour
 {
     [SerializeField] public int currentScore = 0;
     [SerializeField] public int Life;
+    [SerializeField] private float currentTimeScale = 1f;
     private int currentLife = 0;
     public int CurrentLife => currentLife;
     public bool losing = false;
@@ -19,6 +20,9 @@ public class ScoreSystem : MonoBehaviour
     public void Win()
     {
         currentScore++;
+
+        currentTimeScale = 1f + ((float)currentScore / 100f);
+        Time.timeScale = currentTimeScale;
     }
 
     public void Lose()
