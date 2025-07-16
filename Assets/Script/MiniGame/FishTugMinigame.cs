@@ -9,6 +9,10 @@ public class FishTugMinigame : MonoBehaviour
     public Collider2D winZone;
     public Collider2D loseZone;
 
+    [Header("Fish Sprites")]
+    public Sprite normalFishSprite;
+    public Sprite grabbedFishSprite;
+
     [Header("Gameplay Settings")]
     public float dragThreshold = 50f;
     public float swimSpeed = 3f;
@@ -24,6 +28,7 @@ public class FishTugMinigame : MonoBehaviour
     private Vector3 exit;
     private bool canSwimAway = false;
     private Collider2D fishCollider;
+    private SpriteRenderer fishRenderer;
 
     [SerializeField] UnityEvent onFishGoLeft;
     [SerializeField] UnityEvent onFishGoRight;
@@ -31,9 +36,6 @@ public class FishTugMinigame : MonoBehaviour
     private void Start()
     {
         fishDir = (Random.value < 0.5f) ? -1 : 1;
-
-
-
 
         ApplyFishRotation();
 
@@ -49,6 +51,11 @@ public class FishTugMinigame : MonoBehaviour
         if (fishCollider == null)
         {
             Debug.LogError("[FishTug] Missing Collider2D on fish!");
+        }
+        fishRenderer = fish.GetComponent<SpriteRenderer>();
+        if (fishRenderer == null)
+        {
+            Debug.LogError("[FishTug] Missing SpriteRenderer on fish!");
         }
     }
 
@@ -69,6 +76,10 @@ public class FishTugMinigame : MonoBehaviour
                 {
                     isDragging = true;
                     dragOffset = fish.position - (Vector3)mw;
+                    if (fishRenderer != null && grabbedFishSprite != null)
+                    {
+                        fishRenderer.sprite = grabbedFishSprite;
+                    }
                 }
             }
 
@@ -82,6 +93,10 @@ public class FishTugMinigame : MonoBehaviour
             if (Input.GetMouseButtonUp(0))
             {
                 isDragging = false;
+                if (fishRenderer != null && normalFishSprite != null)
+                {
+                    fishRenderer.sprite = normalFishSprite;
+                }
             }
         }
         if (canSwimAway)
