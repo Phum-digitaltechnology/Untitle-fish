@@ -859,7 +859,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1702452812}
         m_TargetAssemblyTypeName: PhaseUpdateMinigameState_Caller, Assembly-CSharp
-        m_MethodName: UpdateMinigameWinState
+        m_MethodName: UpdateStateAndGoNextPhase
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1026,6 +1026,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48cd10c29531a67489b3921787558604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mouseIconStatus: []
 --- !u!4 &807967194
 Transform:
   m_ObjectHideFlags: 0

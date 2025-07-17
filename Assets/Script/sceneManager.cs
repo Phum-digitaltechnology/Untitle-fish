@@ -40,7 +40,7 @@ public class sceneManager : MonoBehaviour
         CanAppear.Clear();
         foreach (var game in MiniGameScene)
         {
-            if(game.weight <= 0)
+            if (game.weight <= 0)
             {
                 game.CanAppear = false;
             }
@@ -59,7 +59,7 @@ public class sceneManager : MonoBehaviour
                 total += game.weight;
             }
         }
-        
+
         int random = UnityEngine.Random.Range(1, total);
 
         int cursor = 0;
@@ -122,7 +122,7 @@ public class sceneManager : MonoBehaviour
 
     private void ResetWeight()
     {
-        foreach(MiniGame m in MiniGameScene)
+        foreach (MiniGame m in MiniGameScene)
         {
             m.weight = 10;
         }
@@ -176,6 +176,7 @@ public class sceneManager : MonoBehaviour
     {
         transitionAnim.SetTrigger("End");
         yield return new WaitForSeconds(1);
+        Debug.Log($"Current Minigame {Time.frameCount} {CurrentMinigame.SceneName}");
         AsyncOperation op = SceneManager.UnloadSceneAsync(CurrentMinigame.SceneName);
 
         op.completed += (AsyncOperation o) =>
