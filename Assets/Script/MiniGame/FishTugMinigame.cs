@@ -123,16 +123,21 @@ public class FishTugMinigame : MonoBehaviour
         }
     }
 
+
+    bool isApply = false;
     private void Finish(bool win)
     {
         isDragging = false;
         finished = true;
 
+        if (isApply) return;
+        isApply = true;
+
         if (win)
         {
             exit = Vector3.right * -fishDir;
             canSwimAway = true;
-            StartCoroutine(InvokeWinAfterDelay());
+            OnWin.Invoke();
         }
         else
         {

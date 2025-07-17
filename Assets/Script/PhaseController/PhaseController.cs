@@ -16,7 +16,6 @@ public class PhaseController : MonoBehaviour
     Phase phase = Phase.Intermission;
     bool MinigameState;
 
-    bool isgoNext = false;
     private void Start()
     {
         EarlySetUp?.Invoke();
@@ -37,8 +36,7 @@ public class PhaseController : MonoBehaviour
         }
         else
         {
-            if (isgoNext) return;
-            isgoNext = true;
+
             Debug.Log("Game End Go back to Da something Scene");
             // Just for Test
             // Loading Next Scene Here
