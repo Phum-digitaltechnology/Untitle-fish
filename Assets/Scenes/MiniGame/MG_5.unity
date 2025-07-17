@@ -1157,6 +1157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48cd10c29531a67489b3921787558604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mouseIconStatus: []
 --- !u!4 &1171071320
 Transform:
   m_ObjectHideFlags: 0
@@ -1803,5 +1804,5 @@ SceneRoots:
   - {fileID: 1202030284}
   - {fileID: 861186721}
   - {fileID: 1102641705}
-  - {fileID: 1171071320}
   - {fileID: 1979732469}
+  - {fileID: 1171071320}
