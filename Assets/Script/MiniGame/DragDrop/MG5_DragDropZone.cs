@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class MG5_DragDropZone : MonoBehaviour
 {
@@ -7,7 +8,8 @@ public class MG5_DragDropZone : MonoBehaviour
     private Vector3 offset;
     [SerializeField] private GameObject worm;
     private Transform wormTransform;
-
+    [SerializeField] UnityEvent OnDrag;
+    [SerializeField] UnityEvent OffDrag;
     public void Setup()
     {
         this.gameObject.GetComponent<MG5_DragDropZone>().enabled = true;
@@ -17,11 +19,16 @@ public class MG5_DragDropZone : MonoBehaviour
     {
         if (dragging)
         {
+            OnDrag?.Invoke();
             if (wormTransform != null)
             {
                 wormTransform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
                 //Debug.Log("Dragging");
             }
+        }
+        else
+        {
+            OffDrag?.Invoke();
         }
     }
 

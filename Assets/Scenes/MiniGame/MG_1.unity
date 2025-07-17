@@ -240,6 +240,107 @@ Transform:
   - {fileID: 1851449301}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &163926015
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4272437493389808024, guid: adc14f0c6f6868a4cb4515c633db2a2c, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272437493389808024, guid: adc14f0c6f6868a4cb4515c633db2a2c, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272437493389808024, guid: adc14f0c6f6868a4cb4515c633db2a2c, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272437493389808024, guid: adc14f0c6f6868a4cb4515c633db2a2c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272437493389808024, guid: adc14f0c6f6868a4cb4515c633db2a2c, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272437493389808024, guid: adc14f0c6f6868a4cb4515c633db2a2c, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272437493389808024, guid: adc14f0c6f6868a4cb4515c633db2a2c, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272437493389808024, guid: adc14f0c6f6868a4cb4515c633db2a2c, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272437493389808024, guid: adc14f0c6f6868a4cb4515c633db2a2c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272437493389808024, guid: adc14f0c6f6868a4cb4515c633db2a2c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272437493389808024, guid: adc14f0c6f6868a4cb4515c633db2a2c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272437493389808024, guid: adc14f0c6f6868a4cb4515c633db2a2c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272437493389808024, guid: adc14f0c6f6868a4cb4515c633db2a2c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272437493389808024, guid: adc14f0c6f6868a4cb4515c633db2a2c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272437493389808024, guid: adc14f0c6f6868a4cb4515c633db2a2c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272437493389808024, guid: adc14f0c6f6868a4cb4515c633db2a2c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272437493389808024, guid: adc14f0c6f6868a4cb4515c633db2a2c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272437493389808024, guid: adc14f0c6f6868a4cb4515c633db2a2c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272437493389808024, guid: adc14f0c6f6868a4cb4515c633db2a2c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272437493389808024, guid: adc14f0c6f6868a4cb4515c633db2a2c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7392982753658873009, guid: adc14f0c6f6868a4cb4515c633db2a2c, type: 3}
+      propertyPath: m_Name
+      value: MouseIconCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8549121116617324924, guid: adc14f0c6f6868a4cb4515c633db2a2c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: da9a9093edee3bc40a50b965a143f43a, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: adc14f0c6f6868a4cb4515c633db2a2c, type: 3}
 --- !u!1 &173495790
 GameObject:
   m_ObjectHideFlags: 0
@@ -1081,6 +1182,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1909892539}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1270604730
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1270604732}
+  - component: {fileID: 1270604731}
+  m_Layer: 0
+  m_Name: MouseIconController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1270604731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270604730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48cd10c29531a67489b3921787558604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1270604732
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270604730}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.676119, y: -4.217733, z: -1.8520021}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1445709382
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1464,6 +1609,42 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1270604731}
+        m_TargetAssemblyTypeName: MouseIconController, Assembly-CSharp
+        m_MethodName: EnableCursorImage
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1270604731}
+        m_TargetAssemblyTypeName: MouseIconController, Assembly-CSharp
+        m_MethodName: SetIconHeight
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 250
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1270604731}
+        m_TargetAssemblyTypeName: MouseIconController, Assembly-CSharp
+        m_MethodName: SetIconWidth
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 250
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
   OnUnActive:
     m_PersistentCalls:
@@ -2490,3 +2671,5 @@ SceneRoots:
   - {fileID: 855490660}
   - {fileID: 8214416406212085142}
   - {fileID: 1445709382}
+  - {fileID: 163926015}
+  - {fileID: 1270604732}

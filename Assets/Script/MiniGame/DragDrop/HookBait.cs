@@ -6,12 +6,24 @@ public class HookBait : MonoBehaviour
     [SerializeField] private UnityEvent OnApplyBait;
     [SerializeField] private GameObject confetti;
     private bool haveWorm = false;
-
-    public void OnTriggerStay2D(Collider2D col)
+    bool isWormOnHook;
+    Collider2D col;
+    void OnTriggerStay2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Worm")
+        this.col = col;
+        isWormOnHook = col.gameObject.tag == "Worm";
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        isWormOnHook = false;
+        this.col = null;
+    }
+
+    private void Update()
+    {
+        if (isWormOnHook)
         {
-            //Debug.Log("Trigger Stay");
             if (Input.GetMouseButtonUp(0) && !haveWorm)
             {
                 Destroy(col.gameObject.GetComponent<Rigidbody2D>());
