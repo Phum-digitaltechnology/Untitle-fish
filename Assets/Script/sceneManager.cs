@@ -49,21 +49,31 @@ public class sceneManager : MonoBehaviour
             }
         }
 
+        int total = 0;
         foreach (var game in MiniGameScene)
         {
             if (game.CanAppear)
             {
-                if (UnityEngine.Random.Range(1, 100) <= game.weight)
-                {
-                    CanAppear.Add(game);
-                }
+                CanAppear.Add(game);
+                total += game.weight;
             }
         }
+        
+        int random = UnityEngine.Random.Range(1, total);
 
-        MiniGame miniGame = CanAppear[UnityEngine.Random.Range(0, CanAppear.Count)];
-        miniGame.weight = 0;
-        miniGame.CurrentDownTime = 0;
-        return miniGame;
+        int cursor = 0;
+        for (int i = 0; i < CanAppear.Count; i++)
+        {
+            cursor += CanAppear[i].weight;
+            if (cursor >= random)
+            {
+                MiniGame miniGame = CanAppear[i];
+                miniGame.weight = 0;
+                miniGame.CurrentDownTime = 0;
+                return miniGame;
+            }
+        }
+        return null;
     }
 
     //change scene
@@ -109,7 +119,7 @@ public class sceneManager : MonoBehaviour
     {
         foreach(MiniGame m in MiniGameScene)
         {
-            m.weight = 100;
+            m.weight = 10;
         }
     }
 
@@ -140,10 +150,6 @@ public class sceneManager : MonoBehaviour
             {
                 game.weight += 10;
                 game.CurrentDownTime++;
-                if (game.weight >= 100)
-                {
-                    game.weight = 100;
-                }
             }
         }
 
