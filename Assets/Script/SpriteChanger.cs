@@ -15,7 +15,7 @@ public class SpriteChanger : MonoBehaviour
 
     void OnWinning(bool win)
     {
-        OnEndMinigame.Invoke();
+        OnEndMinigame?.Invoke();
     }
 
     public void ChangeSprite(Sprite image)
