@@ -18,4 +18,14 @@ public class parabolaFish : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         OnCatchingFish?.Invoke();
     }
+
+    private void Update()
+    {
+        Rigidbody2D rb = this.GetComponent<Rigidbody2D>();
+
+        if (rb.linearVelocity != Vector2.zero)
+        {
+            transform.rotation = Quaternion.LookRotation(rb.linearVelocity, Vector3.forward);
+        }
+    }
 }
