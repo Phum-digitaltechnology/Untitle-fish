@@ -10,7 +10,7 @@ public class ScoreSystem : MonoBehaviour
     public int CurrentLife => currentLife;
     public bool losing = false;
     [SerializeField] UnityEvent<int> currentLifeEvent;
-
+    [SerializeField] bool noLifeLose;
 
     private void Awake()
     {
@@ -27,6 +27,7 @@ public class ScoreSystem : MonoBehaviour
 
     public void Lose()
     {
+        if (noLifeLose) return;
         currentLife--;
         if (currentLife <= 0)
         {
