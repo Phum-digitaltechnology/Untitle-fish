@@ -13,6 +13,7 @@ public class sceneManager : MonoBehaviour
     [SerializeField] private MiniGame CurrentMinigame;
     [SerializeField] private GameObject GameManagerObj;
     private bool losing = false;
+    private bool SceneLoaded = false;
 
     public event Action<string> OnLoadingIntoScene;
     //right click on the component and click "Load All ScriptableObjects" to load all scriptable objects
@@ -79,8 +80,12 @@ public class sceneManager : MonoBehaviour
     //change scene
     public void ChangeScene(string SceneName)
     {
-        Debug.Log($"Loading Into Scene {SceneName}");
-        StartCoroutine(LoadLevel(SceneName));
+        if (!SceneLoaded)
+        {
+            Debug.Log($"Loading Into Scene {SceneName}");
+            StartCoroutine(LoadLevel(SceneName));
+            SceneLoaded = true;
+        }
     }
     //play animation before and after load scene
     IEnumerator LoadLevel(string SceneName)
@@ -139,6 +144,7 @@ public class sceneManager : MonoBehaviour
         }
 
         StartCoroutine(BackToIntermission());
+        SceneLoaded = false;
 
         foreach (var game in MiniGameScene)
         {

@@ -10,9 +10,10 @@ public class MG5_DragDropZone : MonoBehaviour
     private Transform wormTransform;
     [SerializeField] UnityEvent OnDrag;
     [SerializeField] UnityEvent OffDrag;
+    private bool canDragDrop = false;
     public void Setup()
     {
-        this.gameObject.GetComponent<MG5_DragDropZone>().enabled = true;
+        canDragDrop = true;
     }
 
     void Update()
@@ -47,16 +48,19 @@ public class MG5_DragDropZone : MonoBehaviour
 
     private void OnMouseOver()
     {
-        Debug.Log("Mouse over bucket");
-        if (Input.GetMouseButtonDown(0) && haveWorm == false)
+        if (canDragDrop)
         {
-            Debug.Log("Get Worm!");
-            wormTransform = Instantiate(worm, Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity).transform;
-            wormTransform.SetParent(this.transform);
-            haveWorm = true;
-            offset = wormTransform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0, 0, 1);
-            dragging = true;
-            Debug.Log("Mouse down");
+            Debug.Log("Mouse over bucket");
+            if (Input.GetMouseButtonDown(0) && haveWorm == false)
+            {
+                Debug.Log("Get Worm!");
+                wormTransform = Instantiate(worm, Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity).transform;
+                wormTransform.SetParent(this.transform);
+                haveWorm = true;
+                offset = wormTransform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0, 0, 1);
+                dragging = true;
+                Debug.Log("Mouse down");
+            }
         }
     }
 }
