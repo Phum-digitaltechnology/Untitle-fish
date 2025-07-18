@@ -3,7 +3,7 @@ using UnityEngine;
 public class MouseIconController : MonoBehaviour
 {
     MouseIconManage mouseIconManage;
-    private void Start()
+    private void Awake()
     {
 
         ShareComponent.instance.GetComponent<MouseIconManage>(out mouseIconManage);
@@ -18,12 +18,10 @@ public class MouseIconController : MonoBehaviour
 
     public void ApplyMouseIcon(int index)
     {
-        if (index < mouseIconStatus.Count)
-        {
-            Debug.LogError("Index Out Of range");
-            return;
-        }
+        if (mouseIconManage == null) return;
+        Debug.Log($"{index}");
         MouseIconStatus iconState = mouseIconStatus[index];
+        Debug.Log($"is null {iconState == null}");
         mouseIconManage.EnableCursorImage(iconState.IsEnableCursorImage);
         mouseIconManage.EnableRealCursor(iconState.IsEnableRealCursor);
         mouseIconManage.SetSizeHeight(iconState.MouseSize.y);
