@@ -1,9 +1,11 @@
+using System;
 using UnityEngine;
 
-public class EnviromentTrigger : MonoBehaviour
+public class IntermissionSceneTrigger : MonoBehaviour
 {
-    [SerializeField] GameObject Enviroment;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public event Action OnEnterIntermissionScene;
+    public event Action OnExitIntermissionScene;
+
     void Start()
     {
         FindAnyObjectByType<sceneManager>().OnLoadingIntoScene += TriggerEnviroment;
@@ -13,11 +15,11 @@ public class EnviromentTrigger : MonoBehaviour
     {
         if (SceneName == "IntermissionMain")
         {
-            Enviroment.SetActive(true);
+            OnEnterIntermissionScene?.Invoke();
         }
         else
         {
-            Enviroment.SetActive(false);
+            OnExitIntermissionScene?.Invoke();
         }
     }
 }

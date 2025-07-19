@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Head_OnlyExpression
+  m_Name: Head_OnlyExpression 1
   m_Shader: {fileID: 4800000, guid: 650dd9526735d5b46b79224bc6e94025, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -37,7 +37,7 @@ Material:
     - _BaseMap:
         m_Texture: {fileID: 2800000, guid: 049428f9a5c3731459016ad70c4da680, type: 3}
         m_Scale: {x: 0.5, y: 0.5}
-        m_Offset: {x: 2.99, y: 8.47}
+        m_Offset: {x: 1, y: 8.99}
     - _EMISSION_COLOR_MAP:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -49,7 +49,7 @@ Material:
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 049428f9a5c3731459016ad70c4da680, type: 3}
         m_Scale: {x: 0.5, y: 0.5}
-        m_Offset: {x: 2.99, y: 8.47}
+        m_Offset: {x: 1, y: 8.99}
     - _NORMAL_MAP:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}

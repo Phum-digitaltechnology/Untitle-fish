@@ -420,7 +420,7 @@ Transform:
   m_GameObject: {fileID: 1307654352}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.81, y: 3.77, z: -1.3299999}
+  m_LocalPosition: {x: -6.473721, y: 7.34, z: -0.59755206}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -666,40 +666,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8849ba57f2405e408b1c17383abfb58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveingCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: -0.004711151
-      inSlope: 2.2863774
-      outSlope: 2.2863774
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.43924272
-      value: 0.99956346
-      inSlope: 0.23658341
-      outSlope: 0.23658341
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.98999023
-      value: 0.0009422302
-      inSlope: -1.8132106
-      outSlope: -1.8132106
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  moveTime: 10
+  moveTime: 40
   destination: {fileID: 1983490313}
   objToMove: {fileID: 1307654353}
 --- !u!4 &1786082804
@@ -745,7 +712,7 @@ Transform:
   m_GameObject: {fileID: 1983490312}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.190001, y: -1.5899999, z: -1.3299999}
+  m_LocalPosition: {x: 8.190001, y: -1.5899999, z: -0.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

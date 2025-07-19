@@ -1,12 +1,10 @@
+using MoreMountains.Tools;
 using UnityEngine;
 using UnityEngine.UI;
-public class MouseIconManage : MonoBehaviour
+public class MouseIconManage : MMSingleton<MouseIconManage>
 {
     [SerializeField] Image cursorImage;
-    private void Awake()
-    {
-        ShareComponent.instance.AddingComponent(this);
-    }
+
     public void SetCursorImage(Sprite mouseIcon)
     {
         cursorImage.sprite = mouseIcon;

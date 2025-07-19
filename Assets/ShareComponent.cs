@@ -1,47 +1,23 @@
+using MoreMountains.Tools;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShareComponent : MonoBehaviour
+public class ShareComponent : MMSingleton<ShareComponent>
 {
-    public static ShareComponent instance => getInstance();
-    static ShareComponent _instance;
-    static ShareComponent getInstance()
-    {
-        if (_instance == null)
-        {
-            PreCreate();
-        }
-
-        return _instance;
-    }
-
-    static void PreCreate()
-    {
-        GameObject preGameObject = new GameObject();
-        _instance = preGameObject.AddComponent<ShareComponent>();
-    }
-
-    private void Awake()
-    {
-        if (_instance != null)
-        {
-            Destroy(this.gameObject);
-        }
-        DontDestroyOnLoad(gameObject);
-        _instance = this;
-    }
-
     List<MonoBehaviour> storedComponnet = new List<MonoBehaviour>();
-    public void AddingComponent(MonoBehaviour compToAdd)
+    List<Type> addedType = new List<Type>();
+    public void AddingComponent<T>(T compToAdd) where T : MonoBehaviour
     {
-        if (storedComponnet.Contains(compToAdd))
+        if (addedType.Contains(typeof(T)))
         {
-            Destroy(compToAdd.gameObject);
+            Destroy(compToAdd);
             return;
         }
-
         storedComponnet.Add(compToAdd);
-        compToAdd.transform.parent = this.transform;
+        addedType.Add(typeof(T));
+
+        DontDestroyOnLoad(compToAdd);
     }
 
     public bool GetComponent<T>(out T searchResult) where T : MonoBehaviour

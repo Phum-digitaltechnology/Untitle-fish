@@ -14,7 +14,6 @@ public class sceneManager : MonoBehaviour
     [SerializeField] private GameObject GameManagerObj;
     private bool losing = false;
     private bool SceneLoaded = false;
-
     public event Action<string> OnLoadingIntoScene;
     //right click on the component and click "Load All ScriptableObjects" to load all scriptable objects
 #if UNITY_EDITOR
@@ -97,8 +96,6 @@ public class sceneManager : MonoBehaviour
         OnLoadingIntoScene?.Invoke(SceneName);
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(SceneName));
         GameObject.Find("InterMissionCanvas").SetActive(false);
-        GameObject.Find("IntermissionCamera").GetComponent<AudioListener>().enabled = false;
-        GameObject.Find("IntermissionCamera").GetComponent<Camera>().enabled = false;
         transitionAnim.SetTrigger("Start");
     }
 
@@ -133,7 +130,6 @@ public class sceneManager : MonoBehaviour
     {
         //ScoreSystem scoreCS = this.transform.parent.GetChild(3).gameObject.GetComponent<ScoreSystem>();
         ScoreSystem scoreCS = GameManagerObj.GetComponent<GameManager>().Manager[(int)MANAGER.ScoreSystem].GetComponent<ScoreSystem>();
-
         if (areYouWinningSon)
         {
             scoreCS.Win();
@@ -184,8 +180,7 @@ public class sceneManager : MonoBehaviour
             SceneManager.SetActiveScene(SceneManager.GetSceneByName("IntermissionMain"));
         };
         OnLoadingIntoScene?.Invoke("IntermissionMain");
-        GameObject.Find("IntermissionCamera").GetComponent<AudioListener>().enabled = true;
-        GameObject.Find("IntermissionCamera").GetComponent<Camera>().enabled = true;
+
         GameObject[] allObjects = Resources.FindObjectsOfTypeAll<GameObject>();
 
         foreach (GameObject obj in allObjects)

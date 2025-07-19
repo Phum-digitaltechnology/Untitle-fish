@@ -5,13 +5,7 @@ public class MouseIconController : MonoBehaviour
     MouseIconManage mouseIconManage;
     private void Awake()
     {
-
-        ShareComponent.instance.GetComponent<MouseIconManage>(out mouseIconManage);
-        if (mouseIconManage == null)
-        {
-            Debug.LogError("No MouseIconManage in the Scene");
-            return;
-        }
+        mouseIconManage = MouseIconManage.Instance;
     }
 
     [SerializeField] List<MouseIconStatus> mouseIconStatus = new List<MouseIconStatus>();

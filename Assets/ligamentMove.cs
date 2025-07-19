@@ -3,7 +3,6 @@ using UnityEngine;
 public class ligamentMove : MonoBehaviour
 {
 
-    [SerializeField] AnimationCurve moveingCurve;
     [SerializeField] float moveTime;
     [SerializeField] Transform destination;
     [SerializeField] Transform objToMove;
@@ -21,8 +20,8 @@ public class ligamentMove : MonoBehaviour
         while (t <= 1)
         {
 
-            Vector3 yPos = Vector3.Slerp(startPos, destination.transform.position, t);
-            Vector3 finalPos = Vector3.Lerp(startPos, destination.transform.position, t);
+            Vector3 finalPos = Vector3.Lerp(objToMove.transform.position, destination.transform.position, t);
+            Vector3 yPos = Vector3.Slerp(objToMove.transform.position, destination.transform.position, t);
             finalPos.y = yPos.y;
             objToMove.transform.position = finalPos;
             currentTime += Time.deltaTime;

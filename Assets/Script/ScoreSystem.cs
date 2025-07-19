@@ -12,6 +12,9 @@ public class ScoreSystem : MonoBehaviour
     [SerializeField] UnityEvent<int> currentLifeEvent;
     [SerializeField] bool noLifeLose;
 
+    public bool MinigameState { get; private set; } = true;
+
+
     private void Awake()
     {
         currentLife = Life;
@@ -19,14 +22,15 @@ public class ScoreSystem : MonoBehaviour
 
     public void Win()
     {
+        MinigameState = true;
         currentScore++;
-
         currentTimeScale = 1f + ((float)currentScore / 100f);
         Time.timeScale = currentTimeScale;
     }
 
     public void Lose()
     {
+        MinigameState = false;
         if (noLifeLose) return;
         currentLife--;
         if (currentLife <= 0)
