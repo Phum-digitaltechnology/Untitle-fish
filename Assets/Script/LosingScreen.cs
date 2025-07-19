@@ -11,6 +11,7 @@ public class LosingScreen : MonoBehaviour
 
     public void ActiveLosingScene()
     {
+        Debug.Log("Im Loseeee");
         loseUi.SetActive(true);
     }
     void Update()
