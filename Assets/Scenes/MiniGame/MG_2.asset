@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: MG_2
   m_EditorClassIdentifier: 
   SceneName: MG_2
-  coolDown: 3
-  currentDownTime: 0
+  weight: 0
+  CanAppear: 0
+  CurrentDownTime: 0
+  controlSprite: {fileID: 21300000, guid: 909d53a33d9655f4c9d6d22b0e609cfd, type: 3}
