@@ -3,6 +3,7 @@ using UnityEngine;
 public class HealthUiControl : MonoBehaviour
 {
     [SerializeField] Transform healthHolder;
+    [SerializeField] float activeLoseDelay = 2;
     ScoreSystem scoreSystem;
     int previosHealth;
     private void Start()
@@ -24,8 +25,7 @@ public class HealthUiControl : MonoBehaviour
         {
             previosHealth = scoreSystem.CurrentLife;
             decreaseHealth();
-            if (scoreSystem.CurrentLife == 0)
-                FindAnyObjectByType<LosingScreen>(FindObjectsInactive.Include).ActiveLosingScene();
+
             Debug.Log("Change");
         }
         else
@@ -55,13 +55,22 @@ public class HealthUiControl : MonoBehaviour
 
     IEnumerator Delay(HealthLose healthLose)
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0);
         healthLose.ActiveHealthLose(OnfinishHealthLose);
     }
 
     void OnfinishHealthLose()
     {
+        if (scoreSystem.CurrentLife == 0)
+        {
+            StartCoroutine(delayLoseScene());
+        }
+    }
 
+    IEnumerator delayLoseScene()
+    {
+        yield return new WaitForSeconds(activeLoseDelay);
+        FindAnyObjectByType<LosingScreen>(FindObjectsInactive.Include).ActiveLosingScene();
     }
 }
 

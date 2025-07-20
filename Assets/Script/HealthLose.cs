@@ -25,6 +25,7 @@ public class HealthLose : MonoBehaviour
 
     public void OnFinishHealthLose()
     {
+        Debug.Log("Invoke CallBack");
         addedCallback?.Invoke();
     }
 }

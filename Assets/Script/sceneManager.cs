@@ -179,7 +179,6 @@ public class sceneManager : MonoBehaviour
         {
             SceneManager.SetActiveScene(SceneManager.GetSceneByName("IntermissionMain"));
         };
-        OnLoadingIntoScene?.Invoke("IntermissionMain");
 
         GameObject[] allObjects = Resources.FindObjectsOfTypeAll<GameObject>();
 
@@ -194,14 +193,11 @@ public class sceneManager : MonoBehaviour
                 else
                 {
                     obj.SetActive(true);
-                    for (int i = 0; i < 4; i++)
-                    {
-                        obj.transform.GetChild(i).gameObject.SetActive(false);
-                    }
-                    obj.transform.GetChild(4).gameObject.SetActive(true);
+
                 }
             }
         }
+        OnLoadingIntoScene?.Invoke("IntermissionMain");
         transitionAnim.SetTrigger("Start");
     }
 
