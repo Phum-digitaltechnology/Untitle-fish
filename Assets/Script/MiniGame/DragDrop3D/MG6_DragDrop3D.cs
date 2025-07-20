@@ -17,6 +17,9 @@ public class MG6_DragDrop3D : MonoBehaviour
     [SerializeField] BobberColor bobberColor;
     [SerializeField] private UnityEvent<BobberColor> OnApplyBobber;
     [SerializeField] public bool canDragDrop = false;
+    private bool isCollided = false;
+    [SerializeField] private UnityEvent onMouseDrag;
+    [SerializeField] private UnityEvent onMouseDrop;
 
     public void SetUp()
     {
@@ -51,17 +54,32 @@ public class MG6_DragDrop3D : MonoBehaviour
         if (canDragDrop)
         {
             transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition - MousePosition);
+            onMouseDrag?.Invoke();
         }
     }
 
-    void OnTriggerStay(Collider col)
+    public void OnMouseDrop()
+    {
+        onMouseDrop?.Invoke();
+    }
+
+    void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "Hook")
+        {
+            isCollided = true;
+        }
+    }
+
+    private void Update()
+    {
+        if ((isCollided))
         {
             if (Input.GetMouseButtonUp(0))
             {
                 Destroy(this.gameObject.GetComponent<Rigidbody>());
                 OnApplyBobber?.Invoke(bobberColor);
+                Destroy(this.gameObject);
             }
         }
     }

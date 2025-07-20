@@ -8,7 +8,9 @@ public class BobberHook : MonoBehaviour
     [SerializeField] private List<GameObject> BobberUI = new List<GameObject> ();
     private BobberColor correctBobber;
     [SerializeField] private UnityEvent onCorrectBobber;
+    [SerializeField] private UnityEvent onIncorrectBobber;
     [SerializeField] private GameObject confetti;
+    [SerializeField] private GameObject HookIcon;
 
     public void Setup()
     {
@@ -21,8 +23,16 @@ public class BobberHook : MonoBehaviour
     {
         if (bobberColor == correctBobber)
         {
+            BobberUI[(int)correctBobber].gameObject.SetActive(false);
+            HookIcon.GetComponent<MG6_ShowHook>().ShowHookIcon(correctBobber);
             onCorrectBobber?.Invoke();
             Instantiate(confetti, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, this.gameObject.transform.position.z), Quaternion.identity);
+        }
+        else if(bobberColor != correctBobber)
+        {
+            BobberUI[(int)correctBobber].gameObject.SetActive(false);
+            HookIcon.GetComponent<MG6_ShowHook>().ShowHookIcon(bobberColor);
+            onIncorrectBobber?.Invoke();
         }
     }
 }
