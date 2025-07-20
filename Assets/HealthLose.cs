@@ -9,13 +9,19 @@ public class HealthLose : MonoBehaviour
 
     private void Start()
     {
-        _onHealthLose?.Invoke();
+
     }
+    public bool IsLoseHealth { get; private set; } = false;
+
     public void ActiveHealthLose(Action callBack)
     {
-        addedCallback = callBack;
+        IsLoseHealth = true;
+        Debug.Log("Losing Health");
         _onHealthLose?.Invoke();
+        addedCallback = callBack;
     }
+
+
 
     public void OnFinishHealthLose()
     {

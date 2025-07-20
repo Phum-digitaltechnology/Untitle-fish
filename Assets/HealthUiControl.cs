@@ -1,5 +1,5 @@
+using System.Collections;
 using UnityEngine;
-
 public class HealthUiControl : MonoBehaviour
 {
     [SerializeField] Transform healthHolder;
@@ -40,17 +40,23 @@ public class HealthUiControl : MonoBehaviour
 
     void decreaseHealth()
     {
-        int missingHealth = scoreSystem.Life - scoreSystem.CurrentLife;
-
-
-        for (int i = 0; i < missingHealth; i++)
+        for (int i = 0; i < 4; i++)
         {
-            if (healthHolder.transform.GetChild(i).gameObject.activeSelf)
+            if (healthHolder.transform.GetChild(i).gameObject.TryGetComponent<HealthLose>(out HealthLose health))
             {
-                healthHolder.transform.GetChild(i).gameObject.GetComponent<HealthLose>().ActiveHealthLose(OnfinishHealthLose);
-                break;
+                if (health.IsLoseHealth == false)
+                {
+                    StartCoroutine(Delay(health));
+                    break;
+                }
             }
         }
+    }
+
+    IEnumerator Delay(HealthLose healthLose)
+    {
+        yield return new WaitForSeconds(0.1f);
+        healthLose.ActiveHealthLose(OnfinishHealthLose);
     }
 
     void OnfinishHealthLose()
