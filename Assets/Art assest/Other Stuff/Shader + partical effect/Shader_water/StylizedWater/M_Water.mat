@@ -45,8 +45,8 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _RefractionScale: 2.14
-    - _RefractionSpeed: 0.1
-    - _RefractionStrength: 5
+    - _RefractionSpeed: 1
+    - _RefractionStrength: 0
     - _WaterDepth: 7.75
     m_Colors:
     - _DeepWater: {r: 0.480954, g: 0.74114716, b: 0.7924528, a: 0.6666667}
