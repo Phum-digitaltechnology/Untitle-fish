@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -30,7 +31,7 @@ public class MG5_DragDropZone : MonoBehaviour
         else
         {
             OffDrag?.Invoke();
-        }
+        } 
     }
 
     private void OnMouseDown()

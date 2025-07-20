@@ -371,6 +371,82 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &388929360
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 388929362}
+  - component: {fileID: 388929361}
+  m_Layer: 0
+  m_Name: MouseController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &388929361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388929360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9275e6f2962860e439e85b2f5a747bae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MBC: {fileID: 7119719950978793471}
+  OnClicking:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4693437236796880436}
+        m_TargetAssemblyTypeName: MouseIconController, Assembly-CSharp
+        m_MethodName: ApplyMouseIcon
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OffClicking:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4693437236796880436}
+        m_TargetAssemblyTypeName: MouseIconController, Assembly-CSharp
+        m_MethodName: ApplyMouseIcon
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  delayBeforePlay: 2
+--- !u!4 &388929362
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388929360}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.3233829, y: -0.42724347, z: 15.655662}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &420497226
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,7 +955,7 @@ MonoBehaviour:
   OnDrag:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1171071319}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MouseIconController, Assembly-CSharp
         m_MethodName: SetSprite
         m_Mode: 2
@@ -894,7 +970,7 @@ MonoBehaviour:
   OffDrag:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1171071319}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MouseIconController, Assembly-CSharp
         m_MethodName: SetSprite
         m_Mode: 2
@@ -1056,6 +1132,30 @@ MonoBehaviour:
   OnApplyBait:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 4693437236796880436}
+        m_TargetAssemblyTypeName: MouseIconController, Assembly-CSharp
+        m_MethodName: ApplyMouseIcon
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: Win
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 7119719950978793471}
+        m_TargetAssemblyTypeName: MouseBoolChecker, Assembly-CSharp
+        m_MethodName: ApplyBoolTrueFlase
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Win
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 7051385}
         m_TargetAssemblyTypeName: PhaseUpdateMinigameState_Caller, Assembly-CSharp
         m_MethodName: UpdateStateAndGoNextPhase
@@ -1143,51 +1243,6 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1171071318
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1171071320}
-  - component: {fileID: 1171071319}
-  m_Layer: 0
-  m_Name: MouseIconController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1171071319
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1171071318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48cd10c29531a67489b3921787558604, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mouseIconStatus: []
---- !u!4 &1171071320
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1171071318}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 960, y: 540, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1780,6 +1835,108 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adc14f0c6f6868a4cb4515c633db2a2c, type: 3}
+--- !u!1 &1556766159551763115
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7255933773060608315}
+  - component: {fileID: 7119719950978793471}
+  m_Layer: 0
+  m_Name: MouseBoolChecker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &2420015161216265033
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5423563291412843340}
+  - component: {fileID: 4693437236796880436}
+  m_Layer: 0
+  m_Name: MouseIconController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &4693437236796880436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2420015161216265033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48cd10c29531a67489b3921787558604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseIconStatus:
+  - IsEnableRealCursor: 0
+    IsEnableCursorImage: 1
+    MouseIcon: {fileID: 21300000, guid: a1aa0d9d7e7372d4eb3ce930bea21448, type: 3}
+    MouseSize: {x: 500, y: 500}
+  - IsEnableRealCursor: 0
+    IsEnableCursorImage: 1
+    MouseIcon: {fileID: 21300000, guid: c7875dc7829a69e408f63b1b77d474c9, type: 3}
+    MouseSize: {x: 500, y: 500}
+  - IsEnableRealCursor: 0
+    IsEnableCursorImage: 1
+    MouseIcon: {fileID: 21300000, guid: b09a096eb982b7c43b467bd0761222b9, type: 3}
+    MouseSize: {x: 500, y: 500}
+--- !u!4 &5423563291412843340
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2420015161216265033}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.676119, y: -4.217733, z: -1.8520021}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7119719950978793471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556766159551763115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc631aa7ff52cef43bfbd5586b0e50eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  win: 0
+--- !u!4 &7255933773060608315
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556766159551763115}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.3233829, y: -0.42724347, z: 15.655662}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1794,4 +1951,6 @@ SceneRoots:
   - {fileID: 861186721}
   - {fileID: 1102641705}
   - {fileID: 1979732469}
-  - {fileID: 1171071320}
+  - {fileID: 5423563291412843340}
+  - {fileID: 388929362}
+  - {fileID: 7255933773060608315}
