@@ -45,9 +45,17 @@ public class HealthUiControl : MonoBehaviour
 
         for (int i = 0; i < missingHealth; i++)
         {
-            healthHolder.transform.GetChild(i).gameObject.SetActive(false);
+            if (healthHolder.transform.GetChild(i).gameObject.activeSelf)
+            {
+                healthHolder.transform.GetChild(i).gameObject.GetComponent<HealthLose>().ActiveHealthLose(OnfinishHealthLose);
+                break;
+            }
         }
     }
 
+    void OnfinishHealthLose()
+    {
+
+    }
 }
 
