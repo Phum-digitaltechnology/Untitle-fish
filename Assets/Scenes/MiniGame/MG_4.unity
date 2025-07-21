@@ -953,6 +953,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Frame
       objectReference: {fileID: 0}
+    - target: {fileID: 6446677749600469514, guid: 4fa94e04e0dfb1a48ac53c275962c4fc, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 2100000, guid: 3a0a9ec43007a5b4cb484e575c0556c6, type: 2}
     - target: {fileID: 7193417387345002103, guid: 4fa94e04e0dfb1a48ac53c275962c4fc, type: 3}
       propertyPath: StartTime
       value: 5

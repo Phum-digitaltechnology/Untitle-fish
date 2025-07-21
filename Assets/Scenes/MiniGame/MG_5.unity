@@ -693,6 +693,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6446677749600469514, guid: 4fa94e04e0dfb1a48ac53c275962c4fc, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 2100000, guid: 04c2df141387b90458daa3dedb271ff5, type: 2}
+    - target: {fileID: 6446677749600469514, guid: 4fa94e04e0dfb1a48ac53c275962c4fc, type: 3}
       propertyPath: m_FillAmount
       value: 1
       objectReference: {fileID: 0}
@@ -1906,6 +1910,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48cd10c29531a67489b3921787558604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MouseIconlayer: 1
   mouseIconStatus:
   - IsEnableRealCursor: 0
     IsEnableCursorImage: 1
