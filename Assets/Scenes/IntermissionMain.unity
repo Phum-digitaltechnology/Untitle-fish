@@ -4265,7 +4265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _unlockWhen: 1
-  randomCDRange: {x: 0, y: 10}
+  randomCDRange: {x: 0, y: 2}
   Canvas: {fileID: 826420774}
   fishPool:
   - {fileID: 9125035721258122638, guid: 631a605637bc2054f8d0a40ac271d7aa, type: 3}
@@ -10220,7 +10220,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1642883028}
-  - component: {fileID: 1642883027}
+  - component: {fileID: 1642883029}
   m_Layer: 0
   m_Name: IntermissionTrigger
   m_TagString: Untagged
@@ -10228,18 +10228,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1642883027
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1642883026}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3aef2827956532249a534a47ff85f2c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1642883028
 Transform:
   m_ObjectHideFlags: 0
@@ -10255,6 +10243,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1642883029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642883026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aef2827956532249a534a47ff85f2c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1656101796
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10440,7 +10440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e37ed89536161934199c780b4659df06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IntermissionSceneTrigger: {fileID: 1642883027}
+  IntermissionSceneTrigger: {fileID: 1642883029}
   activeGlobalEnviroment:
     m_PersistentCalls:
       m_Calls:
@@ -12596,6 +12596,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthHolder: {fileID: 464927816}
   activeLoseDelay: 2
+  transition: {fileID: 1170659179}
 --- !u!1 &2044309819
 GameObject:
   m_ObjectHideFlags: 0
@@ -13025,18 +13026,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 464927816}
     m_Modifications:
-    - target: {fileID: 515704399158068302, guid: 54a33335f4be85344bdd69722c20d9d8, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 2920113415086849223, guid: 54a33335f4be85344bdd69722c20d9d8, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 2c82ea4c31045d24199646561b0d2301, type: 3}
-    - target: {fileID: 2920113415086849223, guid: 54a33335f4be85344bdd69722c20d9d8, type: 3}
-      propertyPath: m_PreserveAspect
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4360396736804012578, guid: 54a33335f4be85344bdd69722c20d9d8, type: 3}
       propertyPath: m_Name
       value: Health

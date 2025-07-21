@@ -4,10 +4,13 @@ public class HealthUiControl : MonoBehaviour
 {
     [SerializeField] Transform healthHolder;
     [SerializeField] float activeLoseDelay = 2;
+    [SerializeField] Animator transition;
+    TransitionEvent transitionEvent;
     ScoreSystem scoreSystem;
     int previosHealth;
     private void Start()
     {
+        transitionEvent = transition.GetComponent<TransitionEvent>();
         scoreSystem = FindAnyObjectByType<ScoreSystem>();
         previosHealth = scoreSystem.Life;
         FindAnyObjectByType<sceneManager>().OnLoadingIntoScene += isEnterIntermission;
@@ -16,9 +19,26 @@ public class HealthUiControl : MonoBehaviour
     {
         if (sceneName == "IntermissionMain")
         {
-            EnterIntermission();
+            if (IsAnimatorPlaying(transition) == false)
+            {
+                EnterIntermission();
+            }
+            else
+            {
+                Debug.Log("wait for transition");
+                transitionEvent.waitTransitionEvent += EnterIntermission;
+            }
         }
     }
+
+
+
+    bool IsAnimatorPlaying(Animator animator)
+    {
+        var stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+        return stateInfo.normalizedTime < 1f || animator.IsInTransition(0);
+    }
+
     void EnterIntermission()
     {
         if (IsHealthChange())

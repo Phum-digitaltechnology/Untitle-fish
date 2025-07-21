@@ -188,27 +188,12 @@ public class sceneManager : MonoBehaviour
         Debug.Log($"Current Minigame {Time.frameCount} {CurrentMinigame.SceneName}");
         AsyncOperation op = SceneManager.UnloadSceneAsync(CurrentMinigame.SceneName);
 
-        transitionEvent.waitTransitionEvent += activeIntermission;
 
         op.completed += (AsyncOperation o) =>
         {
             SceneManager.SetActiveScene(SceneManager.GetSceneByName("IntermissionMain"));
         };
-
-        isLoadIntermissionComplete = true;
-        if (IsAnimatorPlaying(transitionAnim) == false && isActive == false)
-        {
-            activeIntermission();
-        }
-
-    }
-
-
-    bool isActive;
-    void activeIntermission()
-    {
-        if (isLoadIntermissionComplete == false) return;
-        isActive = true;
+        transitionAnim.SetTrigger("Start");
         GameObject[] allObjects = Resources.FindObjectsOfTypeAll<GameObject>();
         foreach (GameObject obj in allObjects)
         {
@@ -226,12 +211,12 @@ public class sceneManager : MonoBehaviour
             }
         }
         OnLoadingIntoScene?.Invoke("IntermissionMain");
-        transitionAnim.SetTrigger("Start");
     }
-
     bool IsAnimatorPlaying(Animator animator)
     {
         var stateInfo = animator.GetCurrentAnimatorStateInfo(0);
         return stateInfo.normalizedTime < 1f || animator.IsInTransition(0);
     }
+
+
 }

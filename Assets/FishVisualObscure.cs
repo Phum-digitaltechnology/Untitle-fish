@@ -1,7 +1,7 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-
 public class FishVisualObscure : MonoBehaviour
 {
     [SerializeField] float hitCd = 0.1f;
@@ -25,6 +25,7 @@ public class FishVisualObscure : MonoBehaviour
         return Time.time > hitTime;
     }
 
+    bool canDied = false;
     public void OnClick()
     {
         if (canHit() == false) return;
@@ -35,7 +36,7 @@ public class FishVisualObscure : MonoBehaviour
         {
             isDied = true;
             onDied?.Invoke();
-            //Fish Died
+            StartCoroutine(delayDied());
         }
         else
         {
@@ -43,10 +44,15 @@ public class FishVisualObscure : MonoBehaviour
         }
     }
 
+    IEnumerator delayDied()
+    {
+        yield return new WaitForSeconds(0.5f);
+        canDied = true;
+    }
 
     private void Update()
     {
-        if (IsUIOutOfScreen(rect))
+        if (IsUIOutOfScreen(rect) && canDied)
         {
             Destroy(this.gameObject);
         }
@@ -56,9 +62,7 @@ public class FishVisualObscure : MonoBehaviour
     {
         Vector3[] corners = new Vector3[4];
         rectTransform.GetWorldCorners(corners);
-
         int outCount = 0;
-
         foreach (Vector3 corner in corners)
         {
             Vector3 screenPoint = RectTransformUtility.WorldToScreenPoint(null, corner);
