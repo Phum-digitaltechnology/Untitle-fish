@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -12,10 +13,9 @@ public class ScoreSystem : MonoBehaviour
     public bool losing = false;
     [SerializeField] UnityEvent<int> currentLifeEvent;
     [SerializeField] bool noLifeLose;
-
     public bool MinigameState { get; private set; } = true;
-
-
+    public int playedMinigameCount;
+    public event Action<int> OnCountUpdate;
     private void Awake()
     {
         currentLife = Life;
@@ -23,9 +23,11 @@ public class ScoreSystem : MonoBehaviour
 
     public void Win()
     {
+        playedMinigameCount++;
+        OnCountUpdate?.Invoke(playedMinigameCount);
         MinigameState = true;
         currentScore++;
-        if(currentScore >= 5 && currentScore % 5 == 0)
+        if (currentScore >= 7 && currentScore % 7 == 0)
         {
             currentTimeIncreasement += 0.1f;
             currentTimeScale = 1f + currentTimeIncreasement;
@@ -35,6 +37,8 @@ public class ScoreSystem : MonoBehaviour
 
     public void Lose()
     {
+        playedMinigameCount++;
+        OnCountUpdate?.Invoke(playedMinigameCount);
         MinigameState = false;
         if (noLifeLose) return;
         currentLife--;
