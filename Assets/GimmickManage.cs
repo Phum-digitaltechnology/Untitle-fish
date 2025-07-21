@@ -27,6 +27,8 @@ public class GimmickManage : MonoBehaviour
 
     void onFinishMinigame(int currentCount)
     {
+        Debug.Log("[Gimmick] onFinish Minigame");
+
         List<Gimmick> removeList = new List<Gimmick>();
         foreach (Gimmick gimmick in gimmickList)
         {
@@ -45,6 +47,7 @@ public class GimmickManage : MonoBehaviour
 
     public void OnTimmerUpdate()
     {
+        Debug.Log("[Gimmick] Timer Update");
         foreach (Gimmick isActive in gimmickActivePool)
         {
             isActive.AddCD();
