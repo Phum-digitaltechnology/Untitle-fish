@@ -9,7 +9,10 @@ public class BobberHook : MonoBehaviour
     private BobberColor correctBobber;
     [SerializeField] private UnityEvent onCorrectBobber;
     [SerializeField] private UnityEvent onIncorrectBobber;
-    [SerializeField] private GameObject confetti;
+    [SerializeField] private GameObject winningStarPrefab;
+    [SerializeField] private GameObject winningStarLocation;
+    [SerializeField] private GameObject confettiPrefab;
+    [SerializeField] private GameObject confettiLocation;
     [SerializeField] private GameObject HookIcon;
 
     public void Setup()
@@ -26,9 +29,10 @@ public class BobberHook : MonoBehaviour
             BobberUI[(int)correctBobber].gameObject.SetActive(false);
             HookIcon.GetComponent<MG6_ShowHook>().ShowHookIcon(correctBobber);
             onCorrectBobber?.Invoke();
-            Instantiate(confetti, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, this.gameObject.transform.position.z), Quaternion.identity);
+            Instantiate(winningStarPrefab, new Vector3(this.winningStarLocation.transform.position.x, this.winningStarLocation.transform.position.y, this.winningStarLocation.transform.position.z), Quaternion.identity);
+            Instantiate(confettiPrefab, new Vector3(this.confettiLocation.transform.position.x, this.confettiLocation.transform.position.y, this.confettiLocation.transform.position.z), Quaternion.identity);
         }
-        else if(bobberColor != correctBobber)
+        else if (bobberColor != correctBobber)
         {
             BobberUI[(int)correctBobber].gameObject.SetActive(false);
             HookIcon.GetComponent<MG6_ShowHook>().ShowHookIcon(bobberColor);
