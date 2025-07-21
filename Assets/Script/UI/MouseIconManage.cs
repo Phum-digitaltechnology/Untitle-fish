@@ -3,7 +3,42 @@ using UnityEngine;
 using UnityEngine.UI;
 public class MouseIconManage : MMSingleton<MouseIconManage>
 {
+
     [SerializeField] Image cursorImage;
+
+    static MouseIconStatus[] mouseIconLayer = new MouseIconStatus[2];
+
+
+
+    public void SetMouse(int layer, MouseIconStatus iconState)
+    {
+        Debug.Log($"Layer index {layer}");
+        mouseIconLayer[layer - 1] = iconState;
+        MouseIconStatus applyIcon = iconState;
+
+        if (layer == 1) //temporary Logic
+        {
+            if (mouseIconLayer[0].IsEnableRealCursor == false && mouseIconLayer[0].IsEnableCursorImage == false)
+            {
+                Debug.Log("Apply Second Layer Mouse");
+                applyIcon = mouseIconLayer[1];
+            }
+        }
+
+
+
+        ApplyIcon(applyIcon);
+
+    }
+
+    void ApplyIcon(MouseIconStatus iconState)
+    {
+        EnableCursorImage(iconState.IsEnableCursorImage);
+        EnableRealCursor(iconState.IsEnableRealCursor);
+        SetSizeHeight(iconState.MouseSize.y);
+        SetSizeWidth(iconState.MouseSize.x);
+        SetCursorImage(iconState.MouseIcon);
+    }
 
     public void SetCursorImage(Sprite mouseIcon)
     {

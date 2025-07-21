@@ -163,7 +163,6 @@ GameObject:
   - component: {fileID: 144826710}
   - component: {fileID: 144826711}
   - component: {fileID: 144826712}
-  - component: {fileID: 144826713}
   m_Layer: 0
   m_Name: Start
   m_TagString: Untagged
@@ -239,7 +238,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 144826713}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MouseIcon, Assembly-CSharp
         m_MethodName: EnableCursor
         m_Mode: 6
@@ -267,19 +266,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09c4edcaa7296284fa1f9ef15e5f1a64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &144826713
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 144826709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d38362070d52804a922af792afd415d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cursorImage: {fileID: 0}
 --- !u!1 &154536971
 GameObject:
   m_ObjectHideFlags: 0
@@ -2408,6 +2394,7 @@ GameObject:
   - component: {fileID: 1747055439}
   - component: {fileID: 1747055438}
   - component: {fileID: 1747055440}
+  - component: {fileID: 1747055441}
   m_Layer: 0
   m_Name: MiniGameControll
   m_TagString: Untagged
@@ -2486,6 +2473,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09c4edcaa7296284fa1f9ef15e5f1a64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1747055441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747055437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8526e2558fe9afb4a8c7515c062c8126, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1775909292 stripped
