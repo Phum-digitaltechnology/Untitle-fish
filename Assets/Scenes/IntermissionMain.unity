@@ -2345,6 +2345,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 464927816}
     m_Modifications:
+    - target: {fileID: 515704399158068302, guid: 54a33335f4be85344bdd69722c20d9d8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 2920113415086849223, guid: 54a33335f4be85344bdd69722c20d9d8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5ed73c754c2807f468d362b102a11bfb, type: 3}
+    - target: {fileID: 2920113415086849223, guid: 54a33335f4be85344bdd69722c20d9d8, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4360396736804012578, guid: 54a33335f4be85344bdd69722c20d9d8, type: 3}
       propertyPath: m_Name
       value: Health (1)
@@ -2550,7 +2562,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -417, y: 406}
+  m_AnchoredPosition: {x: -417, y: 364}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &464927818
@@ -5345,7 +5357,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &983491907
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7482,6 +7494,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 464927816}
     m_Modifications:
+    - target: {fileID: 515704399158068302, guid: 54a33335f4be85344bdd69722c20d9d8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 2920113415086849223, guid: 54a33335f4be85344bdd69722c20d9d8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2c82ea4c31045d24199646561b0d2301, type: 3}
+    - target: {fileID: 2920113415086849223, guid: 54a33335f4be85344bdd69722c20d9d8, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4360396736804012578, guid: 54a33335f4be85344bdd69722c20d9d8, type: 3}
       propertyPath: m_Name
       value: Health (2)
@@ -9863,8 +9887,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -87, y: -656}
+  m_SizeDelta: {x: 275.7571, y: 334.7449}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1611968366
 MonoBehaviour:
@@ -9913,13 +9937,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 400
+  m_fontSizeBase: 400
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 4
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -10073,6 +10097,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3246648356385584128, guid: adc14f0c6f6868a4cb4515c633db2a2c, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246648356385584128, guid: adc14f0c6f6868a4cb4515c633db2a2c, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 4272437493389808024, guid: adc14f0c6f6868a4cb4515c633db2a2c, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -10157,6 +10189,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MouseIconCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8549121116617324924, guid: adc14f0c6f6868a4cb4515c633db2a2c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: baebc99b9aedea84e91371cc79ff3e09, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10867,6 +10903,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 464927816}
     m_Modifications:
+    - target: {fileID: 515704399158068302, guid: 54a33335f4be85344bdd69722c20d9d8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 2920113415086849223, guid: 54a33335f4be85344bdd69722c20d9d8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5ed73c754c2807f468d362b102a11bfb, type: 3}
+    - target: {fileID: 2920113415086849223, guid: 54a33335f4be85344bdd69722c20d9d8, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4360396736804012578, guid: 54a33335f4be85344bdd69722c20d9d8, type: 3}
       propertyPath: m_Name
       value: Health (3)
@@ -12964,6 +13012,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 464927816}
     m_Modifications:
+    - target: {fileID: 515704399158068302, guid: 54a33335f4be85344bdd69722c20d9d8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 2920113415086849223, guid: 54a33335f4be85344bdd69722c20d9d8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2c82ea4c31045d24199646561b0d2301, type: 3}
+    - target: {fileID: 2920113415086849223, guid: 54a33335f4be85344bdd69722c20d9d8, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4360396736804012578, guid: 54a33335f4be85344bdd69722c20d9d8, type: 3}
       propertyPath: m_Name
       value: Health
