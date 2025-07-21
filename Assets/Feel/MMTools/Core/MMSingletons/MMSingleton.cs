@@ -47,6 +47,11 @@ namespace MoreMountains.Tools
 		/// </summary>
 		protected virtual void InitializeSingleton()
 		{
+			if (_instance != null)
+			{
+				Destroy(this.gameObject);
+			}
+
 			if (!Application.isPlaying)
 			{
 				return;

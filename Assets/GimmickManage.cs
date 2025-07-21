@@ -41,6 +41,7 @@ public class GimmickManage : MonoBehaviour
 
         foreach (Gimmick removed in removeList)
         {
+            removed.ResetCD();
             gimmickList.Remove(removed);
         }
     }
