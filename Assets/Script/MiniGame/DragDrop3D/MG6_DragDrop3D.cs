@@ -3,12 +3,12 @@ using UnityEngine.Events;
 
 public enum BobberColor
 {
-    Purple,
-    Pink,
-    Orange,
-    Blue,
     Red,
+    Purple,
+    Blue,
+    LightBlue,
     Green,
+    Yellow,
 };
 
 public class MG6_DragDrop3D : MonoBehaviour
