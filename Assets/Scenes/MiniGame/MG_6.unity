@@ -3304,12 +3304,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BobberUI:
-  - {fileID: 817806892}
-  - {fileID: 1369689118}
-  - {fileID: 1183925148}
-  - {fileID: 1398293223}
-  - {fileID: 31200258}
-  - {fileID: 649470562}
+  - {fileID: 1765542220}
+  - {fileID: 1906984825}
+  - {fileID: 598254403}
+  - {fileID: 1009132719}
+  - {fileID: 1509437150}
+  - {fileID: 2100235369}
   onCorrectBobber:
     m_PersistentCalls:
       m_Calls:
