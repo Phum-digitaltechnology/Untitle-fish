@@ -100,7 +100,7 @@ public class sceneManager : MonoBehaviour
         OnLoadingIntoScene?.Invoke(SceneName);
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(SceneName));
         GameObject.Find("InterMissionCanvas").SetActive(false);
-        transitionAnim.SetTrigger("StartMinigame");
+        //transitionAnim.SetTrigger("StartMinigame");
     }
 
     //temp code to test scene changing
