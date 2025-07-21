@@ -18,8 +18,9 @@ public class FishGimmick : Gimmick
     {
         RectTransform fish2Spawn = fishPool[Random.Range(0, fishPool.Count)];
         RectTransform randomFish = Instantiate(fish2Spawn, Canvas.transform);
-
+        randomFish.GetComponent<FishVisualObscure>().SetUP();
         MoveImageToRandomPosition(Canvas, randomFish);
+        randomFish.transform.rotation = Quaternion.Euler(0, 0, Random.Range(0, 360));
     }
     void MoveImageToRandomPosition(Canvas canvas, RectTransform imageRect)
     {
