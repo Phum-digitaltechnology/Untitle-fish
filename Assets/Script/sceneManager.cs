@@ -1,15 +1,19 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class sceneManager : MonoBehaviour
 {
     [SerializeField] private List<MiniGame> MiniGameScene = new List<MiniGame>();
     [SerializeField] private List<MiniGame> CanAppear = new List<MiniGame>();
     [SerializeField] private Animator transitionAnim;
+    [SerializeField] private Image controlTransitionImage;
+    [SerializeField] private TextMeshProUGUI tmproTransition;
     [SerializeField] private MiniGame CurrentMinigame;
     [SerializeField] private GameObject GameManagerObj;
     private bool losing = false;
@@ -89,14 +93,14 @@ public class sceneManager : MonoBehaviour
     //play animation before and after load scene
     IEnumerator LoadLevel(string SceneName)
     {
-        transitionAnim.SetTrigger("End");
-        yield return new WaitForSeconds(1);
+        transitionAnim.SetTrigger("EndMinigame");
+        yield return new WaitForSeconds(2.25f);
         AsyncOperation op = SceneManager.LoadSceneAsync(SceneName, LoadSceneMode.Additive);
         yield return op;
         OnLoadingIntoScene?.Invoke(SceneName);
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(SceneName));
         GameObject.Find("InterMissionCanvas").SetActive(false);
-        transitionAnim.SetTrigger("Start");
+        transitionAnim.SetTrigger("StartMinigame");
     }
 
     //temp code to test scene changing
@@ -160,10 +164,14 @@ public class sceneManager : MonoBehaviour
 
     IEnumerator TriggerMiniGame()
     {
-        yield return new WaitForSeconds(3);
+        
+        yield return new WaitForSeconds(3); // maybe random this time???
         if (!losing)
         {
             CurrentMinigame = randomMiniGame();
+            controlTransitionImage.sprite = CurrentMinigame.controlSprite;
+            tmproTransition.text = CurrentMinigame.transitionText;
+            yield return new WaitForSeconds(1);
             ChangeScene(CurrentMinigame.SceneName);
         }
     }
