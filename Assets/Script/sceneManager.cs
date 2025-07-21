@@ -19,6 +19,7 @@ public class sceneManager : MonoBehaviour
     private bool losing = false;
     private bool SceneLoaded = false;
     public event Action<string> OnLoadingIntoScene;
+    TransitionEvent transitionEvent;
     //right click on the component and click "Load All ScriptableObjects" to load all scriptable objects
 #if UNITY_EDITOR
     [ContextMenu("Load All ScriptableObjects")]
@@ -115,7 +116,9 @@ public class sceneManager : MonoBehaviour
 
     private void Start()
     {
+
         ResetWeight();
+        transitionEvent = transitionAnim.GetComponent<TransitionEvent>();
         GameManagerObj = this.transform.parent.gameObject;
         OnLoadingIntoScene?.Invoke("IntermissionMain"); // trigger the Loading scene Event
         StartCoroutine(TriggerMiniGame());
@@ -164,7 +167,7 @@ public class sceneManager : MonoBehaviour
 
     IEnumerator TriggerMiniGame()
     {
-        
+
         yield return new WaitForSeconds(3); // maybe random this time???
         if (!losing)
         {
@@ -176,20 +179,37 @@ public class sceneManager : MonoBehaviour
         }
     }
 
+    bool isLoadIntermissionComplete;
     IEnumerator BackToIntermission()
     {
         transitionAnim.SetTrigger("End");
+
         yield return new WaitForSeconds(1);
         Debug.Log($"Current Minigame {Time.frameCount} {CurrentMinigame.SceneName}");
         AsyncOperation op = SceneManager.UnloadSceneAsync(CurrentMinigame.SceneName);
+
+        transitionEvent.waitTransitionEvent += activeIntermission;
 
         op.completed += (AsyncOperation o) =>
         {
             SceneManager.SetActiveScene(SceneManager.GetSceneByName("IntermissionMain"));
         };
 
-        GameObject[] allObjects = Resources.FindObjectsOfTypeAll<GameObject>();
+        isLoadIntermissionComplete = true;
+        if (IsAnimatorPlaying(transitionAnim) == false && isActive == false)
+        {
+            activeIntermission();
+        }
 
+    }
+
+
+    bool isActive;
+    void activeIntermission()
+    {
+        if (isLoadIntermissionComplete == false) return;
+        isActive = true;
+        GameObject[] allObjects = Resources.FindObjectsOfTypeAll<GameObject>();
         foreach (GameObject obj in allObjects)
         {
             if (obj.name == "InterMissionCanvas" && !obj.activeInHierarchy)
@@ -209,4 +229,9 @@ public class sceneManager : MonoBehaviour
         transitionAnim.SetTrigger("Start");
     }
 
+    bool IsAnimatorPlaying(Animator animator)
+    {
+        var stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+        return stateInfo.normalizedTime < 1f || animator.IsInTransition(0);
+    }
 }
