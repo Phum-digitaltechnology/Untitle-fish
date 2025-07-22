@@ -135,7 +135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &867456
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -417,12 +417,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fish: {fileID: 1702452808}
-  winZone: {fileID: 867456}
   loseZone: {fileID: 586289362}
   normalFishSprite: {fileID: 0}
   grabbedFishSprite: {fileID: 0}
-  dragThreshold: 50
-  swimSpeed: 2
+  swimSpeedNormal: 100
+  swimSpeedReduced: 50
+  swimSpeedReversed: -100
+  gameDuration: 5
   OnWin:
     m_PersistentCalls:
       m_Calls:
@@ -813,12 +814,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fish: {fileID: 1702452808}
-  winZone: {fileID: 867456}
   loseZone: {fileID: 586289362}
   normalFishSprite: {fileID: 21300000, guid: e4d93ceadf9dad54cbf48e27c43a4639, type: 3}
   grabbedFishSprite: {fileID: 21300000, guid: 0aeb7aeddbe38ef40b008538f8268cf2, type: 3}
-  dragThreshold: 50
-  swimSpeed: 3
+  swimSpeedNormal: 6
+  swimSpeedReduced: 3
+  swimSpeedReversed: -6
+  gameDuration: 5
   OnWin:
     m_PersistentCalls:
       m_Calls:
@@ -1838,7 +1840,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1702452806}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 037ba2a3283b96740a1bc20f03a6f2a9, type: 3}
   m_Name: 

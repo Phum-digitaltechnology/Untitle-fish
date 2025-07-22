@@ -6,7 +6,7 @@ public class FishColliderUpdate : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        fishTug.FoundSomething(other);
+        //fishTug.FoundSomething(other);
     }
 
 }
