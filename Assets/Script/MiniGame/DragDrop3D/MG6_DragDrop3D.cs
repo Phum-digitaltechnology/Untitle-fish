@@ -46,6 +46,8 @@ public class MG6_DragDrop3D : MonoBehaviour
                 rb = this.gameObject.AddComponent<Rigidbody>();
                 rb.freezeRotation = true;
             }
+
+            rb.linearDamping = 15f;
         }
     }
 
@@ -69,6 +71,11 @@ public class MG6_DragDrop3D : MonoBehaviour
         {
             isCollided = true;
         }
+    }
+
+    void OnTriggerExit(Collider col)
+    {
+        isCollided = false;
     }
 
     private void Update()
