@@ -8,7 +8,7 @@ public class FishGimmick : Gimmick
     [SerializeField] List<RectTransform> fishPool = new List<RectTransform>();
 
     [SerializeField] UnityEvent _onActive, _onUnActive;
-
+    [SerializeField] Transform spawnTransform;
     private void Start()
     {
         OnUnActive();
@@ -17,7 +17,7 @@ public class FishGimmick : Gimmick
     public override void Active()
     {
         RectTransform fish2Spawn = fishPool[Random.Range(0, fishPool.Count)];
-        RectTransform randomFish = Instantiate(fish2Spawn, Canvas.transform);
+        RectTransform randomFish = Instantiate(fish2Spawn, spawnTransform.transform);
 
         randomFish.GetComponent<FishVisualObscure>().SetUP();
         MoveImageToRandomPosition(Canvas, randomFish);
@@ -46,7 +46,7 @@ public class FishGimmick : Gimmick
     bool state = false;
     private void Update()
     {
-        bool getState = this.transform.childCount > 0;
+        bool getState = spawnTransform.transform.childCount > 0;
 
         if (getState != state)
         {
