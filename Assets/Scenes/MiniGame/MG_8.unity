@@ -15213,6 +15213,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2036095925}
     m_Modifications:
+    - target: {fileID: 658894913504574581, guid: f98e02707f6a87445b356cf95e535e0c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c288787ac584b3443ab4fd09c8162932, type: 2}
     - target: {fileID: 1498085719407155717, guid: f66c44633d45b4c40ae2b383da91e776, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -15261,10 +15265,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: FishingRodModel_Fish_06
       objectReference: {fileID: 0}
-    - target: {fileID: 658894913504574581, guid: f98e02707f6a87445b356cf95e535e0c, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: c288787ac584b3443ab4fd09c8162932, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15858,14 +15858,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8849ba57f2405e408b1c17383abfb58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 7
   destination: {fileID: 2036276295}
   OffSetY: 0
   objToMove: {fileID: 1181360421}
   onFinishMove:
     m_PersistentCalls:
       m_Calls: []
-  TbeforeMove: 0.5
+  TbeforeMove: 0.35
   beforeFinish:
     m_PersistentCalls:
       m_Calls:
