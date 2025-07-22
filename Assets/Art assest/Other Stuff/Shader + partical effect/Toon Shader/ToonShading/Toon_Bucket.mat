@@ -55,7 +55,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AmbientIntensity: 16.7
+    - _AmbientIntensity: 20.7
     - _QueueControl: 0
     - _QueueOffset: 0
     - _RimLightStrength: 12.61

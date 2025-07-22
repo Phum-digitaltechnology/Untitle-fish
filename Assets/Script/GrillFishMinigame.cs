@@ -30,6 +30,9 @@ public class GrillFishMinigame : MonoBehaviour
     private bool gameStarted = false;
     private bool resultChecked = false;
 
+    [SerializeField] private GameObject smokeParticle;
+
+
     private void Start()
     {
         timer = gameDuration;
@@ -85,12 +88,12 @@ public class GrillFishMinigame : MonoBehaviour
         {
             fishRenderer.sprite = cookedFishSprite.FishSprite;
             fishRenderer.color = cookedFishSprite.FishColor;
-
         }
         else if (lineCol.IsTouching(burnedZone))
         {
             fishRenderer.sprite = burnedFishSprite.FishSprite;
             fishRenderer.color = burnedFishSprite.FishColor;
+            smokeParticle.SetActive(true);
         }
     }
 

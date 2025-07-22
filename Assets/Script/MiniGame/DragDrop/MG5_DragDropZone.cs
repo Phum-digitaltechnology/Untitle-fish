@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,7 +8,8 @@ public class MG5_DragDropZone : MonoBehaviour
     private bool dragging = false;
     private bool haveWorm = false;
     private Vector3 offset;
-    [SerializeField] private GameObject worm;
+    //[SerializeField] private GameObject worm;
+    [SerializeField] private List<GameObject> worms = new List<GameObject>();
     private Transform wormTransform;
     [SerializeField] UnityEvent OnDrag;
     [SerializeField] UnityEvent OffDrag;
@@ -55,7 +57,7 @@ public class MG5_DragDropZone : MonoBehaviour
             if (Input.GetMouseButtonDown(0) && haveWorm == false)
             {
                 Debug.Log("Get Worm!");
-                wormTransform = Instantiate(worm, Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity).transform;
+                wormTransform = Instantiate(worms[Random.Range(0, worms.Count)], Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity).transform;
                 wormTransform.SetParent(this.transform);
                 haveWorm = true;
                 offset = wormTransform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0, 0, 1);
