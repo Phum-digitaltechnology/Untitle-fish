@@ -2585,6 +2585,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1502488246594211157, guid: 4fa94e04e0dfb1a48ac53c275962c4fc, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1d4e159da752e2e45befb8a54c037a23, type: 3}
+    - target: {fileID: 1502488246594211157, guid: 4fa94e04e0dfb1a48ac53c275962c4fc, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2689371247522401254, guid: 4fa94e04e0dfb1a48ac53c275962c4fc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 954.86975
@@ -2637,6 +2645,22 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 2100000, guid: 1a99cfb23b3724243884cef77ac1ac20, type: 2}
+    - target: {fileID: 8804220144251463815, guid: 4fa94e04e0dfb1a48ac53c275962c4fc, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 616.8495
+      objectReference: {fileID: 0}
+    - target: {fileID: 8804220144251463815, guid: 4fa94e04e0dfb1a48ac53c275962c4fc, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 66.7696
+      objectReference: {fileID: 0}
+    - target: {fileID: 8804220144251463815, guid: 4fa94e04e0dfb1a48ac53c275962c4fc, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -24.924194
+      objectReference: {fileID: 0}
+    - target: {fileID: 8804220144251463815, guid: 4fa94e04e0dfb1a48ac53c275962c4fc, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -434
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 5499125438742148643, guid: 4fa94e04e0dfb1a48ac53c275962c4fc, type: 3}
@@ -4843,16 +4867,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spritesState:
-  - {fileID: 21300000, guid: b23a49e749efd1142bd347319e38bd12, type: 3}
-  - {fileID: 21300000, guid: 7394af54e8546314c85dd39034062b84, type: 3}
-  - {fileID: 21300000, guid: c7d9fc6091591c744bb675ad07cde9d3, type: 3}
-  - {fileID: 21300000, guid: 80cd3fe8055219247b6ad7e32a0fc66b, type: 3}
-  - {fileID: 21300000, guid: b359a32763f51df4da20d68374f02f77, type: 3}
-  - {fileID: 21300000, guid: 64abc496894b4af43932ed5c7e2c3f5a, type: 3}
-  - {fileID: 21300000, guid: d8138a2d706aadd4baafe7decb85147f, type: 3}
-  - {fileID: 21300000, guid: 6d4cf9220ca9adb47b2dc023b4bde808, type: 3}
-  - {fileID: 21300000, guid: 2eb67c7eea7c53d40b82eaf4ad85064a, type: 3}
-  - {fileID: 21300000, guid: 299e8e78ccf9ea64396cf9567728e17a, type: 3}
+  - {fileID: 21300000, guid: f47bb8afb8486014cb28bcdee59169c6, type: 3}
+  - {fileID: 21300000, guid: 3954debe9a21f354aac7cc73dd7ff628, type: 3}
+  - {fileID: 21300000, guid: 6bfd2ef0e784cd7409f42674dfa1136a, type: 3}
+  - {fileID: 21300000, guid: 46e4d70766176ad44b8137eb5690a0d4, type: 3}
+  - {fileID: 21300000, guid: 7252e908212b8464882a993129806c1a, type: 3}
+  - {fileID: 21300000, guid: 03fd34a3a7bc6d042bcb810ca954d9e0, type: 3}
+  - {fileID: 21300000, guid: adf66791d6d6b684eac5cb44ef76f253, type: 3}
+  - {fileID: 21300000, guid: b57950bd62c3f574286d3c2d638038e2, type: 3}
+  - {fileID: 21300000, guid: 22423ac6fddf2ed49af8c4696670772e, type: 3}
+  - {fileID: 21300000, guid: 1d4e159da752e2e45befb8a54c037a23, type: 3}
   StartTime: 5
   setSpriteEvent:
     m_PersistentCalls:
@@ -4884,7 +4908,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  explode: {fileID: 21300000, guid: f73b7e0b8b39da646bd310b315906aa4, type: 3}
+  explode: {fileID: 21300000, guid: 4d414c0d4311e8a489ce7a5547996f68, type: 3}
 --- !u!4 &654446291
 Transform:
   m_ObjectHideFlags: 0
@@ -6491,7 +6515,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7029248214005703251, guid: d36c56c5359c6d74ea16a54c6fa3f65e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12994,6 +13018,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RippleEffect
       objectReference: {fileID: 0}
+    - target: {fileID: 7564324564529530501, guid: e60221caacfcddd47a94d945e39c1058, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15213,10 +15241,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2036095925}
     m_Modifications:
-    - target: {fileID: 658894913504574581, guid: f98e02707f6a87445b356cf95e535e0c, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: c288787ac584b3443ab4fd09c8162932, type: 2}
     - target: {fileID: 1498085719407155717, guid: f66c44633d45b4c40ae2b383da91e776, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -15265,6 +15289,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FishingRodModel_Fish_06
       objectReference: {fileID: 0}
+    - target: {fileID: 658894913504574581, guid: f98e02707f6a87445b356cf95e535e0c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c288787ac584b3443ab4fd09c8162932, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
