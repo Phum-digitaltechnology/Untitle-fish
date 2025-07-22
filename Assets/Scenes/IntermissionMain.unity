@@ -2514,10 +2514,10 @@ MonoBehaviour:
     IsEnableCursorImage: 0
     MouseIcon: {fileID: 0}
     MouseSize: {x: 0, y: 0}
-  - IsEnableRealCursor: 1
-    IsEnableCursorImage: 0
-    MouseIcon: {fileID: 0}
-    MouseSize: {x: 500, y: 500}
+  - IsEnableRealCursor: 0
+    IsEnableCursorImage: 1
+    MouseIcon: {fileID: 21300000, guid: baebc99b9aedea84e91371cc79ff3e09, type: 3}
+    MouseSize: {x: 150, y: 150}
 --- !u!114 &396756213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4028,8 +4028,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40e7a48b10b9568498db8a3fb740c1a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _unlockWhen: 1
-  randomCDRange: {x: 0, y: 0}
+  _unlockWhen: 3
+  randomCDRange: {x: 5, y: 10}
   effectTime: 4
   onActiveEffect:
     m_PersistentCalls:
