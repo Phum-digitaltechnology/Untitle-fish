@@ -10,7 +10,14 @@ public class CatNipEffectManage : MonoBehaviour
 
     List<Camera> allMyComponents = new List<Camera>();
     List<InvertAble> allCanvas = new List<InvertAble>();
-    [SerializeField] bool isActive = false;
+    bool isActive = false;
+
+    public void SetActive(bool isActive)
+    {
+        this.isActive = isActive;
+        OnLoadNewScene("Something");
+    }
+
 
     void OnLoadNewScene(string scene)
     {
@@ -26,7 +33,15 @@ public class CatNipEffectManage : MonoBehaviour
         {
             foreach (Camera c in allMyComponents)
             {
-                c.transform.Rotate(c.transform.rotation.x, c.transform.rotation.y, 180);
+                if (c.TryGetComponent<invertRotation>(out invertRotation invertCam))
+                {
+                    invertCam.IsInvert(true);
+                }
+                else
+                {
+                    invertRotation invert = c.gameObject.AddComponent<invertRotation>();
+                    invert.IsInvert(true);
+                }
             }
 
             foreach (InvertAble c in allCanvas)
@@ -38,14 +53,15 @@ public class CatNipEffectManage : MonoBehaviour
         {
             foreach (Camera c in allMyComponents)
             {
-                c.transform.Rotate(c.transform.rotation.x, c.transform.rotation.y, 0);
-
+                if (c.TryGetComponent<invertRotation>(out invertRotation invertCam))
+                {
+                    invertCam.IsInvert(false);
+                }
             }
 
             foreach (InvertAble c in allCanvas)
             {
                 c.IsInvert(false);
-
             }
         }
     }
