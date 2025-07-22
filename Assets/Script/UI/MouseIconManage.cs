@@ -26,7 +26,12 @@ public class MouseIconManage : MMSingleton<MouseIconManage>
         }
 
 
-
+        if (applyIcon == null)
+        {
+            Debug.LogWarning("No Icon Found , Apply none");
+            ApplyIcon(new MouseIconStatus());
+            return;
+        }
         ApplyIcon(applyIcon);
 
     }
