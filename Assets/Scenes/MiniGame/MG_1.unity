@@ -1125,8 +1125,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1100899916}
-  - component: {fileID: 1100899914}
   - component: {fileID: 1100899915}
+  - component: {fileID: 1100899917}
   m_Layer: 0
   m_Name: CountDown Before Play
   m_TagString: Untagged
@@ -1134,37 +1134,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1100899914
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1100899913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ebec2193005bed4a9a410f5aa396030, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  countDownTime: 0
-  OnFinishCountDown:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1100899915}
-        m_TargetAssemblyTypeName: PhaseNextStage_Caller, Assembly-CSharp
-        m_MethodName: PhaseGoNextPhase
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  timerUpdate:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &1100899915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1192,6 +1161,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1909892539}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1100899917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100899913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3fb1adcc4422cd47a78100a6668b1a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnFinishTransition:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1100899915}
+        m_TargetAssemblyTypeName: PhaseNextStage_Caller, Assembly-CSharp
+        m_MethodName: PhaseGoNextPhase
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1283862574 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 354832238706590712, guid: f66c44633d45b4c40ae2b383da91e776, type: 3}
@@ -1583,18 +1579,6 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Wait Before playing
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1100899914}
-        m_TargetAssemblyTypeName: Countdown, Assembly-CSharp
-        m_MethodName: BeginCountDown
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 6108415157581087968}
