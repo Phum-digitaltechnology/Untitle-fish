@@ -6,6 +6,7 @@ public abstract class Gimmick : MonoBehaviour
     public int UnLockWhen => _unlockWhen;
     float _activeTime;
     [SerializeField] Vector2 randomCDRange;
+    public bool OnActive { get; protected set; }
     public bool IsActive { get; private set; } = false;
     float currentCD;
 
@@ -19,6 +20,5 @@ public abstract class Gimmick : MonoBehaviour
         _activeTime = Random.Range(randomCDRange.x, randomCDRange.y);
         currentCD = 0;
     }
-
     public abstract void Active();
 }

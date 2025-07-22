@@ -14,7 +14,7 @@ public class FishVisualObscure : MonoBehaviour
 
     public void SetUP()
     {
-        Destination.transform.parent = null;
+        Destination.transform.SetParent(null);
         this.GetComponent<UnityEngine.UI.Image>().color = fishColor[Random.Range(0, fishColor.Count)];
     }
     bool isDied = false;

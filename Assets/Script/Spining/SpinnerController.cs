@@ -9,7 +9,6 @@ public class SpinnerController : MonoBehaviour
     public int reelingMax;
     float spinSpeed;
     float spinDecay = 1f;
-    [SerializeField] float speedCap = 500;
     [SerializeField] UnityEvent OnFinishLoop;
     [SerializeField] UnityEvent OnSuccessLoop;
     [SerializeField] Transform Test;

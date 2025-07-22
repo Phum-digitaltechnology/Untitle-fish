@@ -1,18 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 public class FishGimmick : Gimmick
 {
     [SerializeField] Canvas Canvas;
 
     [SerializeField] List<RectTransform> fishPool = new List<RectTransform>();
 
-    [SerializeField] UnityEvent _onActive, _onUnActive;
     [SerializeField] Transform spawnTransform;
-    private void Start()
-    {
-        OnUnActive();
-    }
 
     public override void Active()
     {
@@ -53,22 +47,16 @@ public class FishGimmick : Gimmick
             state = getState;
             if (state == true)
             {
-                OnActive();
+                OnActive = true;
             }
             else
             {
-                OnUnActive();
+                OnActive = false;
             }
         }
     }
 
-    void OnUnActive()
-    {
-        _onUnActive?.Invoke();
-    }
 
-    void OnActive()
-    {
-        _onActive?.Invoke();
-    }
+
+
 }

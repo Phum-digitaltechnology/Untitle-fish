@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 public class CatnipGimmick : Gimmick
 {
-    bool boolOnactive, activeCatNap;
+    bool activeCatNap;
     ScoreSystem scoreSystem;
     [SerializeField] int effectTime;
 
@@ -15,18 +15,18 @@ public class CatnipGimmick : Gimmick
     int currentEffectTimer;
     public override void Active()
     {
-        if (activeCatNap || boolOnactive) return;
-        Debug.Log("Cat Active");
+        if (activeCatNap || OnActive) return;
         Transform randomedTransform = CatHolder.GetChild(Random.Range(0, CatHolder.childCount));
         CatEatCatNip cat = randomedTransform.GetComponent<CatEatCatNip>();
         cat.gameObject.SetActive(true);
         cat.SetUp(updateState);
-        boolOnactive = true;
+        OnActive = true;
+        OnActive = true;
     }
 
     void updateState(bool isActive)
     {
-        boolOnactive = false;
+        OnActive = false;
         activeCatNap = isActive;
         if (activeCatNap)
         {

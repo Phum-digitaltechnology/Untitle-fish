@@ -2463,6 +2463,106 @@ Transform:
   - {fileID: 1588914244}
   m_Father: {fileID: 1268467456}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &396756210
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 396756211}
+  - component: {fileID: 396756213}
+  - component: {fileID: 396756212}
+  m_Layer: 0
+  m_Name: GimmickMouseController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &396756211
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396756210}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1144194407}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &396756212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396756210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48cd10c29531a67489b3921787558604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MouseIconlayer: 2
+  mouseIconStatus:
+  - IsEnableRealCursor: 0
+    IsEnableCursorImage: 0
+    MouseIcon: {fileID: 0}
+    MouseSize: {x: 0, y: 0}
+  - IsEnableRealCursor: 1
+    IsEnableCursorImage: 0
+    MouseIcon: {fileID: 0}
+    MouseSize: {x: 500, y: 500}
+--- !u!114 &396756213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396756210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45f8c795447e04c45a8ff26b12dba027, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsActive:
+  - {fileID: 826420775}
+  - {fileID: 632207104}
+  onActive:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 396756212}
+        m_TargetAssemblyTypeName: MouseIconController, Assembly-CSharp
+        m_MethodName: ApplyMouseIcon
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  unActive:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 396756212}
+        m_TargetAssemblyTypeName: MouseIconController, Assembly-CSharp
+        m_MethodName: ApplyMouseIcon
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &400486622
 GameObject:
   m_ObjectHideFlags: 0
@@ -4673,7 +4773,6 @@ GameObject:
   m_Component:
   - component: {fileID: 826420772}
   - component: {fileID: 826420775}
-  - component: {fileID: 826420777}
   m_Layer: 0
   m_Name: FishGimmick
   m_TagString: Untagged
@@ -4717,59 +4816,7 @@ MonoBehaviour:
   Canvas: {fileID: 724897842}
   fishPool:
   - {fileID: 9125035721258122638, guid: 631a605637bc2054f8d0a40ac271d7aa, type: 3}
-  _onActive:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 826420777}
-        m_TargetAssemblyTypeName: MouseIconController, Assembly-CSharp
-        m_MethodName: ApplyMouseIcon
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _onUnActive:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 826420777}
-        m_TargetAssemblyTypeName: MouseIconController, Assembly-CSharp
-        m_MethodName: ApplyMouseIcon
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   spawnTransform: {fileID: 166596142}
---- !u!114 &826420777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 826420771}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48cd10c29531a67489b3921787558604, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MouseIconlayer: 2
-  mouseIconStatus:
-  - IsEnableRealCursor: 0
-    IsEnableCursorImage: 0
-    MouseIcon: {fileID: 0}
-    MouseSize: {x: 0, y: 0}
-  - IsEnableRealCursor: 1
-    IsEnableCursorImage: 0
-    MouseIcon: {fileID: 0}
-    MouseSize: {x: 500, y: 500}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -6773,6 +6820,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 724897839}
+  - {fileID: 396756211}
   - {fileID: 826420772}
   - {fileID: 632207102}
   m_Father: {fileID: 1268467456}
@@ -10389,6 +10437,7 @@ GameObject:
   - component: {fileID: 1566674393}
   - component: {fileID: 1566674392}
   - component: {fileID: 1566674390}
+  - component: {fileID: 1566674394}
   m_Layer: 0
   m_Name: WinCam
   m_TagString: MainCamera
@@ -10506,6 +10555,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1418942458}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1566674394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566674389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62b6889c5347ef042ad3b2b86a3b6ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1568685457
 PrefabInstance:
   m_ObjectHideFlags: 0
