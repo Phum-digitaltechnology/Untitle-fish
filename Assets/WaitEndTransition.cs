@@ -5,9 +5,15 @@ public class WaitEndTransition : MonoBehaviour
 {
     [SerializeField] UnityEvent OnFinishTransition;
 
-    private void Awake()
+    private void Start()
     {
-        FindAnyObjectByType<TransitionEvent>().waitTransitionEvent += onFinish;
+        TransitionEvent events = FindAnyObjectByType<TransitionEvent>();
+        if (events == null)
+        {
+            onFinish();
+            return;
+        }
+        events.waitTransitionEvent += onFinish;
     }
 
     void onFinish()
