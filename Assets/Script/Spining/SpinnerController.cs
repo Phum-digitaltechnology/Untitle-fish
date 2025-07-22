@@ -24,7 +24,7 @@ public class SpinnerController : MonoBehaviour
             if (lastMouseDirection != Vector3.zero)
             {
                 float angle = Vector3.SignedAngle(lastMouseDirection, mouseDir, Vector3.forward);
-                if (spinSpeed > 0)
+                if (spinSpeed < 0)
                 {
                     reelingAmount += angle / 360;
                 }
@@ -37,7 +37,6 @@ public class SpinnerController : MonoBehaviour
             lastMouseDirection = Vector3.zero;
         }
 
-        transform.Rotate(Vector3.forward, spinSpeed * Time.deltaTime); // Make the object spin
         Test.transform.Rotate(new Vector3(1, 0, 0), spinSpeed * Time.deltaTime); // Make the object spin
 
 
@@ -51,10 +50,10 @@ public class SpinnerController : MonoBehaviour
             reelingAmount = 0f;
         }
 
-        if (Mathf.FloorToInt(reelingAmount) > Mathf.FloorToInt(previosReelingAmount))
+        if (Mathf.FloorToInt(-reelingAmount) > Mathf.FloorToInt(-previosReelingAmount))
         {
             OnFinishLoop?.Invoke();
-            previosReelingAmount = Mathf.FloorToInt(reelingAmount);
+            previosReelingAmount = Mathf.FloorToInt(-reelingAmount);
         }
 
     }
