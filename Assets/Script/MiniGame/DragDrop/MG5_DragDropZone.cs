@@ -7,6 +7,7 @@ public class MG5_DragDropZone : MonoBehaviour
 {
     private bool dragging = false;
     private bool haveWorm = false;
+    [SerializeField] private Camera mainCamera;
     private Vector3 offset;
     //[SerializeField] private GameObject worm;
     [SerializeField] private List<GameObject> worms = new List<GameObject>();
@@ -26,7 +27,7 @@ public class MG5_DragDropZone : MonoBehaviour
             OnDrag?.Invoke();
             if (wormTransform != null)
             {
-                wormTransform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
+                wormTransform.position = mainCamera.ScreenToWorldPoint(Input.mousePosition) + offset;
                 //Debug.Log("Dragging");
             }
         }
@@ -57,10 +58,10 @@ public class MG5_DragDropZone : MonoBehaviour
             if (Input.GetMouseButtonDown(0) && haveWorm == false)
             {
                 Debug.Log("Get Worm!");
-                wormTransform = Instantiate(worms[Random.Range(0, worms.Count)], Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity).transform;
+                wormTransform = Instantiate(worms[Random.Range(0, worms.Count)], mainCamera.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity).transform;
                 wormTransform.SetParent(this.transform);
                 haveWorm = true;
-                offset = wormTransform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0, 0, 1);
+                offset = wormTransform.position - mainCamera.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0, 0, 1);
                 dragging = true;
                 Debug.Log("Mouse down");
             }

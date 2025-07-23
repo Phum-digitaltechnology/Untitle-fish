@@ -4,7 +4,7 @@ using UnityEngine.Events;
 public class HookBait : MonoBehaviour
 {
     [SerializeField] private UnityEvent OnApplyBait;
-    [SerializeField] private GameObject confetti;
+    //[SerializeField] private GameObject confetti;
     private bool haveWorm = false;
     bool isWormOnHook;
     Collider2D col;
@@ -28,7 +28,7 @@ public class HookBait : MonoBehaviour
             {
                 Destroy(col.gameObject.GetComponent<Rigidbody2D>());
                 OnApplyBait?.Invoke();
-                Instantiate(confetti, new Vector3(col.gameObject.transform.position.x, col.gameObject.transform.position.y, col.gameObject.transform.position.z), Quaternion.identity);
+                //Instantiate(confetti, new Vector3(col.gameObject.transform.position.x, col.gameObject.transform.position.y, col.gameObject.transform.position.z), Quaternion.identity);
                 haveWorm = true;
             }
         }
