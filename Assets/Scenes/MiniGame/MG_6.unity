@@ -5901,7 +5901,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MouseIconlayer: 1
-  mouseIconStatus: []
+  mouseIconStatus:
+  - IsEnableRealCursor: 0
+    IsEnableCursorImage: 1
+    MouseIcon: {fileID: 21300000, guid: 1fd062c6885b2c2439bd0805120a3004, type: 3}
+    MouseSize: {x: 150, y: 150}
+  - IsEnableRealCursor: 0
+    IsEnableCursorImage: 1
+    MouseIcon: {fileID: 21300000, guid: af7158e3fa232d740a412f68d3aa72d6, type: 3}
+    MouseSize: {x: 150, y: 150}
+  - IsEnableRealCursor: 0
+    IsEnableCursorImage: 1
+    MouseIcon: {fileID: 21300000, guid: 2874a1e0f0e0aef4689238b5eb281104, type: 3}
+    MouseSize: {x: 300, y: 300}
 --- !u!4 &983797799
 Transform:
   m_ObjectHideFlags: 0
@@ -12594,10 +12606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5630bc13a652abf4fb01457da4dc3dcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Icon:
-  - {fileID: 24508003}
-  - {fileID: 596116941}
-  - {fileID: 418149663}
+  Icon: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

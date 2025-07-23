@@ -78,16 +78,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spritesState:
-  - {fileID: 21300000, guid: b23a49e749efd1142bd347319e38bd12, type: 3}
-  - {fileID: 21300000, guid: 7394af54e8546314c85dd39034062b84, type: 3}
-  - {fileID: 21300000, guid: c7d9fc6091591c744bb675ad07cde9d3, type: 3}
-  - {fileID: 21300000, guid: 80cd3fe8055219247b6ad7e32a0fc66b, type: 3}
-  - {fileID: 21300000, guid: b359a32763f51df4da20d68374f02f77, type: 3}
-  - {fileID: 21300000, guid: 64abc496894b4af43932ed5c7e2c3f5a, type: 3}
-  - {fileID: 21300000, guid: d8138a2d706aadd4baafe7decb85147f, type: 3}
-  - {fileID: 21300000, guid: 6d4cf9220ca9adb47b2dc023b4bde808, type: 3}
-  - {fileID: 21300000, guid: 2eb67c7eea7c53d40b82eaf4ad85064a, type: 3}
-  - {fileID: 21300000, guid: 299e8e78ccf9ea64396cf9567728e17a, type: 3}
+  - {fileID: 21300000, guid: b8fdedee87897d245ba9f76c9efe7270, type: 3}
+  - {fileID: 21300000, guid: 898672acab0e5aa47964f158cf777b45, type: 3}
+  - {fileID: 21300000, guid: dcce516239a6dd543b43b2e4b46303b2, type: 3}
+  - {fileID: 21300000, guid: 168745262d0a9fe4d870403d0677d50b, type: 3}
+  - {fileID: 21300000, guid: 1095defaf3ab2d34eb768b84df59c260, type: 3}
+  - {fileID: 21300000, guid: c8d9a6c804d758b469c7959c9e794ff1, type: 3}
+  - {fileID: 21300000, guid: 8388ec56909c21a45b06d04bc44f28b8, type: 3}
+  - {fileID: 21300000, guid: 2cdfadbd10d20d7448a9c2aad39f3c01, type: 3}
+  - {fileID: 21300000, guid: 31a993ee4e93e2c408c3a1a25b0eb8e7, type: 3}
+  - {fileID: 21300000, guid: a7b902499420a6746b70fd82bfab830d, type: 3}
   StartTime: 5
   setSpriteEvent:
     m_PersistentCalls:
@@ -119,7 +119,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  explode: {fileID: 21300000, guid: f73b7e0b8b39da646bd310b315906aa4, type: 3}
+  explode: {fileID: 21300000, guid: c50efb0780f3da74ba06a99027105b6d, type: 3}
 --- !u!1 &5706648242370551944
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,8 +238,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -438}
-  m_SizeDelta: {x: 640, y: 80}
+  m_AnchoredPosition: {x: -25, y: -432}
+  m_SizeDelta: {x: 641, y: 92}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5778886477220380621
 CanvasRenderer:
@@ -269,9 +269,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 299e8e78ccf9ea64396cf9567728e17a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a7b902499420a6746b70fd82bfab830d, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -386,7 +386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 6c2ca400add27034b990aa388af76e10, type: 2}
+  m_Material: {fileID: 2100000, guid: 04c2df141387b90458daa3dedb271ff5, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
