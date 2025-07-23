@@ -36,6 +36,9 @@ public class FishTugMinigame : MonoBehaviour
     private float gameTimer;
     private bool inPhaseLoop = false;
     private bool isInPhase1 = true;
+    private float phaseTimer = 0f;
+    private bool expectingClick = true;
+    private bool clickedInThisPhase = false;
 
     private Coroutine phaseCoroutine;
     private bool isApply = false;
@@ -78,6 +81,14 @@ public class FishTugMinigame : MonoBehaviour
         if (!finished)
         {
             gameTimer -= Time.deltaTime;
+            phaseTimer -= Time.deltaTime;
+
+            if (phaseTimer <= 0f)
+            {
+                phaseTimer = 1f;
+                clickedInThisPhase = false;
+                expectingClick = true;
+            }
 
             Vector2 mw = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(mw, Vector2.zero);
@@ -87,7 +98,25 @@ public class FishTugMinigame : MonoBehaviour
             {
                 isHoldingClick = true;
                 if (fishRenderer && grabbedFishSprite) fishRenderer.sprite = grabbedFishSprite;
-                StartPhaseLoop();
+
+                if (expectingClick && !clickedInThisPhase)
+                {
+                    clickedInThisPhase = true;
+
+                    if (isInPhase1)
+                    {
+                        currentSpeed = swimSpeedReduced;
+                    }
+                    else
+                    {
+                        currentSpeed = swimSpeedReversed;
+                    }
+                    isInPhase1 = !isInPhase1;
+                }
+                else
+                {
+                    ResetFish();
+                }
             }
 
             if (Input.GetMouseButtonUp(0))
@@ -96,11 +125,6 @@ public class FishTugMinigame : MonoBehaviour
                 ResetFish();
             }
 
-            if (inPhaseLoop && !isHoldingClick)
-            {
-                StopPhaseLoop();
-                ResetFish();
-            }
 
             fish.position += Vector3.right * fishDir * currentSpeed * Time.deltaTime;
 
@@ -162,6 +186,9 @@ public class FishTugMinigame : MonoBehaviour
     {
         currentSpeed = swimSpeedNormal;
         if (fishRenderer && normalFishSprite) fishRenderer.sprite = normalFishSprite;
+        clickedInThisPhase = false;
+        expectingClick = true;
+        isInPhase1 = true;
     }
 
 

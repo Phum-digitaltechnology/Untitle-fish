@@ -817,9 +817,9 @@ MonoBehaviour:
   loseZone: {fileID: 586289362}
   normalFishSprite: {fileID: 21300000, guid: e4d93ceadf9dad54cbf48e27c43a4639, type: 3}
   grabbedFishSprite: {fileID: 21300000, guid: 0aeb7aeddbe38ef40b008538f8268cf2, type: 3}
-  swimSpeedNormal: 6
-  swimSpeedReduced: 3
-  swimSpeedReversed: -6
+  swimSpeedNormal: 2
+  swimSpeedReduced: 1
+  swimSpeedReversed: -2
   gameDuration: 5
   OnWin:
     m_PersistentCalls:
@@ -1446,6 +1446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ebec2193005bed4a9a410f5aa396030, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  countDonwOnStart: 0
   countDownTime: 5
   OnFinishCountDown:
     m_PersistentCalls:
