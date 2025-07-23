@@ -3519,7 +3519,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartedHookIcon: {fileID: 0}
-  HookIcon: []
+  HookIcon:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!4 &506671767
 Transform:
   m_ObjectHideFlags: 0
@@ -8480,7 +8486,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5630bc13a652abf4fb01457da4dc3dcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Icon: []
+  Icon:
+  - {fileID: 1658323175}
+  - {fileID: 1585230947}
+  - {fileID: 79223361}
 --- !u!1 &1514649835
 GameObject:
   m_ObjectHideFlags: 0
@@ -12606,7 +12615,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5630bc13a652abf4fb01457da4dc3dcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Icon: []
+  Icon:
+  - {fileID: 24508003}
+  - {fileID: 596116941}
+  - {fileID: 418149663}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
