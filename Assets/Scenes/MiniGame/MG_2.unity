@@ -423,7 +423,7 @@ MonoBehaviour:
   swimSpeedNormal: 100
   swimSpeedReduced: 50
   swimSpeedReversed: -100
-  gameDuration: 5
+  gameDuration: 10
   OnWin:
     m_PersistentCalls:
       m_Calls:
@@ -466,12 +466,6 @@ MonoBehaviour:
           m_StringArgument: I lose
           m_BoolArgument: 0
         m_CallState: 2
-  onFishGoLeft:
-    m_PersistentCalls:
-      m_Calls: []
-  onFishGoRight:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!4 &244201866
 Transform:
   m_ObjectHideFlags: 0
@@ -899,12 +893,6 @@ MonoBehaviour:
           m_StringArgument: Loseeee
           m_BoolArgument: 0
         m_CallState: 2
-  onFishGoLeft:
-    m_PersistentCalls:
-      m_Calls: []
-  onFishGoRight:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &476473618
 GameObject:
   m_ObjectHideFlags: 0
@@ -1446,8 +1434,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ebec2193005bed4a9a410f5aa396030, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countDonwOnStart: 0
-  countDownTime: 5
+  countDonwOnStart: 1
+  countDownTime: 10
   OnFinishCountDown:
     m_PersistentCalls:
       m_Calls:
