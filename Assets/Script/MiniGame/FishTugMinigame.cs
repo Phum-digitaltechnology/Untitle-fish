@@ -111,7 +111,7 @@ public class FishTugMinigame : MonoBehaviour
         if (finished) return;
         finished = true;
 
-        exit = Vector3.right * (win ? -fishDir : fishDir);
+        //exit = Vector3.right * (win ? -fishDir : fishDir);
 
         if (win)
             StartCoroutine(InvokeWinAfterDelay());

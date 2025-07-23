@@ -6,11 +6,12 @@ public class AimingMove : MonoBehaviour
     [SerializeField] private Transform fishNetTranform;
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private GameObject fish;
+    [SerializeField] private GameObject fishSpawnPoint;
 
 
     public void SetUp()
     {
-        fish.transform.localPosition = new Vector3(Random.Range(-7, 0), -9, 2.5f);
+        fish.transform.localPosition = new Vector3(Random.Range(fishSpawnPoint.transform.localPosition.x - 1, fishSpawnPoint.transform.localPosition.x + 1), fishSpawnPoint.transform.localPosition.y, fishSpawnPoint.transform.localPosition.z);
         this.gameObject.GetComponent<AimingMove>().enabled = true;
     }
 
@@ -33,7 +34,7 @@ public class AimingMove : MonoBehaviour
     public void parabolaFish()
     {
         fish.SetActive(true);
-        fish.GetComponent<Rigidbody2D>().AddForce(transform.up * Random.Range(14, 18), ForceMode2D.Impulse);
+        fish.GetComponent<Rigidbody2D>().AddForce(transform.up * Random.Range(8, 10), ForceMode2D.Impulse);
         fish.GetComponent<Rigidbody2D>().AddForce(Vector2.right * Random.Range(2, 4), ForceMode2D.Impulse);
         Debug.Log("Fish jump");
     }
