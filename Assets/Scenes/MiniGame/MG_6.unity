@@ -3518,14 +3518,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9fc8e47b8a2d8e49b5a805cbed0851b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartedHookIcon: {fileID: 0}
+  StartedHookIcon: {fileID: 388392332}
   HookIcon:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 544262634}
+  - {fileID: 322633542}
+  - {fileID: 700778434}
+  - {fileID: 2068529202}
+  - {fileID: 1252882924}
+  - {fileID: 914458772}
 --- !u!4 &506671767
 Transform:
   m_ObjectHideFlags: 0
