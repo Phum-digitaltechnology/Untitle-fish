@@ -122,5 +122,9 @@ public class FishRun : MonoBehaviour
         }
     }
 
+    public void changeMoveSpeed(float newSpeed)
+    {
+        moveSpeed = newSpeed;
+    }
 
 }
