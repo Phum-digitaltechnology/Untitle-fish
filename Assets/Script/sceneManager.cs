@@ -19,6 +19,7 @@ public class sceneManager : MonoBehaviour
     private bool losing = false;
     private bool SceneLoaded = false;
     public event Action<string> OnLoadingIntoScene;
+    public event Action<string> PreLoadingIntoScene;
     TransitionEvent transitionEvent;
     //right click on the component and click "Load All ScriptableObjects" to load all scriptable objects
 #if UNITY_EDITOR
@@ -98,6 +99,7 @@ public class sceneManager : MonoBehaviour
         yield return new WaitForSeconds(2.25f);
         AsyncOperation op = SceneManager.LoadSceneAsync(SceneName, LoadSceneMode.Additive);
         yield return op;
+        PreLoadingIntoScene?.Invoke(SceneName);
         OnLoadingIntoScene?.Invoke(SceneName);
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(SceneName));
         GameObject.Find("InterMissionCanvas").SetActive(false);
@@ -121,6 +123,7 @@ public class sceneManager : MonoBehaviour
         transitionEvent = transitionAnim.GetComponent<TransitionEvent>();
         GameManagerObj = this.transform.parent.gameObject;
         OnLoadingIntoScene?.Invoke("IntermissionMain"); // trigger the Loading scene Event
+        PreLoadingIntoScene?.Invoke("IntermissionMain");
         StartCoroutine(TriggerMiniGame());
     }
 
@@ -195,13 +198,7 @@ public class sceneManager : MonoBehaviour
             SceneManager.SetActiveScene(SceneManager.GetSceneByName("IntermissionMain"));
         };
         transitionAnim.SetTrigger("Start");
-        transitionEvent.waitTransitionEvent += waitTransiitonToIntermission;
-
-    }
-
-
-    void waitTransiitonToIntermission()
-    {
+        PreLoadingIntoScene?.Invoke("IntermissionMain");
         GameObject[] allObjects = Resources.FindObjectsOfTypeAll<GameObject>();
         foreach (GameObject obj in allObjects)
         {
@@ -217,6 +214,15 @@ public class sceneManager : MonoBehaviour
                 }
             }
         }
+        transitionEvent.waitTransitionEvent += waitTransiitonToIntermission;
+
+    }
+
+
+    void waitTransiitonToIntermission()
+    {
+        OnLoadingIntoScene?.Invoke("IntermissionMain");
+
     }
     bool IsAnimatorPlaying(Animator animator)
     {

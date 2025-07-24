@@ -31,6 +31,7 @@ public class CatnipGimmick : Gimmick
         OnActive = true;
         waitActive = true;
         waitAction = catAppear;
+        Debug.Log($"{waitAction} Im Waiting to be played :(");
     }
     void onloadIntoIntermission(string isIntermission)
     {
