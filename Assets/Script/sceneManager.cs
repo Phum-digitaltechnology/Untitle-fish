@@ -19,6 +19,7 @@ public class sceneManager : MonoBehaviour
     private bool losing = false;
     private bool SceneLoaded = false;
     public event Action<string> OnLoadingIntoScene;
+    public event Action<string> PreLoadingScene;
     TransitionEvent transitionEvent;
     //right click on the component and click "Load All ScriptableObjects" to load all scriptable objects
 #if UNITY_EDITOR
@@ -121,6 +122,7 @@ public class sceneManager : MonoBehaviour
         transitionEvent = transitionAnim.GetComponent<TransitionEvent>();
         GameManagerObj = this.transform.parent.gameObject;
         OnLoadingIntoScene?.Invoke("IntermissionMain"); // trigger the Loading scene Event
+        PreLoadingScene?.Invoke("IntermissionMain");
         StartCoroutine(TriggerMiniGame());
     }
 
@@ -185,7 +187,6 @@ public class sceneManager : MonoBehaviour
     IEnumerator BackToIntermission()
     {
         transitionAnim.SetTrigger("End");
-
         yield return new WaitForSeconds(1);
         Debug.Log($"Current Minigame {Time.frameCount} {CurrentMinigame.SceneName}");
         AsyncOperation op = SceneManager.UnloadSceneAsync(CurrentMinigame.SceneName);
@@ -196,6 +197,7 @@ public class sceneManager : MonoBehaviour
             SceneManager.SetActiveScene(SceneManager.GetSceneByName("IntermissionMain"));
         };
         transitionAnim.SetTrigger("Start");
+        PreLoadingScene?.Invoke("IntermissionMain");
         GameObject[] allObjects = Resources.FindObjectsOfTypeAll<GameObject>();
         foreach (GameObject obj in allObjects)
         {
@@ -212,6 +214,12 @@ public class sceneManager : MonoBehaviour
                 }
             }
         }
+        transitionEvent.waitTransitionEvent += waitTransiitonToIntermission;
+    }
+
+
+    void waitTransiitonToIntermission()
+    {
         OnLoadingIntoScene?.Invoke("IntermissionMain");
     }
     bool IsAnimatorPlaying(Animator animator)
