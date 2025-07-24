@@ -21,6 +21,7 @@ public class EnviromentManager : MonoBehaviour
     private class Enviroment
     {
         [SerializeField] Camera enviromentCam;
+        public Camera EnviromentCam => enviromentCam;
         [SerializeField] UnityEvent onActiveThisEnviroment;
         [SerializeField] UnityEvent offActiveEnviroment;
         public void Active()
@@ -71,11 +72,14 @@ public class EnviromentManager : MonoBehaviour
 
     }
 
+    public Camera ActiveCam { get; private set; }
+
     void getActiveEnviroment()
     {
         if (scoreSystem.MinigameState == true)
         {
             activeEnviroment = winEnviroment[Random.Range(0, winEnviroment.Count)];
+            ActiveCam = activeEnviroment.EnviromentCam;
         }
         else
         {
