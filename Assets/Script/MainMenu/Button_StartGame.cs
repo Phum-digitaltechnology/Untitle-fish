@@ -16,4 +16,9 @@ public class Button_StartGame : MonoBehaviour
         Application.Quit();
         Debug.Log("Off we gooooooo");
     }
+
+    public void Credits()
+    {
+
+    }
 }
