@@ -29,6 +29,8 @@ public class GrillFishMinigame : MonoBehaviour
     private float timer;
     private bool gameStarted = false;
     private bool resultChecked = false;
+    private bool hasPressedSpace = false;
+    private bool hasReleasedSpace = false;
 
     [SerializeField] private GameObject smokeParticle;
 
@@ -46,15 +48,16 @@ public class GrillFishMinigame : MonoBehaviour
 
         timer -= Time.deltaTime;
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) && !hasPressedSpace)
         {
+            hasPressedSpace = true;
             lineMover.StartMoving();
         }
-        else
+        if (hasPressedSpace && !hasReleasedSpace && Input.GetKeyUp(KeyCode.Space))
         {
+            hasReleasedSpace = true;
             lineMover.StopMoving();
         }
-
         UpdateFishSprite();
 
         if (timer <= 1f && !resultChecked)
