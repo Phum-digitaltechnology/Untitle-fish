@@ -52,6 +52,7 @@ public class AudioManager : MonoBehaviour
             source.outputAudioMixerGroup = sound.outputGroup;
             source.playOnAwake = false;
             sound.audioSource_m = source;
+            source.volume = sound.volume;
         }
     }
     public void SetMasterVolume(float volume)
@@ -127,6 +128,20 @@ public class AudioManager : MonoBehaviour
             s.audioSource_m.PlayOneShot(s.clip);
         }
     }
+
+    public void PlaySFXLoop(string name)
+    {
+        Sound s = Array.Find(sfxSounds, x => x.name == name);
+        if (s == null)
+        {
+            Debug.Log("Sound Not Found");
+        }
+        else
+        {
+            s.audioSource_m.Play();
+            s.audioSource_m.loop = true;
+        }
+    }
 }
 
 [System.Serializable]
@@ -136,4 +151,6 @@ public class Sound
     public AudioClip clip;
     public AudioMixerGroup outputGroup;
     public AudioSource audioSource_m;
+    [Range(0.0f, 1.0f)]
+    public float volume;
 }
