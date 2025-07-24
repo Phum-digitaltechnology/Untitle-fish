@@ -1,8 +1,8 @@
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
 public class RandomFish : MonoBehaviour
 {
-    [System.Serializable    ]
+    [System.Serializable]
     private class FishType
     {
         [SerializeField] Sprite fishSprite;
@@ -17,13 +17,21 @@ public class RandomFish : MonoBehaviour
     }
 
     [SerializeField] List<FishType> fishTypes = new List<FishType>();
-    [SerializeField] List<SpriteRenderer> fishNormalRender = new List<SpriteRenderer>();   
-        [SerializeField] List<SpriteRenderer> fishFearRender = new List<SpriteRenderer>();   
+    [SerializeField] List<SpriteRenderer> fishNormalRender = new List<SpriteRenderer>();
+    [SerializeField] List<SpriteRenderer> fishFearRender = new List<SpriteRenderer>();
 
-[SerializeField] FishRun fishRun;
+    [SerializeField] FishRun fishRun;
     void Awake()
     {
-        int currentRoundPlay = FindAnyObjectByType<ScoreSystem>().playedMinigameCount;
+        ScoreSystem scoreSystem = FindAnyObjectByType<ScoreSystem>();
+
+        if (scoreSystem == null)
+        {
+            setUpfish(fishTypes[Random.Range(0, fishTypes.Count)]);
+            return;
+        }
+
+        int currentRoundPlay = scoreSystem.playedMinigameCount;
         List<FishType> fishPool = new List<FishType>();
 
         int maxCount = 0;
@@ -60,7 +68,7 @@ public class RandomFish : MonoBehaviour
         foreach (SpriteRenderer fishRenderer in fishFearRender)
         {
             fishRenderer.sprite = randFishType.FearFishSprite;
-        }   
+        }
         fishRun.changeMoveSpeed(randFishType.MoveSpeed);
     }
 }
