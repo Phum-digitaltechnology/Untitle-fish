@@ -12,6 +12,7 @@ public class FishRun : MonoBehaviour
     int currentDesitnation;
     [SerializeField] UnityEvent ChangeToPos1;
     [SerializeField] UnityEvent ChangeToPos2;
+    [SerializeField] UnityEvent OnFishLeadToDestination;
     BoxCollider fishCol;
     bool fishStop;
 
@@ -102,22 +103,20 @@ public class FishRun : MonoBehaviour
         else
         {
             if (fishStop) return;
-
+            fishStop = true;
             if (currentDesitnation == 0)
             {
                 DirectionX = 1;
                 fishCol.center = new Vector3(Mathf.Abs(fishCol.center.x), fishCol.center.y, fishCol.center.z);
                 currentDesitnation = 1;
-                ChangeToPos2?.Invoke();
-                setTargetPos(MovePos[1]);
+                OnFishLeadToDestination?.Invoke();
             }
             else
             {
                 DirectionX = -1;
                 fishCol.center = new Vector3(-fishCol.center.x, fishCol.center.y, fishCol.center.z);
                 currentDesitnation = 0;
-                ChangeToPos1?.Invoke();
-                setTargetPos(MovePos[0]);
+                OnFishLeadToDestination?.Invoke();
             }
 
         }

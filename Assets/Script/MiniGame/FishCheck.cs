@@ -10,9 +10,7 @@ public class FishCheck : MonoBehaviour
     [SerializeField] UnityEvent FoundFish;
     [SerializeField] UnityEvent NotFoundFish;
 
-    [Header("Pos Random")]
-    [SerializeField] Transform pos1;
-    [SerializeField] Transform pos2;
+
 
 
 
@@ -20,6 +18,8 @@ public class FishCheck : MonoBehaviour
 
     public void IsFoundFish()
     {
+        if (this.gameObject.activeSelf == false) return;
+
         Collider[] hits = Physics.OverlapSphere(transform.position, radius, detectionLayer);
 
         if (hits.Length > 0)
