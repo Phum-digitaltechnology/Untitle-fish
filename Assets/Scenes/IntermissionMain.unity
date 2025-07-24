@@ -3749,6 +3749,7 @@ GameObject:
   - component: {fileID: 632207102}
   - component: {fileID: 632207104}
   - component: {fileID: 632207103}
+  - component: {fileID: 632207105}
   m_Layer: 0
   m_Name: CatnipGimmick
   m_TagString: Untagged
@@ -3798,6 +3799,21 @@ MonoBehaviour:
   _unlockWhen: 1
   randomCDRange: {x: 0, y: 0}
   effectTime: 1
+  waitRanOutEffect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 632207105}
+        m_TargetAssemblyTypeName: RotateActiveCam, Assembly-CSharp
+        m_MethodName: StartRotation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onActiveEffect:
     m_PersistentCalls:
       m_Calls:
@@ -3829,6 +3845,35 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   CatHolder: {fileID: 426118587}
+--- !u!114 &632207105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632207101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 420785a032faa3a449291ea40383ec8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetZRotation: 0
+  duration: 0.5
+  onFinishRotate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 632207104}
+        m_TargetAssemblyTypeName: CatnipGimmick, Assembly-CSharp
+        m_MethodName: effectRanOut
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &633728209
 PrefabInstance:
   m_ObjectHideFlags: 0

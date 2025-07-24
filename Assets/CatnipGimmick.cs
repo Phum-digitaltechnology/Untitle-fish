@@ -8,6 +8,7 @@ public class CatnipGimmick : Gimmick
     sceneManager getScene;
     [SerializeField] int effectTime;
 
+    [SerializeField] UnityEvent waitRanOutEffect;
     [SerializeField] UnityEvent onActiveEffect, unActiveEffect;
     [SerializeField] Transform CatHolder;
     private void Awake()
@@ -69,11 +70,17 @@ public class CatnipGimmick : Gimmick
         if (currentEffectTimer <= 0)
         {
             waitActive = true;
-            waitAction = effectRanOut;
+            waitAction = invokeWaitRanoutEffect;
         }
     }
 
-    void effectRanOut()
+    void invokeWaitRanoutEffect()
+    {
+        waitRanOutEffect?.Invoke();
+    }
+
+
+    public void effectRanOut()
     {
         ResetCD();
         activeCatNap = false;
