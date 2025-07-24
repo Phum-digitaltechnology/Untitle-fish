@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 public class CatnipGimmick : Gimmick
@@ -18,11 +19,15 @@ public class CatnipGimmick : Gimmick
     int currentEffectTimer;
 
     bool waitActive;
+
+    Action waitAction;
+
     public override void Active()
     {
         if (activeCatNap || OnActive) return;
         OnActive = true;
         waitActive = true;
+        waitAction = catAppear;
     }
     void onloadIntoIntermission(string isIntermission)
     {
@@ -31,14 +36,14 @@ public class CatnipGimmick : Gimmick
             if (waitActive)
             {
                 waitActive = false;
-                catAppear();
+                waitAction?.Invoke();
             }
         }
     }
 
     void catAppear()
     {
-        Transform randomedTransform = CatHolder.GetChild(Random.Range(0, CatHolder.childCount));
+        Transform randomedTransform = CatHolder.GetChild(UnityEngine.Random.Range(0, CatHolder.childCount));
         CatEatCatNip cat = randomedTransform.GetComponent<CatEatCatNip>();
         cat.gameObject.SetActive(true);
         cat.SetUp(updateState);
@@ -63,11 +68,17 @@ public class CatnipGimmick : Gimmick
         currentEffectTimer--;
         if (currentEffectTimer <= 0)
         {
-            ResetCD();
-            activeCatNap = false;
-            scoreSystem.OnCountUpdate -= effectTimeUpdate;
-            unActiveEffect?.Invoke();
+            waitActive = true;
+            waitAction = effectRanOut;
         }
+    }
+
+    void effectRanOut()
+    {
+        ResetCD();
+        activeCatNap = false;
+        scoreSystem.OnCountUpdate -= effectTimeUpdate;
+        unActiveEffect?.Invoke();
     }
 
 
