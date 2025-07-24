@@ -420,8 +420,8 @@ MonoBehaviour:
   loseZone: {fileID: 586289362}
   normalFishSprite: {fileID: 0}
   grabbedFishSprite: {fileID: 0}
-  swimSpeedNormal: 100
-  swimSpeedReduced: 50
+  swimSpeedState1: 100
+  swimSpeedState2: 50
   swimSpeedReversed: -100
   gameDuration: 10
   OnWin:
@@ -466,6 +466,8 @@ MonoBehaviour:
           m_StringArgument: I lose
           m_BoolArgument: 0
         m_CallState: 2
+  phaseTimer: 1
+  currentphaseTimer: 0
 --- !u!4 &244201866
 Transform:
   m_ObjectHideFlags: 0
@@ -811,8 +813,8 @@ MonoBehaviour:
   loseZone: {fileID: 586289362}
   normalFishSprite: {fileID: 21300000, guid: e4d93ceadf9dad54cbf48e27c43a4639, type: 3}
   grabbedFishSprite: {fileID: 21300000, guid: 0aeb7aeddbe38ef40b008538f8268cf2, type: 3}
-  swimSpeedNormal: 2
-  swimSpeedReduced: 1
+  swimSpeedState1: 2
+  swimSpeedState2: 1
   swimSpeedReversed: -2
   gameDuration: 5
   OnWin:
@@ -893,6 +895,8 @@ MonoBehaviour:
           m_StringArgument: Loseeee
           m_BoolArgument: 0
         m_CallState: 2
+  phaseTimer: 0.5
+  currentphaseTimer: 0
 --- !u!1 &476473618
 GameObject:
   m_ObjectHideFlags: 0
