@@ -131,50 +131,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Health
       objectReference: {fileID: 0}
-    - target: {fileID: 6717302827059047727, guid: 54a33335f4be85344bdd69722c20d9d8, type: 3}
-      propertyPath: managedReferences[149570305656357226].PlayEvents.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6717302827059047727, guid: 54a33335f4be85344bdd69722c20d9d8, type: 3}
-      propertyPath: managedReferences[149570305656357226].PlayEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6717302827059047727, guid: 54a33335f4be85344bdd69722c20d9d8, type: 3}
-      propertyPath: managedReferences[149570305656357226].PlayEvents.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6717302827059047727, guid: 54a33335f4be85344bdd69722c20d9d8, type: 3}
-      propertyPath: managedReferences[149570305656357226].PlayEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 831236970}
-    - target: {fileID: 6717302827059047727, guid: 54a33335f4be85344bdd69722c20d9d8, type: 3}
-      propertyPath: managedReferences[149570305656357226].PlayEvents.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 831236965}
-    - target: {fileID: 6717302827059047727, guid: 54a33335f4be85344bdd69722c20d9d8, type: 3}
-      propertyPath: managedReferences[149570305656357226].PlayEvents.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6717302827059047727, guid: 54a33335f4be85344bdd69722c20d9d8, type: 3}
-      propertyPath: managedReferences[149570305656357226].PlayEvents.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnFinishHealthLose
-      objectReference: {fileID: 0}
-    - target: {fileID: 6717302827059047727, guid: 54a33335f4be85344bdd69722c20d9d8, type: 3}
-      propertyPath: managedReferences[149570305656357226].PlayEvents.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SetActive
-      objectReference: {fileID: 0}
-    - target: {fileID: 6717302827059047727, guid: 54a33335f4be85344bdd69722c20d9d8, type: 3}
-      propertyPath: managedReferences[149570305656357226].PlayEvents.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: HealthLose, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 6717302827059047727, guid: 54a33335f4be85344bdd69722c20d9d8, type: 3}
-      propertyPath: managedReferences[149570305656357226].PlayEvents.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 6717302827059047727, guid: 54a33335f4be85344bdd69722c20d9d8, type: 3}
-      propertyPath: managedReferences[149570305656357226].PlayEvents.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 8262533321225974991, guid: 54a33335f4be85344bdd69722c20d9d8, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -258,10 +214,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4360396736804012578, guid: 54a33335f4be85344bdd69722c20d9d8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 831236970}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54a33335f4be85344bdd69722c20d9d8, type: 3}
 --- !u!1 &612363905
 GameObject:
@@ -536,43 +489,11 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
---- !u!1 &831236965 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4360396736804012578, guid: 54a33335f4be85344bdd69722c20d9d8, type: 3}
-  m_PrefabInstance: {fileID: 430717382}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &831236966 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8262533321225974991, guid: 54a33335f4be85344bdd69722c20d9d8, type: 3}
   m_PrefabInstance: {fileID: 430717382}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &831236970
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 831236965}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e55d07074919264428358a00fcd69d04, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _onHealthLose:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 831236970}
-        m_TargetAssemblyTypeName: HealthLose, Assembly-CSharp
-        m_MethodName: OnFinishHealthLose
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &985551530
 GameObject:
   m_ObjectHideFlags: 0
@@ -1129,9 +1050,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8849ba57f2405e408b1c17383abfb58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveTime: 40
+  moveSpeed: 0
   destination: {fileID: 1983490313}
+  OffSetY: 0
   objToMove: {fileID: 1307654353}
+  onFinishMove:
+    m_PersistentCalls:
+      m_Calls: []
+  TbeforeMove: 0
+  beforeFinish:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1786082804
 Transform:
   m_ObjectHideFlags: 0

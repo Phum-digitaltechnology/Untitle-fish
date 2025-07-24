@@ -1789,8 +1789,8 @@ MonoBehaviour:
         Duration: 0.5
         ResetShakerValuesAfterShake: 1
         ResetTargetValuesAfterShake: 1
-        ShakeSpeed: 50
-        ShakeRange: 0.5
+        ShakeSpeed: 15
+        ShakeRange: 0.25
         ShakeMainDirection: {x: 1, y: 1, z: 0}
         RandomizeDirection: 0
         ShakeAltDirection: {x: 0, y: 1, z: 0}
