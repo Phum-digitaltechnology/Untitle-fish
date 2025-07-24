@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.Events;
+using System.Collections;
 
 public class ScoreSystem : MonoBehaviour
 {
@@ -27,12 +28,6 @@ public class ScoreSystem : MonoBehaviour
         OnCountUpdate?.Invoke(playedMinigameCount);
         MinigameState = true;
         currentScore++;
-        if (currentScore >= 7 && currentScore % 7 == 0)
-        {
-            currentTimeIncreasement += 0.1f;
-            currentTimeScale = 1f + currentTimeIncreasement;
-            Time.timeScale = currentTimeScale;
-        }
     }
 
     public void Lose()
@@ -48,5 +43,22 @@ public class ScoreSystem : MonoBehaviour
         }
     }
 
+    public void CheckForSpeedUp()
+    {
+        if (currentScore >= 7 && currentScore % 7 == 0)
+        {
+            currentTimeIncreasement += 0.1f;
+            currentTimeScale = 1f + currentTimeIncreasement;
+            Time.timeScale = currentTimeScale;
+            StartCoroutine(SpeedUpVisual());
+        }
+    }
+
+    IEnumerator SpeedUpVisual()
+    {
+        Animator anim = GameObject.Find("IntermissionCanvas").GetComponent<Animator>();
+        yield return new WaitForSeconds(2f);
+        anim.SetTrigger("SlideIn");
+    }
 
 }
