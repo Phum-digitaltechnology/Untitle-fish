@@ -248,14 +248,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3246648356385584128, guid: adc14f0c6f6868a4cb4515c633db2a2c, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 3246648356385584128, guid: adc14f0c6f6868a4cb4515c633db2a2c, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 150
-      objectReference: {fileID: 0}
     - target: {fileID: 4272437493389808024, guid: adc14f0c6f6868a4cb4515c633db2a2c, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -340,10 +332,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MouseIconCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 8549121116617324924, guid: adc14f0c6f6868a4cb4515c633db2a2c, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 1fd062c6885b2c2439bd0805120a3004, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

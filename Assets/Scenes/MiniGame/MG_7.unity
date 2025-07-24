@@ -1167,7 +1167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d9f09df83665e142923254d7a9b4dcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSceneTime: 10
+  maxSceneTime: 2
   OnStartCountDown:
     m_PersistentCalls:
       m_Calls: []
@@ -4459,6 +4459,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1408501031}
+        m_TargetAssemblyTypeName: FishRun, Assembly-CSharp
+        m_MethodName: SetFishToStop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: Start Ending Count Down
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1611332979}
         m_TargetAssemblyTypeName: UnityEventDebugger, Assembly-CSharp
         m_MethodName: OnDebug
@@ -4939,18 +4951,6 @@ MonoBehaviour:
           m_StringArgument: MiniGame Start
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1820927164}
-        m_TargetAssemblyTypeName: Countdown, Assembly-CSharp
-        m_MethodName: BeginCountDown
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: MiniGame Start
-          m_BoolArgument: 0
-        m_CallState: 2
   OnUnActive:
     m_PersistentCalls:
       m_Calls: []
@@ -4968,7 +4968,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1820927162}
   - {fileID: 1283824572}
   m_Father: {fileID: 866931576}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5098,145 +5097,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3485479515953224614, guid: df893611dd0fec44da787f236147e538, type: 3}
   m_PrefabInstance: {fileID: 1489540516}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1820927161
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1820927162}
-  - component: {fileID: 1820927164}
-  - component: {fileID: 1820927163}
-  - component: {fileID: 1820927165}
-  - component: {fileID: 1820927166}
-  m_Layer: 0
-  m_Name: CountDownLoseCon
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1820927162
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1820927161}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1747055439}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1820927163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1820927161}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f56a6b2d080653d4f880012fcc702de1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1820927164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1820927161}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ebec2193005bed4a9a410f5aa396030, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  countDonwOnStart: 0
-  countDownTime: 10
-  OnFinishCountDown:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1820927163}
-        m_TargetAssemblyTypeName: PhaseUpdateMinigameState_Caller, Assembly-CSharp
-        m_MethodName: UpdateStateAndGoNextPhase
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1820927165}
-        m_TargetAssemblyTypeName: Debugger, Assembly-CSharp
-        m_MethodName: OnDebug
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Noooooo I'm Losee
-          m_BoolArgument: 0
-        m_CallState: 2
-  timerUpdate:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 811926672}
-        m_TargetAssemblyTypeName: Global_CountDown, Assembly-CSharp
-        m_MethodName: UpdateCurrentTime
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1820927166}
-        m_TargetAssemblyTypeName: GimmickTimer, Assembly-CSharp
-        m_MethodName: UpdateTimer
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1820927165
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1820927161}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09c4edcaa7296284fa1f9ef15e5f1a64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1820927166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1820927161}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f96c3bf70ef638846a92abfe688b179c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1838957532
 GameObject:
   m_ObjectHideFlags: 0
@@ -6460,6 +6320,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 2100000, guid: 1a99cfb23b3724243884cef77ac1ac20, type: 2}
+    - target: {fileID: 7193417387345002103, guid: 4fa94e04e0dfb1a48ac53c275962c4fc, type: 3}
+      propertyPath: StartTime
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

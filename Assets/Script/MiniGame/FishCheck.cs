@@ -18,7 +18,7 @@ public class FishCheck : MonoBehaviour
 
     public void IsFoundFish()
     {
-        if (this.gameObject.activeSelf == false) return;
+        if (this.gameObject.activeSelf == false || this.transform.parent.gameObject.activeSelf == false) return;
 
         Collider[] hits = Physics.OverlapSphere(transform.position, radius, detectionLayer);
 

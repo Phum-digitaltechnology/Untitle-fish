@@ -7366,7 +7366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebcfb87175a6a6c478c9296069243b0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentScore: 15
+  currentScore: 0
   Life: 4
   currentTimeScale: 1
   losing: 0
@@ -7374,7 +7374,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   noLifeLose: 0
-  playedMinigameCount: 15
+  playedMinigameCount: 0
 --- !u!1001 &1268261152
 PrefabInstance:
   m_ObjectHideFlags: 0
