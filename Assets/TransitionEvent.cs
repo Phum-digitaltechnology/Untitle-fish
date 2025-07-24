@@ -13,24 +13,10 @@ public class TransitionEvent : MonoBehaviour
     }
     public void OnTransitionEnd()
     {
-        if (IsAnimatorPlaying(thisAnimator))
-        {
-            isWaitToFinish = true;
-            return;
-        }
         waitTransitionEvent?.Invoke();
         waitTransitionEvent = null;
     }
 
-    private void Update()
-    {
-        if (IsAnimatorPlaying(thisAnimator) == false && isWaitToFinish)
-        {
-            isWaitToFinish = false;
-            waitTransitionEvent?.Invoke();
-            waitTransitionEvent = null;
-        }
-    }
 
     bool IsAnimatorPlaying(Animator animator)
     {

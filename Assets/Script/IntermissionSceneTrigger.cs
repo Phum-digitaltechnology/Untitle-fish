@@ -8,7 +8,7 @@ public class IntermissionSceneTrigger : MonoBehaviour
     void Start()
     {
 
-        FindAnyObjectByType<sceneManager>().PreLoadingScene += TriggerEnviroment;
+        FindAnyObjectByType<sceneManager>().OnLoadingIntoScene += TriggerEnviroment;
     }
 
     void TriggerEnviroment(string SceneName)
