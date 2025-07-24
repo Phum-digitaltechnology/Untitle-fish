@@ -162,13 +162,15 @@ public class sceneManager : MonoBehaviour
             }
         }
 
+        scoreCS.CheckForSpeedUp();
+
         StartCoroutine(TriggerMiniGame());
     }
 
     IEnumerator TriggerMiniGame()
     {
 
-        yield return new WaitForSeconds(3); // maybe random this time???
+        yield return new WaitForSeconds(5); // maybe random this time???
         if (!losing)
         {
             CurrentMinigame = randomMiniGame();
