@@ -9,7 +9,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] UnityEvent OnPlayGame;
     [SerializeField] UnityEvent OnUnPauseGame;
     public float CurrentTimeScale;
-    public int CountDownTime;
+    public int CountDownTimeMS;
     public Text text;
     bool IsPaused;
     bool IsDelaying;
@@ -23,9 +23,7 @@ public class PauseMenu : MonoBehaviour
         }
         else if(Input.GetKeyDown(KeyCode.Escape) && IsPaused)
         {
-            OnPlayGame.Invoke();
-            CountDown();
-            Countdown();
+            OnEndCountDown();
         }
 
         if (IsDelaying)
@@ -34,13 +32,20 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+    public void OnEndCountDown()
+    {
+        OnPlayGame.Invoke();
+        CountDown();
+        Countdown(CountDownTimeMS / 1000);
+    }
+
     public async Task<bool> CountDown()
     {
-        await Task.Delay(CountDownTime);
+        await Task.Delay(CountDownTimeMS);
         return IsDelaying = true;
     }
 
-    async Task Countdown(int seconds = 3)
+    async Task Countdown(int seconds)
     {
         float start = Time.realtimeSinceStartup;
 
