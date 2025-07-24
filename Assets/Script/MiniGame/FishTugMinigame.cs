@@ -23,7 +23,8 @@ public class FishTugMinigame : MonoBehaviour
     public UnityEvent OnLose;
 
     private float gameTimer;
-    private float phaseTimer = 1f;
+    public float phaseTimer = 1f;
+    public float currentphaseTimer;
     private int fishDir;
     private float currentSpeed;
     private bool isInState1 = true;
@@ -49,6 +50,8 @@ public class FishTugMinigame : MonoBehaviour
         fishCollider = fish.GetComponent<Collider2D>();
         fishRenderer = fish.GetComponent<SpriteRenderer>();
 
+        currentphaseTimer = phaseTimer;
+
         gameTimer = gameDuration;
         currentSpeed = swimSpeedState1;
     }
@@ -58,13 +61,13 @@ public class FishTugMinigame : MonoBehaviour
         if (finished) return;
 
         gameTimer -= Time.deltaTime;
-        phaseTimer -= Time.deltaTime;
+        currentphaseTimer -= Time.deltaTime;
 
         // 1. Phase Switch (loop)
-        if (phaseTimer <= 0f)
+        if (currentphaseTimer <= 0f)
         {
             isInState1 = !isInState1;
-            phaseTimer = 1f;
+            currentphaseTimer = phaseTimer;
             currentSpeed = isInState1 ? swimSpeedState1 : swimSpeedState2;
         }
 
