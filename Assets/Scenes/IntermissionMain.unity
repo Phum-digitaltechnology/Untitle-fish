@@ -3799,6 +3799,7 @@ MonoBehaviour:
   _unlockWhen: 1
   randomCDRange: {x: 0, y: 0}
   effectTime: 1
+  Delay: 0.25
   waitRanOutEffect:
     m_PersistentCalls:
       m_Calls:
@@ -7377,7 +7378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebcfb87175a6a6c478c9296069243b0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentScore: 6
+  currentScore: 0
   Life: 4
   currentTimeScale: 1
   losing: 0
