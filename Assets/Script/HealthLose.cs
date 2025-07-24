@@ -6,26 +6,29 @@ public class HealthLose : MonoBehaviour
 {
     [SerializeField] UnityEvent _onHealthLose;
     Action addedCallback;
+    HealthUiControl healthUiControl;
 
-    private void Start()
+    private void Awake()
     {
-
+        healthUiControl = FindAnyObjectByType<HealthUiControl>();
     }
+
     public bool IsLoseHealth { get; private set; } = false;
 
-    public void ActiveHealthLose(Action callBack)
+    public void ActiveHealthLose()
     {
         IsLoseHealth = true;
+
         Debug.Log("Losing Health");
         _onHealthLose?.Invoke();
-        addedCallback = callBack;
     }
 
 
 
     public void OnFinishHealthLose()
     {
-        Debug.Log("Invoke CallBack");
-        addedCallback?.Invoke();
+        healthUiControl.OnfinishHealthLose();
+
+
     }
 }

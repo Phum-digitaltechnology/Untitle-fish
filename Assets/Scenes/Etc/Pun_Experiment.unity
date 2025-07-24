@@ -131,6 +131,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Health
       objectReference: {fileID: 0}
+    - target: {fileID: 6717302827059047727, guid: 54a33335f4be85344bdd69722c20d9d8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6717302827059047727, guid: 54a33335f4be85344bdd69722c20d9d8, type: 3}
+      propertyPath: AutoPlayOnEnable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8262533321225974991, guid: 54a33335f4be85344bdd69722c20d9d8, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

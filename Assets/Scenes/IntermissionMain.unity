@@ -2515,18 +2515,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 464927816}
     m_Modifications:
-    - target: {fileID: 515704399158068302, guid: 54a33335f4be85344bdd69722c20d9d8, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 2920113415086849223, guid: 54a33335f4be85344bdd69722c20d9d8, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 5ed73c754c2807f468d362b102a11bfb, type: 3}
-    - target: {fileID: 2920113415086849223, guid: 54a33335f4be85344bdd69722c20d9d8, type: 3}
-      propertyPath: m_PreserveAspect
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4360396736804012578, guid: 54a33335f4be85344bdd69722c20d9d8, type: 3}
       propertyPath: m_Name
       value: Health (1)
@@ -3796,8 +3784,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40e7a48b10b9568498db8a3fb740c1a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _unlockWhen: 1
-  randomCDRange: {x: 0, y: 0}
+  _unlockWhen: 5
+  randomCDRange: {x: 5, y: 10}
   effectTime: 1
   Delay: 0.25
   waitRanOutEffect:
@@ -4624,8 +4612,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d06fea7890f33847a1ed3099dc8e19d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _unlockWhen: 1
-  randomCDRange: {x: 2, y: 10}
+  _unlockWhen: 3
+  randomCDRange: {x: 5, y: 10}
   Canvas: {fileID: 724897842}
   fishPool:
   - {fileID: 9125035721258122638, guid: 631a605637bc2054f8d0a40ac271d7aa, type: 3}
@@ -12046,6 +12034,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MiniGameScene:
   - {fileID: 11400000, guid: 11c5e80c3ce2f8d4781c8d33df73dc93, type: 2}
+  - {fileID: 11400000, guid: 3f8bcd7ac0317214690a2c6c1a02805b, type: 2}
+  - {fileID: 11400000, guid: 6304368eb87f1614185bc5db03d0a4f3, type: 2}
+  - {fileID: 11400000, guid: 47214aa073295a34ba576e82e5f11e95, type: 2}
+  - {fileID: 11400000, guid: bfa7bd322c0ce0f49822b7c573804424, type: 2}
+  - {fileID: 11400000, guid: 5b91895e0a4abc84b823959e0f7875d2, type: 2}
+  - {fileID: 11400000, guid: 8ad0cd21ecf9d9d439c08a92092ea745, type: 2}
+  - {fileID: 11400000, guid: b8a685b5764d02846a7d9e0f96622e49, type: 2}
+  - {fileID: 11400000, guid: 810952adcb6e31e499302089c869ad7c, type: 2}
+  - {fileID: 11400000, guid: 39e570841ca2e5a448302c0ac8d7cfcd, type: 2}
   CanAppear: []
   transitionAnim: {fileID: 1170659179}
   controlTransitionImage: {fileID: 1183154513}

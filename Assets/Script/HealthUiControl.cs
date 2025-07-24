@@ -19,15 +19,7 @@ public class HealthUiControl : MonoBehaviour
     {
         if (sceneName == "IntermissionMain")
         {
-            if (IsAnimatorPlaying(transition) == false)
-            {
-                EnterIntermission();
-            }
-            else
-            {
-                Debug.Log("wait for transition");
-                transitionEvent.waitTransitionEvent += EnterIntermission;
-            }
+            EnterIntermission();
         }
     }
 
@@ -60,37 +52,35 @@ public class HealthUiControl : MonoBehaviour
 
     void decreaseHealth()
     {
+        Debug.Log("Decress Health Visual");
         for (int i = 0; i < 4; i++)
         {
             if (healthHolder.transform.GetChild(i).gameObject.TryGetComponent<HealthLose>(out HealthLose health))
             {
                 if (health.IsLoseHealth == false)
                 {
-                    StartCoroutine(Delay(health));
+
+                    health.ActiveHealthLose();
                     break;
                 }
             }
         }
     }
 
-    IEnumerator Delay(HealthLose healthLose)
+    public void OnfinishHealthLose()
     {
-        yield return new WaitForSeconds(0);
-        healthLose.ActiveHealthLose(OnfinishHealthLose);
-    }
-
-    void OnfinishHealthLose()
-    {
+        Debug.Log("Played On Health Lose");
         if (scoreSystem.CurrentLife == 0)
         {
             StartCoroutine(delayLoseScene());
         }
     }
-
     IEnumerator delayLoseScene()
     {
         yield return new WaitForSeconds(activeLoseDelay);
         FindAnyObjectByType<LosingScreen>(FindObjectsInactive.Include).ActiveLosingScene();
     }
+
 }
+
 
