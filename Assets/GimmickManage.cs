@@ -32,7 +32,7 @@ public class GimmickManage : MonoBehaviour
         List<Gimmick> removeList = new List<Gimmick>();
         foreach (Gimmick gimmick in gimmickList)
         {
-            if (gimmick.UnLockWhen >= currentCount)
+            if (gimmick.UnLockWhen <= currentCount)
             {
                 gimmickActivePool.Add(gimmick);
                 removeList.Add(gimmick);

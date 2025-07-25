@@ -26,13 +26,13 @@ public class EnviromentManager : MonoBehaviour
         [SerializeField] UnityEvent offActiveEnviroment;
         public void Active()
         {
-            enviromentCam.gameObject.SetActive(true);
+            enviromentCam?.gameObject.SetActive(true);
             onActiveThisEnviroment?.Invoke();
         }
 
         public void UnActive()
         {
-            enviromentCam.gameObject.SetActive(false);
+            enviromentCam?.gameObject.SetActive(false);
             offActiveEnviroment?.Invoke();
         }
     }
