@@ -94,6 +94,8 @@ public class FishRun : MonoBehaviour
     float DirectionX = 0;
     private void MoveToPoint(Vector3 destination)
     {
+        if (fishStop) return;
+
         if (Vector3.Distance(fishTransform.transform.position, destination) >= 0.5f)
         {
             Vector3 currentPos = fishTransform.transform.position;
@@ -102,7 +104,6 @@ public class FishRun : MonoBehaviour
         }
         else
         {
-            if (fishStop) return;
             fishStop = true;
             if (currentDesitnation == 0)
             {
