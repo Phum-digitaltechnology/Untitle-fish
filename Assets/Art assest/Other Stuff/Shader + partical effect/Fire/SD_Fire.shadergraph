@@ -524,20 +524,6 @@
         {
             "m_OutputSlot": {
                 "m_Node": {
-                    "m_Id": "42cbbf142ac341e3b2091cf7ad8ed985"
-                },
-                "m_SlotId": 3
-            },
-            "m_InputSlot": {
-                "m_Node": {
-                    "m_Id": "73b53cc5bfdd4cf6b0b1465ff56a1cd0"
-                },
-                "m_SlotId": 1
-            }
-        },
-        {
-            "m_OutputSlot": {
-                "m_Node": {
                     "m_Id": "4643db6662224e448290676ab484b553"
                 },
                 "m_SlotId": 0
@@ -897,6 +883,20 @@
                     "m_Id": "42cbbf142ac341e3b2091cf7ad8ed985"
                 },
                 "m_SlotId": 0
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "959e7572bd9c4706bda687c3f14f3e03"
+                },
+                "m_SlotId": 0
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "73b53cc5bfdd4cf6b0b1465ff56a1cd0"
+                },
+                "m_SlotId": 1
             }
         },
         {
@@ -4126,7 +4126,7 @@
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_Value": 0.15000000596046449,
-    "m_FloatType": 1,
+    "m_FloatType": 0,
     "m_RangeValues": {
         "x": 0.0,
         "y": 1.0
@@ -6839,9 +6839,9 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 1121.0,
-            "y": 1763.0,
-            "width": 101.0,
+            "x": 1345.0001220703125,
+            "y": 1557.0001220703125,
+            "width": 143.0,
             "height": 34.0
         }
     },
@@ -7490,8 +7490,8 @@
     "m_ObjectId": "a9c212a4f0f9452c8bc33ef5a43bc2c3",
     "m_Title": "Opacity",
     "m_Position": {
-        "x": 2018.0001220703125,
-        "y": 2767.000244140625
+        "x": 2018.0,
+        "y": 2767.0
     }
 }
 
@@ -9278,7 +9278,7 @@
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_Value": 1.7999999523162842,
-    "m_FloatType": 1,
+    "m_FloatType": 0,
     "m_RangeValues": {
         "x": 0.0,
         "y": 8.0
