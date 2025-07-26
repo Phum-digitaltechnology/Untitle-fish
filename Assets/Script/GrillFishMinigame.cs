@@ -5,7 +5,6 @@ public class GrillFishMinigame : MonoBehaviour
 {
     [Header("Line Control")]
     public HeatLineMover lineMover;
-    public float gameDuration = 5f;
 
     [Header("Zone Colliders")]
     public Collider2D rawZone;
@@ -26,7 +25,6 @@ public class GrillFishMinigame : MonoBehaviour
     public UnityEvent OnWin;
     public UnityEvent OnLose;
 
-    private float timer;
     private bool gameStarted = false;
     private bool resultChecked = false;
     private bool hasPressedSpace = false;
@@ -37,7 +35,6 @@ public class GrillFishMinigame : MonoBehaviour
 
     private void Start()
     {
-        timer = gameDuration;
         gameStarted = true;
         Debug.Log("MiniGame Start");
     }
@@ -46,7 +43,6 @@ public class GrillFishMinigame : MonoBehaviour
     {
         if (!gameStarted) return;
 
-        timer -= Time.deltaTime;
 
         if (Input.GetKey(KeyCode.Space) && !hasPressedSpace)
         {
@@ -57,19 +53,9 @@ public class GrillFishMinigame : MonoBehaviour
         {
             hasReleasedSpace = true;
             lineMover.StopMoving();
-        }
-        UpdateFishSprite();
-
-        if (timer <= 1f && !resultChecked)
-        {
-            resultChecked = true;
             CheckResult();
         }
-
-        if (timer <= 0f)
-        {
-            gameStarted = false;
-        }
+        UpdateFishSprite();
     }
 
     private void UpdateFishSprite()
