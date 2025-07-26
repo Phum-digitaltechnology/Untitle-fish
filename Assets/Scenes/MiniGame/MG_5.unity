@@ -11458,7 +11458,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countDonwOnStart: 0
-  countDownTime: 100
+  countDownTime: 5
   OnFinishCountDown:
     m_PersistentCalls:
       m_Calls:
