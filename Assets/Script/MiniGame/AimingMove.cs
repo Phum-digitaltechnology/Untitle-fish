@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AimingMove : MonoBehaviour
@@ -7,7 +6,7 @@ public class AimingMove : MonoBehaviour
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private GameObject fish;
     [SerializeField] private GameObject fishSpawnPoint;
-
+    [SerializeField] Transform minMove, maxMove;
 
     public void SetUp()
     {
@@ -27,6 +26,11 @@ public class AimingMove : MonoBehaviour
 
         // Move only on X-axis
         Vector3 newPos = currentPos + new Vector3(inputX * moveSpeed * Time.deltaTime, 0f, 0f);
+        if (newPos.x <= minMove.position.x || newPos.x >= maxMove.position.x)
+        {
+            Debug.Log("Out of Range");
+            return;
+        }
 
         fishNetTranform.position = newPos;
     }
