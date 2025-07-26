@@ -15,12 +15,14 @@ public class GraphRotateZ : MonoBehaviour
     [SerializeField] bool isDisable = false;
 
     [SerializeField] List<float> RotationLog = new List<float>();
-
     [ContextMenu("Lerping Z")]
     public void LerpingRotateZ()
     {
+
+
         if (isDisable) return;
         if (isPlayed) return;
+        Debug.Log($"{this.gameObject.name} Apply Effect");
         isPlayed = true;
         OnStartRotate?.Invoke();
         applyRotation(p0);
@@ -28,6 +30,7 @@ public class GraphRotateZ : MonoBehaviour
     }
     IEnumerator BeginLerp()
     {
+        RotationLog = new List<float>();
         float currentTime = 0f;
         float directionZ = p1 - p0;
 
