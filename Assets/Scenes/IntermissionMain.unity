@@ -8616,6 +8616,31 @@ MonoBehaviour:
     outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
     audioSource_m: {fileID: 0}
     volume: 0.15
+  - name: destroyV1
+    clip: {fileID: 8300000, guid: 90f59ff040ce0474ea7c9ced37518535, type: 3}
+    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
+    audioSource_m: {fileID: 0}
+    volume: 0.5
+  - name: destroyV2
+    clip: {fileID: 8300000, guid: f1a9c73be564917479b474aef8b981ff, type: 3}
+    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
+    audioSource_m: {fileID: 0}
+    volume: 0.5
+  - name: destroyV3
+    clip: {fileID: 8300000, guid: b8410503fa8524946864b0ff6cdb34e9, type: 3}
+    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
+    audioSource_m: {fileID: 0}
+    volume: 0.5
+  - name: Sleeping
+    clip: {fileID: 8300000, guid: 9269d3f659043734b893c969f0fdace8, type: 3}
+    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
+    audioSource_m: {fileID: 0}
+    volume: 0.2
+  - name: AngryMeow
+    clip: {fileID: 8300000, guid: ea0ade1a10030cc4f944c16282c7515a, type: 3}
+    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
+    audioSource_m: {fileID: 0}
+    volume: 0.3
 --- !u!1001 &1311722919
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12673,7 +12698,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MiniGameScene:
-  - {fileID: 11400000, guid: 810952adcb6e31e499302089c869ad7c, type: 2}
+  - {fileID: 11400000, guid: 39e570841ca2e5a448302c0ac8d7cfcd, type: 2}
   CanAppear: []
   transitionAnim: {fileID: 1170659179}
   controlTransitionImage: {fileID: 1183154513}
