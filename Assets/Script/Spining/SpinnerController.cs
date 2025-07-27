@@ -54,7 +54,8 @@ public class SpinnerController : MonoBehaviour
         {
             OnSuccessLoop.Invoke();
             reelingAmount = 0f;
-            AudioManager.Instance.SetSFXPitch("Reeling", 0.0f);
+            AudioManager.Instance.SetSFXPitch("Reeling", 1.0f);
+            AudioManager.Instance.StopSFX("Reeling");
             AudioManager.Instance.PlaySFX("YIPPEE");
         }
         else
