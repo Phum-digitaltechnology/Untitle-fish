@@ -42,6 +42,7 @@ public class MG5_DragDropZone : MonoBehaviour
         //offset = wormTransform.position - Camera.main.WorldToScreenPoint(Input.mousePosition);
         //dragging = true;
         //Debug.Log("Mouse down");
+        AudioManager.Instance.PlaySFX("PickUpWorm");
     }
 
     private void OnMouseUp()
