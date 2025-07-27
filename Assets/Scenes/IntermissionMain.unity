@@ -8106,7 +8106,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcce8db8edeee9840b35ce8f4767361b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Manager: []
+  Manager:
+  - {fileID: 1170659178}
+  - {fileID: 0}
+  - {fileID: 1757088292}
+  - {fileID: 1256470805}
 --- !u!4 &1268467456
 Transform:
   m_ObjectHideFlags: 0
