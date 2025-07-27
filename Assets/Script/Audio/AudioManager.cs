@@ -129,6 +129,21 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void PlaySFXRandomPitch(string name)
+    {
+        Sound s = Array.Find(sfxSounds, x => x.name == name);
+        if (s == null)
+        {
+            Debug.Log("Sound Not Found");
+        }
+        else
+        {
+            
+            s.audioSource_m.pitch = UnityEngine.Random.Range(0.5f, 2.0f);
+            s.audioSource_m.PlayOneShot(s.clip);
+        }
+    }
+
     public void PlaySFXLoop(string name)
     {
         Sound s = Array.Find(sfxSounds, x => x.name == name);
