@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 public class CatnipGimmick : Gimmick
@@ -8,6 +9,7 @@ public class CatnipGimmick : Gimmick
     sceneManager getScene;
     [SerializeField] int effectTime;
 
+    [SerializeField] float Delay = 0.25f;
     [SerializeField] UnityEvent waitRanOutEffect;
     [SerializeField] UnityEvent onActiveEffect, unActiveEffect;
     [SerializeField] Transform CatHolder;
@@ -29,6 +31,7 @@ public class CatnipGimmick : Gimmick
         OnActive = true;
         waitActive = true;
         waitAction = catAppear;
+        Debug.Log($"{waitAction} Im Waiting to be played :(");
     }
     void onloadIntoIntermission(string isIntermission)
     {
@@ -37,9 +40,16 @@ public class CatnipGimmick : Gimmick
             if (waitActive)
             {
                 waitActive = false;
-                waitAction?.Invoke();
+                StartCoroutine(delayActive());
             }
         }
+    }
+
+
+    IEnumerator delayActive()
+    {
+        yield return new WaitForSeconds(Delay);
+        waitAction?.Invoke();
     }
 
     void catAppear()

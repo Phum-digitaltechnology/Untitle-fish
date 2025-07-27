@@ -248,14 +248,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3246648356385584128, guid: adc14f0c6f6868a4cb4515c633db2a2c, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 3246648356385584128, guid: adc14f0c6f6868a4cb4515c633db2a2c, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 150
-      objectReference: {fileID: 0}
     - target: {fileID: 4272437493389808024, guid: adc14f0c6f6868a4cb4515c633db2a2c, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -340,10 +332,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MouseIconCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 8549121116617324924, guid: adc14f0c6f6868a4cb4515c633db2a2c, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 1fd062c6885b2c2439bd0805120a3004, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -864,7 +852,7 @@ GameObject:
   - component: {fileID: 855490662}
   - component: {fileID: 855490663}
   m_Layer: 0
-  m_Name: SpriteRender
+  m_Name: Squre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -878,12 +866,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 855490659}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -0.1, y: 0.1, z: 0.1}
+  m_LocalRotation: {x: 0.036784068, y: 0.062614836, z: -0.039444935, w: 0.99657935}
+  m_LocalPosition: {x: -2.1188092, y: 5.737439, z: -2.246197}
+  m_LocalScale: {x: -0.077839926, y: 0.077839926, z: 0.077839926}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1045785593}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &855490661
 SpriteRenderer:
@@ -998,8 +986,7 @@ Transform:
   m_LocalPosition: {x: 5.612, y: 3.367, z: -3.694}
   m_LocalScale: {x: 0.7783993, y: 0.7783993, z: 0.7783993}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 855490660}
+  m_Children: []
   m_Father: {fileID: 1677049540}
   m_LocalEulerAnglesHint: {x: 4.488, y: 7.023, z: -4.258}
 --- !u!114 &1045785594
@@ -1859,6 +1846,7 @@ SceneRoots:
   - {fileID: 267179249}
   - {fileID: 1513699507}
   - {fileID: 512140735}
+  - {fileID: 855490660}
   - {fileID: 1909892539}
   - {fileID: 1677049540}
   - {fileID: 49407380}

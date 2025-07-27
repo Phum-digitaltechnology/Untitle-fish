@@ -16,5 +16,5 @@ MonoBehaviour:
   weight: 0
   CanAppear: 0
   CurrentDownTime: 0
-  controlSprite: {fileID: 21300000, guid: 909d53a33d9655f4c9d6d22b0e609cfd, type: 3}
+  controlSprite: {fileID: 21300000, guid: 364291e67a51af24b879494343b5aefc, type: 3}
   transitionText: SPIN!

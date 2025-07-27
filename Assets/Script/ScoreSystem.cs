@@ -1,7 +1,7 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
-using System.Collections;
 
 public class ScoreSystem : MonoBehaviour
 {
@@ -22,6 +22,10 @@ public class ScoreSystem : MonoBehaviour
         currentLife = Life;
     }
 
+    private void Start()
+    {
+        OnCountUpdate?.Invoke(playedMinigameCount);
+    }
     public void Win()
     {
         playedMinigameCount++;

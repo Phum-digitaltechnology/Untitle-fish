@@ -10,8 +10,11 @@ public class InvertAble : MonoBehaviour
     }
 
     bool invert = false;
+    bool needToApply;
+
     public void IsInvert(bool invert)
     {
+        needToApply = true;
         this.invert = invert;
     }
 
@@ -25,10 +28,14 @@ public class InvertAble : MonoBehaviour
 
         if (invert)
         {
+            if (needToApply == false) return;
+            needToApply = false;
             rectTransform.localScale = new Vector3(rectTransform.localScale.x, -Mathf.Abs(rectTransform.localScale.y), rectTransform.localScale.z);
         }
         else
         {
+            if (needToApply == false) return;
+            needToApply = false;
             rectTransform.localScale = new Vector3(rectTransform.localScale.x, Mathf.Abs(rectTransform.localScale.y), rectTransform.localScale.z);
 
         }

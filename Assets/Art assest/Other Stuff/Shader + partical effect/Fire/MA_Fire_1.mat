@@ -65,7 +65,7 @@ Material:
     - _Cull: 2
     - _Depth_Fade_Distrance: 0
     - _DstBlend: 10
-    - _FadePosition: 0.796
+    - _FadePosition: -1.87
     - _FadeSize: 0.89
     - _Float: 0.875
     - _Float_1: 0.3
