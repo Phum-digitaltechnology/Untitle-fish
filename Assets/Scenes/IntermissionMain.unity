@@ -8571,6 +8571,26 @@ MonoBehaviour:
     outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
     audioSource_m: {fileID: 0}
     volume: 0.5
+  - name: YAY
+    clip: {fileID: 8300000, guid: af997e1350b9d3f4db3664f0d5dbc3fb, type: 3}
+    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
+    audioSource_m: {fileID: 0}
+    volume: 0.15
+  - name: SadWomp
+    clip: {fileID: 8300000, guid: ec66bed969e0f574ea9699a042abadd9, type: 3}
+    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
+    audioSource_m: {fileID: 0}
+    volume: 0.5
+  - name: PickupBobbers
+    clip: {fileID: 8300000, guid: 5d338bd67ac83b64f8dcb17199e5192f, type: 3}
+    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
+    audioSource_m: {fileID: 0}
+    volume: 0.6
+  - name: BobbersFall
+    clip: {fileID: 8300000, guid: bb679a5adfe54a4459bbe51a522bd5af, type: 3}
+    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
+    audioSource_m: {fileID: 0}
+    volume: 0.7
 --- !u!1001 &1311722919
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12628,7 +12648,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MiniGameScene:
-  - {fileID: 11400000, guid: bfa7bd322c0ce0f49822b7c573804424, type: 2}
+  - {fileID: 11400000, guid: 5b91895e0a4abc84b823959e0f7875d2, type: 2}
   CanAppear: []
   transitionAnim: {fileID: 1170659179}
   controlTransitionImage: {fileID: 1183154513}

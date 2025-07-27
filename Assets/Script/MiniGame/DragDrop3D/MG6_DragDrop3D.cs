@@ -17,6 +17,7 @@ public class MG6_DragDrop3D : MonoBehaviour
     [SerializeField] BobberColor bobberColor;
     [SerializeField] private UnityEvent<BobberColor> OnApplyBobber;
     [SerializeField] public bool canDragDrop = false;
+    private bool isBeingDrag = false;
     private bool isCollided = false;
     [SerializeField] private UnityEvent onMouseDrag;
     [SerializeField] private UnityEvent onMouseDrop;
@@ -35,6 +36,7 @@ public class MG6_DragDrop3D : MonoBehaviour
     {
         if (canDragDrop)
         {
+            AudioManager.Instance.PlaySFX("PickupBobbers");
             MousePosition = Input.mousePosition - GetMousePosition();
             Rigidbody rb = this.gameObject.GetComponent<Rigidbody>();
             if (rb != null)
@@ -55,6 +57,7 @@ public class MG6_DragDrop3D : MonoBehaviour
     {
         if (canDragDrop)
         {
+            isBeingDrag = true;
             transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition - MousePosition);
             onMouseDrag?.Invoke();
         }
@@ -82,12 +85,22 @@ public class MG6_DragDrop3D : MonoBehaviour
     {
         if ((isCollided))
         {
+            Debug.Log("collided");
             if (Input.GetMouseButtonUp(0))
             {
                 Destroy(this.gameObject.GetComponent<Rigidbody>());
                 OnApplyBobber?.Invoke(bobberColor);
                 Destroy(this.gameObject);
             }
+        }
+        else if (!isCollided && isBeingDrag)  
+        {
+            Debug.Log("NOTcollided");
+            if (Input.GetMouseButtonUp(0))
+            {
+                AudioManager.Instance.PlaySFX("BobbersFall");
+            }
+
         }
     }
 }
