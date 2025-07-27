@@ -12,6 +12,13 @@ public class SpinnerController : MonoBehaviour
     [SerializeField] UnityEvent OnFinishLoop;
     [SerializeField] UnityEvent OnSuccessLoop;
     [SerializeField] Transform Test;
+
+    private void Start()
+    {
+        AudioManager.Instance.PlaySFXLoop("Reeling");
+        AudioManager.Instance.SetSFXPitch("Reeling", 0.0f);
+    }
+
     public void Update()
     {
         Vector3 center = Camera.main.WorldToScreenPoint(transform.position);
@@ -41,12 +48,18 @@ public class SpinnerController : MonoBehaviour
 
         spinSpeed = Mathf.Lerp(spinSpeed, 0f, Time.deltaTime * spinDecay); // the Speed of object spin
 
-
+        
 
         if (reelingAmount >= reelingMax || reelingAmount <= -reelingMax)
         {
             OnSuccessLoop.Invoke();
             reelingAmount = 0f;
+            AudioManager.Instance.SetSFXPitch("Reeling", 0.0f);
+            AudioManager.Instance.PlaySFX("YIPPEE");
+        }
+        else
+        {
+            AudioManager.Instance.SetSFXPitch("Reeling", Mathf.Lerp(0.0f, 1.5f, Mathf.Abs(spinSpeed) / 1000.0f));
         }
 
         if (Mathf.FloorToInt(-reelingAmount) > Mathf.FloorToInt(-previosReelingAmount))

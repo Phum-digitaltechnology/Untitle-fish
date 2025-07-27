@@ -144,6 +144,20 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void SetSFXPitch(string name, float pitch)
+    {
+        Sound s = Array.Find(sfxSounds, x => x.name == name);
+        if (s == null)
+        {
+            Debug.Log("Sound Not Found");
+        }
+        else
+        {
+
+            s.audioSource_m.pitch = pitch;
+        }
+    }
+
     public void PlaySFXLoop(string name)
     {
         Sound s = Array.Find(sfxSounds, x => x.name == name);
