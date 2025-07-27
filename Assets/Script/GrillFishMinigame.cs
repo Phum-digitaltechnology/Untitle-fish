@@ -47,11 +47,13 @@ public class GrillFishMinigame : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && !hasPressedSpace)
         {
             hasPressedSpace = true;
+            AudioManager.Instance.PlaySFXLoop("Frying");
             lineMover.StartMoving();
         }
         if (hasPressedSpace && !hasReleasedSpace && Input.GetKeyUp(KeyCode.Space))
         {
             hasReleasedSpace = true;
+            AudioManager.Instance.StopSFX("Frying");
             lineMover.StopMoving();
             CheckResult();
         }
@@ -93,11 +95,13 @@ public class GrillFishMinigame : MonoBehaviour
         if (lineCol.IsTouching(cookedZone))
         {
             Debug.Log("WIN: Cooked Level!");
+            AudioManager.Instance.PlaySFX("YIPPEE");
             OnWin?.Invoke();
         }
         else
         {
             Debug.Log("LOSE: Not Cooked!");
+            AudioManager.Instance.PlaySFX("SadWomp");
             OnLose?.Invoke();
         }
     }

@@ -8596,6 +8596,11 @@ MonoBehaviour:
     outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
     audioSource_m: {fileID: 0}
     volume: 1
+  - name: Frying
+    clip: {fileID: 8300000, guid: 75bf64e47feff794eac320331b025cb0, type: 3}
+    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
+    audioSource_m: {fileID: 0}
+    volume: 0.5
 --- !u!1001 &1311722919
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12653,7 +12658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MiniGameScene:
-  - {fileID: 11400000, guid: 11c5e80c3ce2f8d4781c8d33df73dc93, type: 2}
+  - {fileID: 11400000, guid: b8a685b5764d02846a7d9e0f96622e49, type: 2}
   CanAppear: []
   transitionAnim: {fileID: 1170659179}
   controlTransitionImage: {fileID: 1183154513}

@@ -171,6 +171,19 @@ public class AudioManager : MonoBehaviour
             s.audioSource_m.loop = true;
         }
     }
+
+    public void StopSFX(string name)
+    {
+        Sound s = Array.Find(sfxSounds, x => x.name == name);
+        if (s == null)
+        {
+            Debug.Log("Sound Not Found");
+        }
+        else
+        {
+            s.audioSource_m.Stop();
+        }
+    }
 }
 
 [System.Serializable]
