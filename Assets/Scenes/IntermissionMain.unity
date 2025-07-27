@@ -8596,11 +8596,26 @@ MonoBehaviour:
     outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
     audioSource_m: {fileID: 0}
     volume: 1
+  - name: StoneSlide
+    clip: {fileID: 8300000, guid: fd1b56105a522d148a1387962b23b9ed, type: 3}
+    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
+    audioSource_m: {fileID: 0}
+    volume: 0.4
   - name: Frying
     clip: {fileID: 8300000, guid: 75bf64e47feff794eac320331b025cb0, type: 3}
     outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
     audioSource_m: {fileID: 0}
     volume: 0.5
+  - name: FishFall
+    clip: {fileID: 8300000, guid: 7406b98ca5a57bb4e8d094c8f8ef0505, type: 3}
+    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
+    audioSource_m: {fileID: 0}
+    volume: 0.5
+  - name: FishJump
+    clip: {fileID: 8300000, guid: a66bee4545a580647acf7f2625254e6c, type: 3}
+    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
+    audioSource_m: {fileID: 0}
+    volume: 0.15
 --- !u!1001 &1311722919
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12658,7 +12673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MiniGameScene:
-  - {fileID: 11400000, guid: b8a685b5764d02846a7d9e0f96622e49, type: 2}
+  - {fileID: 11400000, guid: 810952adcb6e31e499302089c869ad7c, type: 2}
   CanAppear: []
   transitionAnim: {fileID: 1170659179}
   controlTransitionImage: {fileID: 1183154513}

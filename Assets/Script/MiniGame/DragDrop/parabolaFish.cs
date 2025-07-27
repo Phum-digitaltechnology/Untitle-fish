@@ -8,7 +8,13 @@ public class parabolaFish : MonoBehaviour
     [SerializeField] private GameObject confetti;
     public void OnTriggerEnter2D(Collider2D col)
     {
+        AudioManager.Instance.PlaySFX("YAY");
         StartCoroutine(spawnEffect());
+    }
+
+    private void Start()
+    {
+        AudioManager.Instance.PlaySFX("FishJump");
     }
 
     IEnumerator spawnEffect()
