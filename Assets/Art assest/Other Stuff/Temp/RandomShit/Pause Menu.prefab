@@ -1265,6 +1265,7 @@ MonoBehaviour:
   master: {fileID: 1761871250344722193}
   music: {fileID: 4796585464906231876}
   sfx: {fileID: 3368771928317022366}
+  pauseMenu: {fileID: 662607101837168639}
 --- !u!1 &4360637076449885904
 GameObject:
   m_ObjectHideFlags: 0
