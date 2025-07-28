@@ -17,6 +17,7 @@ public class ligamentMove : MonoBehaviour
     [ContextMenu("Debug Move")]
     public void StartMove()
     {
+        objToMove.gameObject.SetActive(true);
         onStart?.Invoke();
         endPos = destination.position;
         endPos = new Vector3(destination.position.x, destination.position.y + OffSetY, destination.position.z);
