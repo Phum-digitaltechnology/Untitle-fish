@@ -27,7 +27,6 @@ public class EnviromentManager : MonoBehaviour
         [SerializeField] UnityEvent onActiveThisEnviroment;
         [SerializeField] UnityEvent offActiveEnviroment;
 
-        [SerializeField] UnityEvent waitTransitionEndEvent;
         public void Active()
         {
             if (enviromentCam != null) enviromentCam?.gameObject.SetActive(true);
@@ -40,10 +39,6 @@ public class EnviromentManager : MonoBehaviour
             offActiveEnviroment?.Invoke();
         }
 
-        public void WaitTransitionEnd()
-        {
-            waitTransitionEndEvent?.Invoke();
-        }
     }
 
     void unActiveAll()
