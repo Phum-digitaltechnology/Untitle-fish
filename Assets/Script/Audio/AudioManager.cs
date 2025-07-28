@@ -138,7 +138,16 @@ public class AudioManager : MonoBehaviour
         }
         else
         {
-            
+
+            /*            switch (UnityEngine.Random.Range(0, 2))
+                        {
+                            case 0:
+                                s.audioSource_m.pitch = 1.0f;
+                                break;
+                            case 1:
+                                s.audioSource_m.pitch = UnityEngine.Random.Range(0.5f, 2.0f);
+                                break;
+                        }*/
             s.audioSource_m.pitch = UnityEngine.Random.Range(0.5f, 2.0f);
             s.audioSource_m.PlayOneShot(s.clip);
         }
