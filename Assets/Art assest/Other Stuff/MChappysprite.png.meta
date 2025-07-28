@@ -1,0 +1,1339 @@
+fileFormatVersion: 2
+guid: 3d59ae5adc530a64bb264daddeee62b8
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MChappysprite_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7380
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc57c8cf2f6d50c46a93d54103e30f9c
+      internalID: 1277357461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_1
+      rect:
+        serializedVersion: 2
+        x: 1730
+        y: 7380
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e2f82a7292c81447a3e7642d54c9fea
+      internalID: 1754417364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_2
+      rect:
+        serializedVersion: 2
+        x: 3460
+        y: 7380
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86d941a802c5a1747be5c1f37326ca79
+      internalID: -1958499772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_3
+      rect:
+        serializedVersion: 2
+        x: 5190
+        y: 7380
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61f84a2fe7032b048b8b5ac7e59d15ae
+      internalID: -2012932058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_4
+      rect:
+        serializedVersion: 2
+        x: 6920
+        y: 7380
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8c4038ebae065c40b2c1821815bcb7b
+      internalID: -1363100755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_5
+      rect:
+        serializedVersion: 2
+        x: 8650
+        y: 7380
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1fa054a1dfbf5b4ca26d5d0eab32aed
+      internalID: -1000971489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_6
+      rect:
+        serializedVersion: 2
+        x: 10380
+        y: 7380
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31cb0c029c79900448634597d86e620a
+      internalID: -2008121289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_7
+      rect:
+        serializedVersion: 2
+        x: 12110
+        y: 7380
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8993e9441896a6643ae0f5fdda83976a
+      internalID: -2003963229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6150
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4d1dfcf8f3a38d44aa126840cd154ce
+      internalID: -985335394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_9
+      rect:
+        serializedVersion: 2
+        x: 1730
+        y: 6150
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fdd16fd244eaf841866d0af7ea7c6e1
+      internalID: 1312057796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_10
+      rect:
+        serializedVersion: 2
+        x: 3460
+        y: 6150
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbbf11fd17192934c882b75d8ba19a97
+      internalID: 273857356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_11
+      rect:
+        serializedVersion: 2
+        x: 5190
+        y: 6150
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b75bb62e38ffa347beaa6a720335fc3
+      internalID: -1490126574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_12
+      rect:
+        serializedVersion: 2
+        x: 6920
+        y: 6150
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20a7d45b620c2414e840717495008482
+      internalID: -1333359677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_13
+      rect:
+        serializedVersion: 2
+        x: 8650
+        y: 6150
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8556bb45b49e6354987c93afb80fabc2
+      internalID: 43183501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_14
+      rect:
+        serializedVersion: 2
+        x: 10380
+        y: 6150
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca6e930e58ac7384ebb44dbbc2705a7b
+      internalID: 105852851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_15
+      rect:
+        serializedVersion: 2
+        x: 12110
+        y: 6150
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9408f1b8352ef949bb1bef245d35e12
+      internalID: -703722297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4920
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fae873289cd53a24391f996305e6e780
+      internalID: -1207586899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_17
+      rect:
+        serializedVersion: 2
+        x: 1730
+        y: 4920
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eeec69f69268eba448f51612294d4198
+      internalID: -1214716199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_18
+      rect:
+        serializedVersion: 2
+        x: 3460
+        y: 4920
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fda94dbb4a8faa940b7621afbc7c391d
+      internalID: 959808692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_19
+      rect:
+        serializedVersion: 2
+        x: 5190
+        y: 4920
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e26c396449d8d643850067e985967e9
+      internalID: -2048995049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_20
+      rect:
+        serializedVersion: 2
+        x: 6920
+        y: 4920
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5b2d610dc5f6444c94b9398fe296650
+      internalID: 2054907218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_21
+      rect:
+        serializedVersion: 2
+        x: 8650
+        y: 4920
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a0b7b1e049841a4e9197f8414f9eb31
+      internalID: 140223123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_22
+      rect:
+        serializedVersion: 2
+        x: 10380
+        y: 4920
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53be2278401178b4284435f623897f4e
+      internalID: 1333336997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_23
+      rect:
+        serializedVersion: 2
+        x: 12110
+        y: 4920
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d65db2b806c16fb418d5f579e6894421
+      internalID: -748997846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3690
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4da97aee916eed40b092094b93a514e
+      internalID: 1084149714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_25
+      rect:
+        serializedVersion: 2
+        x: 1730
+        y: 3690
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7d8d62c401eea34ca71ff386de21ee1
+      internalID: -2073348511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_26
+      rect:
+        serializedVersion: 2
+        x: 3460
+        y: 3690
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77e3e666847a0d849af65d4e4d46455b
+      internalID: 1547939746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_27
+      rect:
+        serializedVersion: 2
+        x: 5190
+        y: 3690
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48fab3ba2cab4994699c3efbf2a0f4f6
+      internalID: 1463311719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_28
+      rect:
+        serializedVersion: 2
+        x: 6920
+        y: 3690
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52fbdf26897674b4e9a5ce8413387a2f
+      internalID: 1177580494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_29
+      rect:
+        serializedVersion: 2
+        x: 8650
+        y: 3690
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07f2251c78605b044b8610a6135211de
+      internalID: 233688898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_30
+      rect:
+        serializedVersion: 2
+        x: 10380
+        y: 3690
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdb7865569873d94992148101694e63b
+      internalID: -114627826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_31
+      rect:
+        serializedVersion: 2
+        x: 12110
+        y: 3690
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aa16dfb247037e4690a81c52a7f32b4
+      internalID: -1202769698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2460
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f798df5a08c91ae4a9b95189d9295e90
+      internalID: 1678653300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_33
+      rect:
+        serializedVersion: 2
+        x: 1730
+        y: 2460
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 981c265851444054dab240e391583a5a
+      internalID: 1531345008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_34
+      rect:
+        serializedVersion: 2
+        x: 3460
+        y: 2460
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b81fa8680fa3594e9e458ae6d77edbd
+      internalID: -1817191306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_35
+      rect:
+        serializedVersion: 2
+        x: 5190
+        y: 2460
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 396a82a4a8051484e8784b9560782ebc
+      internalID: 1606139117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_36
+      rect:
+        serializedVersion: 2
+        x: 6920
+        y: 2460
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccf187704a1add24699f9da766cb48e3
+      internalID: -972323632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_37
+      rect:
+        serializedVersion: 2
+        x: 8650
+        y: 2460
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3a1aae299387034fb6f8c45bad4703b
+      internalID: 1988712600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_38
+      rect:
+        serializedVersion: 2
+        x: 10380
+        y: 2460
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ae06f4c5c102484187df129a631fc39
+      internalID: 649808437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_39
+      rect:
+        serializedVersion: 2
+        x: 12110
+        y: 2460
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c534ce1aa21e8442a943790f26dd25a
+      internalID: -1193236374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1230
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 465da8811c2b4e047a93cb7c72ef1162
+      internalID: -1607603111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_41
+      rect:
+        serializedVersion: 2
+        x: 1730
+        y: 1230
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 036df700eb2f0534ab4c982ede720bea
+      internalID: -2031392079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_42
+      rect:
+        serializedVersion: 2
+        x: 3460
+        y: 1230
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d244d78b25c15545892b2bed8f98481
+      internalID: -1400064411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_43
+      rect:
+        serializedVersion: 2
+        x: 5190
+        y: 1230
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4948d2e3bd6b7d54c92e50a333fe1fa5
+      internalID: -2069091792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_44
+      rect:
+        serializedVersion: 2
+        x: 6920
+        y: 1230
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d6f7b863c9138649a41eb4e918fbd49
+      internalID: 1865219081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_45
+      rect:
+        serializedVersion: 2
+        x: 8650
+        y: 1230
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faada1d08f0ef224b8f1d0b18bbe6550
+      internalID: -953423492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_46
+      rect:
+        serializedVersion: 2
+        x: 10380
+        y: 1230
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e66fcb38ef42c54f841077256c5ff10
+      internalID: -962578285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_47
+      rect:
+        serializedVersion: 2
+        x: 12110
+        y: 1230
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f924bc508a04f844fa769585c77206d2
+      internalID: 1947351532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbc7a94efd415a54da152d8506157ddf
+      internalID: 982740135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_49
+      rect:
+        serializedVersion: 2
+        x: 1730
+        y: 0
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7cf846d35450e84e809e537b3652321
+      internalID: -1883413188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_50
+      rect:
+        serializedVersion: 2
+        x: 3460
+        y: 0
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 555406774b1db1647ab9f21480620917
+      internalID: -471031482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_51
+      rect:
+        serializedVersion: 2
+        x: 5190
+        y: 0
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f73d8a9eaabbdd42af6c83dd8c1844f
+      internalID: 2083102681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MChappysprite_52
+      rect:
+        serializedVersion: 2
+        x: 6920
+        y: 0
+        width: 1730
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69945b6df2c32d0448e82e4dedb3cf9c
+      internalID: 1802945787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      MChappysprite_0: 1277357461
+      MChappysprite_1: 1754417364
+      MChappysprite_10: 273857356
+      MChappysprite_11: -1490126574
+      MChappysprite_12: -1333359677
+      MChappysprite_13: 43183501
+      MChappysprite_14: 105852851
+      MChappysprite_15: -703722297
+      MChappysprite_16: -1207586899
+      MChappysprite_17: -1214716199
+      MChappysprite_18: 959808692
+      MChappysprite_19: -2048995049
+      MChappysprite_2: -1958499772
+      MChappysprite_20: 2054907218
+      MChappysprite_21: 140223123
+      MChappysprite_22: 1333336997
+      MChappysprite_23: -748997846
+      MChappysprite_24: 1084149714
+      MChappysprite_25: -2073348511
+      MChappysprite_26: 1547939746
+      MChappysprite_27: 1463311719
+      MChappysprite_28: 1177580494
+      MChappysprite_29: 233688898
+      MChappysprite_3: -2012932058
+      MChappysprite_30: -114627826
+      MChappysprite_31: -1202769698
+      MChappysprite_32: 1678653300
+      MChappysprite_33: 1531345008
+      MChappysprite_34: -1817191306
+      MChappysprite_35: 1606139117
+      MChappysprite_36: -972323632
+      MChappysprite_37: 1988712600
+      MChappysprite_38: 649808437
+      MChappysprite_39: -1193236374
+      MChappysprite_4: -1363100755
+      MChappysprite_40: -1607603111
+      MChappysprite_41: -2031392079
+      MChappysprite_42: -1400064411
+      MChappysprite_43: -2069091792
+      MChappysprite_44: 1865219081
+      MChappysprite_45: -953423492
+      MChappysprite_46: -962578285
+      MChappysprite_47: 1947351532
+      MChappysprite_48: 982740135
+      MChappysprite_49: -1883413188
+      MChappysprite_5: -1000971489
+      MChappysprite_50: -471031482
+      MChappysprite_51: 2083102681
+      MChappysprite_52: 1802945787
+      MChappysprite_53: 1830963573
+      MChappysprite_54: -464099730
+      MChappysprite_55: -657162936
+      MChappysprite_6: -2008121289
+      MChappysprite_7: -2003963229
+      MChappysprite_8: -985335394
+      MChappysprite_9: 1312057796
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
