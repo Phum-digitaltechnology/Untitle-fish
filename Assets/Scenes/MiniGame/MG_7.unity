@@ -450,7 +450,7 @@ GameObject:
   m_Component:
   - component: {fileID: 450173235}
   - component: {fileID: 450173234}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LoseAnimationSwitcher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -593,7 +593,7 @@ GameObject:
   - component: {fileID: 593205573}
   - component: {fileID: 593205576}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: Main Camera - Perspective
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -646,7 +646,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1143
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -689,7 +689,8 @@ MonoBehaviour:
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
-  m_Cameras: []
+  m_Cameras:
+  - {fileID: 902337962}
   m_RendererIndex: -1
   m_VolumeLayerMask:
     serializedVersion: 2
@@ -732,13 +733,13 @@ GameObject:
   m_Component:
   - component: {fileID: 723510357}
   - component: {fileID: 723510356}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WinAndLose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &723510356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1034,6 +1035,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WinningStar_PS
       objectReference: {fileID: 0}
+    - target: {fileID: 5298457969305077031, guid: 6aaa2426b1fe99e488ccd06e1a875ecc, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7163010956979252404, guid: 6aaa2426b1fe99e488ccd06e1a875ecc, type: 3}
       propertyPath: simulationSpeed
       value: 1
@@ -1244,7 +1249,7 @@ GameObject:
   m_Component:
   - component: {fileID: 876650043}
   - component: {fileID: 876650044}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LoseAnimationSwitcher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1378,6 +1383,143 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09c4edcaa7296284fa1f9ef15e5f1a64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &902337959
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 902337963}
+  - component: {fileID: 902337962}
+  - component: {fileID: 902337961}
+  - component: {fileID: 902337960}
+  m_Layer: 0
+  m_Name: Overlay Camera - Orthographic
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &902337960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902337959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 1
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
+--- !u!81 &902337961
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902337959}
+  m_Enabled: 1
+--- !u!20 &902337962
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902337959}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 4
+  m_BackGroundColor: {r: 0.5113207, g: 0.8692704, b: 1, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 1
+  orthographic size: 3.34
+  m_Depth: -1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 128
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!4 &902337963
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902337959}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.047637936, y: -0, z: -0, w: 0.9988647}
+  m_LocalPosition: {x: -23.370651, y: 1.2949793, z: -5.39}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 5.461, y: 0, z: 0}
 --- !u!1 &906088937
 GameObject:
   m_ObjectHideFlags: 0
@@ -1387,7 +1529,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 906088938}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FishLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1423,7 +1565,7 @@ GameObject:
   m_Component:
   - component: {fileID: 908157777}
   - component: {fileID: 908157778}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DarkFish
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1841,7 +1983,7 @@ GameObject:
   m_Component:
   - component: {fileID: 991359251}
   - component: {fileID: 991359252}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FishCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2015,7 +2157,7 @@ GameObject:
   m_Component:
   - component: {fileID: 993790174}
   - component: {fileID: 993790175}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DarkFish (1)
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -2428,7 +2570,7 @@ GameObject:
   m_Component:
   - component: {fileID: 993922715}
   - component: {fileID: 993922716}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FishCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2602,7 +2744,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1061227810}
   - component: {fileID: 1061227809}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FishPool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2790,7 +2932,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1248644693}
   - component: {fileID: 1248644694}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Fish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2930,6 +3072,10 @@ PrefabInstance:
     - target: {fileID: 5298457969305077031, guid: 6aaa2426b1fe99e488ccd06e1a875ecc, type: 3}
       propertyPath: m_Name
       value: WinningStar_PS
+      objectReference: {fileID: 0}
+    - target: {fileID: 5298457969305077031, guid: 6aaa2426b1fe99e488ccd06e1a875ecc, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7163010956979252404, guid: 6aaa2426b1fe99e488ccd06e1a875ecc, type: 3}
       propertyPath: simulationSpeed
@@ -3071,13 +3217,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1318272337}
   - component: {fileID: 1318272338}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WinAnimation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1318272337
 Transform:
   m_ObjectHideFlags: 0
@@ -3128,7 +3274,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1337225141}
   - component: {fileID: 1337225142}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Hook
   m_TagString: Hook
   m_Icon: {fileID: 0}
@@ -3326,7 +3472,7 @@ GameObject:
   - component: {fileID: 1375830832}
   - component: {fileID: 1375830831}
   - component: {fileID: 1375830830}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: CheckFish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3481,7 +3627,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1407488739}
   - component: {fileID: 1407488740}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FishCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3766,7 +3912,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1428398585}
   - component: {fileID: 1428398586}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Hook
   m_TagString: Hook
   m_Icon: {fileID: 0}
@@ -3853,7 +3999,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1437477023}
   - component: {fileID: 1437477024}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Hook
   m_TagString: Hook
   m_Icon: {fileID: 0}
@@ -4031,7 +4177,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1490726926}
   - component: {fileID: 1490726927}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WinAndLose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4131,7 +4277,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1501637892}
   - component: {fileID: 1501637891}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Hook
   m_TagString: Hook
   m_Icon: {fileID: 0}
@@ -4642,7 +4788,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1644721606}
   - component: {fileID: 1644721607}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Hook
   m_TagString: Hook
   m_Icon: {fileID: 0}
@@ -4729,7 +4875,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1673096868}
   - component: {fileID: 1673096867}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MissHook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4784,7 +4930,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1699594616}
   - component: {fileID: 1699594617}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MissHook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4839,7 +4985,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1739714673}
   - component: {fileID: 1739714672}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Hook
   m_TagString: Hook
   m_Icon: {fileID: 0}
@@ -5210,7 +5356,7 @@ GameObject:
   - component: {fileID: 1850615459}
   - component: {fileID: 1850615458}
   - component: {fileID: 1850615457}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: CheckFish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5529,7 +5675,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1961418411}
   - component: {fileID: 1961418412}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WinAnimation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5793,7 +5939,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2011284215}
   - component: {fileID: 2011284216}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Fish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5859,7 +6005,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 09e82455096233d479550f1f30634b1b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d88bc4ad5e076754e9207386a244266b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5881,7 +6027,7 @@ GameObject:
   - component: {fileID: 2036276295}
   - component: {fileID: 2036276296}
   - component: {fileID: 2036276297}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FishHolder
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -5961,7 +6107,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2044547215}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FishRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6346,6 +6492,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 593205575}
+  - {fileID: 902337963}
   - {fileID: 2005257291}
   - {fileID: 2062353264}
   - {fileID: 144826710}

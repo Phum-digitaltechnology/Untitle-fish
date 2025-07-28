@@ -10,12 +10,14 @@ public class ligamentMove : MonoBehaviour
     [SerializeField] Transform objToMove;
     float currentTime = 0;
     Vector3 startPos, endPos;
+    [SerializeField] UnityEvent onStart;
     [SerializeField] UnityEvent onFinishMove;
     [SerializeField] float TbeforeMove;
     [SerializeField] UnityEvent beforeFinish;
     [ContextMenu("Debug Move")]
     public void StartMove()
     {
+        onStart?.Invoke();
         endPos = destination.position;
         endPos = new Vector3(destination.position.x, destination.position.y + OffSetY, destination.position.z);
         startPos = objToMove.position;

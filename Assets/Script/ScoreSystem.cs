@@ -49,7 +49,7 @@ public class ScoreSystem : MonoBehaviour
 
     public void CheckForSpeedUp()
     {
-        if (currentScore >= 7 && currentScore % 7 == 0)
+        if (currentScore >= 5 && currentScore % 5 == 0)
         {
             currentTimeIncreasement += 0.1f;
             currentTimeScale = 1f + currentTimeIncreasement;
