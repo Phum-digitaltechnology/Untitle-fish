@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 enum MANAGER
 {
@@ -30,6 +31,14 @@ public class GameManager : MonoBehaviour
             {
                 Manager.Add(gameObject.transform.GetChild(i).gameObject);
             }
+        }
+    }
+
+    private void Update()
+    {
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            Destroy(this.gameObject);
         }
     }
 }
