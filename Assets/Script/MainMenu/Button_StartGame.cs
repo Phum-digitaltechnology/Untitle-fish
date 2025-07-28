@@ -39,15 +39,18 @@ public class Button_StartGame : MonoBehaviour
     public void SetMasterVolume(float t)
     {
         AudioManager.Instance.SetMasterVolume(t);
+        PlayerPrefs.GetFloat("MasterVolume", t);
     }
 
     public void SetMusicVolume(float t)
     {
         AudioManager.Instance.SetMusicVolume(t);
+        PlayerPrefs.GetFloat("MusicVolume", t);
     }
 
     public void SetSFXVolume(float t)
     {
         AudioManager.Instance.SetSFXVolume(t);
+        PlayerPrefs.GetFloat("SFXVolume", t);
     }
 }
