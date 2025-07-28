@@ -8,6 +8,7 @@ public class OnColliderEvent : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        AudioManager.Instance.PlaySFX("FishFall");
         OnColliderSomething?.Invoke();
     }
 }

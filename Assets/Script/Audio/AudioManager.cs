@@ -129,6 +129,44 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void PlaySFXRandomPitch(string name)
+    {
+        Sound s = Array.Find(sfxSounds, x => x.name == name);
+        if (s == null)
+        {
+            Debug.Log("Sound Not Found");
+        }
+        else
+        {
+
+            /*            switch (UnityEngine.Random.Range(0, 2))
+                        {
+                            case 0:
+                                s.audioSource_m.pitch = 1.0f;
+                                break;
+                            case 1:
+                                s.audioSource_m.pitch = UnityEngine.Random.Range(0.5f, 2.0f);
+                                break;
+                        }*/
+            s.audioSource_m.pitch = UnityEngine.Random.Range(0.5f, 2.0f);
+            s.audioSource_m.PlayOneShot(s.clip);
+        }
+    }
+
+    public void SetSFXPitch(string name, float pitch)
+    {
+        Sound s = Array.Find(sfxSounds, x => x.name == name);
+        if (s == null)
+        {
+            Debug.Log("Sound Not Found");
+        }
+        else
+        {
+
+            s.audioSource_m.pitch = pitch;
+        }
+    }
+
     public void PlaySFXLoop(string name)
     {
         Sound s = Array.Find(sfxSounds, x => x.name == name);
@@ -140,6 +178,19 @@ public class AudioManager : MonoBehaviour
         {
             s.audioSource_m.Play();
             s.audioSource_m.loop = true;
+        }
+    }
+
+    public void StopSFX(string name)
+    {
+        Sound s = Array.Find(sfxSounds, x => x.name == name);
+        if (s == null)
+        {
+            Debug.Log("Sound Not Found");
+        }
+        else
+        {
+            s.audioSource_m.Stop();
         }
     }
 }

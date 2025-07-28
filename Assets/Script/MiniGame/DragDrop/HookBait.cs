@@ -33,4 +33,9 @@ public class HookBait : MonoBehaviour
             }
         }
     }
+
+    public void playYIPPEE()
+    {
+        AudioManager.Instance.PlaySFX("YIPPEE");
+    }
 }

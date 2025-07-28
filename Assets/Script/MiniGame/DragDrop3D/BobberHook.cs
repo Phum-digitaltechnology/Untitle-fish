@@ -26,6 +26,7 @@ public class BobberHook : MonoBehaviour
     {
         if (bobberColor == correctBobber)
         {
+            AudioManager.Instance.PlaySFX("YAY");
             BobberUI[(int)correctBobber].gameObject.SetActive(false);
             HookIcon.GetComponent<MG6_ShowHook>().ShowHookIcon(correctBobber);
             onCorrectBobber?.Invoke();
@@ -37,6 +38,7 @@ public class BobberHook : MonoBehaviour
             BobberUI[(int)correctBobber].gameObject.SetActive(false);
             HookIcon.GetComponent<MG6_ShowHook>().ShowHookIcon(bobberColor);
             onIncorrectBobber?.Invoke();
+            AudioManager.Instance.PlaySFX("SadWomp");
         }
     }
 }

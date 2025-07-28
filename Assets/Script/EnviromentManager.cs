@@ -6,6 +6,8 @@ public class EnviromentManager : MonoBehaviour
 {
     ScoreSystem scoreSystem;
     Enviroment activeEnviroment;
+    TransitionEvent waitEndTransition;
+
 
 
     [SerializeField] IntermissionSceneTrigger IntermissionSceneTrigger;
@@ -24,6 +26,8 @@ public class EnviromentManager : MonoBehaviour
         public Camera EnviromentCam => enviromentCam;
         [SerializeField] UnityEvent onActiveThisEnviroment;
         [SerializeField] UnityEvent offActiveEnviroment;
+
+        [SerializeField] UnityEvent waitTransitionEndEvent;
         public void Active()
         {
             if (enviromentCam != null) enviromentCam?.gameObject.SetActive(true);
@@ -34,6 +38,11 @@ public class EnviromentManager : MonoBehaviour
         {
             if (enviromentCam != null) enviromentCam?.gameObject.SetActive(false);
             offActiveEnviroment?.Invoke();
+        }
+
+        public void WaitTransitionEnd()
+        {
+            waitTransitionEndEvent?.Invoke();
         }
     }
 
@@ -52,6 +61,7 @@ public class EnviromentManager : MonoBehaviour
 
     private void Awake()
     {
+        waitEndTransition = FindAnyObjectByType<TransitionEvent>();
         unActiveAll();
         scoreSystem = FindAnyObjectByType<ScoreSystem>();
         IntermissionSceneTrigger.OnEnterIntermissionScene += OnActiveScene;
@@ -63,6 +73,7 @@ public class EnviromentManager : MonoBehaviour
     {
         activeGlobalEnviroment?.Invoke();
         getActiveEnviroment();
+
     }
 
     void OffActive()
@@ -86,6 +97,7 @@ public class EnviromentManager : MonoBehaviour
             activeEnviroment = loseEnviroment[Random.Range(0, winEnviroment.Count)];
 
         }
+
         activeEnviroment.Active();
     }
 }

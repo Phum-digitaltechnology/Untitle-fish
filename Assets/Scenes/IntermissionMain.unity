@@ -2589,7 +2589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8964f495953db03499f12266560fced3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTransform: {fileID: 0}
+  targetTransform: {fileID: 783962615}
   p0: 0
   p1: 180
   duration: 2
@@ -2629,7 +2629,7 @@ MonoBehaviour:
   OnStartRotate:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 783962616}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -2644,7 +2644,7 @@ MonoBehaviour:
   OnFinishRotate:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 783962616}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -4423,7 +4423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8964f495953db03499f12266560fced3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTransform: {fileID: 0}
+  targetTransform: {fileID: 783962615}
   p0: 180
   p1: 0
   duration: 2
@@ -4463,7 +4463,7 @@ MonoBehaviour:
   OnStartRotate:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 783962616}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -4478,7 +4478,7 @@ MonoBehaviour:
   OnFinishRotate:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 783962616}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -7307,7 +7307,7 @@ GameObject:
   - component: {fileID: 1120597528}
   - component: {fileID: 1120597527}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Cat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8703,13 +8703,98 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: e7daaa738515b1c4ab21d25945e95734, type: 3}
     outputGroup: {fileID: 3587029220550448306, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
     audioSource_m: {fileID: 0}
-    volume: 1
+    volume: 0.1
   sfxSounds:
   - name: PickUpWorm
     clip: {fileID: 8300000, guid: 11e542294fccf1c43a08c8bd4810b2f6, type: 3}
     outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
     audioSource_m: {fileID: 0}
+    volume: 0.5
+  - name: YIPPEE
+    clip: {fileID: 8300000, guid: 0145819b25e36d74baf5691f58869b7f, type: 3}
+    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
+    audioSource_m: {fileID: 0}
+    volume: 0.5
+  - name: DropWorm
+    clip: {fileID: 8300000, guid: 0ddb6fffc5950a94f930db783d4dd72e, type: 3}
+    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
+    audioSource_m: {fileID: 0}
+    volume: 0.5
+  - name: YAY
+    clip: {fileID: 8300000, guid: af997e1350b9d3f4db3664f0d5dbc3fb, type: 3}
+    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
+    audioSource_m: {fileID: 0}
+    volume: 0.15
+  - name: SadWomp
+    clip: {fileID: 8300000, guid: ec66bed969e0f574ea9699a042abadd9, type: 3}
+    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
+    audioSource_m: {fileID: 0}
+    volume: 0.5
+  - name: PickupBobbers
+    clip: {fileID: 8300000, guid: 5d338bd67ac83b64f8dcb17199e5192f, type: 3}
+    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
+    audioSource_m: {fileID: 0}
+    volume: 0.6
+  - name: BobbersFall
+    clip: {fileID: 8300000, guid: bb679a5adfe54a4459bbe51a522bd5af, type: 3}
+    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
+    audioSource_m: {fileID: 0}
+    volume: 0.7
+  - name: Reeling
+    clip: {fileID: 8300000, guid: 9d30f10ab212bb84f89f7e89d617c52a, type: 3}
+    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
+    audioSource_m: {fileID: 0}
     volume: 1
+  - name: StoneSlide
+    clip: {fileID: 8300000, guid: fd1b56105a522d148a1387962b23b9ed, type: 3}
+    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
+    audioSource_m: {fileID: 0}
+    volume: 0.4
+  - name: Frying
+    clip: {fileID: 8300000, guid: 75bf64e47feff794eac320331b025cb0, type: 3}
+    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
+    audioSource_m: {fileID: 0}
+    volume: 0.5
+  - name: FishFall
+    clip: {fileID: 8300000, guid: 7406b98ca5a57bb4e8d094c8f8ef0505, type: 3}
+    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
+    audioSource_m: {fileID: 0}
+    volume: 0.5
+  - name: FishJump
+    clip: {fileID: 8300000, guid: a66bee4545a580647acf7f2625254e6c, type: 3}
+    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
+    audioSource_m: {fileID: 0}
+    volume: 0.15
+  - name: destroyV1
+    clip: {fileID: 8300000, guid: 90f59ff040ce0474ea7c9ced37518535, type: 3}
+    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
+    audioSource_m: {fileID: 0}
+    volume: 0.5
+  - name: destroyV2
+    clip: {fileID: 8300000, guid: f1a9c73be564917479b474aef8b981ff, type: 3}
+    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
+    audioSource_m: {fileID: 0}
+    volume: 0.5
+  - name: destroyV3
+    clip: {fileID: 8300000, guid: b8410503fa8524946864b0ff6cdb34e9, type: 3}
+    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
+    audioSource_m: {fileID: 0}
+    volume: 0.5
+  - name: Sleeping
+    clip: {fileID: 8300000, guid: 9269d3f659043734b893c969f0fdace8, type: 3}
+    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
+    audioSource_m: {fileID: 0}
+    volume: 0.2
+  - name: AngryMeow
+    clip: {fileID: 8300000, guid: ea0ade1a10030cc4f944c16282c7515a, type: 3}
+    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
+    audioSource_m: {fileID: 0}
+    volume: 0.3
+  - name: CatPull
+    clip: {fileID: 8300000, guid: 3c6ba16c60c00e241bccd4686eb2442c, type: 3}
+    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
+    audioSource_m: {fileID: 0}
+    volume: 0.5
 --- !u!1001 &1311722919
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11176,9 +11261,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pause Menu
       objectReference: {fileID: 0}
+    - target: {fileID: 392760199581228466, guid: 7913021779eec7145bbea75c2f230a47, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2058378087545036946, guid: 7913021779eec7145bbea75c2f230a47, type: 3}
       propertyPath: m_SortingOrder
       value: 32767
+      objectReference: {fileID: 0}
+    - target: {fileID: 2843907310826171138, guid: 7913021779eec7145bbea75c2f230a47, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2843907310826171138, guid: 7913021779eec7145bbea75c2f230a47, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3102683833837050879, guid: 7913021779eec7145bbea75c2f230a47, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11218,6 +11315,42 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3102683833837050879, guid: 7913021779eec7145bbea75c2f230a47, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3104406588447628771, guid: 7913021779eec7145bbea75c2f230a47, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3136131145996481403, guid: 7913021779eec7145bbea75c2f230a47, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3338418959431571715, guid: 7913021779eec7145bbea75c2f230a47, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5584055350600880311, guid: 7913021779eec7145bbea75c2f230a47, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6275130825059331135, guid: 7913021779eec7145bbea75c2f230a47, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6275130825059331135, guid: 7913021779eec7145bbea75c2f230a47, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6275130825059331135, guid: 7913021779eec7145bbea75c2f230a47, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6533302252361207256, guid: 7913021779eec7145bbea75c2f230a47, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7756616807699885367, guid: 7913021779eec7145bbea75c2f230a47, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -11815,10 +11948,34 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1120597526}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   unActiveGlobalEnviroment:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2020712798}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1120597526}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -11847,6 +12004,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1120597527}
+          m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+          m_MethodName: SetTrigger
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: WinTrigger
+            m_BoolArgument: 1
+          m_CallState: 2
     offActiveEnviroment:
       m_PersistentCalls:
         m_Calls:
@@ -11862,36 +12031,54 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    waitTransitionEndEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1120597527}
+          m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+          m_MethodName: SetTrigger
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: WinTrigger
+            m_BoolArgument: 0
+          m_CallState: 2
   loseEnviroment:
   - enviromentCam: {fileID: 1006677952}
     onActiveThisEnviroment:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
+        - m_Target: {fileID: 1120597527}
+          m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+          m_MethodName: SetTrigger
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
+            m_StringArgument: LoseTrigger
+            m_BoolArgument: 0
           m_CallState: 2
     offActiveEnviroment:
       m_PersistentCalls:
+        m_Calls: []
+    waitTransitionEndEvent:
+      m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
+        - m_Target: {fileID: 1120597527}
+          m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+          m_MethodName: SetTrigger
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument: LoseTrigger
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!4 &1686628679
@@ -12617,13 +12804,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MiniGameScene:
+  - {fileID: 11400000, guid: 11c5e80c3ce2f8d4781c8d33df73dc93, type: 2}
+  - {fileID: 11400000, guid: 3f8bcd7ac0317214690a2c6c1a02805b, type: 2}
+  - {fileID: 11400000, guid: 6304368eb87f1614185bc5db03d0a4f3, type: 2}
+  - {fileID: 11400000, guid: 47214aa073295a34ba576e82e5f11e95, type: 2}
+  - {fileID: 11400000, guid: bfa7bd322c0ce0f49822b7c573804424, type: 2}
+  - {fileID: 11400000, guid: 5b91895e0a4abc84b823959e0f7875d2, type: 2}
+  - {fileID: 11400000, guid: 8ad0cd21ecf9d9d439c08a92092ea745, type: 2}
   - {fileID: 11400000, guid: b8a685b5764d02846a7d9e0f96622e49, type: 2}
+  - {fileID: 11400000, guid: 810952adcb6e31e499302089c869ad7c, type: 2}
+  - {fileID: 11400000, guid: 39e570841ca2e5a448302c0ac8d7cfcd, type: 2}
   CanAppear: []
   transitionAnim: {fileID: 1170659179}
   controlTransitionImage: {fileID: 1183154513}
   tmproTransition: {fileID: 555262368}
   CurrentMinigame: {fileID: 0}
   GameManagerObj: {fileID: 1268467454}
+  delayTime: 0
+  beforeActiveMinigame:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1120597527}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: PullFish
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1793907756
 GameObject:
   m_ObjectHideFlags: 0
@@ -13782,6 +13994,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneName: ModelTestScene
+  master: {fileID: 0}
+  music: {fileID: 0}
+  sfx: {fileID: 0}
 --- !u!114 &2006020169
 MonoBehaviour:
   m_ObjectHideFlags: 0

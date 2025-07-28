@@ -7972,19 +7972,7 @@ MonoBehaviour:
   maxSceneTime: 5
   OnStartCountDown:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 811926672}
-        m_TargetAssemblyTypeName: Global_CountDown, Assembly-CSharp
-        m_MethodName: ClampCurrentTime
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 2
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   OnFinishCountDown:
     m_PersistentCalls:
       m_Calls:
@@ -12299,6 +12287,18 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
+          m_StringArgument: Action
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 811926672}
+        m_TargetAssemblyTypeName: Global_CountDown, Assembly-CSharp
+        m_MethodName: ClampCurrentTime
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 2
           m_StringArgument: Action
           m_BoolArgument: 0
         m_CallState: 2
@@ -17755,7 +17755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8849ba57f2405e408b1c17383abfb58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 14
+  moveSpeed: 10
   destination: {fileID: 2036276295}
   OffSetY: 0
   objToMove: {fileID: 1181360421}

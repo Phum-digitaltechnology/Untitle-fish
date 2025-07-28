@@ -7,6 +7,7 @@ public class AimingMove : MonoBehaviour
     [SerializeField] private GameObject fish;
     [SerializeField] private GameObject fishSpawnPoint;
     [SerializeField] Transform minMove, maxMove;
+    bool once = false;
 
     public void SetUp()
     {
@@ -18,6 +19,19 @@ public class AimingMove : MonoBehaviour
     {
         float inputX = Input.GetAxisRaw("Horizontal"); // A/D or Left/Right arrow keys
         MoveOnXAxis(inputX);
+        if (inputX == 0)
+        {
+            AudioManager.Instance.StopSFX("StoneSlide");
+            once = false;
+        }
+        else
+        {
+            if (!once)
+            {
+                AudioManager.Instance.PlaySFXLoop("StoneSlide");
+                once = true;
+            }
+        }
     }
 
     private void MoveOnXAxis(float inputX)
