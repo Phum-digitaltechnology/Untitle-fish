@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -21,7 +22,12 @@ public class sceneManager : MonoBehaviour
     public event Action<string> OnLoadingIntoScene;
     public event Action<string> PreLoadingIntoScene;
     TransitionEvent transitionEvent;
-    //right click on the component and click "Load All ScriptableObjects" to load all scriptable objects
+
+
+    [SerializeField] float delayTime;
+    [SerializeField] UnityEvent beforeActiveMinigame;
+
+
 #if UNITY_EDITOR
     [ContextMenu("Load All ScriptableObjects")]
     void LoadAllInEditor()
@@ -177,6 +183,7 @@ public class sceneManager : MonoBehaviour
         if (!losing)
         {
             CurrentMinigame = randomMiniGame();
+            beforeActiveMinigame?.Invoke();
             controlTransitionImage.sprite = CurrentMinigame.controlSprite;
             tmproTransition.text = CurrentMinigame.transitionText;
             yield return new WaitForSeconds(1);
@@ -217,7 +224,6 @@ public class sceneManager : MonoBehaviour
         transitionEvent.waitTransitionEvent += waitTransiitonToIntermission;
 
     }
-
 
     void waitTransiitonToIntermission()
     {
