@@ -12,18 +12,6 @@ public class Button_StartGame : MonoBehaviour
 
     private void Start()
     {
-        if (!PlayerPrefs.HasKey("HasLaunchedBefore"))
-        {
-            // First time launching the game
-            PlayerPrefs.SetFloat("MasterVolume", 1.0f);
-            PlayerPrefs.SetFloat("MusicVolume", 1.0f);
-            PlayerPrefs.SetFloat("SFXVolume", 1.0f);
-
-            // Mark as launched
-            PlayerPrefs.SetInt("HasLaunchedBefore", 1);
-            PlayerPrefs.Save(); // Optional but good practice to save right away
-        }
-
         SetMasterVolume(PlayerPrefs.GetFloat("MasterVolume"));
         SetMusicVolume(PlayerPrefs.GetFloat("MusicVolume"));
         SetSFXVolume(PlayerPrefs.GetFloat("SFXVolume"));
