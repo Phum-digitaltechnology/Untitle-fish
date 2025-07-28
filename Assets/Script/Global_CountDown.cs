@@ -28,11 +28,8 @@ public class Global_CountDown : MonoBehaviour
 
     public void ClampCurrentTime(float ClampTime)
     {
-        if (currentTime > ClampTime)
-        {
-            currentTime = ClampTime;
-            currentTimeUpdate?.Invoke(currentTime);
-        }
+        currentTime = ClampTime;
+        currentTimeUpdate?.Invoke(currentTime);
     }
 
 
