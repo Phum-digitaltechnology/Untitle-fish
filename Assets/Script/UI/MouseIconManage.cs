@@ -8,12 +8,32 @@ public class MouseIconManage : MMSingleton<MouseIconManage>
 
     public static MouseIconStatus[] mouseIconLayer = new MouseIconStatus[3];
 
-
+    bool isSetUp = false;
+    protected override void Awake()
+    {
+        base.Awake();
+        isSetUp = true;
+        for (int i = 0; i < mouseIconLayer.Length; i++)
+        {
+            mouseIconLayer[i] = new MouseIconStatus();
+        }
+    }
 
     public void SetMouse(int layer, MouseIconStatus iconState)
     {
+        if (isSetUp == false)
+        {
+            isSetUp = true;
+            for (int i = 0; i < mouseIconLayer.Length; i++)
+            {
+                mouseIconLayer[i] = new MouseIconStatus();
+            }
+        }
+
+
         Debug.Log($"Layer index {layer}");
-        mouseIconLayer[layer] = iconState;
+        if (iconState != null)
+            mouseIconLayer[layer] = iconState;
         MouseIconStatus applyIcon = null;
 
 

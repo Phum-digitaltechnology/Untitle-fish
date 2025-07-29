@@ -16774,7 +16774,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 482118367}
+      - m_Target: {fileID: 865949918}
         m_TargetAssemblyTypeName: MouseIconController, Assembly-CSharp
         m_MethodName: ApplyMouseIcon
         m_Mode: 3
@@ -16815,6 +16815,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 865949918}
+        m_TargetAssemblyTypeName: MouseIconController, Assembly-CSharp
+        m_MethodName: ApplyMouseIcon
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -25723,7 +25735,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 662607101837168639, guid: 7913021779eec7145bbea75c2f230a47, type: 3}
       propertyPath: OnPlayGame.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 662607101837168639, guid: 7913021779eec7145bbea75c2f230a47, type: 3}
       propertyPath: OnPauseGame.m_PersistentCalls.m_Calls.Array.size
@@ -25731,11 +25743,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 662607101837168639, guid: 7913021779eec7145bbea75c2f230a47, type: 3}
       propertyPath: OnUnPauseGame.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 662607101837168639, guid: 7913021779eec7145bbea75c2f230a47, type: 3}
       propertyPath: OnPlayGame.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 662607101837168639, guid: 7913021779eec7145bbea75c2f230a47, type: 3}
+      propertyPath: OnPlayGame.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 662607101837168639, guid: 7913021779eec7145bbea75c2f230a47, type: 3}
       propertyPath: OnPauseGame.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -25745,6 +25761,10 @@ PrefabInstance:
       propertyPath: OnPlayGame.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 717623422}
+    - target: {fileID: 662607101837168639, guid: 7913021779eec7145bbea75c2f230a47, type: 3}
+      propertyPath: OnPlayGame.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 865949918}
     - target: {fileID: 662607101837168639, guid: 7913021779eec7145bbea75c2f230a47, type: 3}
       propertyPath: OnPauseGame.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -25758,9 +25778,13 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 662607101837168639, guid: 7913021779eec7145bbea75c2f230a47, type: 3}
+      propertyPath: OnPlayGame.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 662607101837168639, guid: 7913021779eec7145bbea75c2f230a47, type: 3}
       propertyPath: OnUnPauseGame.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 482118367}
+      objectReference: {fileID: 865949918}
     - target: {fileID: 662607101837168639, guid: 7913021779eec7145bbea75c2f230a47, type: 3}
       propertyPath: OnPauseGame.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -25768,6 +25792,10 @@ PrefabInstance:
     - target: {fileID: 662607101837168639, guid: 7913021779eec7145bbea75c2f230a47, type: 3}
       propertyPath: OnPlayGame.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
       value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 662607101837168639, guid: 7913021779eec7145bbea75c2f230a47, type: 3}
+      propertyPath: OnPlayGame.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: RevertMouseIcon
       objectReference: {fileID: 0}
     - target: {fileID: 662607101837168639, guid: 7913021779eec7145bbea75c2f230a47, type: 3}
       propertyPath: OnPauseGame.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -25786,6 +25814,10 @@ PrefabInstance:
       value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 662607101837168639, guid: 7913021779eec7145bbea75c2f230a47, type: 3}
+      propertyPath: OnPlayGame.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: MouseIconController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 662607101837168639, guid: 7913021779eec7145bbea75c2f230a47, type: 3}
       propertyPath: OnPauseGame.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: MouseIconController, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -25798,6 +25830,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 662607101837168639, guid: 7913021779eec7145bbea75c2f230a47, type: 3}
+      propertyPath: OnPlayGame.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 662607101837168639, guid: 7913021779eec7145bbea75c2f230a47, type: 3}
       propertyPath: OnPauseGame.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
       value: 1
       objectReference: {fileID: 0}
@@ -25807,6 +25843,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 662607101837168639, guid: 7913021779eec7145bbea75c2f230a47, type: 3}
       propertyPath: OnPlayGame.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 662607101837168639, guid: 7913021779eec7145bbea75c2f230a47, type: 3}
+      propertyPath: OnPlayGame.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 662607101837168639, guid: 7913021779eec7145bbea75c2f230a47, type: 3}
@@ -29087,6 +29127,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: MoreMountains.Feedbacks.MMF_Player, MoreMountains.Tools
         m_MethodName: PlayFeedbacks
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1120597526}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
