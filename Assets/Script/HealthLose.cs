@@ -37,6 +37,7 @@ public class HealthLose : MonoBehaviour
 
     public void OnFinishHealthLose()
     {
+        if (healthUiControl == null) return;
         healthUiControl.OnfinishHealthLose();
 
 
