@@ -6,6 +6,8 @@ public class HealthLose : MonoBehaviour
 {
     [SerializeField] UnityEvent onResetEvent;
     [SerializeField] UnityEvent _onHealthLose;
+    [SerializeField] UnityEvent OnActive;
+    [SerializeField] Transform startPos;
     Action addedCallback;
     HealthUiControl healthUiControl;
 
@@ -20,7 +22,12 @@ public class HealthLose : MonoBehaviour
         onResetEvent?.Invoke();
         IsLoseHealth = false;
         this.transform.GetChild(0).gameObject.SetActive(true);
-        this.transform.GetChild(0).transform.position = this.transform.position;
+        this.transform.GetChild(0).transform.position = startPos.transform.position;
+    }
+
+    public void OnActiveHealth()
+    {
+        OnActive?.Invoke();
     }
 
     public bool IsLoseHealth { get; private set; } = false;

@@ -37,6 +37,23 @@ public class HealthUiControl : MonoBehaviour
         }
     }
 
+
+    public void OnActiveHealthUi()
+    {
+        StartCoroutine(onActiveUi());
+    }
+
+    IEnumerator onActiveUi()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            if (healthHolder.transform.GetChild(i).gameObject.TryGetComponent<HealthLose>(out HealthLose health))
+            {
+                health.OnActiveHealth();
+                yield return new WaitForSeconds(0.5f);
+            }
+        }
+    }
     void isEnterIntermission(string sceneName)
     {
         if (sceneName == "IntermissionMain")
