@@ -13,10 +13,6 @@ public class MiniGameBase : MonoBehaviour
 
         Debug.Log(win ? "Mini-game: WIN" : "Mini-game: LOSE");
 
-        if (win && GameManager.instance != null)
-        {
-            // GameManager.instance.AddScore(1);
-        }
 
         StartCoroutine(UnloadAfterDelay(1f));
     }

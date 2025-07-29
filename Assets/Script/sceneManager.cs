@@ -122,9 +122,8 @@ public class sceneManager : MonoBehaviour
         losing = GameManagerObj.GetComponent<GameManager>().Manager[(int)MANAGER.ScoreSystem].GetComponent<ScoreSystem>().losing;
     }
 
-    private void Start()
+    public void SetUp()
     {
-
         ResetWeight();
         transitionEvent = transitionAnim.GetComponent<TransitionEvent>();
         GameManagerObj = this.transform.parent.gameObject;

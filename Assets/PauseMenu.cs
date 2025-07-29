@@ -1,6 +1,6 @@
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
-using System.Threading.Tasks;
 using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
@@ -21,7 +21,7 @@ public class PauseMenu : MonoBehaviour
             StartPauseGame();
             IsDelaying = false;
         }
-        else if(Input.GetKeyDown(KeyCode.Escape) && IsPaused)
+        else if (Input.GetKeyDown(KeyCode.Escape) && IsPaused)
         {
             OnEndCountDown();
         }
@@ -32,11 +32,11 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    public void OnEndCountDown()
+    public async void OnEndCountDown()
     {
         OnPlayGame.Invoke();
-        CountDown();
-        Countdown(CountDownTimeMS / 1000);
+        await CountDown();
+        await Countdown(CountDownTimeMS / 1000);
     }
 
     public async Task<bool> CountDown()
@@ -67,7 +67,7 @@ public class PauseMenu : MonoBehaviour
         IsPaused = true;
         OnPauseGame.Invoke();
     }
-    
+
     public void EndPauseGame()
     {
         Time.timeScale = CurrentTimeScale;
