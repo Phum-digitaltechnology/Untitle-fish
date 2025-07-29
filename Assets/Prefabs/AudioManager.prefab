@@ -138,7 +138,7 @@ MonoBehaviour:
     audioSource_m: {fileID: 0}
     volume: 0.3
   - name: CatPull
-    clip: {fileID: 8300000, guid: 3c6ba16c60c00e241bccd4686eb2442c, type: 3}
+    clip: {fileID: 8300000, guid: ff0ce10f3fba91542bbd315e3802e9ca, type: 3}
     outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
     audioSource_m: {fileID: 0}
     volume: 0.2
