@@ -17981,148 +17981,11 @@ Transform:
   - {fileID: 482604214}
   m_Father: {fileID: 1023224248}
   m_LocalEulerAnglesHint: {x: 49.25292, y: -33.51734, z: -24.77425}
---- !u!1 &1307469062
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1307469063}
-  - component: {fileID: 1307469064}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1307469063
+--- !u!4 &1307469063 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 3777201949402374200, guid: 753c27335115c1042afa7ca392622407, type: 3}
+  m_PrefabInstance: {fileID: 2285190164457188793}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1307469062}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1036.5331, y: 638.7188, z: -215}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1268467456}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1307469064
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1307469062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05d0af1758586d1419e246dd53d9ebfc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioMixer: {fileID: 24100000, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
-  musicSounds:
-  - name: PlaceHolder
-    clip: {fileID: 8300000, guid: e7daaa738515b1c4ab21d25945e95734, type: 3}
-    outputGroup: {fileID: 3587029220550448306, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
-    audioSource_m: {fileID: 0}
-    volume: 0.1
-  sfxSounds:
-  - name: PickUpWorm
-    clip: {fileID: 8300000, guid: 11e542294fccf1c43a08c8bd4810b2f6, type: 3}
-    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
-    audioSource_m: {fileID: 0}
-    volume: 0.5
-  - name: YIPPEE
-    clip: {fileID: 8300000, guid: 0145819b25e36d74baf5691f58869b7f, type: 3}
-    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
-    audioSource_m: {fileID: 0}
-    volume: 0.5
-  - name: DropWorm
-    clip: {fileID: 8300000, guid: 0ddb6fffc5950a94f930db783d4dd72e, type: 3}
-    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
-    audioSource_m: {fileID: 0}
-    volume: 0.5
-  - name: YAY
-    clip: {fileID: 8300000, guid: af997e1350b9d3f4db3664f0d5dbc3fb, type: 3}
-    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
-    audioSource_m: {fileID: 0}
-    volume: 0.15
-  - name: SadWomp
-    clip: {fileID: 8300000, guid: ec66bed969e0f574ea9699a042abadd9, type: 3}
-    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
-    audioSource_m: {fileID: 0}
-    volume: 0.5
-  - name: PickupBobbers
-    clip: {fileID: 8300000, guid: 5d338bd67ac83b64f8dcb17199e5192f, type: 3}
-    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
-    audioSource_m: {fileID: 0}
-    volume: 0.6
-  - name: BobbersFall
-    clip: {fileID: 8300000, guid: bb679a5adfe54a4459bbe51a522bd5af, type: 3}
-    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
-    audioSource_m: {fileID: 0}
-    volume: 0.7
-  - name: Reeling
-    clip: {fileID: 8300000, guid: 9d30f10ab212bb84f89f7e89d617c52a, type: 3}
-    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
-    audioSource_m: {fileID: 0}
-    volume: 1
-  - name: StoneSlide
-    clip: {fileID: 8300000, guid: fd1b56105a522d148a1387962b23b9ed, type: 3}
-    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
-    audioSource_m: {fileID: 0}
-    volume: 0.4
-  - name: Frying
-    clip: {fileID: 8300000, guid: 75bf64e47feff794eac320331b025cb0, type: 3}
-    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
-    audioSource_m: {fileID: 0}
-    volume: 0.5
-  - name: FishFall
-    clip: {fileID: 8300000, guid: 7406b98ca5a57bb4e8d094c8f8ef0505, type: 3}
-    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
-    audioSource_m: {fileID: 0}
-    volume: 0.5
-  - name: FishJump
-    clip: {fileID: 8300000, guid: a66bee4545a580647acf7f2625254e6c, type: 3}
-    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
-    audioSource_m: {fileID: 0}
-    volume: 0.15
-  - name: destroyV1
-    clip: {fileID: 8300000, guid: 90f59ff040ce0474ea7c9ced37518535, type: 3}
-    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
-    audioSource_m: {fileID: 0}
-    volume: 0.5
-  - name: destroyV2
-    clip: {fileID: 8300000, guid: f1a9c73be564917479b474aef8b981ff, type: 3}
-    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
-    audioSource_m: {fileID: 0}
-    volume: 0.5
-  - name: destroyV3
-    clip: {fileID: 8300000, guid: b8410503fa8524946864b0ff6cdb34e9, type: 3}
-    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
-    audioSource_m: {fileID: 0}
-    volume: 0.5
-  - name: Sleeping
-    clip: {fileID: 8300000, guid: 9269d3f659043734b893c969f0fdace8, type: 3}
-    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
-    audioSource_m: {fileID: 0}
-    volume: 0.2
-  - name: AngryMeow
-    clip: {fileID: 8300000, guid: ea0ade1a10030cc4f944c16282c7515a, type: 3}
-    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
-    audioSource_m: {fileID: 0}
-    volume: 0.3
-  - name: CatPull
-    clip: {fileID: 8300000, guid: 3c6ba16c60c00e241bccd4686eb2442c, type: 3}
-    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
-    audioSource_m: {fileID: 0}
-    volume: 0.5
 --- !u!1 &1308649573
 GameObject:
   m_ObjectHideFlags: 0
@@ -25090,7 +24953,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MiniGameScene:
-  - {fileID: 11400000, guid: 810952adcb6e31e499302089c869ad7c, type: 2}
+  - {fileID: 11400000, guid: 47214aa073295a34ba576e82e5f11e95, type: 2}
   CanAppear: []
   transitionAnim: {fileID: 1170659179}
   controlTransitionImage: {fileID: 1183154513}
@@ -29829,6 +29692,63 @@ Transform:
   - {fileID: 464338723}
   m_Father: {fileID: 206059161}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2285190164457188793
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1268467456}
+    m_Modifications:
+    - target: {fileID: 3777201949402374200, guid: 753c27335115c1042afa7ca392622407, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1036.5331
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777201949402374200, guid: 753c27335115c1042afa7ca392622407, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 638.7188
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777201949402374200, guid: 753c27335115c1042afa7ca392622407, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -215
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777201949402374200, guid: 753c27335115c1042afa7ca392622407, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777201949402374200, guid: 753c27335115c1042afa7ca392622407, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777201949402374200, guid: 753c27335115c1042afa7ca392622407, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777201949402374200, guid: 753c27335115c1042afa7ca392622407, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777201949402374200, guid: 753c27335115c1042afa7ca392622407, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777201949402374200, guid: 753c27335115c1042afa7ca392622407, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777201949402374200, guid: 753c27335115c1042afa7ca392622407, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7689999263072618207, guid: 753c27335115c1042afa7ca392622407, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 753c27335115c1042afa7ca392622407, type: 3}
 --- !u!1001 &4768198996237317281
 PrefabInstance:
   m_ObjectHideFlags: 0
