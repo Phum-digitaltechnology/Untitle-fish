@@ -12,7 +12,7 @@ public class HealthUiControl : MonoBehaviour
     private void Start()
     {
         transitionEvent = transition.GetComponent<TransitionEvent>();
-        scoreSystem = FindAnyObjectByType<ScoreSystem>();
+        scoreSystem = FindAnyObjectByType<ScoreSystem>(FindObjectsInactive.Include);
         previosHealth = scoreSystem.Life;
         FindAnyObjectByType<sceneManager>().OnLoadingIntoScene += isEnterIntermission;
     }
@@ -23,8 +23,8 @@ public class HealthUiControl : MonoBehaviour
         if (scoreSystem == null)
         {
             transitionEvent = transition.GetComponent<TransitionEvent>();
-            scoreSystem = FindAnyObjectByType<ScoreSystem>();
-            FindAnyObjectByType<sceneManager>().OnLoadingIntoScene += isEnterIntermission;
+            scoreSystem = FindAnyObjectByType<ScoreSystem>(FindObjectsInactive.Include);
+            FindAnyObjectByType<sceneManager>(FindObjectsInactive.Include).OnLoadingIntoScene += isEnterIntermission;
         }
 
         previosHealth = scoreSystem.Life;
