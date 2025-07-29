@@ -8300,7 +8300,7 @@ MonoBehaviour:
   - {fileID: 1787742349}
   - {fileID: 1075942380}
   ExitTime: 1
-  EnterTime: 0.5
+  EnterTime: 0
 --- !u!4 &519399793
 Transform:
   m_ObjectHideFlags: 0
