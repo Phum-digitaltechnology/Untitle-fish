@@ -12,6 +12,22 @@ public class MouseIconController : MonoBehaviour
         MouseIconStatus iconState = mouseIconStatus[index];
         MouseIconManage.Instance.SetMouse(MouseIconlayer, iconState);
     }
+
+    MouseIconStatus previosIcon;
+
+    public void ApplyOnTopPreviosMouseIcon(int index)
+    {
+        previosIcon = MouseIconManage.mouseIconLayer[MouseIconlayer - 1];
+        MouseIconStatus iconState = mouseIconStatus[index];
+        MouseIconManage.Instance.SetMouse(MouseIconlayer, iconState);
+
+    }
+
+    public void RevertMouseIcon()
+    {
+        MouseIconManage.Instance.SetMouse(MouseIconlayer, previosIcon);
+    }
+
 }
 [System.Serializable]
 public class MouseIconStatus

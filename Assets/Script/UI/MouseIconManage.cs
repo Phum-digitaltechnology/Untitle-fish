@@ -6,25 +6,25 @@ public class MouseIconManage : MMSingleton<MouseIconManage>
 
     [SerializeField] Image cursorImage;
 
-    static MouseIconStatus[] mouseIconLayer = new MouseIconStatus[2];
+    public static MouseIconStatus[] mouseIconLayer = new MouseIconStatus[3];
 
 
 
     public void SetMouse(int layer, MouseIconStatus iconState)
     {
         Debug.Log($"Layer index {layer}");
-        mouseIconLayer[layer - 1] = iconState;
-        MouseIconStatus applyIcon = iconState;
+        mouseIconLayer[layer] = iconState;
+        MouseIconStatus applyIcon = null;
 
-        if (layer == 1) //temporary Logic
+
+        for (int i = 0; i < mouseIconLayer.Length; i++)
         {
-            if (mouseIconLayer[0].IsEnableRealCursor == false && mouseIconLayer[0].IsEnableCursorImage == false)
+            if (mouseIconLayer[i].IsEnableRealCursor == true || mouseIconLayer[i].IsEnableCursorImage == true)
             {
-                Debug.Log("Apply Second Layer Mouse");
-                applyIcon = mouseIconLayer[1];
+                applyIcon = mouseIconLayer[i];
+                break;
             }
         }
-
 
         if (applyIcon == null)
         {
@@ -32,6 +32,7 @@ public class MouseIconManage : MMSingleton<MouseIconManage>
             ApplyIcon(new MouseIconStatus());
             return;
         }
+
         ApplyIcon(applyIcon);
 
     }

@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class LosingScreen : MonoBehaviour
@@ -8,9 +9,10 @@ public class LosingScreen : MonoBehaviour
     public TextMeshProUGUI Losetext;
     public TextMeshProUGUI Score;
     [SerializeField] GameObject loseUi;
-
+    [SerializeField] UnityEvent onLoseEvent;
     public void ActiveLosingScene()
     {
+        onLoseEvent?.Invoke();
         Debug.Log("Im Loseeee");
         loseUi.SetActive(true);
     }
