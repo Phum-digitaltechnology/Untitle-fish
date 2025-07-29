@@ -10150,8 +10150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40e7a48b10b9568498db8a3fb740c1a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _unlockWhen: 15
-  randomCDRange: {x: 3, y: 10}
+  _unlockWhen: 2
+  randomCDRange: {x: 0, y: 0}
   effectTime: 3
   Delay: 1
   waitRanOutEffect:
@@ -10210,7 +10210,19 @@ MonoBehaviour:
         m_CallState: 2
   unActiveEffect:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 632207103}
+        m_TargetAssemblyTypeName: CatNipEffectManage, Assembly-CSharp
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   CatHolder: {fileID: 426118587}
 --- !u!114 &632207105
 MonoBehaviour:
@@ -26887,7 +26899,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3455031311866353786, guid: 7913021779eec7145bbea75c2f230a47, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5216226861032775525, guid: 7913021779eec7145bbea75c2f230a47, type: 3}
       propertyPath: QuitButton.m_PersistentCalls.m_Calls.Array.size
@@ -26919,7 +26931,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6836947793622262859, guid: 7913021779eec7145bbea75c2f230a47, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7756616807699885367, guid: 7913021779eec7145bbea75c2f230a47, type: 3}
       propertyPath: m_AnchorMax.x
@@ -29548,6 +29560,30 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1256470807}
+        m_TargetAssemblyTypeName: ScoreSystem, Assembly-CSharp
+        m_MethodName: SetUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1144194408}
+        m_TargetAssemblyTypeName: GimmickManage, Assembly-CSharp
+        m_MethodName: ResetPool
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
