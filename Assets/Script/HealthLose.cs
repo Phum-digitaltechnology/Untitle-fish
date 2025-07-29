@@ -4,6 +4,7 @@ using UnityEngine.Events;
 
 public class HealthLose : MonoBehaviour
 {
+    [SerializeField] UnityEvent onResetEvent;
     [SerializeField] UnityEvent _onHealthLose;
     Action addedCallback;
     HealthUiControl healthUiControl;
@@ -11,6 +12,15 @@ public class HealthLose : MonoBehaviour
     private void Awake()
     {
         healthUiControl = FindAnyObjectByType<HealthUiControl>();
+    }
+
+    [ContextMenu("On Reset")]
+    public void OnReset()
+    {
+        onResetEvent?.Invoke();
+        IsLoseHealth = false;
+        this.transform.GetChild(0).gameObject.SetActive(true);
+        this.transform.GetChild(0).transform.position = this.transform.position;
     }
 
     public bool IsLoseHealth { get; private set; } = false;

@@ -66,6 +66,7 @@ public class GameLoopHolder : MonoBehaviour
 
     public void ChangeToMenuState()
     {
+
         ChangeState(GameState.Menu);
 
     }

@@ -10,6 +10,8 @@ public abstract class Gimmick : MonoBehaviour
     public bool IsActive { get; private set; } = false;
     float currentCD;
 
+    public abstract void OnReset();
+
     public void AddCD()
     {
         currentCD += Time.deltaTime;

@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class ScoreSystem : MonoBehaviour
 {
+    [SerializeField] UnityEvent OnReset;
     [SerializeField] public int currentScore = 0;
     [SerializeField] public int Life;
     [SerializeField] private float currentTimeScale = 1f;
@@ -22,9 +23,15 @@ public class ScoreSystem : MonoBehaviour
         currentLife = Life;
     }
 
-    private void Start()
+    public void SetUp()
     {
-        OnCountUpdate?.Invoke(playedMinigameCount);
+        playedMinigameCount = 0;
+        currentScore = 0;
+        currentLife = 4;
+        currentTimeIncreasement = 0;
+        Time.timeScale = 1;
+        losing = false;
+        OnReset?.Invoke();
     }
     public void Win()
     {

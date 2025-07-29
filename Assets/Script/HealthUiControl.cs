@@ -3,6 +3,7 @@ using UnityEngine;
 public class HealthUiControl : MonoBehaviour
 {
     [SerializeField] Transform healthHolder;
+    [SerializeField] float healthLoseDelay = 1;
     [SerializeField] float activeLoseDelay = 2;
     [SerializeField] Animator transition;
     TransitionEvent transitionEvent;
@@ -15,6 +16,27 @@ public class HealthUiControl : MonoBehaviour
         previosHealth = scoreSystem.Life;
         FindAnyObjectByType<sceneManager>().OnLoadingIntoScene += isEnterIntermission;
     }
+
+
+    public void OnReset()
+    {
+        if (scoreSystem == null)
+        {
+            transitionEvent = transition.GetComponent<TransitionEvent>();
+            scoreSystem = FindAnyObjectByType<ScoreSystem>();
+            FindAnyObjectByType<sceneManager>().OnLoadingIntoScene += isEnterIntermission;
+        }
+
+        previosHealth = scoreSystem.Life;
+        for (int i = 0; i < 4; i++)
+        {
+            if (healthHolder.transform.GetChild(i).gameObject.TryGetComponent<HealthLose>(out HealthLose health))
+            {
+                health.OnReset();
+            }
+        }
+    }
+
     void isEnterIntermission(string sceneName)
     {
         if (sceneName == "IntermissionMain")
@@ -22,6 +44,7 @@ public class HealthUiControl : MonoBehaviour
             EnterIntermission();
         }
     }
+
 
 
 
@@ -36,14 +59,19 @@ public class HealthUiControl : MonoBehaviour
         if (IsHealthChange())
         {
             previosHealth = scoreSystem.CurrentLife;
-            decreaseHealth();
 
-            Debug.Log("Change");
+            StartCoroutine(onHealthloseDelay());
         }
         else
         {
             Debug.Log("Nothing Change");
         }
+    }
+
+    IEnumerator onHealthloseDelay()
+    {
+        yield return new WaitForSeconds(healthLoseDelay);
+        decreaseHealth();
     }
     bool IsHealthChange()
     {

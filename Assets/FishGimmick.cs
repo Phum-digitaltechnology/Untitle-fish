@@ -8,6 +8,16 @@ public class FishGimmick : Gimmick
 
     [SerializeField] Transform spawnTransform;
 
+
+    public override void OnReset()
+    {
+        OnActive = false;
+        foreach (Transform i in spawnTransform)
+        {
+            Destroy(i.gameObject);
+        }
+    }
+
     public override void Active()
     {
         RectTransform fish2Spawn = fishPool[Random.Range(0, fishPool.Count)];
