@@ -3711,6 +3711,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0.0000011669626
       objectReference: {fileID: 0}
+    - target: {fileID: -7853819996588613692, guid: 5201c3142026b9546aafd0c5abd210f8, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 70dde2bc541f0d74394cc51fe97b4630, type: 2}
     - target: {fileID: -7723317165710482738, guid: 5201c3142026b9546aafd0c5abd210f8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 6.361109e-15
@@ -3723,6 +3727,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0
       objectReference: {fileID: 0}
+    - target: {fileID: -7610278017948341887, guid: 5201c3142026b9546aafd0c5abd210f8, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 70dde2bc541f0d74394cc51fe97b4630, type: 2}
     - target: {fileID: -7597538031839523843, guid: 5201c3142026b9546aafd0c5abd210f8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0.99999994
@@ -4399,6 +4407,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 9.671262
       objectReference: {fileID: 0}
+    - target: {fileID: 801581640288146107, guid: 5201c3142026b9546aafd0c5abd210f8, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 414df3ebd45e81b4a8209758217ea422, type: 2}
     - target: {fileID: 844510567774180457, guid: 5201c3142026b9546aafd0c5abd210f8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 13.990045
@@ -4555,6 +4567,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 9.671262
       objectReference: {fileID: 0}
+    - target: {fileID: 3173187213102864347, guid: 5201c3142026b9546aafd0c5abd210f8, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 70dde2bc541f0d74394cc51fe97b4630, type: 2}
     - target: {fileID: 3233952297501076207, guid: 5201c3142026b9546aafd0c5abd210f8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 90
@@ -17110,10 +17126,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2036095925}
     m_Modifications:
-    - target: {fileID: 658894913504574581, guid: f98e02707f6a87445b356cf95e535e0c, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: c288787ac584b3443ab4fd09c8162932, type: 2}
     - target: {fileID: 1498085719407155717, guid: f66c44633d45b4c40ae2b383da91e776, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -17162,6 +17174,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FishingRodModel_Fish_06
       objectReference: {fileID: 0}
+    - target: {fileID: 658894913504574581, guid: f98e02707f6a87445b356cf95e535e0c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c288787ac584b3443ab4fd09c8162932, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
