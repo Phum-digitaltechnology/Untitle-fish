@@ -35,8 +35,8 @@ public class PauseMenu : MonoBehaviour
     public async void OnEndCountDown()
     {
         OnPlayGame.Invoke();
-        await CountDown();
-        await Countdown(CountDownTimeMS / 1000);
+        CountDown();
+        Countdown(CountDownTimeMS / 1000);
     }
 
     public async Task<bool> CountDown()

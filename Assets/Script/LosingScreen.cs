@@ -16,7 +16,7 @@ public class LosingScreen : MonoBehaviour
     }
     void Update()
     {
-        string disPlayText = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().Manager[(int)MANAGER.ScoreSystem].GetComponent<ScoreSystem>().currentScore.ToString();
+        string disPlayText = GameObject.FindAnyObjectByType<ScoreSystem>().currentScore.ToString();
         Losetext.text = "Score : " + disPlayText;
         Score.text = disPlayText;
     }

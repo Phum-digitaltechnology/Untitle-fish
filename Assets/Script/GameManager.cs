@@ -4,9 +4,9 @@ using UnityEngine;
 enum MANAGER
 {
     SceneTransition = 0,
-    AudioSources = 1,
+    AudioSources = 3,
     SceneManager = 2,
-    ScoreSystem = 3,
+    ScoreSystem = 1,
 };
 
 public class GameManager : MonoBehaviour
@@ -23,10 +23,6 @@ public class GameManager : MonoBehaviour
         else
         {
             instance = this;
-            for (int i = 0; i < 4; i++)
-            {
-                Manager.Add(gameObject.transform.GetChild(i).gameObject);
-            }
         }
     }
 

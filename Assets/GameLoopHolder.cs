@@ -17,7 +17,7 @@ public class GameLoopHolder : MonoBehaviour
     [SerializeField] float EnterTime;
     private void Awake()
     {
-        if (instance != this)
+        if (instance != null && instance != this)
         {
             Destroy(this.gameObject);
             return;
@@ -40,7 +40,7 @@ public class GameLoopHolder : MonoBehaviour
         }
     }
 
-    public void ChangeState(GameState newState)
+    void ChangeState(GameState newState)
     {
         currentState = newState;
         GameStateListener onEnter = null, onExit = null;
@@ -56,6 +56,18 @@ public class GameLoopHolder : MonoBehaviour
             }
         }
         StartCoroutine(transition(onEnter, onExit));
+    }
+
+
+    public void ChangeToGameState()
+    {
+        ChangeState(GameState.Game);
+    }
+
+    public void ChangeToMenuState()
+    {
+        ChangeState(GameState.Menu);
+
     }
 
     IEnumerator transition(GameStateListener enter, GameStateListener exit)
