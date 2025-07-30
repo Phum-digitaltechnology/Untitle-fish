@@ -682,7 +682,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5368244826568326358}
   - component: {fileID: 8340280272703919798}
-  - component: {fileID: 600260267089609567}
   m_Layer: 0
   m_Name: OnEnterFeedBack
   m_TagString: Untagged
@@ -1197,18 +1196,6 @@ MonoBehaviour:
         ResetEvents:
           m_PersistentCalls:
             m_Calls: []
---- !u!114 &600260267089609567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6759205430333212430}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 211ff2df821eb0c40be62068f15a3934, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7221966913632879935
 GameObject:
   m_ObjectHideFlags: 0
