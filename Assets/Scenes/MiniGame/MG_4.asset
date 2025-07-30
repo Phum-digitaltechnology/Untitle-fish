@@ -17,4 +17,4 @@ MonoBehaviour:
   CanAppear: 0
   CurrentDownTime: 0
   controlSprite: {fileID: 21300000, guid: 70815d52f74ff6443bba1bb8f162121c, type: 3}
-  transitionText: FISH!
+  transitionText: SPAM!
