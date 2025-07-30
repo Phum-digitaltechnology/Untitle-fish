@@ -13,6 +13,7 @@ public class ScoreSystem : MonoBehaviour
     private int currentLife = 0;
     public int CurrentLife => currentLife;
     public bool losing = false;
+    [SerializeField] UnityEvent OnLose;
     [SerializeField] UnityEvent<int> currentLifeEvent;
     [SerializeField] bool noLifeLose;
     public bool MinigameState { get; private set; } = true;
@@ -25,6 +26,7 @@ public class ScoreSystem : MonoBehaviour
 
     public void SetUp()
     {
+        MinigameState = true;
         playedMinigameCount = 0;
         currentScore = 0;
         currentLife = 4;
@@ -50,6 +52,7 @@ public class ScoreSystem : MonoBehaviour
         currentLife--;
         if (currentLife <= 0)
         {
+            OnLose?.Invoke();
             losing = true;
         }
     }
@@ -60,6 +63,7 @@ public class ScoreSystem : MonoBehaviour
         {
             currentTimeIncreasement += 0.1f;
             currentTimeScale = 1f + currentTimeIncreasement;
+            Debug.Log($"{currentTimeScale}");
             Time.timeScale = currentTimeScale;
             StartCoroutine(SpeedUpVisual());
         }
