@@ -30,6 +30,7 @@ namespace MoreMountains.Tools
 						_instance = obj.AddComponent<T> ();
 					}
 				}
+				
 				return _instance;
 			}
 		}

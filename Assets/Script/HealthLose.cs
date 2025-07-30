@@ -4,13 +4,30 @@ using UnityEngine.Events;
 
 public class HealthLose : MonoBehaviour
 {
+    [SerializeField] UnityEvent onResetEvent;
     [SerializeField] UnityEvent _onHealthLose;
+    [SerializeField] UnityEvent OnActive;
+    [SerializeField] Transform startPos;
     Action addedCallback;
     HealthUiControl healthUiControl;
 
     private void Awake()
     {
         healthUiControl = FindAnyObjectByType<HealthUiControl>();
+    }
+
+    [ContextMenu("On Reset")]
+    public void OnReset()
+    {
+        onResetEvent?.Invoke();
+        IsLoseHealth = false;
+        this.transform.GetChild(0).gameObject.SetActive(true);
+        this.transform.GetChild(0).transform.position = startPos.transform.position;
+    }
+
+    public void OnActiveHealth()
+    {
+        OnActive?.Invoke();
     }
 
     public bool IsLoseHealth { get; private set; } = false;
@@ -27,6 +44,7 @@ public class HealthLose : MonoBehaviour
 
     public void OnFinishHealthLose()
     {
+        if (healthUiControl == null) return;
         healthUiControl.OnfinishHealthLose();
 
 

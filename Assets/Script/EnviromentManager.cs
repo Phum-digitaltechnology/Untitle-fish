@@ -58,7 +58,7 @@ public class EnviromentManager : MonoBehaviour
     {
         waitEndTransition = FindAnyObjectByType<TransitionEvent>();
         unActiveAll();
-        scoreSystem = FindAnyObjectByType<ScoreSystem>();
+        scoreSystem = FindAnyObjectByType<ScoreSystem>(FindObjectsInactive.Include);
         IntermissionSceneTrigger.OnEnterIntermissionScene += OnActiveScene;
         IntermissionSceneTrigger.OnExitIntermissionScene += OffActive;
     }

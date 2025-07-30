@@ -25,6 +25,20 @@ public class CatnipGimmick : Gimmick
 
     Action waitAction;
 
+
+    public override void OnReset()
+    {
+        OnActive = false;
+        waitActive = false;
+        waitAction = null;
+        unActiveEffect?.Invoke();
+        foreach (Transform i in CatHolder.transform)
+        {
+            i.gameObject.SetActive(false);
+        }
+    }
+
+
     public override void Active()
     {
         if (activeCatNap || OnActive) return;

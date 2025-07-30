@@ -6,25 +6,45 @@ public class MouseIconManage : MMSingleton<MouseIconManage>
 
     [SerializeField] Image cursorImage;
 
-    static MouseIconStatus[] mouseIconLayer = new MouseIconStatus[2];
+    public static MouseIconStatus[] mouseIconLayer = new MouseIconStatus[3];
 
-
+    bool isSetUp = false;
+    protected override void Awake()
+    {
+        base.Awake();
+        isSetUp = true;
+        for (int i = 0; i < mouseIconLayer.Length; i++)
+        {
+            mouseIconLayer[i] = new MouseIconStatus();
+        }
+    }
 
     public void SetMouse(int layer, MouseIconStatus iconState)
     {
-        Debug.Log($"Layer index {layer}");
-        mouseIconLayer[layer - 1] = iconState;
-        MouseIconStatus applyIcon = iconState;
-
-        if (layer == 1) //temporary Logic
+        if (isSetUp == false)
         {
-            if (mouseIconLayer[0].IsEnableRealCursor == false && mouseIconLayer[0].IsEnableCursorImage == false)
+            isSetUp = true;
+            for (int i = 0; i < mouseIconLayer.Length; i++)
             {
-                Debug.Log("Apply Second Layer Mouse");
-                applyIcon = mouseIconLayer[1];
+                mouseIconLayer[i] = new MouseIconStatus();
             }
         }
 
+
+        Debug.Log($"Layer index {layer}");
+        if (iconState != null)
+            mouseIconLayer[layer] = iconState;
+        MouseIconStatus applyIcon = null;
+
+
+        for (int i = 0; i < mouseIconLayer.Length; i++)
+        {
+            if (mouseIconLayer[i].IsEnableRealCursor == true || mouseIconLayer[i].IsEnableCursorImage == true)
+            {
+                applyIcon = mouseIconLayer[i];
+                break;
+            }
+        }
 
         if (applyIcon == null)
         {
@@ -32,6 +52,7 @@ public class MouseIconManage : MMSingleton<MouseIconManage>
             ApplyIcon(new MouseIconStatus());
             return;
         }
+
         ApplyIcon(applyIcon);
 
     }

@@ -11,7 +11,16 @@ public class GimmickManage : MonoBehaviour
         getGimmickList();
         scoreSystem = FindAnyObjectByType<ScoreSystem>();
         scoreSystem.OnCountUpdate += onFinishMinigame;
+    }
 
+    public void ResetPool()
+    {
+        gimmickActivePool = new List<Gimmick>();
+
+        foreach (Gimmick g in gimmickList)
+        {
+            g.OnReset();
+        }
     }
 
     void getGimmickList()
@@ -27,28 +36,19 @@ public class GimmickManage : MonoBehaviour
 
     void onFinishMinigame(int currentCount)
     {
-        Debug.Log("[Gimmick] onFinish Minigame");
 
-        List<Gimmick> removeList = new List<Gimmick>();
         foreach (Gimmick gimmick in gimmickList)
         {
             if (gimmick.UnLockWhen <= currentCount)
             {
+                if (gimmickActivePool.Contains(gimmick)) continue;
                 gimmickActivePool.Add(gimmick);
-                removeList.Add(gimmick);
             }
-        }
-
-        foreach (Gimmick removed in removeList)
-        {
-            removed.ResetCD();
-            gimmickList.Remove(removed);
         }
     }
 
     public void OnTimmerUpdate()
     {
-        Debug.Log("[Gimmick] Timer Update");
         foreach (Gimmick isActive in gimmickActivePool)
         {
             isActive.AddCD();
