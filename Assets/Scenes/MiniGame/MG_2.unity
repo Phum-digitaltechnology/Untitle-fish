@@ -1149,7 +1149,7 @@ MonoBehaviour:
   fishRenderer: {fileID: 405212815}
   normalFishSprite: {fileID: 21300000, guid: 16b30ad01070f2044beb124ab06e267e, type: 3}
   grabbedFishSprite: {fileID: 21300000, guid: d88bc4ad5e076754e9207386a244266b, type: 3}
-  swimSpeedState1: 4
+  swimSpeedState1: 5
   swimSpeedState2: 0.5
   swimSpeedReversed: -2
   phaseTimer: 1
