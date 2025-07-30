@@ -125,13 +125,9 @@ public class FishTugMinigame : MonoBehaviour
 
         fish.position += Vector3.right * fishDir * currentSpeed * Time.deltaTime;
 
-        if (fishCollider.IsTouching(loseZone)) //gameTimer > 2f && 
+        if (fishCollider.IsTouching(loseZone))
         {
             Finish(false);
-        }
-        else
-        {
-            Finish(true);
         }
     }
 
