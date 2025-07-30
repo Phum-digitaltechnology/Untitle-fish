@@ -152,7 +152,7 @@ public class FishTugMinigame : MonoBehaviour
         else
             OnLose.Invoke();
 
-        StartCoroutine(SwimAway());
+        //  StartCoroutine(SwimAway());
     }
 
     private IEnumerator InvokeWinAfterDelay()
