@@ -18,4 +18,9 @@ public class MG4Audio : MonoBehaviour
     {
         AudioManager.Instance.PlaySFX("YIPPEE");
     }
+
+    public void playPullSound()
+    {
+        AudioManager.Instance.PlaySFXRandomPitch("CatPull");
+    }
 }

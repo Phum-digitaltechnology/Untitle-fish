@@ -37,7 +37,7 @@ public class Temp_InputNoRepeatKey : MonoBehaviour
                         OnKeyPressEvent[i]?.Invoke();
                         OnSuccessInputKey?.Invoke();
                         previousKey = InputKey[i];
-                        AudioManager.Instance.PlaySFXRandomPitch("CatPull");
+                        //AudioManager.Instance.PlaySFXRandomPitch("CatPull");
                     }
                 }
             }
