@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -16,7 +16,7 @@ public class FishTugMinigame : MonoBehaviour
     public float swimSpeedState1 = 100f;   // Angry
     public float swimSpeedState2 = 50f;    // Tired
     public float swimSpeedReversed = -100f;
-    public float gameDuration = 5f;
+    //public float gameDuration = 5f;
 
     [Header("Callbacks")]
     public UnityEvent OnWin;
@@ -31,7 +31,7 @@ public class FishTugMinigame : MonoBehaviour
 
     private bool finished = false;
     private Collider2D fishCollider;
-    private SpriteRenderer fishRenderer;
+    [SerializeField] private SpriteRenderer fishRenderer;
     private Vector3 exit;
 
     private void Start()
@@ -48,11 +48,10 @@ public class FishTugMinigame : MonoBehaviour
         fish.position = pos;
 
         fishCollider = fish.GetComponent<Collider2D>();
-        fishRenderer = fish.GetComponent<SpriteRenderer>();
 
         currentphaseTimer = phaseTimer;
 
-        gameTimer = gameDuration;
+        //gameTimer = gameDuration;
         currentSpeed = swimSpeedState1;
     }
 
@@ -60,15 +59,15 @@ public class FishTugMinigame : MonoBehaviour
     {
         if (finished) return;
 
-        gameTimer -= Time.deltaTime;
+        //gameTimer -= Time.deltaTime;
         currentphaseTimer -= Time.deltaTime;
 
         // 1. Phase Switch (loop)
         if (currentphaseTimer <= 0f)
         {
-            isInState1 = !isInState1;
+            //isInState1 = !isInState1;
             currentphaseTimer = phaseTimer;
-            currentSpeed = isInState1 ? swimSpeedState1 : swimSpeedState2;
+            //currentSpeed = isInState1 ? swimSpeedState1 : swimSpeedState2;
         }
 
         // 2. Input Click
@@ -78,6 +77,7 @@ public class FishTugMinigame : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && onFish)
         {
+            Debug.Log("Fish grabbed!");
             if (fishRenderer && grabbedFishSprite)
                 fishRenderer.sprite = grabbedFishSprite;
 
@@ -87,26 +87,27 @@ public class FishTugMinigame : MonoBehaviour
                 currentSpeed = swimSpeedReversed;
         }
 
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) || !onFish)
         {
             if (fishRenderer && normalFishSprite)
                 fishRenderer.sprite = normalFishSprite;
+            currentSpeed = swimSpeedState1;
         }
 
         fish.position += Vector3.right * fishDir * currentSpeed * Time.deltaTime;
 
-        if (gameTimer > 2f && fishCollider.IsTouching(loseZone))
+        if (fishCollider.IsTouching(loseZone)) //gameTimer > 2f && 
         {
             Finish(false);
         }
 
-        if (gameTimer <= 2f)
-        {
-            if (fishCollider.IsTouching(loseZone))
-                Finish(false);
-            else
-                Finish(true);
-        }
+        // if (gameTimer <= 2f)
+        // {
+        //     if (fishCollider.IsTouching(loseZone))
+        //         Finish(false);
+        //     else
+        //         Finish(true);
+        // }
     }
 
     private void Finish(bool win)

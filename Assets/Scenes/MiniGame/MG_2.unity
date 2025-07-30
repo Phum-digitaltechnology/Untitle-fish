@@ -464,7 +464,6 @@ MonoBehaviour:
   swimSpeedState1: 100
   swimSpeedState2: 50
   swimSpeedReversed: -100
-  gameDuration: 10
   OnWin:
     m_PersistentCalls:
       m_Calls:
@@ -509,6 +508,7 @@ MonoBehaviour:
         m_CallState: 2
   phaseTimer: 1
   currentphaseTimer: 0
+  fishRenderer: {fileID: 0}
 --- !u!4 &244201866
 Transform:
   m_ObjectHideFlags: 0
@@ -1087,12 +1087,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fish: {fileID: 1702452808}
   loseZone: {fileID: 586289362}
-  normalFishSprite: {fileID: 21300000, guid: e4d93ceadf9dad54cbf48e27c43a4639, type: 3}
-  grabbedFishSprite: {fileID: 21300000, guid: 0aeb7aeddbe38ef40b008538f8268cf2, type: 3}
-  swimSpeedState1: 2
-  swimSpeedState2: 1
+  normalFishSprite: {fileID: 21300000, guid: 16b30ad01070f2044beb124ab06e267e, type: 3}
+  grabbedFishSprite: {fileID: 21300000, guid: d88bc4ad5e076754e9207386a244266b, type: 3}
+  swimSpeedState1: 3
+  swimSpeedState2: 0.5
   swimSpeedReversed: -2
-  gameDuration: 5
   OnWin:
     m_PersistentCalls:
       m_Calls:
@@ -1173,6 +1172,7 @@ MonoBehaviour:
         m_CallState: 2
   phaseTimer: 0.5
   currentphaseTimer: 0
+  fishRenderer: {fileID: 405212815}
 --- !u!1 &445645645
 GameObject:
   m_ObjectHideFlags: 0
@@ -1917,7 +1917,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d9f09df83665e142923254d7a9b4dcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSceneTime: 6
+  maxSceneTime: 20
   OnStartCountDown:
     m_PersistentCalls:
       m_Calls: []
@@ -2653,7 +2653,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countDonwOnStart: 0
-  countDownTime: 6
+  countDownTime: 20
   OnFinishCountDown:
     m_PersistentCalls:
       m_Calls:
@@ -2918,7 +2918,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
