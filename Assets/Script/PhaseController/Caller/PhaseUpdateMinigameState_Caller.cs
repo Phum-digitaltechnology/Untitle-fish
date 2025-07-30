@@ -17,7 +17,7 @@ public class PhaseUpdateMinigameState_Caller : MonoBehaviour
     public void UpdateStateAndGoNextPhase(bool State)
     {
 
-
+        Debug.Log("Mingigame Update State");
         phaseController.UpdateMinigameState(State);
         phaseController.NextStage();
     }

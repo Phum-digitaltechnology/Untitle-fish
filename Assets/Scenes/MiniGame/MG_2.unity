@@ -1163,55 +1163,7 @@ MonoBehaviour:
   RightSpawnZone: {fileID: 1889437919}
   OnWin:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1702452813}
-        m_TargetAssemblyTypeName: UnityEventDebugger, Assembly-CSharp
-        m_MethodName: OnDebug
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Winnnnn
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1702452812}
-        m_TargetAssemblyTypeName: PhaseUpdateMinigameState_Caller, Assembly-CSharp
-        m_MethodName: UpdateStateAndGoNextPhase
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 807967193}
-        m_TargetAssemblyTypeName: MouseIconController, Assembly-CSharp
-        m_MethodName: ApplyMouseIcon
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 2229689165775090537}
-        m_TargetAssemblyTypeName: MouseBoolChecker, Assembly-CSharp
-        m_MethodName: ApplyBoolTrueFlase
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
   OnLose:
     m_PersistentCalls:
       m_Calls:
@@ -1229,7 +1181,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1702452812}
         m_TargetAssemblyTypeName: PhaseUpdateMinigameState_Caller, Assembly-CSharp
-        m_MethodName: UpdateMinigameWinState
+        m_MethodName: UpdateStateAndGoNextPhase
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2844,7 +2796,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countDonwOnStart: 0
-  countDownTime: 6
+  countDownTime: 5
   OnFinishCountDown:
     m_PersistentCalls:
       m_Calls:
@@ -2858,10 +2810,10 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 1606486491}
-        m_TargetAssemblyTypeName: Debugger, Assembly-CSharp
+        m_TargetAssemblyTypeName: UnityEventDebugger, Assembly-CSharp
         m_MethodName: OnDebug
         m_Mode: 5
         m_Arguments:
@@ -2869,8 +2821,8 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Noooooo I'm Losee
-          m_BoolArgument: 0
+          m_StringArgument: Yippe I Win
+          m_BoolArgument: 1
         m_CallState: 2
   timerUpdate:
     m_PersistentCalls:

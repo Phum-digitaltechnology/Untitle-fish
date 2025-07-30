@@ -129,10 +129,6 @@ public class FishTugMinigame : MonoBehaviour
         {
             Finish(false);
         }
-        else
-        {
-            Finish(true);
-        }
     }
 
     private void Finish(bool win)
