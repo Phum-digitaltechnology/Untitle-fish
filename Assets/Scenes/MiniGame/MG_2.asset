@@ -17,4 +17,4 @@ MonoBehaviour:
   CanAppear: 0
   CurrentDownTime: 0
   controlSprite: {fileID: 21300000, guid: 364291e67a51af24b879494343b5aefc, type: 3}
-  transitionText: PULL!
+  transitionText: HOLD THAT FISH!

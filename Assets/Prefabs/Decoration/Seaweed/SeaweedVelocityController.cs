@@ -13,7 +13,7 @@ public class SeaweedVelocityController : MonoBehaviour
 
     public void InfluenceSeaweed(Material mat, float XVelocity)
     {
-        Debug.Log(XVelocity);
+        //Debug.Log(XVelocity);
         mat.SetFloat(_fishInfluence, XVelocity);
     }
 

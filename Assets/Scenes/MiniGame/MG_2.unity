@@ -390,6 +390,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 160425711}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &169374317
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 169374318}
+  m_Layer: 0
+  m_Name: Pos1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &169374318
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169374317}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.65, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 410939775}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &212997259
 GameObject:
   m_ObjectHideFlags: 0
@@ -459,11 +490,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fish: {fileID: 1702452808}
   loseZone: {fileID: 586289362}
+  fishRenderer: {fileID: 0}
   normalFishSprite: {fileID: 0}
   grabbedFishSprite: {fileID: 0}
   swimSpeedState1: 100
   swimSpeedState2: 50
   swimSpeedReversed: -100
+  phaseTimer: 1
+  currentPhaseTimer: 0
+  lanePositions:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  laneSwitchDuration: 0.2
+  LeftSpawnZone: {fileID: 0}
+  RightSpawnZone: {fileID: 0}
   OnWin:
     m_PersistentCalls:
       m_Calls:
@@ -506,9 +547,6 @@ MonoBehaviour:
           m_StringArgument: I lose
           m_BoolArgument: 0
         m_CallState: 2
-  phaseTimer: 1
-  currentphaseTimer: 0
-  fishRenderer: {fileID: 0}
 --- !u!4 &244201866
 Transform:
   m_ObjectHideFlags: 0
@@ -681,6 +719,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FewySeaWeedNormal
       objectReference: {fileID: 0}
+    - target: {fileID: 2011588284989180419, guid: e72cf15c0e7aa0e4d85d20d84152b204, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2231306439376980022, guid: e72cf15c0e7aa0e4d85d20d84152b204, type: 3}
       propertyPath: m_LocalScale.x
       value: 11.404558
@@ -733,6 +775,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -17.956
       objectReference: {fileID: 0}
+    - target: {fileID: 7623318319803066526, guid: e72cf15c0e7aa0e4d85d20d84152b204, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -754,6 +800,10 @@ PrefabInstance:
     - target: {fileID: 61696347739731748, guid: e72cf15c0e7aa0e4d85d20d84152b204, type: 3}
       propertyPath: m_Name
       value: FewySeaWeedNormal
+      objectReference: {fileID: 0}
+    - target: {fileID: 2011588284989180419, guid: e72cf15c0e7aa0e4d85d20d84152b204, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2231306439376980022, guid: e72cf15c0e7aa0e4d85d20d84152b204, type: 3}
       propertyPath: m_LocalScale.x
@@ -806,6 +856,10 @@ PrefabInstance:
     - target: {fileID: 2231306439376980022, guid: e72cf15c0e7aa0e4d85d20d84152b204, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -14.345
+      objectReference: {fileID: 0}
+    - target: {fileID: 7623318319803066526, guid: e72cf15c0e7aa0e4d85d20d84152b204, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1029,7 +1083,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 16b30ad01070f2044beb124ab06e267e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1070,7 +1124,12 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 169374318}
+  - {fileID: 1089767744}
+  - {fileID: 621661499}
+  - {fileID: 1013887964}
+  - {fileID: 1889437919}
   m_Father: {fileID: 1685344615}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &410939776
@@ -1087,11 +1146,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fish: {fileID: 1702452808}
   loseZone: {fileID: 586289362}
+  fishRenderer: {fileID: 405212815}
   normalFishSprite: {fileID: 21300000, guid: 16b30ad01070f2044beb124ab06e267e, type: 3}
   grabbedFishSprite: {fileID: 21300000, guid: d88bc4ad5e076754e9207386a244266b, type: 3}
-  swimSpeedState1: 3
+  swimSpeedState1: 4
   swimSpeedState2: 0.5
   swimSpeedReversed: -2
+  phaseTimer: 1
+  currentPhaseTimer: 0
+  lanePositions:
+  - {fileID: 169374318}
+  - {fileID: 1089767744}
+  - {fileID: 621661499}
+  laneSwitchDuration: 0.2
+  LeftSpawnZone: {fileID: 1013887964}
+  RightSpawnZone: {fileID: 1889437919}
   OnWin:
     m_PersistentCalls:
       m_Calls:
@@ -1170,9 +1239,6 @@ MonoBehaviour:
           m_StringArgument: Loseeee
           m_BoolArgument: 0
         m_CallState: 2
-  phaseTimer: 0.5
-  currentphaseTimer: 0
-  fishRenderer: {fileID: 405212815}
 --- !u!1 &445645645
 GameObject:
   m_ObjectHideFlags: 0
@@ -1570,6 +1636,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FewySeaWeedNormal
       objectReference: {fileID: 0}
+    - target: {fileID: 2011588284989180419, guid: e72cf15c0e7aa0e4d85d20d84152b204, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2231306439376980022, guid: e72cf15c0e7aa0e4d85d20d84152b204, type: 3}
       propertyPath: m_LocalScale.x
       value: 10.520026
@@ -1622,6 +1692,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -20.565
       objectReference: {fileID: 0}
+    - target: {fileID: 7623318319803066526, guid: e72cf15c0e7aa0e4d85d20d84152b204, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1632,6 +1706,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2231306439376980022, guid: e72cf15c0e7aa0e4d85d20d84152b204, type: 3}
   m_PrefabInstance: {fileID: 618151215}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &621661498
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 621661499}
+  m_Layer: 0
+  m_Name: Pos3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &621661499
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 621661498}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.65, y: -5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 410939775}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &627685665
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1735,6 +1840,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlipFewySeaWeed
       objectReference: {fileID: 0}
+    - target: {fileID: 1343740664889188517, guid: 5238a15cf06f30b4f9634797f8fe6fc7, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1709191386843243152, guid: 5238a15cf06f30b4f9634797f8fe6fc7, type: 3}
       propertyPath: m_LocalScale.x
       value: 9.238693
@@ -1786,6 +1895,10 @@ PrefabInstance:
     - target: {fileID: 1709191386843243152, guid: 5238a15cf06f30b4f9634797f8fe6fc7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 4.367
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954686473018753592, guid: 5238a15cf06f30b4f9634797f8fe6fc7, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2037,6 +2150,68 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 976057747}
   m_Mesh: {fileID: -1984733756418808333, guid: 9e3760cea2418414fb050963ab31ded4, type: 3}
+--- !u!1 &1013887963
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1013887964}
+  m_Layer: 0
+  m_Name: LeftSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1013887964
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013887963}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.57, y: -2.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 410939775}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1089767743
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1089767744}
+  m_Layer: 0
+  m_Name: Pos2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1089767744
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089767743}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.65, y: -2.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 410939775}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1197055104
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2048,6 +2223,10 @@ PrefabInstance:
     - target: {fileID: 690252924116180354, guid: 5238a15cf06f30b4f9634797f8fe6fc7, type: 3}
       propertyPath: m_Name
       value: FlipFewySeaWeed
+      objectReference: {fileID: 0}
+    - target: {fileID: 1343740664889188517, guid: 5238a15cf06f30b4f9634797f8fe6fc7, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1709191386843243152, guid: 5238a15cf06f30b4f9634797f8fe6fc7, type: 3}
       propertyPath: m_LocalScale.x
@@ -2100,6 +2279,10 @@ PrefabInstance:
     - target: {fileID: 1709191386843243152, guid: 5238a15cf06f30b4f9634797f8fe6fc7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 11.236
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954686473018753592, guid: 5238a15cf06f30b4f9634797f8fe6fc7, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2361,6 +2544,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FewySeaWeedNormal
       objectReference: {fileID: 0}
+    - target: {fileID: 2011588284989180419, guid: e72cf15c0e7aa0e4d85d20d84152b204, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2231306439376980022, guid: e72cf15c0e7aa0e4d85d20d84152b204, type: 3}
       propertyPath: m_LocalScale.x
       value: 11.287261
@@ -2412,6 +2599,10 @@ PrefabInstance:
     - target: {fileID: 2231306439376980022, guid: e72cf15c0e7aa0e4d85d20d84152b204, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 26.195
+      objectReference: {fileID: 0}
+    - target: {fileID: 7623318319803066526, guid: e72cf15c0e7aa0e4d85d20d84152b204, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2879,7 +3070,7 @@ Transform:
   m_GameObject: {fileID: 1702452806}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.9298096, y: -2.3994386, z: -3.582803}
+  m_LocalPosition: {x: 12.15, y: -2.29, z: -3.582803}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2901,11 +3092,11 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: 1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -3054,7 +3245,7 @@ Transform:
   m_GameObject: {fileID: 1736381962}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.7093487, y: 1.7649791, z: 3.7049441}
+  m_LocalPosition: {x: 4.7093487, y: 1.7649791, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3363,6 +3554,37 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!1 &1889437918
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1889437919}
+  m_Layer: 0
+  m_Name: RightSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1889437919
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889437918}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 13.52, y: -2.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 410939775}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1892624926
 GameObject:
   m_ObjectHideFlags: 0
