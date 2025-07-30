@@ -3642,7 +3642,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &196745619
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8763,7 +8763,7 @@ MonoBehaviour:
   - {fileID: 1787742349}
   - {fileID: 1075942380}
   ExitTime: 0.5
-  EnterTime: 1.5
+  EnterTime: 0.5
 --- !u!4 &519399793
 Transform:
   m_ObjectHideFlags: 0
@@ -20861,6 +20861,9 @@ MonoBehaviour:
   Life: 4
   currentTimeScale: 1
   losing: 0
+  OnLose:
+    m_PersistentCalls:
+      m_Calls: []
   currentLifeEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -25668,7 +25671,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1499119228
 RectTransform:
   m_ObjectHideFlags: 0
@@ -28700,6 +28703,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1686628679}
   - component: {fileID: 1686628678}
+  - component: {fileID: 1686628680}
   m_Layer: 0
   m_Name: ===WorldVisual===
   m_TagString: Untagged
@@ -28829,55 +28833,16 @@ MonoBehaviour:
           m_CallState: 2
     offActiveEnviroment:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1027870099}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   loseEnviroment:
   - enviromentCam: {fileID: 0}
     onActiveThisEnviroment:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1120597527}
-          m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-          m_MethodName: SetTrigger
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: LoseTrigger
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: LoseTrigger
-            m_BoolArgument: 1
-          m_CallState: 2
-    offActiveEnviroment:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
+        - m_Target: {fileID: 1686628680}
+          m_TargetAssemblyTypeName: isLoseCondition, Assembly-CSharp
+          m_MethodName: Active
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -28886,6 +28851,9 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    offActiveEnviroment:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!4 &1686628679
 Transform:
   m_ObjectHideFlags: 0
@@ -28902,6 +28870,48 @@ Transform:
   - {fileID: 2020712799}
   m_Father: {fileID: 1642883028}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1686628680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1686628677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5c300817c1ebfb418b0218cd7415599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onNotLose:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1120597527}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: LoseTrigger
+          m_BoolArgument: 0
+        m_CallState: 2
+  onLose:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1120597527}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: FrezeLose
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1691908386
 GameObject:
   m_ObjectHideFlags: 0
@@ -34848,7 +34858,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthHolder: {fileID: 464927816}
   healthLoseDelay: 0.5
-  activeLoseDelay: 2
+  activeLoseDelay: 1
   transition: {fileID: 1170659179}
 --- !u!1 &2031401926
 GameObject:
