@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class CreditScript : MonoBehaviour
 {
-    public float ScrollSpeed = 1f; 
+    public float ScrollSpeedOriginal = 1f;
+    public float ScrollSpeed = 1f;
+    public float MaxScrollSpeed = 1f;
     private RectTransform rect;
     private bool startScrolling = false;
     private Vector2 originalPosition;
@@ -38,5 +40,14 @@ public class CreditScript : MonoBehaviour
         {
             rect.anchoredPosition += new Vector2(0, ScrollSpeed*Time.deltaTime);
         }
+        if (Input.GetKey(KeyCode.Space))
+        {
+            ScrollSpeed = MaxScrollSpeed;
+        }
+        else
+        {
+            ScrollSpeed = ScrollSpeedOriginal;
+        }
+        
     }
 }
