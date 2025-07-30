@@ -31406,8 +31406,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MiniGameScene:
-  - {fileID: 11400000, guid: 11c5e80c3ce2f8d4781c8d33df73dc93, type: 2}
-  - {fileID: 11400000, guid: 47214aa073295a34ba576e82e5f11e95, type: 2}
+  - {fileID: 11400000, guid: 6304368eb87f1614185bc5db03d0a4f3, type: 2}
   CanAppear: []
   transitionAnim: {fileID: 1170659179}
   controlTransitionImage: {fileID: 1183154513}

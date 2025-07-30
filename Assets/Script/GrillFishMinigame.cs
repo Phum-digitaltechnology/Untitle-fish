@@ -32,11 +32,11 @@ public class GrillFishMinigame : MonoBehaviour
 
     [SerializeField] private GameObject smokeParticle;
 
-
     private void Start()
     {
         gameStarted = true;
         Debug.Log("MiniGame Start");
+        lineMover = FindAnyObjectByType<HeatLineMover>();
     }
 
     private void Update()
