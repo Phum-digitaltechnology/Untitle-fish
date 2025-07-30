@@ -147,3 +147,13 @@ MonoBehaviour:
     outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
     audioSource_m: {fileID: 0}
     volume: 0.5
+  - name: CarAccelerate
+    clip: {fileID: 8300000, guid: e7aebb3d61b89df47aa3f7b782991167, type: 3}
+    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
+    audioSource_m: {fileID: 0}
+    volume: 1
+  - name: CarBreak
+    clip: {fileID: 8300000, guid: 41d21e4973cf8b74fba092f9383fedb2, type: 3}
+    outputGroup: {fileID: 1302692758672183816, guid: 3914ebf30f6cafa4d8668e5ee2dea662, type: 2}
+    audioSource_m: {fileID: 0}
+    volume: 0.25

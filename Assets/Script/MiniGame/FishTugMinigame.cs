@@ -43,6 +43,7 @@ public class FishTugMinigame : MonoBehaviour
     public UnityEvent OnWin;
     public UnityEvent OnLose;
 
+    bool once = false;
 
     private void Start()
     {
@@ -114,6 +115,10 @@ public class FishTugMinigame : MonoBehaviour
                 currentSpeed = swimSpeedState2;
             else
                 currentSpeed = swimSpeedReversed;
+
+            AudioManager.Instance.PlaySFX("CarBreak");
+            AudioManager.Instance.StopSFX("CarAccelerate");
+            once = false;
         }
 
         if (Input.GetMouseButtonUp(0) || !onFish)
@@ -121,6 +126,12 @@ public class FishTugMinigame : MonoBehaviour
             if (fishRenderer && normalFishSprite)
                 fishRenderer.sprite = normalFishSprite;
             currentSpeed = swimSpeedState1;
+            if (!once)
+            {
+                AudioManager.Instance.PlaySFX("CarAccelerate");
+                AudioManager.Instance.StopSFX("CarBreak");
+                once = true;
+            }
         }
 
         fish.position += Vector3.right * fishDir * currentSpeed * Time.deltaTime;
