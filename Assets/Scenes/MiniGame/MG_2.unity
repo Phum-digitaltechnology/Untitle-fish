@@ -1917,7 +1917,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d9f09df83665e142923254d7a9b4dcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSceneTime: 20
+  maxSceneTime: 6
   OnStartCountDown:
     m_PersistentCalls:
       m_Calls: []
@@ -2653,7 +2653,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countDonwOnStart: 0
-  countDownTime: 20
+  countDownTime: 6
   OnFinishCountDown:
     m_PersistentCalls:
       m_Calls:
