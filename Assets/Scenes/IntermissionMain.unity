@@ -9819,7 +9819,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1920, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &590068074
@@ -18865,7 +18865,7 @@ Transform:
   m_GameObject: {fileID: 1120597526}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -1955.6802, y: -535.81, z: 1126.89}
+  m_LocalPosition: {x: -1955.6802, y: -536.61, z: 1126.89}
   m_LocalScale: {x: 0.8274168, y: 0.8274157, z: 0.8274168}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -20861,7 +20861,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnReset:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1144194408}
+        m_TargetAssemblyTypeName: GimmickManage, Assembly-CSharp
+        m_MethodName: ResetPool
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   currentScore: 0
   Life: 4
   currentTimeScale: 1
@@ -30430,18 +30442,6 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1757088294}
         m_TargetAssemblyTypeName: sceneManager, Assembly-CSharp
-        m_MethodName: SetUp
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1256470807}
-        m_TargetAssemblyTypeName: ScoreSystem, Assembly-CSharp
         m_MethodName: SetUp
         m_Mode: 1
         m_Arguments:
