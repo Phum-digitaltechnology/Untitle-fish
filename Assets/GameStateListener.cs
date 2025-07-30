@@ -32,6 +32,7 @@ public class GameStateListener : MonoBehaviour
         OnEnter?.Invoke();
     }
 
+    [ContextMenu("Test OnExit")]
     public void OnExitTransition()
     {
         OnExit?.Invoke();
