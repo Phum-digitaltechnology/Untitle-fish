@@ -6,11 +6,18 @@ public class Countdown : MonoBehaviour
 {
     public event Action OnFinishCountDownEvent;
 
+    [SerializeField] bool countDonwOnStart = false;
     [SerializeField] float countDownTime;
     [SerializeField] UnityEvent OnFinishCountDown;
-
     [SerializeField] UnityEvent<float> timerUpdate;
 
+    private void Start()
+    {
+        if (countDonwOnStart)
+        {
+            BeginCountDown();
+        }
+    }
     public void BeginCountDown()
     {
         StartCoroutine(CountDownCoroutine());

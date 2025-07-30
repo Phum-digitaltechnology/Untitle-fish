@@ -1,21 +1,33 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class sceneManager : MonoBehaviour
 {
     [SerializeField] private List<MiniGame> MiniGameScene = new List<MiniGame>();
     [SerializeField] private List<MiniGame> CanAppear = new List<MiniGame>();
     [SerializeField] private Animator transitionAnim;
+    [SerializeField] private Image controlTransitionImage;
+    [SerializeField] private TextMeshProUGUI tmproTransition;
     [SerializeField] private MiniGame CurrentMinigame;
     [SerializeField] private GameObject GameManagerObj;
     private bool losing = false;
-
+    private bool SceneLoaded = false;
     public event Action<string> OnLoadingIntoScene;
-    //right click on the component and click "Load All ScriptableObjects" to load all scriptable objects
+    public event Action<string> PreLoadingIntoScene;
+    TransitionEvent transitionEvent;
+
+
+    [SerializeField] float delayTime;
+    [SerializeField] UnityEvent beforeActiveMinigame;
+
+
 #if UNITY_EDITOR
     [ContextMenu("Load All ScriptableObjects")]
     void LoadAllInEditor()
@@ -39,7 +51,7 @@ public class sceneManager : MonoBehaviour
         CanAppear.Clear();
         foreach (var game in MiniGameScene)
         {
-            if(game.weight <= 0)
+            if (game.weight <= 0)
             {
                 game.CanAppear = false;
             }
@@ -49,42 +61,55 @@ public class sceneManager : MonoBehaviour
             }
         }
 
+        int total = 0;
         foreach (var game in MiniGameScene)
         {
             if (game.CanAppear)
             {
-                if (UnityEngine.Random.Range(1, 100) <= game.weight)
-                {
-                    CanAppear.Add(game);
-                }
+                CanAppear.Add(game);
+                total += game.weight;
             }
         }
 
-        MiniGame miniGame = CanAppear[UnityEngine.Random.Range(0, CanAppear.Count)];
-        miniGame.weight = 0;
-        miniGame.CurrentDownTime = 0;
-        return miniGame;
+        int random = UnityEngine.Random.Range(1, total);
+
+        int cursor = 0;
+        for (int i = 0; i < CanAppear.Count; i++)
+        {
+            cursor += CanAppear[i].weight;
+            if (cursor >= random)
+            {
+                MiniGame miniGame = CanAppear[i];
+                miniGame.weight = 0;
+                miniGame.CurrentDownTime = 0;
+                return miniGame;
+            }
+        }
+        return null;
     }
 
     //change scene
     public void ChangeScene(string SceneName)
     {
-        Debug.Log($"Loading Into Scene {SceneName}");
-        StartCoroutine(LoadLevel(SceneName));
+        if (!SceneLoaded)
+        {
+            Debug.Log($"Loading Into Scene {SceneName}");
+            StartCoroutine(LoadLevel(SceneName));
+            SceneLoaded = true;
+        }
     }
     //play animation before and after load scene
     IEnumerator LoadLevel(string SceneName)
     {
-        transitionAnim.SetTrigger("End");
-        yield return new WaitForSeconds(1);
+        transitionAnim.SetTrigger("EndMinigame");
+        yield return new WaitForSeconds(2.25f);
         AsyncOperation op = SceneManager.LoadSceneAsync(SceneName, LoadSceneMode.Additive);
         yield return op;
+        PreLoadingIntoScene?.Invoke(SceneName);
         OnLoadingIntoScene?.Invoke(SceneName);
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(SceneName));
         GameObject.Find("InterMissionCanvas").SetActive(false);
-        GameObject.Find("IntermissionCamera").GetComponent<AudioListener>().enabled = false;
-        GameObject.Find("IntermissionCamera").GetComponent<Camera>().enabled = false;
-        transitionAnim.SetTrigger("Start");
+        //transitionAnim.SetTrigger("StartMinigame");
     }
 
     //temp code to test scene changing
@@ -99,17 +124,20 @@ public class sceneManager : MonoBehaviour
 
     private void Start()
     {
+
         ResetWeight();
+        transitionEvent = transitionAnim.GetComponent<TransitionEvent>();
         GameManagerObj = this.transform.parent.gameObject;
         OnLoadingIntoScene?.Invoke("IntermissionMain"); // trigger the Loading scene Event
+        PreLoadingIntoScene?.Invoke("IntermissionMain");
         StartCoroutine(TriggerMiniGame());
     }
 
     private void ResetWeight()
     {
-        foreach(MiniGame m in MiniGameScene)
+        foreach (MiniGame m in MiniGameScene)
         {
-            m.weight = 100;
+            m.weight = 10;
         }
     }
 
@@ -118,7 +146,6 @@ public class sceneManager : MonoBehaviour
     {
         //ScoreSystem scoreCS = this.transform.parent.GetChild(3).gameObject.GetComponent<ScoreSystem>();
         ScoreSystem scoreCS = GameManagerObj.GetComponent<GameManager>().Manager[(int)MANAGER.ScoreSystem].GetComponent<ScoreSystem>();
-
         if (areYouWinningSon)
         {
             scoreCS.Win();
@@ -129,6 +156,7 @@ public class sceneManager : MonoBehaviour
         }
 
         StartCoroutine(BackToIntermission());
+        SceneLoaded = false;
 
         foreach (var game in MiniGameScene)
         {
@@ -140,41 +168,45 @@ public class sceneManager : MonoBehaviour
             {
                 game.weight += 10;
                 game.CurrentDownTime++;
-                if (game.weight >= 100)
-                {
-                    game.weight = 100;
-                }
             }
         }
+
+        scoreCS.CheckForSpeedUp();
 
         StartCoroutine(TriggerMiniGame());
     }
 
     IEnumerator TriggerMiniGame()
     {
-        yield return new WaitForSeconds(3);
+
+        yield return new WaitForSeconds(5); // maybe random this time???
         if (!losing)
         {
             CurrentMinigame = randomMiniGame();
+            beforeActiveMinigame?.Invoke();
+            controlTransitionImage.sprite = CurrentMinigame.controlSprite;
+            tmproTransition.text = CurrentMinigame.transitionText;
+            yield return new WaitForSeconds(1);
             ChangeScene(CurrentMinigame.SceneName);
         }
     }
 
+    bool isLoadIntermissionComplete;
     IEnumerator BackToIntermission()
     {
         transitionAnim.SetTrigger("End");
         yield return new WaitForSeconds(1);
+        Debug.Log($"Current Minigame {Time.frameCount} {CurrentMinigame.SceneName}");
         AsyncOperation op = SceneManager.UnloadSceneAsync(CurrentMinigame.SceneName);
+
 
         op.completed += (AsyncOperation o) =>
         {
             SceneManager.SetActiveScene(SceneManager.GetSceneByName("IntermissionMain"));
         };
-        OnLoadingIntoScene?.Invoke("IntermissionMain");
-        GameObject.Find("IntermissionCamera").GetComponent<AudioListener>().enabled = true;
-        GameObject.Find("IntermissionCamera").GetComponent<Camera>().enabled = true;
+        transitionAnim.SetTrigger("Start");
+        PreLoadingIntoScene?.Invoke("IntermissionMain");
         GameObject[] allObjects = Resources.FindObjectsOfTypeAll<GameObject>();
-
         foreach (GameObject obj in allObjects)
         {
             if (obj.name == "InterMissionCanvas" && !obj.activeInHierarchy)
@@ -186,15 +218,23 @@ public class sceneManager : MonoBehaviour
                 else
                 {
                     obj.SetActive(true);
-                    for (int i = 0; i < 4; i++)
-                    {
-                        obj.transform.GetChild(i).gameObject.SetActive(false);
-                    }
-                    obj.transform.GetChild(4).gameObject.SetActive(true);
                 }
             }
         }
-        transitionAnim.SetTrigger("Start");
+        transitionEvent.waitTransitionEvent += waitTransiitonToIntermission;
+
     }
+
+    void waitTransiitonToIntermission()
+    {
+        OnLoadingIntoScene?.Invoke("IntermissionMain");
+
+    }
+    bool IsAnimatorPlaying(Animator animator)
+    {
+        var stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+        return stateInfo.normalizedTime < 1f || animator.IsInTransition(0);
+    }
+
 
 }

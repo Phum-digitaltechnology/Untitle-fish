@@ -7,4 +7,6 @@ public class MiniGame : ScriptableObject
     public int weight;
     public bool CanAppear;
     public int CurrentDownTime;
+    public Sprite controlSprite;
+    public string transitionText;
 }

@@ -6,7 +6,6 @@ public class FishTugMinigame : MonoBehaviour
 {
     [Header("Scene Refs")]
     public Transform fish;
-    public Collider2D winZone;
     public Collider2D loseZone;
 
     [Header("Fish Sprites")]
@@ -14,137 +13,130 @@ public class FishTugMinigame : MonoBehaviour
     public Sprite grabbedFishSprite;
 
     [Header("Gameplay Settings")]
-    public float dragThreshold = 50f;
-    public float swimSpeed = 3f;
+    public float swimSpeedState1 = 100f;   // Angry
+    public float swimSpeedState2 = 50f;    // Tired
+    public float swimSpeedReversed = -100f;
+    public float gameDuration = 5f;
 
     [Header("Callbacks")]
     public UnityEvent OnWin;
     public UnityEvent OnLose;
 
+    private float gameTimer;
+    public float phaseTimer = 1f;
+    public float currentphaseTimer;
     private int fishDir;
-    private bool isDragging = false;
-    private Vector3 dragOffset;
+    private float currentSpeed;
+    private bool isInState1 = true;
+
     private bool finished = false;
-    private Vector3 exit;
-    private bool canSwimAway = false;
     private Collider2D fishCollider;
     private SpriteRenderer fishRenderer;
-
-    [SerializeField] UnityEvent onFishGoLeft;
-    [SerializeField] UnityEvent onFishGoRight;
+    private Vector3 exit;
 
     private void Start()
     {
         fishDir = (Random.value < 0.5f) ? -1 : 1;
-
         ApplyFishRotation();
 
-        Vector3 p = fish.position; p.y = 0f; fish.position = p;
-        if (fishDir == -1)
-        {
-            var temp = winZone;
-            winZone = loseZone;
-            loseZone = temp;
-        }
+        Vector3 loseZonePos = loseZone.transform.position;
+        loseZonePos.x = fish.position.x + fishDir * 10f;
+        loseZone.transform.position = loseZonePos;
+
+        Vector3 pos = fish.position;
+        pos.y = 0f;
+        fish.position = pos;
 
         fishCollider = fish.GetComponent<Collider2D>();
-        if (fishCollider == null)
-        {
-            Debug.LogError("[FishTug] Missing Collider2D on fish!");
-        }
         fishRenderer = fish.GetComponent<SpriteRenderer>();
-        if (fishRenderer == null)
-        {
-            Debug.LogError("[FishTug] Missing SpriteRenderer on fish!");
-        }
+
+        currentphaseTimer = phaseTimer;
+
+        gameTimer = gameDuration;
+        currentSpeed = swimSpeedState1;
     }
 
     private void Update()
     {
-        if (!finished)
+        if (finished) return;
+
+        gameTimer -= Time.deltaTime;
+        currentphaseTimer -= Time.deltaTime;
+
+        // 1. Phase Switch (loop)
+        if (currentphaseTimer <= 0f)
         {
-            if (!isDragging)
-            {
-                fish.position += Vector3.right * fishDir * swimSpeed * Time.deltaTime;
-            }
-
-            if (Input.GetMouseButtonDown(0))
-            {
-                Vector2 mw = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                RaycastHit2D hit = Physics2D.Raycast(mw, Vector2.zero);
-                if (hit && hit.transform == fish)
-                {
-                    isDragging = true;
-                    dragOffset = fish.position - (Vector3)mw;
-                    if (fishRenderer != null && grabbedFishSprite != null)
-                    {
-                        fishRenderer.sprite = grabbedFishSprite;
-                    }
-                }
-            }
-
-            if (Input.GetMouseButton(0) && isDragging)
-            {
-                Vector2 mw = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                Vector3 newPos = (Vector3)mw + dragOffset;
-                fish.position = new Vector3(newPos.x, fish.position.y, fish.position.z);
-            }
-
-            if (Input.GetMouseButtonUp(0))
-            {
-                isDragging = false;
-                if (fishRenderer != null && normalFishSprite != null)
-                {
-                    fishRenderer.sprite = normalFishSprite;
-                }
-            }
+            isInState1 = !isInState1;
+            currentphaseTimer = phaseTimer;
+            currentSpeed = isInState1 ? swimSpeedState1 : swimSpeedState2;
         }
-        if (canSwimAway)
+
+        // 2. Input Click
+        Vector2 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        RaycastHit2D hit = Physics2D.Raycast(mouseWorld, Vector2.zero);
+        bool onFish = hit && hit.transform == fish;
+
+        if (Input.GetMouseButtonDown(0) && onFish)
         {
-            fish.position += exit * swimSpeed * Time.deltaTime;
+            if (fishRenderer && grabbedFishSprite)
+                fishRenderer.sprite = grabbedFishSprite;
 
-            if (Mathf.Abs(fish.position.x) > 30f)
-            {
-                canSwimAway = false;
-            }
+            if (isInState1)
+                currentSpeed = swimSpeedState2;
+            else
+                currentSpeed = swimSpeedReversed;
         }
-    }
-    public void FoundSomething(Collider2D other)
-    {
-        Debug.Log("Checking Collider");
 
-        if (other == winZone)
+        if (Input.GetMouseButtonUp(0))
         {
-            Finish(true);
+            if (fishRenderer && normalFishSprite)
+                fishRenderer.sprite = normalFishSprite;
         }
-        else if (other == loseZone)
+
+        fish.position += Vector3.right * fishDir * currentSpeed * Time.deltaTime;
+
+        if (gameTimer > 2f && fishCollider.IsTouching(loseZone))
         {
             Finish(false);
+        }
+
+        if (gameTimer <= 2f)
+        {
+            if (fishCollider.IsTouching(loseZone))
+                Finish(false);
+            else
+                Finish(true);
         }
     }
 
     private void Finish(bool win)
     {
-        isDragging = false;
+        if (finished) return;
         finished = true;
 
+        //exit = Vector3.right * (win ? -fishDir : fishDir);
+
         if (win)
-        {
-            exit = Vector3.right * -fishDir;
-            canSwimAway = true;
             StartCoroutine(InvokeWinAfterDelay());
-        }
         else
-        {
-            exit = Vector3.right * fishDir;
             OnLose.Invoke();
-            canSwimAway = true;
-        }
+
+        StartCoroutine(SwimAway());
     }
+
     private IEnumerator InvokeWinAfterDelay()
     {
         yield return new WaitForSeconds(1.5f);
         OnWin.Invoke();
+    }
+
+    private IEnumerator SwimAway()
+    {
+        while (Mathf.Abs(fish.position.x) < 30f)
+        {
+            fish.position += exit * swimSpeedState1 * Time.deltaTime;
+            yield return null;
+        }
     }
 
     private void ApplyFishRotation()

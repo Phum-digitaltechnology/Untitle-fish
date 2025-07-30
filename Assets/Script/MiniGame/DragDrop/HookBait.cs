@@ -4,21 +4,38 @@ using UnityEngine.Events;
 public class HookBait : MonoBehaviour
 {
     [SerializeField] private UnityEvent OnApplyBait;
-    [SerializeField] private GameObject confetti;
+    //[SerializeField] private GameObject confetti;
     private bool haveWorm = false;
-
-    public void OnTriggerStay2D(Collider2D col)
+    bool isWormOnHook;
+    Collider2D col;
+    void OnTriggerStay2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Worm")
+        this.col = col;
+        isWormOnHook = col.gameObject.tag == "Worm";
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        isWormOnHook = false;
+        this.col = null;
+    }
+
+    private void Update()
+    {
+        if (isWormOnHook)
         {
-            //Debug.Log("Trigger Stay");
             if (Input.GetMouseButtonUp(0) && !haveWorm)
             {
                 Destroy(col.gameObject.GetComponent<Rigidbody2D>());
                 OnApplyBait?.Invoke();
-                Instantiate(confetti, new Vector3(col.gameObject.transform.position.x, col.gameObject.transform.position.y, col.gameObject.transform.position.z), Quaternion.identity);
+                //Instantiate(confetti, new Vector3(col.gameObject.transform.position.x, col.gameObject.transform.position.y, col.gameObject.transform.position.z), Quaternion.identity);
                 haveWorm = true;
             }
         }
+    }
+
+    public void playYIPPEE()
+    {
+        AudioManager.Instance.PlaySFX("YIPPEE");
     }
 }

@@ -12,9 +12,15 @@ public class FishRun : MonoBehaviour
     int currentDesitnation;
     [SerializeField] UnityEvent ChangeToPos1;
     [SerializeField] UnityEvent ChangeToPos2;
-
+    [SerializeField] UnityEvent OnFishLeadToDestination;
+    BoxCollider fishCol;
     bool fishStop;
 
+
+    private void Awake()
+    {
+        fishCol = fishTransform.gameObject.GetComponent<BoxCollider>();
+    }
     public void SetFishToStop()
     {
         fishStop = true;
@@ -39,6 +45,7 @@ public class FishRun : MonoBehaviour
         if (randIndex == 0)
         {
             DirectionX = 1;
+            fishCol.center = new Vector3(Mathf.Abs(fishCol.center.x), fishCol.center.y, fishCol.center.z);
             currentDesitnation = 1;
             ChangeToPos2?.Invoke();
 
@@ -46,6 +53,8 @@ public class FishRun : MonoBehaviour
         else
         {
             DirectionX = -1;
+            fishCol.center = new Vector3(Mathf.Abs(fishCol.center.x) * -1, fishCol.center.y, fishCol.center.z);
+
             currentDesitnation = 0;
             ChangeToPos1?.Invoke();
         }
@@ -85,6 +94,8 @@ public class FishRun : MonoBehaviour
     float DirectionX = 0;
     private void MoveToPoint(Vector3 destination)
     {
+        if (fishStop) return;
+
         if (Vector3.Distance(fishTransform.transform.position, destination) >= 0.5f)
         {
             Vector3 currentPos = fishTransform.transform.position;
@@ -93,25 +104,28 @@ public class FishRun : MonoBehaviour
         }
         else
         {
-            if (fishStop) return;
-
+            fishStop = true;
             if (currentDesitnation == 0)
             {
                 DirectionX = 1;
+                fishCol.center = new Vector3(Mathf.Abs(fishCol.center.x), fishCol.center.y, fishCol.center.z);
                 currentDesitnation = 1;
-                ChangeToPos2?.Invoke();
-                setTargetPos(MovePos[1]);
+                OnFishLeadToDestination?.Invoke();
             }
             else
             {
                 DirectionX = -1;
+                fishCol.center = new Vector3(-fishCol.center.x, fishCol.center.y, fishCol.center.z);
                 currentDesitnation = 0;
-                ChangeToPos1?.Invoke();
-                setTargetPos(MovePos[0]);
+                OnFishLeadToDestination?.Invoke();
             }
 
         }
     }
 
+    public void changeMoveSpeed(float newSpeed)
+    {
+        moveSpeed = newSpeed;
+    }
 
 }

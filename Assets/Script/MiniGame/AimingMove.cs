@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AimingMove : MonoBehaviour
@@ -6,11 +5,13 @@ public class AimingMove : MonoBehaviour
     [SerializeField] private Transform fishNetTranform;
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private GameObject fish;
-
+    [SerializeField] private GameObject fishSpawnPoint;
+    [SerializeField] Transform minMove, maxMove;
+    bool once = false;
 
     public void SetUp()
     {
-        fish.transform.localPosition = new Vector3(Random.Range(-1.5f, 6), -9, 0);
+        fish.transform.localPosition = new Vector3(Random.Range(fishSpawnPoint.transform.localPosition.x - 1, fishSpawnPoint.transform.localPosition.x + 1), fishSpawnPoint.transform.localPosition.y, fishSpawnPoint.transform.localPosition.z);
         this.gameObject.GetComponent<AimingMove>().enabled = true;
     }
 
@@ -18,6 +19,19 @@ public class AimingMove : MonoBehaviour
     {
         float inputX = Input.GetAxisRaw("Horizontal"); // A/D or Left/Right arrow keys
         MoveOnXAxis(inputX);
+        if (inputX == 0)
+        {
+            AudioManager.Instance.StopSFX("StoneSlide");
+            once = false;
+        }
+        else
+        {
+            if (!once)
+            {
+                AudioManager.Instance.PlaySFXLoop("StoneSlide");
+                once = true;
+            }
+        }
     }
 
     private void MoveOnXAxis(float inputX)
@@ -26,16 +40,19 @@ public class AimingMove : MonoBehaviour
 
         // Move only on X-axis
         Vector3 newPos = currentPos + new Vector3(inputX * moveSpeed * Time.deltaTime, 0f, 0f);
-
-        if (newPos.x >= 4 && newPos.x <= 18.5f)
+        if (newPos.x <= minMove.position.x || newPos.x >= maxMove.position.x)
         {
-            fishNetTranform.position = newPos;
+            Debug.Log("Out of Range");
+            return;
         }
+
+        fishNetTranform.position = newPos;
     }
 
     public void parabolaFish()
     {
-        fish.GetComponent<Rigidbody2D>().AddForce(transform.up * Random.Range(14, 18), ForceMode2D.Impulse);
+        fish.SetActive(true);
+        fish.GetComponent<Rigidbody2D>().AddForce(transform.up * Random.Range(8, 10), ForceMode2D.Impulse);
         fish.GetComponent<Rigidbody2D>().AddForce(Vector2.right * Random.Range(2, 4), ForceMode2D.Impulse);
         Debug.Log("Fish jump");
     }

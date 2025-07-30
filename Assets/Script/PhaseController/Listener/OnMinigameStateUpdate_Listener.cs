@@ -15,6 +15,8 @@ public class OnMinigameStateUpdate_Listener : MonoBehaviour
     }
     public void OnMiniGameWinStateUpdate(bool isWin)
     {
+        if (this.gameObject.activeSelf == false) return;
+
         if (isWin)
         {
             OnWin?.Invoke();

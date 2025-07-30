@@ -1,0 +1,25 @@
+using System.Collections.Generic;
+using UnityEngine;
+public class MouseIconController : MonoBehaviour
+{
+    [SerializeField] int MouseIconlayer = 1;
+
+
+    [SerializeField] List<MouseIconStatus> mouseIconStatus = new List<MouseIconStatus>();
+
+    public void ApplyMouseIcon(int index)
+    {
+        MouseIconStatus iconState = mouseIconStatus[index];
+        MouseIconManage.Instance.SetMouse(MouseIconlayer, iconState);
+    }
+}
+[System.Serializable]
+public class MouseIconStatus
+{
+    public bool IsEnableRealCursor;
+    public bool IsEnableCursorImage;
+    public Sprite MouseIcon;
+    public Vector2 MouseSize;
+
+}
+

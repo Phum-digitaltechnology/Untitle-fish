@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: e89789a39b290a54ca9b9ea5a42f4afa
+  - enabled: 1
     path: Assets/Scenes/IntermissionMain.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
@@ -14,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MiniGame/MG_2.unity
     guid: 90c3efdcdcc740444aff845e379a0c04
+  - enabled: 1
+    path: Assets/Scenes/MiniGame/MG_3.unity
+    guid: ed29acec9fa007d4489f5b76ab660eaa
   - enabled: 1
     path: Assets/Scenes/MiniGame/MG_4.unity
     guid: c8f7de04dfe90e9408e8cdfc5615b4a6
@@ -35,7 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MiniGame/MG_10.unity
     guid: 37a5f5fe098822143ab90866215b9203
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Title.unity
     guid: dc6ca702a734dff44991daca2d03949e
   m_configObjects:

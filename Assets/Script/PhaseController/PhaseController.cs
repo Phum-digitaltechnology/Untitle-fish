@@ -15,6 +15,7 @@ public class PhaseController : MonoBehaviour
 
     Phase phase = Phase.Intermission;
     bool MinigameState;
+    bool isPlayed;
     private void Start()
     {
         EarlySetUp?.Invoke();
@@ -35,10 +36,15 @@ public class PhaseController : MonoBehaviour
         }
         else
         {
+            if (isPlayed) return;
+            isPlayed = true;
             Debug.Log("Game End Go back to Da something Scene");
             // Just for Test
             // Loading Next Scene Here
-            GameManager.instance.Manager[(int)MANAGER.SceneManager].GetComponent<sceneManager>().EndMiniGame(MinigameState);
+            if (GameManager.instance != null)
+            {
+                GameManager.instance.Manager[(int)MANAGER.SceneManager].GetComponent<sceneManager>().EndMiniGame(MinigameState);
+            }
         }
     }
     public void UpdateMinigameState(bool UpdateState) // Calling this when Minigame End

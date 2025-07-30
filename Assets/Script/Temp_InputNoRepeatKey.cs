@@ -10,9 +10,16 @@ public class Temp_InputNoRepeatKey : MonoBehaviour
     [SerializeField] UnityEvent OnFailureInputpKey;
     KeyCode previousKey;
 
+    [SerializeField] UnityEvent RemoveMouse;
+
     [Header("Key Press")]
     [SerializeField] List<UnityEvent> OnKeyPressEvent = new List<UnityEvent>();
 
+
+    private void Start()
+    {
+        RemoveMouse.Invoke();
+    }
 
     private void Update()
     {
@@ -30,6 +37,7 @@ public class Temp_InputNoRepeatKey : MonoBehaviour
                         OnKeyPressEvent[i]?.Invoke();
                         OnSuccessInputKey?.Invoke();
                         previousKey = InputKey[i];
+                        AudioManager.Instance.PlaySFXRandomPitch("CatPull");
                     }
                 }
             }

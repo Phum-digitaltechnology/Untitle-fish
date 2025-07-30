@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: MG_10
   m_EditorClassIdentifier: 
   SceneName: MG_10
-  coolDown: 3
-  currentDownTime: 0
+  weight: 0
+  CanAppear: 0
+  CurrentDownTime: 0
+  controlSprite: {fileID: 21300000, guid: 4a9f4dc30a9af0a41994420e0e683ce4, type: 3}
+  transitionText: WAKE THE CAT!

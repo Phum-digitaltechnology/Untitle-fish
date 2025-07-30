@@ -79,9 +79,6 @@
             "m_Id": "266e4aef552b47129402ccfd6ce17c54"
         },
         {
-            "m_Id": "032352224dc8496ea0c611d77c79b13b"
-        },
-        {
             "m_Id": "5a7379f9978a4abd98639d863717f1ed"
         },
         {
@@ -119,6 +116,9 @@
         },
         {
             "m_Id": "d3047c8cc4504ba6873fddfcfd95ef3c"
+        },
+        {
+            "m_Id": "01b92566c1604b29acf45e8b1dcdf069"
         }
     ],
     "m_GroupDatas": [],
@@ -127,7 +127,7 @@
         {
             "m_OutputSlot": {
                 "m_Node": {
-                    "m_Id": "032352224dc8496ea0c611d77c79b13b"
+                    "m_Id": "01b92566c1604b29acf45e8b1dcdf069"
                 },
                 "m_SlotId": 0
             },
@@ -599,7 +599,7 @@
 {
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.GradientNode",
-    "m_ObjectId": "032352224dc8496ea0c611d77c79b13b",
+    "m_ObjectId": "01b92566c1604b29acf45e8b1dcdf069",
     "m_Group": {
         "m_Id": ""
     },
@@ -608,15 +608,15 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1659.0001220703125,
-            "y": 216.00001525878907,
-            "width": 208.0001220703125,
-            "height": 104.00004577636719
+            "x": -1656.6668701171875,
+            "y": 216.0000457763672,
+            "width": 209.33349609375,
+            "height": 106.66667175292969
         }
     },
     "m_Slots": [
         {
-            "m_Id": "1b61c07872b14d06a41fad74c12a613f"
+            "m_Id": "c0bf2adf692d453e9418bab5c8077c5f"
         }
     ],
     "synonyms": [
@@ -954,18 +954,6 @@
         "e32": 0.0,
         "e33": 1.0
     }
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.GradientMaterialSlot",
-    "m_ObjectId": "1b61c07872b14d06a41fad74c12a613f",
-    "m_Id": 0,
-    "m_DisplayName": "Out",
-    "m_SlotType": 1,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "Out",
-    "m_StageCapability": 3
 }
 
 {
@@ -3078,6 +3066,18 @@
         "y": 1.0
     },
     "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.GradientMaterialSlot",
+    "m_ObjectId": "c0bf2adf692d453e9418bab5c8077c5f",
+    "m_Id": 0,
+    "m_DisplayName": "Out",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3
 }
 
 {

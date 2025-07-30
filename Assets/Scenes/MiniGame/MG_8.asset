@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: MG_8
   m_EditorClassIdentifier: 
   SceneName: MG_8
-  coolDown: 0
-  currentDownTime: 0
+  weight: 0
+  CanAppear: 0
+  CurrentDownTime: 0
+  controlSprite: {fileID: 21300000, guid: 0515e50a2f846254a8516791712e7208, type: 3}
+  transitionText: FISH!
