@@ -11782,7 +11782,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40e7a48b10b9568498db8a3fb740c1a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _unlockWhen: 1
+  _unlockWhen: 15
   randomCDRange: {x: 3, y: 5}
   effectTime: 3
   Delay: 1
