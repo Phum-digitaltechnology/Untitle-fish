@@ -60,7 +60,7 @@ public class GrillFishMinigame : MonoBehaviour
         UpdateFishSprite();
     }
 
-    private void UpdateFishSprite()
+    public void UpdateFishSprite()
     {
         Collider2D lineCol = lineMover.GetComponent<Collider2D>();
 

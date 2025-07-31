@@ -61,6 +61,8 @@ public class Minigame3_RandomFish : MonoBehaviour
 
     void setUpfish(FishType randFishType)
     {
+
+
         randFishType.Line.SetActive(true);
         randFishType.Bar.SetActive(true);
         grillFish.rawZone = randFishType.rawZone;
@@ -71,5 +73,6 @@ public class Minigame3_RandomFish : MonoBehaviour
         grillFish.mediumFishSprite.FishSprite = randFishType.mediumFishSprite.FishSprite;
         grillFish.cookedFishSprite.FishSprite = randFishType.cookedFishSprite.FishSprite;
         grillFish.burnedFishSprite.FishSprite = randFishType.burnedFishSprite.FishSprite;
+        grillFish.UpdateFishSprite();
     }
 }
