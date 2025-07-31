@@ -2487,6 +2487,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 91764137}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: PlayInFixedTime
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Ator_methicalCat
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!95 &91764137
 Animator:
   serializedVersion: 7
@@ -11770,7 +11782,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40e7a48b10b9568498db8a3fb740c1a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _unlockWhen: 15
+  _unlockWhen: 1
   randomCDRange: {x: 3, y: 5}
   effectTime: 3
   Delay: 1
@@ -14872,7 +14884,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
