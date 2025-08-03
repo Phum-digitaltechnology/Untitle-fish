@@ -19,6 +19,7 @@ public class ForceLose : MonoBehaviour
 
         if (sceneManager.isEndMinigame)
         {
+            sceneManager.StopAllCoroutines();
             scoreSystem.InstantLose();
         }
         else
@@ -33,6 +34,7 @@ public class ForceLose : MonoBehaviour
 
     public void waitLoadIntermission(string name)
     {
+        sceneManager.StopAllCoroutines();
         scoreSystem.InstantLose();
         sceneManager.OnLoadingIntoScene -= waitLoadIntermission;
 

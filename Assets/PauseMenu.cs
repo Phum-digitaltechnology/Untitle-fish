@@ -13,7 +13,7 @@ public class PauseMenu : MonoBehaviour
     public Text text;
     bool IsPaused;
     bool IsDelaying;
-
+    bool onActive;
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && !IsPaused)
@@ -21,8 +21,9 @@ public class PauseMenu : MonoBehaviour
             StartPauseGame();
             IsDelaying = false;
         }
-        else if (Input.GetKeyDown(KeyCode.Escape) && IsPaused)
+        else if (Input.GetKeyDown(KeyCode.Escape) && IsPaused && onActive == false)
         {
+            onActive = true;
             OnEndCountDown();
         }
 
@@ -34,6 +35,7 @@ public class PauseMenu : MonoBehaviour
 
     public async void OnEndCountDown()
     {
+
         OnPlayGame.Invoke();
         CountDown();
         Countdown(CountDownTimeMS / 1000);
@@ -75,7 +77,7 @@ public class PauseMenu : MonoBehaviour
 
     public void EndPauseGame()
     {
-
+        onActive = false;
         Time.timeScale = CurrentTimeScale;
         IsPaused = false;
         OnUnPauseGame.Invoke();
