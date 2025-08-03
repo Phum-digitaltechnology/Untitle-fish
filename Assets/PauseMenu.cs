@@ -68,8 +68,14 @@ public class PauseMenu : MonoBehaviour
         OnPauseGame.Invoke();
     }
 
+    public void OnBruhPlayGame()
+    {
+        OnPlayGame.Invoke();
+    }
+
     public void EndPauseGame()
     {
+
         Time.timeScale = CurrentTimeScale;
         IsPaused = false;
         OnUnPauseGame.Invoke();

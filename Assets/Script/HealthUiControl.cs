@@ -112,6 +112,20 @@ public class HealthUiControl : MonoBehaviour
         }
     }
 
+    public void InstantLose()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            if (healthHolder.transform.GetChild(i).gameObject.TryGetComponent<HealthLose>(out HealthLose health))
+            {
+                if (health.IsLoseHealth == false)
+                {
+                    health.ActiveHealthLose();
+                }
+            }
+        }
+    }
+
     public void OnfinishHealthLose()
     {
         Debug.Log("Played On Health Lose");

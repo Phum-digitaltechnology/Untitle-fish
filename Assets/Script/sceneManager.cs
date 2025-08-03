@@ -108,6 +108,10 @@ public class sceneManager : MonoBehaviour
         PreLoadingIntoScene?.Invoke(SceneName);
         OnLoadingIntoScene?.Invoke(SceneName);
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(SceneName));
+        if (SceneName != "IntermissionMain")
+        {
+            isEndMinigame = false;
+        }
         GameObject.Find("InterMissionCanvas").SetActive(false);
         //transitionAnim.SetTrigger("StartMinigame");
     }
@@ -140,9 +144,10 @@ public class sceneManager : MonoBehaviour
         }
     }
 
-    //call to unload minigame scene and return to intermission scene
+    public bool isEndMinigame = true;
     public void EndMiniGame(bool areYouWinningSon)
     {
+        isEndMinigame = true;
         //ScoreSystem scoreCS = this.transform.parent.GetChild(3).gameObject.GetComponent<ScoreSystem>();
         ScoreSystem scoreCS = GameManagerObj.GetComponent<GameManager>().Manager[(int)MANAGER.ScoreSystem].GetComponent<ScoreSystem>();
         if (areYouWinningSon)

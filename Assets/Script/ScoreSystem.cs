@@ -19,6 +19,8 @@ public class ScoreSystem : MonoBehaviour
     public bool MinigameState { get; private set; } = true;
     public int playedMinigameCount;
     public event Action<int> OnCountUpdate;
+
+    HealthUiControl healthUiControl;
     private void Awake()
     {
         currentLife = Life;
@@ -55,6 +57,19 @@ public class ScoreSystem : MonoBehaviour
             OnLose?.Invoke();
             losing = true;
         }
+    }
+
+    public void InstantLose()
+    {
+        if (healthUiControl == null)
+        {
+            healthUiControl = FindAnyObjectByType<HealthUiControl>(FindObjectsInactive.Include);
+        }
+
+        losing = true;
+        currentLife = 0;
+        OnLose?.Invoke();
+        healthUiControl.InstantLose();
     }
 
     public void CheckForSpeedUp()

@@ -1173,6 +1173,18 @@ MonoBehaviour:
         PlayEvents:
           m_PersistentCalls:
             m_Calls:
+            - m_Target: {fileID: 1950839443}
+              m_TargetAssemblyTypeName: MoreMountains.Feedbacks.MMF_Player, MoreMountains.Tools
+              m_MethodName: SkipToTheEnd
+              m_Mode: 1
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 1
+              m_CallState: 2
             - m_Target: {fileID: 56580870}
               m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
               m_MethodName: SetActive
@@ -7483,7 +7495,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 783962614}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.031350397, y: -0.906766, z: 0.068397194, w: -0.41486683}
+  m_LocalRotation: {x: -0.031350393, y: -0.906766, z: 0.0683972, w: -0.41486683}
   m_LocalPosition: {x: -994.683, y: 4.507, z: 1125.862}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -15295,6 +15307,23 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54a33335f4be85344bdd69722c20d9d8, type: 3}
+--- !u!1 &1351981124 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3258919606260877351, guid: 7913021779eec7145bbea75c2f230a47, type: 3}
+  m_PrefabInstance: {fileID: 1608244944}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1351981129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1351981124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbda9baa4497a6749947aad4493f3c18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1357389186 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5973967581460570821, guid: 0e779db3f070996419064264578d8f7b, type: 3}
@@ -16618,10 +16647,25 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8546005189157917769, guid: 7913021779eec7145bbea75c2f230a47, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1351981129}
+    - target: {fileID: 8546005189157917769, guid: 7913021779eec7145bbea75c2f230a47, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: forceLose
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546005189157917769, guid: 7913021779eec7145bbea75c2f230a47, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ForceLose, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3258919606260877351, guid: 7913021779eec7145bbea75c2f230a47, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1351981129}
   m_SourcePrefab: {fileID: 100100000, guid: 7913021779eec7145bbea75c2f230a47, type: 3}
 --- !u!4 &1609984137 stripped
 Transform:
@@ -17604,6 +17648,7 @@ MonoBehaviour:
           m_StringArgument: PullFish
           m_BoolArgument: 0
         m_CallState: 2
+  isEndMinigame: 1
 --- !u!1 &1777440655
 GameObject:
   m_ObjectHideFlags: 0
@@ -17703,8 +17748,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1777639654}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.043174516, y: -0.90444404, z: 0.094241515, w: -0.41380617}
-  m_LocalPosition: {x: -3.311, y: 7.828, z: 39.575}
+  m_LocalRotation: {x: -0.043174513, y: -0.90444404, z: 0.094241515, w: -0.41380617}
+  m_LocalPosition: {x: -3.3295898, y: 7.59206, z: 39.608154}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18683,6 +18728,18 @@ MonoBehaviour:
         PlayEvents:
           m_PersistentCalls:
             m_Calls:
+            - m_Target: {fileID: 48693793}
+              m_TargetAssemblyTypeName: MoreMountains.Feedbacks.MMF_Player, MoreMountains.Tools
+              m_MethodName: SkipToTheEnd
+              m_Mode: 1
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 1
+              m_CallState: 2
             - m_Target: {fileID: 56580870}
               m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
               m_MethodName: SetActive
