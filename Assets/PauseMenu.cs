@@ -14,8 +14,19 @@ public class PauseMenu : MonoBehaviour
     bool IsPaused;
     bool IsDelaying;
     bool onActive;
+
+    sceneManager sceneManage;
+
     private void Update()
     {
+        if (sceneManage == null)
+        {
+            sceneManage = FindAnyObjectByType<sceneManager>();
+
+        }
+
+        if (sceneManage.OnLoad) return;
+
         if (Input.GetKeyDown(KeyCode.Escape) && !IsPaused)
         {
             StartPauseGame();

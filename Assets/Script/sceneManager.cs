@@ -19,6 +19,7 @@ public class sceneManager : MonoBehaviour
     [SerializeField] private GameObject GameManagerObj;
     private bool losing = false;
     private bool SceneLoaded = false;
+    public bool OnLoad;
     public event Action<string> OnLoadingIntoScene;
     public event Action<string> PreLoadingIntoScene;
     TransitionEvent transitionEvent;
@@ -101,18 +102,22 @@ public class sceneManager : MonoBehaviour
     //play animation before and after load scene
     IEnumerator LoadLevel(string SceneName)
     {
+
         transitionAnim.SetTrigger("EndMinigame");
-        yield return new WaitForSeconds(2.25f);
         if (SceneName != "IntermissionMain")
         {
             isEndMinigame = false;
         }
+        yield return new WaitForSeconds(2.25f);
+        OnLoad = true;
         AsyncOperation op = SceneManager.LoadSceneAsync(SceneName, LoadSceneMode.Additive);
+
         yield return op;
+
         PreLoadingIntoScene?.Invoke(SceneName);
         OnLoadingIntoScene?.Invoke(SceneName);
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(SceneName));
-
+        OnLoad = false;
         GameObject.Find("InterMissionCanvas").SetActive(false);
         //transitionAnim.SetTrigger("StartMinigame");
     }
@@ -129,6 +134,8 @@ public class sceneManager : MonoBehaviour
 
     public void SetUp()
     {
+        SceneLoaded = false;
+        CurrentMinigame = null;
         ResetWeight();
         transitionEvent = transitionAnim.GetComponent<TransitionEvent>();
         GameManagerObj = this.transform.parent.gameObject;
