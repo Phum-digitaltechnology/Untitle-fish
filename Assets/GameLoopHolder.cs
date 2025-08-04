@@ -40,6 +40,27 @@ public class GameLoopHolder : MonoBehaviour
         }
     }
 
+    public void InstantSetState(GameState currentState)
+    {
+        this.currentState = currentState;
+        GameStateListener onEnter = null, onExit = null;
+        foreach (GameStateListener listener in gameStateListeners)
+        {
+            if (listener.IsEnter(currentState))
+            {
+                onEnter = listener;
+            }
+            else
+            {
+                onExit = listener;
+            }
+        }
+        onEnter.OnSetState(currentState);
+        onExit.OnSetState(currentState);
+
+
+    }
+
     void ChangeState(GameState newState)
     {
         currentState = newState;

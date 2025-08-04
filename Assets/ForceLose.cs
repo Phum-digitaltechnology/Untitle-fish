@@ -4,40 +4,43 @@ public class ForceLose : MonoBehaviour
 {
 
     sceneManager sceneManager;
-    ScoreSystem scoreSystem;
     PauseMenu pauseMenu;
+    GameLoopHolder gameLoopHolder;
+    TransitionEvent transitionEvent;
+    Animator anim;
     public void forceLose()
     {
-
-        Debug.Log("Clicking");
         if (sceneManager == null)
         {
+            transitionEvent = FindAnyObjectByType<TransitionEvent>(FindObjectsInactive.Include);
+            anim = transitionEvent.GetComponent<Animator>();
+            gameLoopHolder = FindAnyObjectByType<GameLoopHolder>(FindObjectsInactive.Include);
             sceneManager = FindAnyObjectByType<sceneManager>(FindObjectsInactive.Include);
-            scoreSystem = FindAnyObjectByType<ScoreSystem>(FindObjectsInactive.Include);
             pauseMenu = FindAnyObjectByType<PauseMenu>(FindObjectsInactive.Include);
         }
 
         if (sceneManager.isEndMinigame)
         {
+            gameLoopHolder.ChangeToMenuState();
+            anim.SetTrigger("DisableAnimation");
             sceneManager.StopAllCoroutines();
-            scoreSystem.InstantLose();
         }
         else
         {
-            sceneManager.EndMiniGame(false);
-            sceneManager.OnLoadingIntoScene += waitLoadIntermission;
+            sceneManager.BackToIntermissionCall();
+            transitionEvent.waitTransitionEvent += waitEnd;
         }
         pauseMenu.OnBruhPlayGame();
         pauseMenu.EndPauseGame();
     }
 
 
-    public void waitLoadIntermission(string name)
+    void waitEnd()
     {
+        anim.SetTrigger("DisableAnimation");
         sceneManager.StopAllCoroutines();
-        scoreSystem.InstantLose();
-        sceneManager.OnLoadingIntoScene -= waitLoadIntermission;
-
+        gameLoopHolder.InstantSetState(GameState.Menu);
     }
-
 }
+
+

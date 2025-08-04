@@ -1,12 +1,19 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TransitionEvent : MonoBehaviour
 {
     public event Action waitTransitionEvent;
+    public event Action waitAnotherTransition;
+    public event Action TempMiddleEvent;
 
     Animator thisAnimator;
     bool isWaitToFinish;
+
+    [SerializeField] UnityEvent OnStart;
+    [SerializeField] UnityEvent OnFinish;
+
     private void Awake()
     {
         thisAnimator = this.GetComponent<Animator>();
@@ -15,8 +22,16 @@ public class TransitionEvent : MonoBehaviour
     {
         waitTransitionEvent?.Invoke();
         waitTransitionEvent = null;
+        OnFinish?.Invoke();
+        waitTransitionEvent = waitAnotherTransition;
+        waitAnotherTransition = null;
     }
 
+
+    public void OnStartTransition()
+    {
+        OnStart?.Invoke();
+    }
 
     bool IsAnimatorPlaying(Animator animator)
     {

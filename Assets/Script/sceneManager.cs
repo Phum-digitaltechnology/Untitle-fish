@@ -103,15 +103,16 @@ public class sceneManager : MonoBehaviour
     {
         transitionAnim.SetTrigger("EndMinigame");
         yield return new WaitForSeconds(2.25f);
+        if (SceneName != "IntermissionMain")
+        {
+            isEndMinigame = false;
+        }
         AsyncOperation op = SceneManager.LoadSceneAsync(SceneName, LoadSceneMode.Additive);
         yield return op;
         PreLoadingIntoScene?.Invoke(SceneName);
         OnLoadingIntoScene?.Invoke(SceneName);
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(SceneName));
-        if (SceneName != "IntermissionMain")
-        {
-            isEndMinigame = false;
-        }
+
         GameObject.Find("InterMissionCanvas").SetActive(false);
         //transitionAnim.SetTrigger("StartMinigame");
     }
@@ -196,6 +197,13 @@ public class sceneManager : MonoBehaviour
     }
 
     bool isLoadIntermissionComplete;
+
+
+    public void BackToIntermissionCall()
+    {
+        StartCoroutine(BackToIntermission());
+    }
+
     IEnumerator BackToIntermission()
     {
         transitionAnim.SetTrigger("End");
