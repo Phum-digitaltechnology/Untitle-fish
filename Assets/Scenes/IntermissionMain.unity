@@ -18428,6 +18428,7 @@ MonoBehaviour:
   tmproTransition: {fileID: 555262368}
   CurrentMinigame: {fileID: 0}
   GameManagerObj: {fileID: 1268467454}
+  OnLoad: 0
   delayTime: 0
   beforeActiveMinigame:
     m_PersistentCalls:
@@ -19691,6 +19692,53 @@ MonoBehaviour:
         ResetEvents:
           m_PersistentCalls:
             m_Calls: []
+--- !u!1 &1964602097
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1964602099}
+  - component: {fileID: 1964602098}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1964602098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1964602097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e74a901a1daf214587b7acbcf369eed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  webglFPS: 60
+  mobileFPS: 30
+  desktopFPS: 120
+--- !u!4 &1964602099
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1964602097}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 563.60205, y: 883.67084, z: 191.14027}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1982760422
 GameObject:
   m_ObjectHideFlags: 0
@@ -31400,3 +31448,4 @@ SceneRoots:
   - {fileID: 1489036146}
   - {fileID: 2097336558}
   - {fileID: 1445105089}
+  - {fileID: 1964602099}
